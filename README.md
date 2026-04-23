@@ -30,7 +30,7 @@ as to be able to publish the exact “recipe” for training data preparation.
 The master copy of the training data collection is organized on LUMI, using
 storage that is part of the EuroHPC strategic access (`project_465002530`).
 Data identification and preparation works at the interface between WP3 and WP4,
-coordinated by Prompsit, AI Sweden, and UiO.
+coordinated (in mid-2026) by AI Sweden, Prompsit, and UiO.
 
 The collection is maintained as a directory tree rooted
 in `/scratch/project_465002530/training/collection/`.
