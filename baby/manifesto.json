@@ -1,0 +1,10 @@
+{"cycle": "baby",
+ "datasets":
+ {"dclm-1.0": {"name": "DCLM-baseline", "version": 1.0,
+               "languages": ["eng_Latn"],
+               "annotations": {"contamination": {"owner": "prompsit", "status": "complete"},
+                               "pmi", {"owner": "lsp", "status": "complete"}},
+               "release": {"owner": "", "status": "pending", "files": 4711}},
+  "hplt-3.0": {}
+ }
+}
