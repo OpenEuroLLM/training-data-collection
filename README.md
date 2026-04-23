@@ -12,10 +12,10 @@ This repository serves to coordinate training data management for this work.
 Data preparation for each cycle encompasses a series of steps, including
 
 1. identification and acquisition of suitable **source datasets**;
-2. definition of subsets, e.g. by volume or based on available metadata;
-3. annotation with e.g. contamination against benchmarks and PII flags;
+2. definition of **subsets**, e.g. by volume or based on available metadata;
+3. **annotation** with e.g. contamination against benchmarks and PII flags;
 4. possibly additional annotation, e.g. “quality” signals, WDS, registers;
-5. effectuating the above, i.e. creating the exact and full training data.
+5. **effectuating** the above, i.e. creating the exact and full training data.
 
 The result of these steps is called the OpenEuroLLM **Training Data Collection**
 (which is distinct from the Training Data Catalogue, but see below).
