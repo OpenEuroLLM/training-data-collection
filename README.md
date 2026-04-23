@@ -73,7 +73,7 @@ For HPLT 3.0, a sampling strategy will be applied that takes into account
 available metadata, notably WDS document “quality” estimates and web register
 annotations.
 The `release` version of HPLT 3.0 in the `baby` collection, thus, will comprise
-at most 100B tokens, the “best” subset within the available per-language
+at most 100B tokens of Spanish, the “best” subset within the available per-language
 training budget.
 
 ## Workflow
@@ -83,3 +83,5 @@ moving sequentially through steps 1. (source data identification and acqusition)
 through 5. (creation of the actual collection, the `release` version).
 Scripts and instructions for data acquisition, annotation, and packing are
 maintained as part of this repository.
+
+## Mirroring across EuroHPC Systems
