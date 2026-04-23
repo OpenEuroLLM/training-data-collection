@@ -6,7 +6,7 @@ The OpenEuroLLM consortium will collectively exectute at least three full LLM **
 
 + (a) a first “production” model around 8B parameters (“mid-size”) available by mid-2026, codenamed [`baby`](./baby/README.md);
 + (b) the first “flagship” model around 30–70B parameters by late 2026, codenamed `flag`; and
-+ (c) the final “flagship” model to become available towards the project end.
++ (c) the final “flagship” model to become available towards the project end and yet to be codenamed.
 
 This repository serves to coordinate training data management for this work.
 Data preparation for each cycle encompasses a series of steps, including
