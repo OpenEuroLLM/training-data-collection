@@ -2,9 +2,9 @@
 
 ## Motivation
 
-The OpenEuroLLM consortium will collectively exectute at least three full LLM development **cycles**,
+The OpenEuroLLM consortium will collectively exectute at least three full LLM **development cycles**,
 
-+ (a) a first “production” model around 8B parameters (“mid-size”) available by mid-2026, codenamed `[baby](./baby/README.md)`;
++ (a) a first “production” model around 8B parameters (“mid-size”) available by mid-2026, codenamed [`baby`](./baby/README.md);
 + (b) the first “flagship” model around 30–70B parameters by late 2026, codenamed `flag`; and
 + (c) the final “flagship” model to become available towards the project end.
 
