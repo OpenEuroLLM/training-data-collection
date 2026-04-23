@@ -62,7 +62,7 @@ dataset will typically encompass selection of a subset of data and possibly
 metadata-based upsampling.
 This process is implemented by code maintained as part of the training data
 collection (this repository), which we tentatively dub the OpenEuroLLM **packer**.
-Pack(ag)ing of the release versions of each data set at the same applies
+Pack(ag)ing of the release versions of each dataset at the same time applies
 decontamination and PII masking, on the basis of available annotations.
 
 For the “baby” cycle, for example, a language like Spanish will be represented
