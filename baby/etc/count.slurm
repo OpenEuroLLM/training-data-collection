@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# for i in hplt-3.0/source/*_*; do sbatch etc/count $i; done
+# for i in hplt-3.0/source/*_*; do sbatch etc/count.slurm $i; done
 #
 
 #SBATCH --job-name=count
