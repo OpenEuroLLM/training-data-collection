@@ -98,7 +98,10 @@ echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] count.slurm: root in ${root}; data: ${1}.
 echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] count.slurm: target: ${target}."
 echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] count.slurm: using ${cores} cores."
 
-echo python -c "
+#
+# finally, invoke the statitics code from the Training Data Catalogue
+#
+python -c "
 import sys;
 sys.path.append(\"${base}/etc\");
 import counts;
