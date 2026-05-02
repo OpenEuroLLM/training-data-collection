@@ -2,6 +2,7 @@
 
 #
 # for i in hplt-3.0/source/*_*; do sbatch etc/count.slurm $i; done
+# for i in nemotron-cc-1.0/{high,medium-high,medium}/actual; do sbatch etc/count.slurm $i; done
 #
 
 #SBATCH --job-name=count
@@ -63,12 +64,31 @@ if [ -z "${path}" ]; then
   exit 1;
 fi
 
-pattern="\\.jsonl\\.zst\$";
 tokenizer="openeurollm/tokenizer-256k";
-key="text";
+
 suffix="${path##${root}/}";
 name="${suffix%%/source/*}";
 part="${suffix##*/source/}";
+metadata="${root}/${name}/metadata.yaml";
+
+if [ ! -f "${metadata}" ]; then
+  echo "count.slurm: no metadata for ${root}/${name}; exit." >&2;
+  exit 1;
+fi
+
+key=$(yq4 ".text" ${metadata});
+if [ -z "${key}" -o "${key}" = "null" ]; then
+  echo "count.slurm: unable to determine .text. key; exit." >&2;
+  exit 1;
+fi
+
+pattern=$(yq4 ".suffix" ${metadata});
+if [ -z "${pattern}" -o "${key}" = "null" ]; then
+  echo "count.slurm: unable to determine .suffix. value; exit." >&2;
+  exit 1;
+fi
+pattern=$(echo $pattern | sed -e 's,\.,\\\\\.,g' -e 's,$,\$,g');
+
 target="${root}/${name}/counts/${part}";
 if [ ! -d ${target} ]; then mkdir -p ${target}; fi
 target=${target}/source.json;
@@ -78,7 +98,7 @@ echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] count.slurm: root in ${root}; data: ${1}.
 echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] count.slurm: target: ${target}."
 echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] count.slurm: using ${cores} cores."
 
-python -c "
+echo python -c "
 import sys;
 sys.path.append(\"${base}/etc\");
 import counts;
