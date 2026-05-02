@@ -1,5 +1,6 @@
 name: HPLT 3.0
 url: https://hplt-project.org/datasets/v3.0
+suffix: .jsonl.zst
 text: text
 id: id
 wds: true
@@ -7,13 +8,51 @@ registers: true
 annotations:
 - contamination:
   - owner: Prompsit
-  - status: complete
+  - status: 
 - pii:
   - owner: AI Sweden
-  - status: complete
-sample:
+  - status: 
+release:
+- default:
+  - sample: wds+registers
+  - rubber: 5%
+- als_Latn:
+- bos_Latn:
+- bul_Cyrl:
+- cat_Latn:
+- ces_Latn:
+- dan_Latn:
 - deu_Latn:
-  - type: wds+registers
-  - budget: 100b
+  - sample: wds+registers
+  - budget: 200md
+- ekk_Latn:
+- ell_Grek:
+- eus_Latn:
+- fin_Latn:
+- fra_Latn:
+- gle_Latn:
+- glg_Latn:
+- hrv_Latn:
+- hun_Latn:
+- isl_Latn:
+- ita_Latn:
+- kat_Geor:
+- lit_Latn:
+- ltg_Latn:
+- lvs_Latn:
+- mkd_Cyrl:
+- mlt_Latn:
+- nld_Latn:
+- nno_Latn:
 - nob_Latn:
-  - type: all
+- pol_Latn:
+- por_Latn:
+- ron_Latn:
+- slk_Latn:
+- slv_Latn:
+- spa_Latn:
+- srp_Cyrl:
+- swe_Latn:
+- tur_Latn:
+- ukr_Cyrl:
+

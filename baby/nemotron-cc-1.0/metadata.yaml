@@ -1,0 +1,27 @@
+name: Nemotron-CC 1.0
+url: https://data.commoncrawl.org/contrib/Nemotron/Nemotron-CC/index.html
+suffix: .jsonl.zstd
+text: text
+id: warc_record_id
+url: url
+annotations:
+- contamination:
+  - owner: Prompsit
+  - status: complete
+- pii:
+  - owner: AI Sweden
+  - status: complete
+release:
+- default:
+  - filter: true # suppress full documents flagged for benchmark contamination
+  - mask: true # mask sub-strings flagged as personally identifiable information
+  - target: self # outputs go into .release. subdirectories parallel to .source.
+- high/actual:
+  - sample: full
+- medium-high/actual:
+  - sample: full
+- medium/actual:
+  - sample: random
+  - budget:
+
+  
