@@ -6,6 +6,7 @@
 # for i in finepdfs-edu-1.0.0/source/*_*; do sbatch etc/count.slurm $i; done
 # for i in hplt-3.0/source/*_*; do sbatch etc/count.slurm $i; done
 # for i in nemotron-cc-1.0/source/*/actual; do sbatch etc/count.slurm $i; done
+# for i in nemotron-cc-opus-1.1/source/*_*; do sbatch etc/count.slurm $i; done
 #
 
 #SBATCH --job-name=count

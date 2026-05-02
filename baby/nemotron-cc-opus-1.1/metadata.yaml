@@ -1,0 +1,19 @@
+name: OPUS Translations of Nemotron-CC 1.1
+huggingface: Helsinki-NLP/nemotron-cc-translated
+suffix: .jsonl.gz
+text: text
+id: warc_record_id
+annotations:
+- contamination:
+  - owner: Prompsit
+  - status: 
+- pii:
+  - owner: AI Sweden
+  - status: 
+release:
+- default:
+  - filter: true # suppress full documents flagged for benchmark contamination
+  - mask: true # mask sub-strings flagged as personally identifiable information
+  - target: self # outputs go into .release. subdirectories parallel to .source.
+
+  
