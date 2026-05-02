@@ -21,6 +21,6 @@ release:
   - sample: full
 - medium/actual:
   - sample: random
-  - budget:
+  - budget: 64%
 
   
