@@ -3,14 +3,13 @@ url: https://data.commoncrawl.org/contrib/Nemotron/Nemotron-CC/index.html
 suffix: .jsonl.zstd
 text: text
 id: warc_record_id
-url: url
 annotations:
 - contamination:
   - owner: Prompsit
-  - status: complete
+  - status: 
 - pii:
   - owner: AI Sweden
-  - status: complete
+  - status: 
 release:
 - default:
   - filter: true # suppress full documents flagged for benchmark contamination

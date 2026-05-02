@@ -1,0 +1,16 @@
+name: DCLM Baseline 1.0
+huggingface: mlfoundations/dclm-baseline-1.0
+suffix: .jsonl.zst
+text: text
+id: metadata.WARC-Record-ID
+annotations:
+- contamination:
+  - owner: Prompsit
+  - status: 
+- pii:
+  - owner: AI Sweden
+  - status: 
+release:
+- default:
+  - sample: random
+  - rubber: 5%
