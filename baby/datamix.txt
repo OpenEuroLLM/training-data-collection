@@ -112,8 +112,8 @@
 0.002000 LLM360/MegaMath-10p-sample/megamath-text-code-block-10p-sample
 0.002000 LLM360/MegaMath-10p-sample/megamath-web-pro-10p-sample
 0.054000 nemotron-cc-1.0/megatron-lm/high/actual
-0.054000 nemotron-cc-1.0/megatron-lm/medium/actual
-0.131440 nemotron-cc-1.0/megatron-lm/medium-high/actual
+0.131440 nemotron-cc-1.0/megatron-lm/medium/actual
+0.054000 nemotron-cc-1.0/megatron-lm/medium-high/actual
 0.000994 nemotron-cc-opus-1.1/megatron-lm/bos_Latn
 0.001309 nemotron-cc-opus-1.1/megatron-lm/bul_Cyrl
 0.001173 nemotron-cc-opus-1.1/megatron-lm/cat_Latn
