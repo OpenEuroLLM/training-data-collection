@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #
-# for i in dclm-1.0/source/*_*_of_10/*_*_of_10; do echo batch etc/count.slurm $i; done
+# for i in dclm-1.0/source/*_*_of_10/*_*_of_10; do sbatch etc/count.slurm $i; done
 # for i in finepdfs-1.0.0/source/*_*; do sbatch etc/count.slurm $i; done
 # for i in finepdfs-edu-1.0.0/source/*_*; do sbatch etc/count.slurm $i; done
 # for i in hplt-3.0/source/*_*; do sbatch etc/count.slurm $i; done
