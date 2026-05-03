@@ -1,5 +1,6 @@
 name: Training Data Collection for OpenEuroLLM Baby Model
 date: May 2026
+tokenizer: openeurollm/tokenizer-256k
 release:
   filter: contamination # suppress documents flagged for benchmark contamination
   mask: pii # mask out sub-strings flagged as personally identifiable information
