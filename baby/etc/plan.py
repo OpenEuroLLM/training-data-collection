@@ -62,7 +62,7 @@ def main():
           continue;
         ratio, path = _.groups();
         ratio = float(ratio);
-        _ = os.path.join(path.replace("/megatron-lm/", "/counts/"), "source.json")
+        _ = os.path.join(path.replace("/megatron-lm", "/counts"), "source.json")
         if not os.path.isfile(_):
           if not arguments.quiet:
             print("plan.py(): no counts for {} (#{})."
