@@ -1,5 +1,6 @@
 name: Nemotron-CC 1.0
 url: https://data.commoncrawl.org/contrib/Nemotron/Nemotron-CC/index.html
+catalogue: nemotron-cc/1.0/data
 suffix: .jsonl.zstd
 text: text
 id: warc_record_id
@@ -12,8 +13,6 @@ annotations:
     status: 
 release:
   default:
-    filter: true # suppress full documents flagged for benchmark contamination
-    mask: true # mask sub-strings flagged as personally identifiable information
     target: self # outputs go into .release. subdirectories parallel to .source.
   high/actual:
     sample: full

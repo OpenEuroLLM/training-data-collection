@@ -1,18 +1,17 @@
 name: Tower+ Translations of Nemotron-CC 0.1
 huggingface: MultiSynt/MT-Nemotron-CC
-branch: main
-commit: 79d8bda
+catalogue: nemotron-cc-tower+/0.1/parallel
 suffix: .jsonl.zst
 text: text
 id: warc_record_id
 annotations:
-- contamination:
-  - owner: Prompsit
-  - status: 
-- pii:
-  - owner: AI Sweden
-  - status: 
+  contamination:
+    owner: Prompsit
+    status: 
+  pii:
+    owner: AI Sweden
+    status: 
 release:
-- default:
-  - sample: random
-  - rubber: 5%
+  default:
+    sample: random
+    rubber: 5%

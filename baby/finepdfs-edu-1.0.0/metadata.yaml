@@ -1,16 +1,17 @@
 name: FinePDFs-EDU 1.0.0
 huggingface: HuggingFaceFW/finepdfs-edu
+catalogue: finepds/1.0.0/edu
 suffix: .jsonl.zst
 text: text
 id: id
 annotations:
-- contamination:
-  - owner: Prompsit
-  - status: 
-- pii:
-  - owner: AI Sweden
-  - status: 
+  contamination:
+    owner: Prompsit
+    status: _to_do_
+  pii:
+    owner: AI Sweden
+    status: _to_do_
 release:
-- default:
-  - sample: random
-  - rubber: 5%
+  default:
+    sample: random
+    rubber: 5%
