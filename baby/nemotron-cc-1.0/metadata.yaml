@@ -12,8 +12,6 @@ annotations:
     owner: AI Sweden
     status: 
 release:
-  default:
-    target: self # outputs go into .release. subdirectories parallel to .source.
   high/actual:
     sample: full
   medium-high/actual:
