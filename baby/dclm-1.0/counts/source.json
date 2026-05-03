@@ -1,0 +1,23 @@
+{
+  "files": 27900,
+  "bytes": 7213299738100,
+  "documents": 2947374500,
+  "segments": 165895403200,
+  "tokens": 3893039878500,
+  "characters": 16558114552500,
+  "time": 11509365.467168331,
+  "errors": 0,
+  "keys": {
+    "required": [
+      "bff_contained_ngram_count_before_dedupe",
+      "language_id_whole_page_fasttext",
+      "metadata",
+      "previous_word_count",
+      "text",
+      "url",
+      "warcinfo",
+      "fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train_prob"
+    ],
+    "optional": []
+  }
+}

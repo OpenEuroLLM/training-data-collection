@@ -29,9 +29,9 @@ def main():
     for file in arguments.inputs:
       with open(file) as _:
         counts = json.load(_);
-        for _ in ("bytes", "documents", "segments", "tokens", "characters", "time", "errors"):
+        for _ in ("files", "bytes", "documents", "segments",
+                  "tokens", "characters", "time", "errors"):
           result[_] += counts[_];
-        result["files"] += 1;
         if "keys" in counts:
           required.update(counts["keys"]["required"]);
           optional.update(counts["keys"]["optional"]);
