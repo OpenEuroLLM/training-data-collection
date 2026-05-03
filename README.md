@@ -104,7 +104,7 @@ are computed using the exact tokenizer for the specific cycle, e.g.
 `tokenizer` property in `baby/metadata.yaml`).
 These counts are organized in a directory tree parallel to the internal
 structure of each source dataset, below the `counts/` subdirectory of each
-dataset.
+dataset (see `count.slurm` for details).
 
 For example, the “baby” cycle draws on three of the available parts in
 Nemotron-CC 1.0, called `high/actual`, `medium-high/actual`, and
