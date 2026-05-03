@@ -96,10 +96,10 @@ for the packing process are to the largest possible degree maintained in
 machine-readable form, as files `metadata.yaml` in the top-level directory
 and the root directories for each of the source datasets.
 
-## Statistics and Sampling
+## Sampling
 
 For each source datasets and its component parts, document and token counts
-are computed using the exact tokenizer for the specific cycle, e.g.
+are computed using the tokenizer for the specific cycle, e.g.
 `openeurollm/tokenizer-256k` for the “baby” cycle (as specified by the
 `tokenizer` property in `baby/metadata.yaml`).
 These counts are organized in a directory tree parallel to the internal
@@ -108,8 +108,8 @@ dataset (see `count.slurm` for details).
 
 For example, the “baby” cycle draws on three of the available parts in
 Nemotron-CC 1.0, called `high/actual`, `medium-high/actual`, and
-`medium-actual`.
-Statistics for each of these subsets are organized as e.g.
+`medium/actual`.
+Statistics for each of these source parts are organized as e.g.
 `baby/nemotron-cc-1.0/counts/high/actual/source.json`,
 `baby/nemotron-cc-1.0/counts/medium-high/actual/source.json`, etc.
 
