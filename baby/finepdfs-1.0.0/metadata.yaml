@@ -15,3 +15,5 @@ release:
   default:
     sample: random
     rubber: 5%
+    block:
+    - f70a59b2-4638-4f1a-8689-a1f1f4d1d975
