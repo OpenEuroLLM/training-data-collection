@@ -18,10 +18,12 @@ def main():
   start = time.time();
 
   parser = argparse.ArgumentParser(description = "Maintenance of OpenEuroLLM Training Data Collection");
-  parser.add_argument("--quiet", action = "store_true", default = False);
+  parser.add_argument("--pattern", type = str, default = None);
+  parser.add_argument("--format", type = str, default = "plain");
   parser.add_argument("--sum", action = "store_true", default = False);
   parser.add_argument("--budget", action = "store_true", default = False);
   parser.add_argument("--finepdfs", action = "store_true", default = False);
+  parser.add_argument("--quiet", action = "store_true", default = False);
   parser.add_argument("inputs", nargs = "*");
   arguments = parser.parse_args();
 
@@ -66,7 +68,10 @@ def main():
         mix[path] = float(ratio);
 
   if arguments.budget:
+    pattern = None;
+    if arguments.pattern is not None: pattern = re.compile(arguments.pattern);
     for path, ratio in mix.items():
+      if pattern is not None and pattern.search(path) is None: continue
       _ = os.path.join(path.replace("/megatron-lm", "/counts"), "source.json")
       if not os.path.isfile(_):
         if not arguments.quiet:
@@ -78,9 +83,17 @@ def main():
         counts = json.load(_);
         budget = math.ceil(1e13 * ratio / 1e6);
         pool = math.floor(counts["tokens"] / 1e6);
-        print("{}: {:,}m tokens of {:,}m ({:,.1f}%)."
-              "".format(path, budget, pool,
-                        budget / pool * 100));
+        percent = budget / pool * 100;
+        if arguments.format == "plain":
+           print("{}: {:,}m tokens of {:,}m ({:,.1f}%)."
+                 "".format(path, budget, pool, percent));
+        elif arguments.format == "yaml":
+          print("  {}:".format(re.sub(r".+/megatron-lm/", "", path)));
+          percent = math.ceil(percent);
+          if percent >= 100:
+            print("  - sample: full");
+          else:
+            print("  - sample: random\n  - budget: {}%".format(percent));
     sys.exit(0);
 
   if arguments.finepdfs:
