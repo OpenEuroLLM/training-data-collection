@@ -15,79 +15,79 @@ release:
   default:
     sample: random
     rubber: 5%
+  als_Latn:
+    sample: full
+  bos_Latn:
+    budget: 66%
+  bul_Cyrl:
+    budget: 62%
+  cat_Latn:
+    budget: 40%
+  ces_Latn:
+    budget: 12%
+  dan_Latn:
+    budget: 28%
+  deu_Latn:
+    budget: 1%
+  ekk_Latn:
+    sample: full
+  ell_Grek:
+    budget: 47%
+  eng_Latn:
     block:
     - f70a59b2-4638-4f1a-8689-a1f1f4d1d975
-  als_Latn:
-  - sample: full
-  bos_Latn:
-  - budget: 66%
-  bul_Cyrl:
-  - budget: 62%
-  cat_Latn:
-  - budget: 40%
-  ces_Latn:
-  - budget: 12%
-  dan_Latn:
-  - budget: 28%
-  deu_Latn:
-  - budget: 1%
-  ekk_Latn:
-  - sample: full
-  ell_Grek:
-  - budget: 47%
-  eng_Latn:
-  - budget: 81%
+    budget: 81%
   eus_Latn:
-  - sample: full
+    sample: full
   fin_Latn:
-  - budget: 29%
+    budget: 29%
   fra_Latn:
-  - budget: 3%
+    budget: 3%
   gle_Latn:
-  - sample: full
+    sample: full
   glg_Latn:
-  - sample: full
+    sample: full
   hrv_Latn:
-  - budget: 35%
+    budget: 35%
   hun_Latn:
-  - budget: 10%
+    budget: 10%
   isl_Latn:
-  - sample: full
+    sample: full
   ita_Latn:
-  - budget: 8%
+    budget: 8%
   kat_Geor:
-  - sample: full
+    sample: full
   lit_Latn:
-  - budget: 74%
+    budget: 74%
   lvs_Latn:
-  - sample: full
+    sample: full
   mkd_Cyrl:
-  - sample: full
+    sample: full
   mlt_Latn:
-  - sample: full
+    sample: full
   nld_Latn:
-  - budget: 11%
+    budget: 11%
   nno_Latn:
-  - sample: full
+    sample: full
   nob_Latn:
-  - budget: 31%
+    budget: 31%
   pol_Latn:
-  - budget: 7%
+    budget: 7%
   por_Latn:
-  - budget: 6%
+    budget: 6%
   ron_Latn:
-  - budget: 17%
+    budget: 17%
   slk_Latn:
-  - budget: 32%
+    budget: 32%
   slv_Latn:
-  - budget: 59%
+    budget: 59%
   spa_Latn:
-  - budget: 2%
+    budget: 2%
   srp_Cyrl:
-  - budget: 34%
+    budget: 34%
   swe_Latn:
-  - budget: 16%
+    budget: 16%
   tur_Latn:
-  - budget: 42%
+    budget: 42%
   ukr_Cyrl:
-  - budget: 10%
+    budget: 10%
