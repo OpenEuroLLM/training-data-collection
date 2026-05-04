@@ -130,8 +130,7 @@ The first two sampling strategies are exemplified by e.g. the three parts
 specified in `baby/nemotron-cc-1.0/metadata.yaml`, where the `full` strategy
 takes no parameters, and the `random` one is given its target document `budget`
 as a percentage of the full source.
-
-``
+```
 release:
   high/actual:
     sample: full
