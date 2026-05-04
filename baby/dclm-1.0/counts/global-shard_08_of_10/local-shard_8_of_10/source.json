@@ -1,11 +1,11 @@
 {
-  "files": 279,
-  "bytes": 72132997381,
-  "documents": 29473745,
-  "segments": 1658954032,
-  "tokens": 38930398785,
-  "characters": 165581145525,
-  "time": 97130.80891609192,
+  "files": 280,
+  "bytes": 72260878301,
+  "documents": 29516635,
+  "segments": 1661882690,
+  "tokens": 39003679224,
+  "characters": 165878939108,
+  "time": 103271.46657443047,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
