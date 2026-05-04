@@ -87,13 +87,15 @@ def main():
     for path, ratio in mix.items():
       if path.startswith("finepdfs-1.0.0"):
         edu = path.replace("finepdfs-1.0.0", "finepdfs-edu-1.0.0");
-        if edu not in mix: continue;
+        if edu not in mix:
+          print("{:,.6f} {}".format(ratio, path));
+          continue;
         sum = ratio + mix[edu];
         _ = os.path.join(edu.replace("/megatron-lm", "/counts"), "source.json")
         with open(_, encoding = "utf-8") as _:
           r = min(sum, json.load(_)["tokens"] / 1e13);
-          print("{:,.6f} {}\n{:,.6f} {}"
-                "".format(r, edu, sum - r, path));
+          print("{:,.6f} {}".format(r, edu));
+          if sum > r: print("{:,.6f} {}".format( sum - r, path));
     sys.exit(0);
     
 
