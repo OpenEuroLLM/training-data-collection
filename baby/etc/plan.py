@@ -21,6 +21,7 @@ def main():
   parser.add_argument("--quiet", action = "store_true", default = False);
   parser.add_argument("--sum", action = "store_true", default = False);
   parser.add_argument("--budget", action = "store_true", default = False);
+  parser.add_argument("--finepdfs", action = "store_true", default = False);
   parser.add_argument("inputs", nargs = "*");
   arguments = parser.parse_args();
 
@@ -46,8 +47,9 @@ def main():
                       "optional": list(optional)};
     json.dump(result, sys.stdout, indent = 2);
     sys.exit(0);
-     
-  if arguments.budget:
+
+  mix = dict();
+  if arguments.budget or arguments.finepdfs:
     pattern = re.compile(r"(0\.[0-9]+)[ \t](.+)$")
     
     with open(arguments.inputs[0], encoding = "utf-8") as stream:
@@ -61,22 +63,39 @@ def main():
                   file = sys.stderr, flush = True);
           continue;
         ratio, path = _.groups();
-        ratio = float(ratio);
-        _ = os.path.join(path.replace("/megatron-lm", "/counts"), "source.json")
-        if not os.path.isfile(_):
-          if not arguments.quiet:
-            print("plan.py(): no counts for {} (#{})."
-                  "".format(path, i),
-                  file = sys.stderr, flush = True);
-          continue;
-        with open(_, encoding = "utf-8") as _:
-          counts = json.load(_);
-          budget = math.ceil(1e13 * ratio / 1e6);
-          pool = math.floor(counts["tokens"] / 1e6);
-          print("{}: {:,}m tokens of {:,}m ({:,.1f}%)."
-                "".format(path, budget, pool,
-                          budget / pool * 100));
+        mix[path] = float(ratio);
+
+  if arguments.budget:
+    for path, ratio in mix.items():
+      _ = os.path.join(path.replace("/megatron-lm", "/counts"), "source.json")
+      if not os.path.isfile(_):
+        if not arguments.quiet:
+          print("plan.py(): no counts for {} (#{})."
+                "".format(path, i),
+                file = sys.stderr, flush = True);
+        continue;
+      with open(_, encoding = "utf-8") as _:
+        counts = json.load(_);
+        budget = math.ceil(1e13 * ratio / 1e6);
+        pool = math.floor(counts["tokens"] / 1e6);
+        print("{}: {:,}m tokens of {:,}m ({:,.1f}%)."
+              "".format(path, budget, pool,
+                        budget / pool * 100));
     sys.exit(0);
+
+  if arguments.finepdfs:
+    for path, ratio in mix.items():
+      if path.startswith("finepdfs-1.0.0"):
+        edu = path.replace("finepdfs-1.0.0", "finepdfs-edu-1.0.0");
+        if edu not in mix: continue;
+        sum = ratio + mix[edu];
+        _ = os.path.join(edu.replace("/megatron-lm", "/counts"), "source.json")
+        with open(_, encoding = "utf-8") as _:
+          r = min(sum, json.load(_)["tokens"] / 1e13);
+          print("{:,.6f} {}\n{:,.6f} {}"
+                "".format(r, edu, sum - r, path));
+    sys.exit(0);
+    
 
 if __name__ == "__main__":
   main();
