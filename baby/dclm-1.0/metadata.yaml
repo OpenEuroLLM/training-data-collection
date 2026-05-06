@@ -13,107 +13,206 @@ annotations:
     status: _to_do_
 release:
   default:
+    pack: flat
     sample: random
-    rubber: 5%
-  parts:
-    - global-shard_01_of_10/local-shard_0_of_10
-    - global-shard_01_of_10/local-shard_1_of_10
-    - global-shard_01_of_10/local-shard_2_of_10
-    - global-shard_01_of_10/local-shard_3_of_10
-    - global-shard_01_of_10/local-shard_4_of_10
-    - global-shard_01_of_10/local-shard_5_of_10
-    - global-shard_01_of_10/local-shard_6_of_10
-    - global-shard_01_of_10/local-shard_7_of_10
-    - global-shard_01_of_10/local-shard_8_of_10
-    - global-shard_01_of_10/local-shard_9_of_10
-    - global-shard_02_of_10/local-shard_0_of_10
-    - global-shard_02_of_10/local-shard_1_of_10
-    - global-shard_02_of_10/local-shard_2_of_10
-    - global-shard_02_of_10/local-shard_3_of_10
-    - global-shard_02_of_10/local-shard_4_of_10
-    - global-shard_02_of_10/local-shard_5_of_10
-    - global-shard_02_of_10/local-shard_6_of_10
-    - global-shard_02_of_10/local-shard_7_of_10
-    - global-shard_02_of_10/local-shard_8_of_10
-    - global-shard_02_of_10/local-shard_9_of_10
-    - global-shard_03_of_10/local-shard_0_of_10
-    - global-shard_03_of_10/local-shard_1_of_10
-    - global-shard_03_of_10/local-shard_2_of_10
-    - global-shard_03_of_10/local-shard_3_of_10
-    - global-shard_03_of_10/local-shard_4_of_10
-    - global-shard_03_of_10/local-shard_5_of_10
-    - global-shard_03_of_10/local-shard_6_of_10
-    - global-shard_03_of_10/local-shard_7_of_10
-    - global-shard_03_of_10/local-shard_8_of_10
-    - global-shard_03_of_10/local-shard_9_of_10
-    - global-shard_04_of_10/local-shard_0_of_10
-    - global-shard_04_of_10/local-shard_1_of_10
-    - global-shard_04_of_10/local-shard_2_of_10
-    - global-shard_04_of_10/local-shard_3_of_10
-    - global-shard_04_of_10/local-shard_4_of_10
-    - global-shard_04_of_10/local-shard_5_of_10
-    - global-shard_04_of_10/local-shard_6_of_10
-    - global-shard_04_of_10/local-shard_7_of_10
-    - global-shard_04_of_10/local-shard_8_of_10
-    - global-shard_04_of_10/local-shard_9_of_10
-    - global-shard_05_of_10/local-shard_0_of_10
-    - global-shard_05_of_10/local-shard_1_of_10
-    - global-shard_05_of_10/local-shard_2_of_10
-    - global-shard_05_of_10/local-shard_3_of_10
-    - global-shard_05_of_10/local-shard_4_of_10
-    - global-shard_05_of_10/local-shard_5_of_10
-    - global-shard_05_of_10/local-shard_6_of_10
-    - global-shard_05_of_10/local-shard_7_of_10
-    - global-shard_05_of_10/local-shard_8_of_10
-    - global-shard_05_of_10/local-shard_9_of_10
-    - global-shard_06_of_10/local-shard_0_of_10
-    - global-shard_06_of_10/local-shard_1_of_10
-    - global-shard_06_of_10/local-shard_2_of_10
-    - global-shard_06_of_10/local-shard_3_of_10
-    - global-shard_06_of_10/local-shard_4_of_10
-    - global-shard_06_of_10/local-shard_5_of_10
-    - global-shard_06_of_10/local-shard_6_of_10
-    - global-shard_06_of_10/local-shard_7_of_10
-    - global-shard_06_of_10/local-shard_8_of_10
-    - global-shard_06_of_10/local-shard_9_of_10
-    - global-shard_07_of_10/local-shard_0_of_10
-    - global-shard_07_of_10/local-shard_1_of_10
-    - global-shard_07_of_10/local-shard_2_of_10
-    - global-shard_07_of_10/local-shard_3_of_10
-    - global-shard_07_of_10/local-shard_4_of_10
-    - global-shard_07_of_10/local-shard_5_of_10
-    - global-shard_07_of_10/local-shard_6_of_10
-    - global-shard_07_of_10/local-shard_7_of_10
-    - global-shard_07_of_10/local-shard_8_of_10
-    - global-shard_07_of_10/local-shard_9_of_10
-    - global-shard_08_of_10/local-shard_0_of_10
-    - global-shard_08_of_10/local-shard_1_of_10
-    - global-shard_08_of_10/local-shard_2_of_10
-    - global-shard_08_of_10/local-shard_3_of_10
-    - global-shard_08_of_10/local-shard_4_of_10
-    - global-shard_08_of_10/local-shard_5_of_10
-    - global-shard_08_of_10/local-shard_6_of_10
-    - global-shard_08_of_10/local-shard_7_of_10
-    - global-shard_08_of_10/local-shard_8_of_10
-    - global-shard_08_of_10/local-shard_9_of_10
-    - global-shard_09_of_10/local-shard_0_of_10
-    - global-shard_09_of_10/local-shard_1_of_10
-    - global-shard_09_of_10/local-shard_2_of_10
-    - global-shard_09_of_10/local-shard_3_of_10
-    - global-shard_09_of_10/local-shard_4_of_10
-    - global-shard_09_of_10/local-shard_5_of_10
-    - global-shard_09_of_10/local-shard_6_of_10
-    - global-shard_09_of_10/local-shard_7_of_10
-    - global-shard_09_of_10/local-shard_8_of_10
-    - global-shard_09_of_10/local-shard_9_of_10
-    - global-shard_10_of_10/local-shard_0_of_10
-    - global-shard_10_of_10/local-shard_1_of_10
-    - global-shard_10_of_10/local-shard_2_of_10
-    - global-shard_10_of_10/local-shard_3_of_10
-    - global-shard_10_of_10/local-shard_4_of_10
-    - global-shard_10_of_10/local-shard_5_of_10
-    - global-shard_10_of_10/local-shard_6_of_10
-    - global-shard_10_of_10/local-shard_7_of_10
-    - global-shard_10_of_10/local-shard_8_of_10
-    - global-shard_10_of_10/local-shard_9_of_10
-  
+    budget: 85%
+  global-shard_01_of_10/local-shard_0_of_10:
+    prefix: 01_0
+  global-shard_01_of_10/local-shard_1_of_10:
+    prefix: 01_1
+  global-shard_01_of_10/local-shard_2_of_10:
+    prefix: 01_2
+  global-shard_01_of_10/local-shard_3_of_10:
+    prefix: 01_3
+  global-shard_01_of_10/local-shard_4_of_10:
+    prefix: 01_4
+  global-shard_01_of_10/local-shard_5_of_10:
+    prefix: 01_5
+  global-shard_01_of_10/local-shard_6_of_10:
+    prefix: 01_6
+  global-shard_01_of_10/local-shard_7_of_10:
+    prefix: 01_7
+  global-shard_01_of_10/local-shard_8_of_10:
+    prefix: 01_8
+  global-shard_01_of_10/local-shard_9_of_10:
+    prefix: 01_9
+  global-shard_02_of_10/local-shard_0_of_10:
+    prefix: 02_0
+  global-shard_02_of_10/local-shard_1_of_10:
+    prefix: 02_1
+  global-shard_02_of_10/local-shard_2_of_10:
+    prefix: 02_2
+  global-shard_02_of_10/local-shard_3_of_10:
+    prefix: 02_3
+  global-shard_02_of_10/local-shard_4_of_10:
+    prefix: 02_4
+  global-shard_02_of_10/local-shard_5_of_10:
+    prefix: 02_5
+  global-shard_02_of_10/local-shard_6_of_10:
+    prefix: 02_6
+  global-shard_02_of_10/local-shard_7_of_10:
+    prefix: 02_7
+  global-shard_02_of_10/local-shard_8_of_10:
+    prefix: 02_8
+  global-shard_02_of_10/local-shard_9_of_10:
+    prefix: 02_9
+  global-shard_03_of_10/local-shard_0_of_10:
+    prefix: 03_0
+  global-shard_03_of_10/local-shard_1_of_10:
+    prefix: 03_1
+  global-shard_03_of_10/local-shard_2_of_10:
+    prefix: 03_2
+  global-shard_03_of_10/local-shard_3_of_10:
+    prefix: 03_3
+  global-shard_03_of_10/local-shard_4_of_10:
+    prefix: 03_4
+  global-shard_03_of_10/local-shard_5_of_10:
+    prefix: 03_5
+  global-shard_03_of_10/local-shard_6_of_10:
+    prefix: 03_6
+  global-shard_03_of_10/local-shard_7_of_10:
+    prefix: 03_7
+  global-shard_03_of_10/local-shard_8_of_10:
+    prefix: 03_8
+  global-shard_03_of_10/local-shard_9_of_10:
+    prefix: 03_9
+  global-shard_04_of_10/local-shard_0_of_10:
+    prefix: 04_0
+  global-shard_04_of_10/local-shard_1_of_10:
+    prefix: 04_1
+  global-shard_04_of_10/local-shard_2_of_10:
+    prefix: 04_2
+  global-shard_04_of_10/local-shard_3_of_10:
+    prefix: 04_3
+  global-shard_04_of_10/local-shard_4_of_10:
+    prefix: 04_4
+  global-shard_04_of_10/local-shard_5_of_10:
+    prefix: 04_5
+  global-shard_04_of_10/local-shard_6_of_10:
+    prefix: 04_6
+  global-shard_04_of_10/local-shard_7_of_10:
+    prefix: 04_7
+  global-shard_04_of_10/local-shard_8_of_10:
+    prefix: 04_8
+  global-shard_04_of_10/local-shard_9_of_10:
+    prefix: 04_9
+  global-shard_05_of_10/local-shard_0_of_10:
+    prefix: 05_0
+  global-shard_05_of_10/local-shard_1_of_10:
+    prefix: 05_1
+  global-shard_05_of_10/local-shard_2_of_10:
+    prefix: 05_2
+  global-shard_05_of_10/local-shard_3_of_10:
+    prefix: 05_3
+  global-shard_05_of_10/local-shard_4_of_10:
+    prefix: 05_4
+  global-shard_05_of_10/local-shard_5_of_10:
+    prefix: 05_5
+  global-shard_05_of_10/local-shard_6_of_10:
+    prefix: 05_6
+  global-shard_05_of_10/local-shard_7_of_10:
+    prefix: 05_7
+  global-shard_05_of_10/local-shard_8_of_10:
+    prefix: 05_8
+  global-shard_05_of_10/local-shard_9_of_10:
+    prefix: 05_9
+  global-shard_06_of_10/local-shard_0_of_10:
+    prefix: 06_0
+  global-shard_06_of_10/local-shard_1_of_10:
+    prefix: 06_1
+  global-shard_06_of_10/local-shard_2_of_10:
+    prefix: 06_2
+  global-shard_06_of_10/local-shard_3_of_10:
+    prefix: 06_3
+  global-shard_06_of_10/local-shard_4_of_10:
+    prefix: 06_4
+  global-shard_06_of_10/local-shard_5_of_10:
+    prefix: 06_5
+  global-shard_06_of_10/local-shard_6_of_10:
+    prefix: 06_6
+  global-shard_06_of_10/local-shard_7_of_10:
+    prefix: 06_7
+  global-shard_06_of_10/local-shard_8_of_10:
+    prefix: 06_8
+  global-shard_06_of_10/local-shard_9_of_10:
+    prefix: 06_9
+  global-shard_07_of_10/local-shard_0_of_10:
+    prefix: 07_0
+  global-shard_07_of_10/local-shard_1_of_10:
+    prefix: 07_1
+  global-shard_07_of_10/local-shard_2_of_10:
+    prefix: 07_2
+  global-shard_07_of_10/local-shard_3_of_10:
+    prefix: 07_3
+  global-shard_07_of_10/local-shard_4_of_10:
+    prefix: 07_4
+  global-shard_07_of_10/local-shard_5_of_10:
+    prefix: 07_5
+  global-shard_07_of_10/local-shard_6_of_10:
+    prefix: 07_6
+  global-shard_07_of_10/local-shard_7_of_10:
+    prefix: 07_7
+  global-shard_07_of_10/local-shard_8_of_10:
+    prefix: 07_8
+  global-shard_07_of_10/local-shard_9_of_10:
+    prefix: 07_9
+  global-shard_08_of_10/local-shard_0_of_10:
+    prefix: 08_0
+  global-shard_08_of_10/local-shard_1_of_10:
+    prefix: 08_1
+  global-shard_08_of_10/local-shard_2_of_10:
+    prefix: 08_2
+  global-shard_08_of_10/local-shard_3_of_10:
+    prefix: 08_3
+  global-shard_08_of_10/local-shard_4_of_10:
+    prefix: 08_4
+  global-shard_08_of_10/local-shard_5_of_10:
+    prefix: 08_5
+  global-shard_08_of_10/local-shard_6_of_10:
+    prefix: 08_6
+  global-shard_08_of_10/local-shard_7_of_10:
+    prefix: 08_7
+  global-shard_08_of_10/local-shard_8_of_10:
+    prefix: 08_8
+  global-shard_08_of_10/local-shard_9_of_10:
+    prefix: 08_9
+  global-shard_09_of_10/local-shard_0_of_10:
+    prefix: 09_0
+  global-shard_09_of_10/local-shard_1_of_10:
+    prefix: 09_1
+  global-shard_09_of_10/local-shard_2_of_10:
+    prefix: 09_2
+  global-shard_09_of_10/local-shard_3_of_10:
+    prefix: 09_3
+  global-shard_09_of_10/local-shard_4_of_10:
+    prefix: 09_4
+  global-shard_09_of_10/local-shard_5_of_10:
+    prefix: 09_5
+  global-shard_09_of_10/local-shard_6_of_10:
+    prefix: 09_6
+  global-shard_09_of_10/local-shard_7_of_10:
+    prefix: 09_7
+  global-shard_09_of_10/local-shard_8_of_10:
+    prefix: 09_8
+  global-shard_09_of_10/local-shard_9_of_10:
+    prefix: 09_9
+  global-shard_10_of_10/local-shard_0_of_10:
+    prefix: 10_0
+  global-shard_10_of_10/local-shard_1_of_10:
+    prefix: 10_1
+  global-shard_10_of_10/local-shard_2_of_10:
+    prefix: 10_2
+  global-shard_10_of_10/local-shard_3_of_10:
+    prefix: 10_3
+  global-shard_10_of_10/local-shard_4_of_10:
+    prefix: 10_4
+  global-shard_10_of_10/local-shard_5_of_10:
+    prefix: 10_5
+  global-shard_10_of_10/local-shard_6_of_10:
+    prefix: 10_6
+  global-shard_10_of_10/local-shard_7_of_10:
+    prefix: 10_7
+  global-shard_10_of_10/local-shard_8_of_10:
+    prefix: 10_8
+  global-shard_10_of_10/local-shard_9_of_10:
+    prefix: 10_9
