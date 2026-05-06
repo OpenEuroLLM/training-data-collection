@@ -12,10 +12,11 @@ annotations:
     owner: AI Sweden
     status: 
 release:
+  default:
+    pack: tree
+    sample: full
   high/actual:
-    sample: full
   medium-high/actual:
-    sample: full
   medium/actual:
     sample: random
     budget: 64%
