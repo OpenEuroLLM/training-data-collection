@@ -10,6 +10,8 @@
 # for i in nemotron-cc-tower+-0.1/source/parallel/*/*_*; do sbatch etc/count.slurm $i; done
 # for i in olmo-mix-1124/source/*; do sbatch etc/count.slurm $i; done
 #
+# for i in hplt-3.0/wds+register/*_*; do sbatch etc/count.slurm $i; done
+#
 
 #SBATCH --job-name=count
 #SBATCH --output=log/%x-%j.out
