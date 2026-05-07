@@ -91,9 +91,9 @@ def main():
           print("  {}:".format(re.sub(r".+/megatron-lm/", "", path)));
           percent = math.ceil(percent);
           if percent >= 100:
-            print("  - sample: full");
+            print("    sample: full");
           else:
-            print("  - sample: random\n  - budget: {}%".format(percent));
+            print("    budget: {}%".format(percent));
     sys.exit(0);
 
   if arguments.finepdfs:
