@@ -1,4 +1,5 @@
 0.324000 dclm-1.0/megatron-lm
+0.004000 finemath-0.0.0/megatron-lm/finemath-4plus
 0.000611 finepdfs-1.0.0/megatron-lm/als_Latn
 0.000370 finepdfs-1.0.0/megatron-lm/bos_Latn
 0.000491 finepdfs-1.0.0/megatron-lm/bul_Cyrl
@@ -108,9 +109,8 @@
 0.002057 hplt-3.0/megatron-lm/swe_Latn
 0.002763 hplt-3.0/megatron-lm/tur_Latn
 0.002234 hplt-3.0/megatron-lm/ukr_Cyrl
-0.004000 HuggingFaceTB/finemath-10p-sample/finemath4plus-10p-sample
-0.002000 LLM360/MegaMath-10p-sample/megamath-text-code-block-10p-sample
-0.002000 LLM360/MegaMath-10p-sample/megamath-web-pro-10p-sample
+0.002000 megamath-0.0.0/megatron-lm/megamath-text-code-block
+0.002000 megamath-0.0.0/megatron-lm/megamath-web-pro
 0.054000 nemotron-cc-1.0/megatron-lm/high/actual
 0.131440 nemotron-cc-1.0/megatron-lm/medium/actual
 0.054000 nemotron-cc-1.0/megatron-lm/medium-high/actual
@@ -153,4 +153,4 @@
 0.009000 olmo-mix-1124/megatron-lm/arxiv
 0.009000 olmo-mix-1124/megatron-lm/pes2o
 0.018000 olmo-mix-1124/megatron-lm/wiki
-0.072000 starcoder-10p-sample/starcoder-10p-sample
+0.072000 starcoder-0.0.0/megatron-lm
