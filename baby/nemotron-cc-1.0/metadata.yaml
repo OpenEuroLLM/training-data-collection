@@ -7,10 +7,10 @@ id: warc_record_id
 annotations:
   contamination:
     owner: Prompsit
-    status: 
+    status: _to_do_
   pii:
     owner: AI Sweden
-    status: 
+    status: _to_do_
 release:
   default:
     pack: tree
