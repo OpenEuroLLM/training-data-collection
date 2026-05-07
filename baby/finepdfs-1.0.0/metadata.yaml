@@ -13,6 +13,7 @@ annotations:
     status: _to_do_
 release:
   default:
+    pack: tree
     sample: random
     rubber: 5%
   als_Latn:
