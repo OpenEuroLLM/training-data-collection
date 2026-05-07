@@ -24,7 +24,7 @@ release:
   ces_Latn:
   dan_Latn:
   deu_Latn:
-    sample: wds+registers
+    sample: wds+register
     budget: 200bt
   ekk_Latn:
   ell_Grek:
