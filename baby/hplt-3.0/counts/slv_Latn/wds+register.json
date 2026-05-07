@@ -1,0 +1,39 @@
+{
+  "files": 6,
+  "bytes": 17310743548,
+  "documents": 11760701,
+  "segments": 306089391,
+  "tokens": 15734669648,
+  "characters": 57087326756,
+  "time": 20436.10568332672,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "f",
+      "o",
+      "s",
+      "rs",
+      "u",
+      "c",
+      "ts",
+      "de",
+      "crawl_id",
+      "lang",
+      "prob",
+      "text",
+      "cluster_size",
+      "seg_langs",
+      "id",
+      "filter",
+      "pii",
+      "doc_scores",
+      "web-register",
+      "registers"
+    ],
+    "optional": [
+      "xml",
+      "html_lang"
+    ]
+  }
+}

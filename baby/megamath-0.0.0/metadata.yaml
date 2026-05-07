@@ -1,0 +1,9 @@
+name: MegaMath 0.0.0
+huggingface: LLM360/MegaMath
+catalogue: megamath/0.0.0/data
+suffix: .jsonl.zst
+text: text
+release:
+  default:
+    pack: tree
+    sample: random

@@ -66,6 +66,11 @@ module reset;
 module load cray-python;
 source ${base}/local/bin/activate;
 
+if [ "$1" = "--trial" ]; then
+  trial=1;
+  shift;
+fi
+
 #
 # command-line argument is one (source) directory with JSONLines files
 #
