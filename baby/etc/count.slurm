@@ -73,8 +73,10 @@ fi
 tokenizer="openeurollm/tokenizer-256k";
 
 suffix="${path##${root}/}";
-name="${suffix%%/source/*}";
-part="${suffix##*/source/}";
+infix="${suffix#*/}";
+infix="${infix%%/*}";
+name="${suffix%%/${infix}/*}";
+part="${suffix##*/${infix}/}";
 metadata="${root}/${name}/metadata.yaml";
 
 if [ ! -f "${metadata}" ]; then
@@ -97,7 +99,7 @@ pattern=$(echo $pattern | sed -e 's,\.,\\\\\.,g' -e 's,$,\$,g');
 
 target="${root}/${name}/counts/${part}";
 if [ ! -d ${target} ]; then mkdir -p ${target}; fi
-target=${target}/source.json;
+target=${target}/${infix}.json;
 if [ -e ${target} ]; then rm -f ${target}; fi
 
 echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] count.slurm: root in ${root}; data: ${1}."
