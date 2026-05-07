@@ -1,5 +1,6 @@
 name: HPLT 3.0
 url: https://hplt-project.org/datasets/v3.0
+catalogue: hplt/3.0/sorted
 suffix: .jsonl.zst
 text: text
 id: id
@@ -12,11 +13,12 @@ annotations:
   pii:
     owner: AI Sweden
     status: _to_do_
-release:
+wds+register:
   default:
-    scrub: [xml, md]
-    sample: wds+register
-    rubber: 5%
+    input: source
+    pack: tree
+    length:
+    coefficients:
   als_Latn:
   bos_Latn:
   bul_Cyrl:
@@ -24,8 +26,53 @@ release:
   ces_Latn:
   dan_Latn:
   deu_Latn:
-    sample: wds+register
-    budget: 200bt
+  ekk_Latn:
+  ell_Grek:
+  eus_Latn:
+  fin_Latn:
+  fra_Latn:
+  gle_Latn:
+  glg_Latn:
+  hrv_Latn:
+  hun_Latn:
+  isl_Latn:
+  ita_Latn:
+  kat_Geor:
+  lit_Latn:
+  ltg_Latn:
+  lvs_Latn:
+  mkd_Cyrl:
+  mlt_Latn:
+  nld_Latn:
+  nno_Latn:
+  nob_Latn:
+  pol_Latn:
+  por_Latn:
+  ron_Latn:
+  slk_Latn:
+  slv_Latn:
+  spa_Latn:
+  srp_Cyrl:
+  swe_Latn:
+  tur_Latn:
+  ukr_Cyrl:
+release:
+  default:
+    input: wds+register
+    scrub:
+    - xml
+    - md
+    sample: random
+    rubber: 5%
+  als_Latn:
+    sample: full
+  bos_Latn:
+  bul_Cyrl:
+  cat_Latn:
+  ces_Latn:
+  dan_Latn:
+  deu_Latn:
+    budget: 10%
   ekk_Latn:
   ell_Grek:
   eus_Latn:
