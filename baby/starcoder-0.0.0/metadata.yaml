@@ -2,7 +2,7 @@ name: StarCoder Training Dataset 0.0.0
 huggingface: bigcode/starcoderdata
 catalogue: starcoder/0.0.0/data
 suffix: .jsonl.zst
-text: text
+text: content
 release:
   default:
     pack: flat
