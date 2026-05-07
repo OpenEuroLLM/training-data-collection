@@ -13,6 +13,7 @@ annotations:
     status: _to_do_
 release:
   default:
+    pack: tree
     sample: full
   als_Latn:
   bos_Latn:
