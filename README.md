@@ -127,13 +127,14 @@ For the initial “baby” cycle, three sampling strategies are defined:
 + `wds+register`: down- and upsampling based on WDS and web register annotations (see below).
 
 By default, sampling reads from the `source/` directories and writes into the
-`release/` directories for each dataset.
-Outputs will be organized into sequentially numbered files of at most
-`shard` documents each.
+`release/` directories of each dataset.
+Outputs will be organized into sequentially numbered files, each containing
+at most `shard` documents.
 Output file organization can either mirror the directory structure of the
-source data (`pack: tree`), i.e. preserve whatever internal organization into parts,
-or “flat-pack” all output documents into a sequence of shards in the top-level
-`release/` directory (`pack: flat`).
+source data (`pack: tree`), i.e. preserve whatever internal organization into parts
+there is in the source dataset, or “flat-pack” all outputs into a sequence of shards
+in the top-level `release/` directory (`pack: flat`).
+
 The first two sampling strategies are exemplified by e.g. the three parts
 specified in `baby/nemotron-cc-1.0/metadata.yaml`, where the `full` strategy
 takes no parameters, and the `random` one is given its target document `budget`
@@ -153,9 +154,9 @@ release:
 
 Conversely, the DCLM source data is internally partitioned into 100
 arbitrary shards, and this directory structure is not preserved in packing.
-To enable parallelization, `dclm-1.0/metadata.yaml` pairs each source
-part with an output file naming prefix, such that `release/` shards can
-be written in parallel for each input part.
+To facilitate parallelization in the packer, `dclm-1.0/metadata.yaml`
+further pairs each source part with an output file naming prefix, such that
+`release/` shards can be written in parallel for each input part.
 ```
 release:
   default:
