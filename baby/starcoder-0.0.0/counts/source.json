@@ -1,0 +1,32 @@
+{
+  "files": 863,
+  "bytes": 170105251105,
+  "documents": 206642239,
+  "segments": 22491235350,
+  "tokens": 276861687159,
+  "characters": 815450910997,
+  "time": 460980.3854532242,
+  "errors": 0,
+  "keys": {
+    "required": [
+      "id",
+      "content"
+    ],
+    "optional": [
+      "repo_name",
+      "size",
+      "max_stars_count",
+      "max_stars_repo_name",
+      "max_stars_repo_path",
+      "lang",
+      "ext",
+      "hexsha",
+      "license",
+      "alphanum_fraction",
+      "path",
+      "max_stars_repo_licenses",
+      "chain_length",
+      "avg_line_length"
+    ]
+  }
+}
