@@ -152,8 +152,8 @@ release:
     budget: 64%
 ```
 
-Conversely, the DCLM source data is internally partitioned into 100
-arbitrary shards, and this directory structure is not preserved in packing.
+Conversely, the DCLM source data is internally broken up into 100
+arbitrary parts, and this directory structure is not preserved in packing.
 To facilitate parallelization in the packer, `dclm-1.0/metadata.yaml`
 further pairs each source part with an output file naming prefix, such that
 `release/` shards can be written in parallel for each input part.
