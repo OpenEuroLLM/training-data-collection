@@ -7,3 +7,12 @@ release:
   default:
     pack: tree
     sample: random
+    shard: 100bd
+#
+# ./etc/plan.py --pattern megamath-0.0.0 --format yaml \
+#   --budget datamix.txt >> megamath-0.0.0/metadata.yaml
+#
+  megamath-text-code-block:
+    budget: 42%
+  megamath-web-pro:
+    sample: full
