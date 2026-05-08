@@ -1,15 +1,21 @@
 {
   "files": 1,
   "bytes": 26610819,
-  "documents": 0,
-  "segments": 0,
-  "tokens": 0,
-  "characters": 0,
-  "time": 1.1196317672729492,
-  "errors": 15850,
+  "documents": 15850,
+  "segments": 4650340,
+  "tokens": 62007697,
+  "characters": 177055766,
+  "time": 67.40353417396545,
+  "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
-    "required": [],
+    "required": [
+      "max_stars_repo_path",
+      "max_stars_repo_name",
+      "max_stars_count",
+      "id",
+      "content"
+    ],
     "optional": []
   }
 }

@@ -1,15 +1,27 @@
 {
   "files": 8,
   "bytes": 1896084516,
-  "documents": 0,
-  "segments": 0,
-  "tokens": 0,
-  "characters": 0,
-  "time": 105.88293099403381,
-  "errors": 914510,
+  "documents": 914510,
+  "segments": 203912329,
+  "tokens": 2573285987,
+  "characters": 7085112308,
+  "time": 2454.0671327114105,
+  "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
-    "required": [],
+    "required": [
+      "hexsha",
+      "ext",
+      "lang",
+      "max_stars_repo_path",
+      "max_stars_repo_name",
+      "max_stars_repo_licenses",
+      "avg_line_length",
+      "alphanum_fraction",
+      "size",
+      "id",
+      "content"
+    ],
     "optional": []
   }
 }
