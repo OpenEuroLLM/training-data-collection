@@ -16,5 +16,16 @@ sources:
     parts: 36
   hplt-3.0:
     parts: 36
+  megamath-0.0.0:
+    parts: 2
   nemotron-cc-1.0:
     parts: 3
+  nemotron-cc-opus-1.1:
+    parts: 20
+  nemotron-cc-tower+-0.1:
+    parts: 16
+  olmo-mix-1124:
+    parts: 3
+  starcoder-0.0.0:
+    parts: 1
+ 

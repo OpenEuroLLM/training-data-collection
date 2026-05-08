@@ -126,19 +126,75 @@ For the initial “baby” cycle, three sampling strategies are defined:
 + `random`: random downsampling, packing a subset of documents at a set probability; and
 + `wds+register`: down- and upsampling based on WDS and web register annotations (see below).
 
+By default, sampling reads from the `source/` directories and writes into the
+`release/` directories for each dataset.
+Outputs will be organized into sequentially numbered files of at most
+`shard` documents each.
+Output file organization can either mirror the directory structure of the
+source data (`pack: tree`), i.e. preserve whatever internal organization into parts,
+or “flat-pack” all output documents into a sequence of shards in the top-level
+`release/` directory (`pack: flat`).
 The first two sampling strategies are exemplified by e.g. the three parts
 specified in `baby/nemotron-cc-1.0/metadata.yaml`, where the `full` strategy
 takes no parameters, and the `random` one is given its target document `budget`
 as a percentage of the full source.
 ```
 release:
+  default:
+    pack: tree
+    sample: full
+    shard: 100bd
   high/actual:
-    sample: full
   medium-high/actual:
-    sample: full
   medium/actual:
     sample: random
     budget: 64%
+```
+
+Conversely, the DCLM source data is internally partitioned into 100
+arbitrary shards, and this directory structure is not preserved in packing.
+To enable parallelization, `dclm-1.0/metadata.yaml` pairs each source
+part with an output file naming prefix, such that `release/` shards can
+be written in parallel for each input part.
+```
+release:
+  default:
+    pack: flat
+    sample: random
+    budget: 85%
+    shard: 100bd
+  global-shard_01_of_10/local-shard_0_of_10:
+    prefix: 01_0
+  global-shard_01_of_10/local-shard_1_of_10:
+    prefix: 01_
+  …
+```
+
+Finally, the `wds+register` strategy is technically a combination of a separate
+preprocessing step, followed by `random` sampling.
+The first of these is activated through the top-level `wds+register` key in
+`hplt-3.0/metadata.yaml`, where various parameters are specified for combined
+filtering and upsampling based on WDS levels and web register annotations.
+In the “baby” cycle, these annotations are only available in the HPLT 3.0 sources.
+The result of preprocessing will be written to a separate directory tree of
+revised data files – with some documents removed and others repeated – rooted
+below `wds+register/`.
+The `etc/count.slurm` script can then be used to generate updated statistics,
+recorded as, for example,  `baby/hplt-3.0/counts/spa_Latn/wds+register.json`.
+```
+wds+register:
+  default:
+    input: source
+    pack: tree
+    length: 200
+    threshold: 0.4
+    coefficients:
+      dtp: 1.5
+      HI: 1.5
+      …
+  als_Latn:
+  bos_Latn:
+  …
 ```
 
 ## Mirroring across EuroHPC Systems

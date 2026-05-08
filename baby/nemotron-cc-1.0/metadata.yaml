@@ -15,6 +15,7 @@ release:
   default:
     pack: tree
     sample: full
+    shard: 100bd
   high/actual:
   medium-high/actual:
   medium/actual:

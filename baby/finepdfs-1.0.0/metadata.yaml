@@ -16,6 +16,12 @@ release:
     pack: tree
     sample: random
     rubber: 5%
+    block:
+    - f70a59b2-4638-4f1a-8689-a1f1f4d1d975
+#
+# ./etc/plan.py --pattern finepdfs-1.0.0 --format yaml \
+#   --budget datamix.txt >> finepdfs-1.0.0/metadata.yaml
+#
   als_Latn:
     sample: full
   bos_Latn:
@@ -35,8 +41,6 @@ release:
   ell_Grek:
     budget: 47%
   eng_Latn:
-    block:
-    - f70a59b2-4638-4f1a-8689-a1f1f4d1d975
     budget: 81%
   eus_Latn:
     sample: full
