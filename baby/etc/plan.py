@@ -19,6 +19,7 @@ def main():
 
   parser = argparse.ArgumentParser(description = "Maintenance of OpenEuroLLM Training Data Collection");
   parser.add_argument("--pattern", type = str, default = None);
+  parser.add_argument("--counts", type = str, default = "source.json");
   parser.add_argument("--format", type = str, default = "plain");
   parser.add_argument("--sum", action = "store_true", default = False);
   parser.add_argument("--budget", action = "store_true", default = False);
@@ -72,7 +73,7 @@ def main():
     if arguments.pattern is not None: pattern = re.compile(arguments.pattern);
     for path, ratio in mix.items():
       if pattern is not None and pattern.search(path) is None: continue
-      _ = os.path.join(path.replace("/megatron-lm", "/counts"), "source.json")
+      _ = os.path.join(path.replace("/megatron-lm", "/counts"), arguments.counts)
       if not os.path.isfile(_):
         if not arguments.quiet:
           print("plan.py(): no counts for {} (#{})."
@@ -104,7 +105,7 @@ def main():
           print("{:,.6f} {}".format(ratio, path));
           continue;
         sum = ratio + mix[edu];
-        _ = os.path.join(edu.replace("/megatron-lm", "/counts"), "source.json")
+        _ = os.path.join(edu.replace("/megatron-lm", "/counts"), arguments.counts)
         with open(_, encoding = "utf-8") as _:
           r = min(sum, json.load(_)["tokens"] / 1e13);
           print("{:,.6f} {}".format(r, edu));
