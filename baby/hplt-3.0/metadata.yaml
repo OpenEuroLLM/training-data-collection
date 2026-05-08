@@ -17,8 +17,22 @@ wds+register:
   default:
     input: source
     pack: tree
-    length:
+    length: 200
+    threshold: 0.4
     coefficients:
+      dtp: 1.5
+      HI: 1.5
+      ID: 1.0
+      IN: 1.0
+      IP: 0.1
+      MT: 0.1
+      NA: 1.0
+      ne: 1.0
+      OP: 1.5
+      SP: 1.0
+      LY: 1.0
+      no-label: 1.0
+      HI-IN: 1.5
   als_Latn:
   bos_Latn:
   bul_Cyrl:
@@ -64,43 +78,79 @@ release:
     - md
     sample: random
     rubber: 5%
+#
+# ./etc/plan.py --pattern hplt --counts wds+register.json \
+#   --format yaml --budget datamix.txt >> hplt-3.0/metadata.yaml
+#
   als_Latn:
     sample: full
   bos_Latn:
+    budget: 52%
   bul_Cyrl:
+    budget: 44%
   cat_Latn:
+    budget: 81%
   ces_Latn:
+    budget: 30%
   dan_Latn:
+    budget: 40%
   deu_Latn:
-    budget: 10%
+    budget: 13%
   ekk_Latn:
+    budget: 91%
   ell_Grek:
+    budget: 28%
   eus_Latn:
+    sample: full
   fin_Latn:
+    budget: 34%
   fra_Latn:
+    budget: 15%
   gle_Latn:
+    sample: full
   glg_Latn:
+    sample: full
   hrv_Latn:
+    budget: 58%
   hun_Latn:
+    budget: 28%
   isl_Latn:
+    sample: full
   ita_Latn:
+    budget: 20%
   kat_Geor:
+    sample: full
   lit_Latn:
-  ltg_Latn:
+    budget: 71%
   lvs_Latn:
+    sample: full
   mkd_Cyrl:
+    sample: full
   mlt_Latn:
+    sample: full
   nld_Latn:
+    budget: 23%
   nno_Latn:
+    sample: full
   nob_Latn:
+    budget: 47%
   pol_Latn:
+    budget: 20%
   por_Latn:
+    budget: 18%
   ron_Latn:
+    budget: 25%
   slk_Latn:
+    budget: 69%
   slv_Latn:
+    budget: 95%
   spa_Latn:
+    budget: 18%
   srp_Cyrl:
+    sample: full
   swe_Latn:
+    budget: 29%
   tur_Latn:
+    budget: 24%
   ukr_Cyrl:
-
+    budget: 28%
