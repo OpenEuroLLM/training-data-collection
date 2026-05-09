@@ -24,6 +24,7 @@ def main():
   parser.add_argument("--sum", action = "store_true", default = False);
   parser.add_argument("--budget", action = "store_true", default = False);
   parser.add_argument("--finepdfs", action = "store_true", default = False);
+  parser.add_argument("--hplt", action = "store_true", default = False);
   parser.add_argument("--quiet", action = "store_true", default = False);
   parser.add_argument("inputs", nargs = "*");
   arguments = parser.parse_args();
@@ -52,7 +53,7 @@ def main():
     sys.exit(0);
 
   mix = dict();
-  if arguments.budget or arguments.finepdfs:
+  if arguments.budget or arguments.finepdfs or arguments.hplt:
     pattern = re.compile(r"(0\.[0-9]+)[ \t](.+)$")
     
     with open(arguments.inputs[0], encoding = "utf-8") as stream:
@@ -68,9 +69,10 @@ def main():
         ratio, path = _.groups();
         mix[path] = float(ratio);
 
-  if arguments.budget:
+  if arguments.budget or arguments.hplt:
     pattern = None;
     if arguments.pattern is not None: pattern = re.compile(arguments.pattern);
+    elif arguments.hplt: pattern = re.compile(r"hplt-");
     for path, ratio in mix.items():
       if pattern is not None and pattern.search(path) is None: continue
       _ = os.path.join(path.replace("/megatron-lm", "/counts"), arguments.counts)
@@ -85,7 +87,27 @@ def main():
         budget = math.ceil(1e13 * ratio / 1e6);
         pool = math.floor(counts["tokens"] / 1e6);
         percent = budget / pool * 100;
-        if arguments.format == "plain":
+        if arguments.hplt:
+          _ = os.path.join(path.replace("/megatron-lm", "/counts"), "wds+register.json")
+          if not os.path.isfile(_):
+            if not arguments.quiet:
+              print("plan.py(): no wds+register counts for {} (#{})."
+                    "".format(path, i),
+                    file = sys.stderr, flush = True);
+            continue;
+          with open(_, encoding = "utf-8") as _:
+            new = json.load(_);
+            part = re.sub(r"[^/]+/megatron-lm/", "", path);
+            print("{}: {:,}m / {:,} source tokens = |{:,.1f}|; "
+                  "{:,}m / {:,} wds+register tokens = |{:,.1f}| "
+                  "({:,.1f}% / {:,.1f}%)."
+                  "".format(part, counts["tokens"] // 1e6, counts["documents"],
+                            counts["tokens"] / counts["documents"],
+                            new["tokens"] // 1e6, new["documents"],
+                            new["tokens"] / new["documents"],
+                            new["tokens"] / counts["tokens"] * 100,
+                            new["documents"] / counts["documents"] * 100));
+        elif arguments.format == "plain":
            print("{}: {:,}m tokens of {:,}m ({:,.1f}%)."
                  "".format(path, budget, pool, percent));
         elif arguments.format == "yaml":
