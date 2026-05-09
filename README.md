@@ -180,8 +180,6 @@ In the “baby” cycle, these annotations are only available in the HPLT 3.0 so
 The result of preprocessing will be written to a separate directory tree of
 revised data files – with some documents removed and others repeated – rooted
 below `wds+register/`.
-The `etc/count.slurm` script can then be used to generate updated statistics,
-recorded as, for example,  `baby/hplt-3.0/counts/spa_Latn/wds+register.json`.
 ```
 wds+register:
   default:
@@ -197,5 +195,34 @@ wds+register:
   bos_Latn:
   …
 ```
+
+The `etc/count.slurm` script can then be used to generate updated statistics,
+recorded as, for example,  `baby/hplt-3.0/counts/spa_Latn/wds+register.json`.
+Per-language target budgets for random sampling are then determined based on
+these counts (using the `plan.py` tool; see comments in e.g.
+`baby/hplt3.0/metadata.yaml`), and the `release` output block takes its input
+from the preprocessed directory:
+```
+release:
+  default:
+    input: wds+register
+    scrub:
+    - xml
+    - md
+    sample: random
+    rubber: 5%
+    shard: 100bd
+#
+# ./etc/plan.py --pattern hplt --counts wds+register.json --format yaml \
+#   --budget datamix.txt >> hplt-3.0/metadata.yaml
+#
+  als_Latn:
+    sample: full
+  bos_Latn:
+    budget: 52%
+```
+
+## Metadata 
+
 
 ## Mirroring across EuroHPC Systems
