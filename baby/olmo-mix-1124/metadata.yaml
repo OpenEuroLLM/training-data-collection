@@ -2,7 +2,7 @@ name: OLMo 2 (November 2024) Pretraining Set
 huggingface: allenai/olmo-mix-1124
 branch: main
 commit: 99ee6aa
-suffix: .json.gz
+suffix: .jsonl.zst
 text: text
 id: _to_do_
 annotations:
@@ -14,6 +14,6 @@ annotations:
     status: _to_do_
 release:
   default:
-    input: source
+    input: turku
     pack: tree
     shard: 100bd
