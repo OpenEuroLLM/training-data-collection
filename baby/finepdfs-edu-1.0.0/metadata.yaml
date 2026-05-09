@@ -13,8 +13,10 @@ annotations:
     status: _to_do_
 release:
   default:
+    input: source
     pack: tree
     sample: full
+    shard: 100bd
   als_Latn:
   bos_Latn:
   bul_Cyrl:

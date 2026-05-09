@@ -13,11 +13,13 @@ annotations:
     status: _to_do_
 release:
   default:
+    input: source
     pack: tree
     sample: random
     rubber: 5%
     block:
     - f70a59b2-4638-4f1a-8689-a1f1f4d1d975
+    shard: 100bd
 #
 # ./etc/plan.py --pattern finepdfs-1.0.0 --format yaml \
 #   --budget datamix.txt >> finepdfs-1.0.0/metadata.yaml

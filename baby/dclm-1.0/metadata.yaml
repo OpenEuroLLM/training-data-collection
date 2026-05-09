@@ -13,9 +13,11 @@ annotations:
     status: _to_do_
 release:
   default:
+    input: source
     pack: flat
     sample: random
     budget: 85%
+    rubber: 5%
     shard: 100bd
   global-shard_01_of_10/local-shard_0_of_10:
     prefix: 01_0

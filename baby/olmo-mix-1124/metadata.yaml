@@ -12,3 +12,8 @@ annotations:
   pii:
     owner: AI Sweden
     status: _to_do_
+release:
+  default:
+    input: source
+    pack: tree
+    shard: 100bd

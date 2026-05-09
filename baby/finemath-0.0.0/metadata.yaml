@@ -5,8 +5,8 @@ suffix: .jsonl.zst
 text: text
 release:
   default:
+    input: source
     pack: tree
-    sample: random
     shard: 100bd
 #
 # ./etc/plan.py --pattern finemath-0.0.0 --format yaml \

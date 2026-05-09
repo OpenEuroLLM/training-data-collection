@@ -5,5 +5,12 @@ suffix: .jsonl.zst
 text: content
 release:
   default:
+    input: source
     pack: flat
-    sample: random
+    shard: 100bd
+#
+# ./etc/plan.py --pattern starcoder-0.0.0 --format yaml \
+#   --budget datamix.txt >> starcoder-0.0.0/metadata.yaml
+#
+  starcoder-0.0.0/megatron-lm:
+    sample: full

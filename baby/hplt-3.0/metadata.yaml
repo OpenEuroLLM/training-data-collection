@@ -78,9 +78,10 @@ release:
     - md
     sample: random
     rubber: 5%
+    shard: 100bd
 #
-# ./etc/plan.py --pattern hplt --counts wds+register.json \
-#   --format yaml --budget datamix.txt >> hplt-3.0/metadata.yaml
+# ./etc/plan.py --pattern hplt --counts wds+register.json --format yaml \
+#   --budget datamix.txt >> hplt-3.0/metadata.yaml
 #
   als_Latn:
     sample: full

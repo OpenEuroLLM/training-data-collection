@@ -5,6 +5,7 @@ suffix: .jsonl.zst
 text: text
 release:
   default:
+    input: source
     pack: tree
     sample: random
     shard: 100bd

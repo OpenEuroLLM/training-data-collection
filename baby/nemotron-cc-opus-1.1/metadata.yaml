@@ -12,5 +12,52 @@ annotations:
     owner: AI Sweden
     status: _todo_
 release:
-
-  
+  default:
+    input: source
+    sample: random
+    rubber: 5%
+    shard: 100bd
+#
+# ./etc/plan.py --pattern nemotron-cc-opus-1.1 --format yaml \
+#   --budget datamix.txt >> nemotron-cc-opus-1.1/metadata.yaml
+#
+  bos_Latn:
+    budget: 11%
+  bul_Cyrl:
+    budget: 11%
+  cat_Latn:
+    budget: 10%
+  ces_Latn:
+    budget: 16%
+  ell_Grek:
+    budget: 14%
+  est_Latn:
+    budget: 9%
+  eus_Latn:
+    budget: 8%
+  gle_Latn:
+    budget: 7%
+  glg_Latn:
+    budget: 8%
+  hrv_Latn:
+    budget: 11%
+  kat_Geor:
+    budget: 8%
+  lav_Latn:
+    budget: 9%
+  lit_Latn:
+    budget: 9%
+  mkd_Cyrl:
+    budget: 8%
+  mlt_Latn:
+    budget: 8%
+  slk_Latn:
+    budget: 10%
+  slv_Latn:
+    budget: 9%
+  sqi_Latn:
+    budget: 9%
+  srp_Cyrl:
+    budget: 9%
+  tur_Latn:
+    budget: 17%
