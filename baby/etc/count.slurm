@@ -13,6 +13,8 @@
 # for i in olmo-mix-1124/source/*; do sbatch etc/count.slurm $i; done
 # for i in starcoder-0.0.0/source/*; do sbatch etc/count.slurm $i; done
 #
+# for i in olmo-mix-1124/turku/{arxiv,pes2o,wiki}; do sbatch etc/count.slurm $i; done
+#
 # for i in hplt-3.0/wds+register/*_*; do sbatch etc/count.slurm $i; done
 #
 
