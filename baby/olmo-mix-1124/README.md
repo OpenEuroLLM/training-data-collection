@@ -38,7 +38,6 @@ For reference, e.g. to compare token and document counts, the original version
 of the dataset, as distributed through the HuggingFace Hub, is also available
 in the `source/` subdirectory.
 
-directory 
 ```
 git lfs install --skip-smudge
 git config --global lfs.concurrenttransfers 16
