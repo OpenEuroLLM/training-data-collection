@@ -17,3 +17,7 @@ release:
     input: turku
     pack: tree
     shard: 100bd
+    pack: full
+    arxiv:
+    pes2o:
+    wiki:
