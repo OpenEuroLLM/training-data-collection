@@ -7,10 +7,10 @@ release:
   default:
     input: source
     pack: tree
-    shard: 100bd
 #
 # ./etc/plan.py --pattern finemath-0.0.0 --format yaml \
 #   --budget datamix.txt >> finemath-0.0.0/metadata.yaml
 #
   finemath-4plus:
     sample: full
+    shard: 63md

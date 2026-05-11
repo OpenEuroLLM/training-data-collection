@@ -19,82 +19,118 @@ release:
     rubber: 5%
     block:
     - f70a59b2-4638-4f1a-8689-a1f1f4d1d975
-    shard: 100bd
 #
 # ./etc/plan.py --pattern finepdfs-1.0.0 --format yaml \
 #   --budget datamix.txt >> finepdfs-1.0.0/metadata.yaml
 #
   als_Latn:
     sample: full
+    shard: 8md
   bos_Latn:
     budget: 66%
+    shard: 12md
   bul_Cyrl:
     budget: 62%
+    shard: 16md
   cat_Latn:
     budget: 40%
+    shard: 17md
   ces_Latn:
     budget: 12%
+    shard: 22md
   dan_Latn:
     budget: 28%
+    shard: 21md
   deu_Latn:
     budget: 1%
+    shard: 23md
   ekk_Latn:
     sample: full
+    shard: 19md
   ell_Grek:
     budget: 47%
+    shard: 12md
   eng_Latn:
     budget: 81%
+    shard: 16md
   eus_Latn:
     sample: full
+    shard: 13md
   fin_Latn:
     budget: 29%
+    shard: 15md
   fra_Latn:
     budget: 3%
+    shard: 16md
   gle_Latn:
     sample: full
+    shard: 11md
   glg_Latn:
     sample: full
+    shard: 17md
   hrv_Latn:
     budget: 35%
+    shard: 14md
   hun_Latn:
     budget: 10%
+    shard: 11md
   isl_Latn:
     sample: full
+    shard: 12md
   ita_Latn:
     budget: 8%
+    shard: 22md
   kat_Geor:
     sample: full
+    shard: 3md
   lit_Latn:
     budget: 74%
+    shard: 16md
   lvs_Latn:
     sample: full
+    shard: 13md
   mkd_Cyrl:
     sample: full
+    shard: 10md
   mlt_Latn:
     sample: full
+    shard: 21md
   nld_Latn:
     budget: 11%
+    shard: 18md
   nno_Latn:
     sample: full
+    shard: 27md
   nob_Latn:
     budget: 31%
+    shard: 15md
   pol_Latn:
     budget: 7%
+    shard: 23md
   por_Latn:
     budget: 6%
+    shard: 13md
   ron_Latn:
     budget: 17%
+    shard: 16md
   slk_Latn:
     budget: 32%
+    shard: 21md
   slv_Latn:
     budget: 59%
+    shard: 13md
   spa_Latn:
     budget: 2%
+    shard: 12md
   srp_Cyrl:
     budget: 34%
+    shard: 9md
   swe_Latn:
     budget: 16%
+    shard: 19md
   tur_Latn:
     budget: 42%
+    shard: 11md
   ukr_Cyrl:
     budget: 10%
+    shard: 11md
