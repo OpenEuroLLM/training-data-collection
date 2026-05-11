@@ -112,11 +112,19 @@ def main():
                  "".format(path, budget, pool, percent));
         elif arguments.format == "yaml":
           print("  {}:".format(re.sub(r".+/megatron-lm/", "", path)));
+          #
+          # per suggestion by @spyysalo, aim for shards around 100b tokens
+          #
+          shard = 1e11 / (counts["tokens"] / counts["documents"]);
+          if shard > 1e6: shard = "{}md".format(round(shard / 1e6));
+          elif shard > 1e3: shard = "{}md".format(round(shard / 1e3));
+          else: shard = "{}d".format(shard);
           percent = math.ceil(percent);
           if percent >= 100:
-            print("    sample: full");
+            print(f"    sample: full\n    shard: {shard}");
           else:
-            print("    budget: {}%".format(percent));
+            print("    budget: {}%\n    shard: {}"
+                  "".format(percent, shard));
     sys.exit(0);
 
   if arguments.finepdfs:
