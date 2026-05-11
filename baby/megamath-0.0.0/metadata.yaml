@@ -8,6 +8,7 @@ release:
     input: source
     pack: tree
     sample: random
+    rubber: 5%
 #
 # ./etc/plan.py --pattern megamath-0.0.0 --format yaml \
 #   --budget datamix.txt >> megamath-0.0.0/metadata.yaml
