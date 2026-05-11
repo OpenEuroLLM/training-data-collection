@@ -78,80 +78,115 @@ release:
     - md
     sample: random
     rubber: 5%
-    shard: 100bd
 #
 # ./etc/plan.py --pattern hplt --counts wds+register.json --format yaml \
 #   --budget datamix.txt >> hplt-3.0/metadata.yaml
 #
   als_Latn:
     sample: full
+    shard: 91md
   bos_Latn:
     budget: 52%
+    shard: 117md
   bul_Cyrl:
     budget: 44%
+    shard: 78md
   cat_Latn:
     budget: 81%
+    shard: 109md
   ces_Latn:
     budget: 30%
+    shard: 87md
   dan_Latn:
     budget: 40%
+    shard: 71md
   deu_Latn:
     budget: 13%
+    shard: 102md
   ekk_Latn:
     budget: 91%
+    shard: 64md
   ell_Grek:
     budget: 28%
+    shard: 68md
   eus_Latn:
     sample: full
+    shard: 105md
   fin_Latn:
     budget: 34%
+    shard: 67md
   fra_Latn:
     budget: 15%
+    shard: 80md
   gle_Latn:
     sample: full
+    shard: 73md
   glg_Latn:
     sample: full
+    shard: 119md
   hrv_Latn:
     budget: 58%
+    shard: 86md
   hun_Latn:
     budget: 28%
+    shard: 67md
   isl_Latn:
     sample: full
+    shard: 87md
   ita_Latn:
     budget: 20%
+    shard: 106md
   kat_Geor:
     sample: full
+    shard: 11md
   lit_Latn:
     budget: 71%
+    shard: 66md
   lvs_Latn:
     sample: full
+    shard: 46md
   mkd_Cyrl:
     sample: full
+    shard: 128md
   mlt_Latn:
     sample: full
+    shard: 91md
   nld_Latn:
     budget: 23%
+    shard: 93md
   nno_Latn:
     sample: full
+    shard: 88md
   nob_Latn:
     budget: 47%
+    shard: 74md
   pol_Latn:
     budget: 20%
+    shard: 95md
   por_Latn:
     budget: 18%
+    shard: 89md
   ron_Latn:
     budget: 25%
+    shard: 81md
   slk_Latn:
     budget: 69%
+    shard: 86md
   slv_Latn:
     budget: 95%
+    shard: 75md
   spa_Latn:
     budget: 18%
+    shard: 93md
   srp_Cyrl:
     sample: full
+    shard: 69md
   swe_Latn:
     budget: 29%
+    shard: 81md
   tur_Latn:
     budget: 24%
+    shard: 97md
   ukr_Cyrl:
     budget: 28%
+    shard: 87md

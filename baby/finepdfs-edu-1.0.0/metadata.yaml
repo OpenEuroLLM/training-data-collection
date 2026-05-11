@@ -16,40 +16,80 @@ release:
     input: source
     pack: tree
     sample: full
-    shard: 100bd
+#
+# ./etc/plan.py --pattern finepdfs-edu-1.0.0 --format yaml \
+#   --budget datamix.txt | grep -v sample: >> finepdfs-edu-1.0.0/metadata.yaml
+#
   als_Latn:
+    shard: 4md
   bos_Latn:
+    shard: 7md
   bul_Cyrl:
+    shard: 11md
   cat_Latn:
+    shard: 17md
   ces_Latn:
+    shard: 14md
   dan_Latn:
+    shard: 15md
   deu_Latn:
+    shard: 23md
   ekk_Latn:
+    shard: 14md
   ell_Grek:
+    shard: 9md
   eng_Latn:
+    shard: 16md
   eus_Latn:
+    shard: 13md
   fin_Latn:
+    shard: 11md
   fra_Latn:
+    shard: 17md
   glg_Latn:
+    shard: 13md
   hrv_Latn:
+    shard: 9md
   hun_Latn:
+    shard: 7md
   isl_Latn:
+    shard: 16md
   ita_Latn:
+    shard: 18md
   kat_Geor:
+    shard: 2md
   lit_Latn:
+    shard: 11md
   lvs_Latn:
+    shard: 11md
   mkd_Cyrl:
+    shard: 7md
   mlt_Latn:
+    shard: 17md
   nld_Latn:
+    shard: 17md
   nno_Latn:
+    budget: 98%
+    shard: 24md
   nob_Latn:
+    shard: 13md
   pol_Latn:
+    shard: 13md
   por_Latn:
+    shard: 10md
   ron_Latn:
+    shard: 7md
   slk_Latn:
+    shard: 12md
   slv_Latn:
+    shard: 17md
   spa_Latn:
+    shard: 10md
   srp_Cyrl:
+    shard: 5md
   swe_Latn:
+    shard: 13md
   tur_Latn:
+    shard: 8md
   ukr_Cyrl:
+    shard: 6md
