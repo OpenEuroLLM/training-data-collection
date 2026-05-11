@@ -16,8 +16,14 @@ release:
   default:
     input: turku
     pack: tree
-    shard: 100bd
-    pack: full
-    arxiv:
-    pes2o:
-    wiki:
+    sample: full
+#
+# ./etc/plan.py --pattern olmo-mix --format yaml \
+#   --budget datamix.txt | grep -v sample: >> olmo-mix-1124/metadata.yaml
+#
+  arxiv:
+    shard: 18md
+  pes2o:
+    shard: 64md
+  wiki:
+    shard: 161md
