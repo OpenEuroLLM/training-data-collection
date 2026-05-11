@@ -13,20 +13,20 @@
       "content"
     ],
     "optional": [
-      "repo_name",
-      "size",
-      "max_stars_count",
-      "max_stars_repo_name",
-      "max_stars_repo_path",
-      "lang",
-      "ext",
-      "hexsha",
-      "license",
-      "alphanum_fraction",
-      "path",
-      "max_stars_repo_licenses",
       "chain_length",
-      "avg_line_length"
+      "hexsha",
+      "max_stars_repo_path",
+      "max_stars_count",
+      "size",
+      "lang",
+      "repo_name",
+      "alphanum_fraction",
+      "max_stars_repo_licenses",
+      "ext",
+      "license",
+      "avg_line_length",
+      "max_stars_repo_name",
+      "path"
     ]
   }
 }
