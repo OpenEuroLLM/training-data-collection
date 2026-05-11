@@ -150,7 +150,7 @@
 0.003852 nemotron-cc-tower+-0.1/megatron-lm/parallel/tower9b/por_Latn
 0.001660 nemotron-cc-tower+-0.1/megatron-lm/parallel/tower9b/ron_Latn
 0.001519 nemotron-cc-tower+-0.1/megatron-lm/parallel/tower9b/ukr_Cyrl
-0.009000 olmo-mix-1124/megatron-lm/arxiv
-0.009000 olmo-mix-1124/megatron-lm/pes2o
-0.018000 olmo-mix-1124/megatron-lm/wiki
+0.002520 olmo-mix-1124/megatron-lm/arxiv
+0.032400 olmo-mix-1124/megatron-lm/pes2o
+0.001080 olmo-mix-1124/megatron-lm/wiki
 0.072000 starcoder-0.0.0/megatron-lm
