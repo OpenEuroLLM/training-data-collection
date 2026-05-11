@@ -16,48 +16,67 @@ release:
     input: source
     sample: random
     rubber: 5%
-    shard: 100bd
 #
 # ./etc/plan.py --pattern nemotron-cc-opus-1.1 --format yaml \
 #   --budget datamix.txt >> nemotron-cc-opus-1.1/metadata.yaml
 #
   bos_Latn:
     budget: 11%
+    shard: 158md
   bul_Cyrl:
     budget: 11%
+    shard: 127md
   cat_Latn:
     budget: 10%
+    shard: 126md
   ces_Latn:
     budget: 16%
+    shard: 164md
   ell_Grek:
     budget: 14%
+    shard: 101md
   est_Latn:
     budget: 9%
+    shard: 136md
   eus_Latn:
     budget: 8%
+    shard: 153md
   gle_Latn:
     budget: 7%
+    shard: 124md
   glg_Latn:
     budget: 8%
+    shard: 142md
   hrv_Latn:
     budget: 11%
+    shard: 145md
   kat_Geor:
     budget: 8%
+    shard: 15md
   lav_Latn:
     budget: 9%
+    shard: 92md
   lit_Latn:
     budget: 9%
+    shard: 136md
   mkd_Cyrl:
     budget: 8%
+    shard: 125md
   mlt_Latn:
     budget: 8%
+    shard: 116md
   slk_Latn:
     budget: 10%
+    shard: 138md
   slv_Latn:
     budget: 9%
+    shard: 139md
   sqi_Latn:
     budget: 9%
+    shard: 90md
   srp_Cyrl:
     budget: 9%
+    shard: 119md
   tur_Latn:
     budget: 17%
+    shard: 133md

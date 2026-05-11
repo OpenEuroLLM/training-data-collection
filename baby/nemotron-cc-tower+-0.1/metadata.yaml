@@ -16,7 +16,6 @@ release:
     input: source
     sample: random
     rubber: 5%
-    shard: 100bd
 #
 # ./etc/plan.py --pattern nemotron-cc-tower\\+-0.1 --format yaml \
 #   --budget datamix.txt >> nemotron-cc-tower+-0.1/metadata.yaml
@@ -53,3 +52,51 @@ release:
     budget: 17%
   parallel/tower9b/ukr_Cyrl:
     budget: 15%
+  parallel/tower72b/deu_Latn:
+    budget: 45%
+    shard: 171md
+  parallel/tower72b/fin_Latn:
+    budget: 13%
+    shard: 151md
+  parallel/tower72b/ita_Latn:
+    budget: 42%
+    shard: 171md
+  parallel/tower72b/spa_Latn:
+    budget: 76%
+    shard: 153md
+  parallel/tower72b/swe_Latn:
+    budget: 16%
+    shard: 157md
+  parallel/tower9b/dan_Latn:
+    budget: 12%
+    shard: 160md
+  parallel/tower9b/fra_Latn:
+    budget: 47%
+    shard: 137md
+  parallel/tower9b/hun_Latn:
+    budget: 17%
+    shard: 141md
+  parallel/tower9b/isl_Latn:
+    budget: 8%
+    shard: 144md
+  parallel/tower9b/nld_Latn:
+    budget: 22%
+    shard: 150md
+  parallel/tower9b/nno_Latn:
+    budget: 8%
+    shard: 156md
+  parallel/tower9b/nob_Latn:
+    budget: 12%
+    shard: 167md
+  parallel/tower9b/pol_Latn:
+    budget: 27%
+    shard: 167md
+  parallel/tower9b/por_Latn:
+    budget: 43%
+    shard: 156md
+  parallel/tower9b/ron_Latn:
+    budget: 17%
+    shard: 140md
+  parallel/tower9b/ukr_Cyrl:
+    budget: 15%
+    shard: 137md

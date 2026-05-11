@@ -16,12 +16,16 @@ release:
     input: source
     pack: tree
     sample: full
-    shard: 100bd
-  high/actual:
-  medium-high/actual:
-  medium/actual:
-    sample: random
-    budget: 64%
     rubber: 5%
-
-  
+#
+# ./etc/plan.py --pattern nemotron-cc-1.0 --format yaml \
+#   --budget datamix.txt | grep -v sample: >> nemotron-cc-1.0/metadata.yaml
+#
+  high/actual:
+    budget: 96%
+    shard: 132md
+  medium/actual:
+    budget: 64%
+    shard: 111md
+  medium-high/actual:
+    shard: 108md
