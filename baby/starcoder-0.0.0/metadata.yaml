@@ -7,6 +7,7 @@ release:
   default:
     input: source
     pack: flat
+    sample: full
     shard: 75md
   ada:
   agda:
