@@ -72,7 +72,7 @@ wds+register:
   ukr_Cyrl:
 release:
   default:
-    input: wds+register
+    input: source
     scrub:
     - xml
     - md

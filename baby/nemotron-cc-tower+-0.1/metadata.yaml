@@ -14,6 +14,7 @@ annotations:
 release:
   default:
     input: source
+    pack: tree
     sample: random
     rubber: 5%
 #
