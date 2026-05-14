@@ -84,11 +84,12 @@ fi
 
 tokenizer="openeurollm/tokenizer-256k";
 
-suffix="${path##${root}/}";
+suffix="${path##${root}/}/";
 infix="${suffix#*/}";
 infix="${infix%%/*}";
 name="${suffix%%/${infix}/*}";
 part="${suffix##*/${infix}/}";
+part="${part%/}";
 metadata="${root}/${name}/metadata.yaml";
 
 if [ ! -f "${metadata}" ]; then
@@ -109,7 +110,11 @@ if [ -z "${pattern}" -o "${key}" = "null" ]; then
 fi
 pattern=$(echo $pattern | sed -e 's,\.,\\\\\.,g' -e 's,$,\$,g');
 
-target="${root}/${name}/counts/${part}";
+if [ -z "${part}" ]; then
+  target="${root}/${name}/counts";
+else
+  target="${root}/${name}/counts/${part}";
+fi
 if [ ! -d ${target} ]; then mkdir -p ${target}; fi
 target=${target}/${infix}.json;
 if [ -e ${target} ]; then rm -f ${target}; fi

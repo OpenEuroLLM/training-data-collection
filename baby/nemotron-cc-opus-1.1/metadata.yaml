@@ -8,10 +8,11 @@ annotations:
   contamination:
     owner: Prompsit
     status: _todo_
-    suffix: .jsonl.zstd
+    suffix: .jsonl
   pii:
     owner: AI Sweden
     status: _todo_
+    suffix: .jsonl.zstd
 release:
   default:
     input: source
