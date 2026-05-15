@@ -1,7 +1,17 @@
 #!/bin/bash
 
 #
-#
+# for i in dclm-1.0/source/*_*_of_10/*_*_of_10; do sbatch etc/md5.slurm $i; done
+# sbatch etc/md5.slurm finemath-0.0.0/source/finemath-4plus
+# for i in finepdfs-1.0.0/source/*_*; do sbatch etc/md5.slurm $i; done
+# for i in finepdfs-edu-1.0.0/source/*_*; do sbatch etc/md5.slurm $i; done
+# for i in hplt-3.0/source/*_*; do sbatch etc/md5.slurm $i; done
+# for i in megamath-0.0.0/source/*; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-1.0/source/*/actual; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-opus-1.1/source/*_*; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-tower+-0.1/source/parallel/*/*_*; do sbatch etc/md5.slurm $i; done
+# for i in olmo-mix-1124/source/*; do sbatch etc/md5.slurm $i; done
+# for i in starcoder-0.0.0/source/*; do sbatch etc/md5.slurm $i; done
 #
 
 #SBATCH --job-name=md5
@@ -107,6 +117,7 @@ module load LUMI parallel;
 
 function run() {
   local file=${1};
+  echo ${file};  
   local target="$(dirname ${file})/.$(basename ${file} ${pattern}).md5";
   local command="md5sum ${file} > ${target}";
   if [ ! -f ${target} ]; then eval ${command}; fi;
@@ -116,7 +127,6 @@ export -f run;
 parallel="LC_ALL=C parallel --plain --will-cite";
 parallel="${parallel} --group --jobs ${cores}";
 
-set -x
 #
 # finally, iterate through all the files in this directory
 #
