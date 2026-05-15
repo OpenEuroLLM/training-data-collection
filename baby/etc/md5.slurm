@@ -18,7 +18,7 @@
 #SBATCH --output=log/%x-%j.out
 #SBATCH --partition=small
 #SBATCH --account=project_465002530
-#SBATCH --time=72:00:00
+#SBATCH --time=24:00:00
 #SBATCH --mail-type=FAIL
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=64
