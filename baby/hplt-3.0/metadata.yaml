@@ -73,6 +73,7 @@ wds+register:
 release:
   default:
     input: source
+    pack: tree
     scrub:
     - xml
     - md
@@ -142,6 +143,9 @@ release:
   lit_Latn:
     budget: 71%
     shard: 66md
+  ltg_Latn:
+    budget: full
+    shard: 100md
   lvs_Latn:
     sample: full
     shard: 46md
