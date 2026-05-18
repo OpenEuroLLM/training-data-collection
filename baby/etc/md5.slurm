@@ -13,6 +13,16 @@
 # for i in olmo-mix-1124/source/*; do sbatch etc/md5.slurm $i; done
 # for i in starcoder-0.0.0/source/*; do sbatch etc/md5.slurm $i; done
 #
+# sbatch etc/md5.slurm dclm-1.0/megatron-lm
+# sbatch etc/md5.slurm finemath-0.0.0/megatron-lm/finemath-4plus
+# for i in finepdfs-edu-1.0.0/megatron-lm/*_*; do sbatch etc/md5.slurm $i; done
+# for i in megamath-0.0.0/megatron/*; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-opus-1.1/megatron-lm/*_*; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-tower+-0.1/megatron-lm/parallel/*/*_*; do sbatch etc/md5.slurm $i; done
+# for i in olmo-mix-1124/source/*; do sbatch etc/md5.slurm $i; done
+# for i in starcoder-0.0.0/source/*; do sbatch etc/md5.slurm $i; done
+# 
+
 
 #SBATCH --job-name=md5
 #SBATCH --output=log/%x-%j.out
@@ -50,6 +60,7 @@ root=$(realpath ${root});
 
 cores=${SLURM_CPUS_ON_NODE:-8};
 
+set -x
 #
 # determine the root of the Training Data Catalogue
 #
@@ -92,10 +103,15 @@ if [ ! -f "${metadata}" ]; then
   exit 1;
 fi
 
-pattern=$(yq4 ".suffix" ${metadata});
-if [ -z "${pattern}" -o "${key}" = "null" ]; then
-  echo "md5.slurm: unable to determine .suffix. value; exit." >&2;
-  exit 1;
+if [ "${infix}" = "megatron-lm" ]; then
+  pattern="( -name *.bin -o -name *.idx -o -name *.json )";
+else
+  pattern="$(yq4 ".suffix" ${metadata})";
+  if [ -z "${pattern}" -o "${key}" = "null" ]; then
+    echo "md5.slurm: unable to determine .suffix. value; exit." >&2;
+    exit 1;
+  fi
+  pattern="-name *${pattern}";
 fi
 export pattern;
 
@@ -118,7 +134,7 @@ module load LUMI parallel;
 function run() {
   local file=${1};
   echo ${file};  
-  local target="$(dirname ${file})/.$(basename ${file} ${pattern}).md5";
+  local target="$(dirname ${file})/.$(basename ${file}).md5";
   local command="md5sum ${file} > ${target}";
   if [ ! -f ${target} ]; then eval ${command}; fi;
 } # run()
@@ -131,10 +147,10 @@ parallel="${parallel} --group --jobs ${cores}";
 # finally, iterate through all the files in this directory
 #
 cd ${root};
-find ${suffix} -mindepth 1 -maxdepth 1 -name \*${pattern} \
+find ${suffix} -mindepth 1 -maxdepth 1 ${pattern} \
 | eval ${parallel} run {} ${target};
 
-cat ${suffix}/.*.md5 | sort -k 2,2 > ${target};
+cat ${suffix}.*.md5 | sort -k 2,2 > ${target};
 
 #
 # make sure everything is group-readable (and directories searchable)
