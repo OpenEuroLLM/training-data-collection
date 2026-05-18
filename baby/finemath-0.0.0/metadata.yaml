@@ -2,10 +2,15 @@ name: FineMath 0.0.0
 huggingface: HuggingFaceTB/finemath
 catalogue: finemath/0.0.0/data
 suffix: .jsonl.zst
+id: uuid
 text: text
+annotations:
+  contamination:
+    owner: Prompsit
+    status: done
 release:
   default:
-    input: source
+    input: uuid
     pack: tree
 #
 # ./etc/plan.py --pattern finemath-0.0.0 --format yaml \
