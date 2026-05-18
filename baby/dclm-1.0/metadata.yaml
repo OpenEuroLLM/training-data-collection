@@ -18,7 +18,7 @@ release:
     sample: random
     budget: 85%
     rubber: 5%
-    shard: 74bd
+    shard: 74md
   global-shard_01_of_10/local-shard_0_of_10:
     prefix: 01_0
   global-shard_01_of_10/local-shard_1_of_10:
