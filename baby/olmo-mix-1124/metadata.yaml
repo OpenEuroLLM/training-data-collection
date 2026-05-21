@@ -2,19 +2,19 @@ name: OLMo 2 (November 2024) Pretraining Set
 huggingface: allenai/olmo-mix-1124
 branch: main
 commit: 99ee6aa
-suffix: .jsonl.zst
+suffix: .json.gz
 text: text
 id: id
 annotations:
   contamination:
     owner: Prompsit
-    status: _to_do_ 
+    suffix: .jsonl
   pii:
     owner: AI Sweden
-    status: _to_do_
+    suffix: .json.gz
 release:
   default:
-    input: turku
+    input: source
     pack: tree
     sample: full
 #
