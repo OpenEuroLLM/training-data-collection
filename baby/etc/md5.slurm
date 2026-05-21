@@ -15,7 +15,9 @@
 #
 # sbatch etc/md5.slurm dclm-1.0/megatron-lm
 # sbatch etc/md5.slurm finemath-0.0.0/megatron-lm/finemath-4plus
+# for i in finepdfs-1.0.0/megatron-lm/*_*; do sbatch etc/md5.slurm $i; done
 # for i in finepdfs-edu-1.0.0/megatron-lm/*_*; do sbatch etc/md5.slurm $i; done
+# for i in hplt-3.0/megatron-lm/*_*; do sbatch etc/md5.slurm $i; done
 # for i in megamath-0.0.0/megatron/*; do sbatch etc/md5.slurm $i; done
 # for i in nemotron-cc-opus-1.1/megatron-lm/*_*; do sbatch etc/md5.slurm $i; done
 # for i in nemotron-cc-tower+-0.1/megatron-lm/parallel/*/*_*; do sbatch etc/md5.slurm $i; done
