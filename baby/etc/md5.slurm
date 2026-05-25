@@ -138,7 +138,7 @@ function run() {
   echo ${file};  
   local target="$(dirname ${file})/.$(basename ${file}).md5";
   local command="md5sum ${file} > ${target}";
-  if [ ! -f ${target} ]; then eval ${command}; fi;
+  if [ ! -f ${target} -o ${file} -nt ${target} ]; then eval ${command}; fi;
 } # run()
 export -f run;
 
