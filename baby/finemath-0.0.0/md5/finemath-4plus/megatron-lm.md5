@@ -1,3 +1,11 @@
-f6f132d25aaa2fa461425da15a241b2b  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000.info.json
-88bde9ac76a99d8c42a682bf04e0c706  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_text_document.bin
-4b4023cd3b204ef24189079b3c289d8c  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_text_document.idx
+0516e1357ba76673959c8ad8ad485698  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_0_text_document.bin
+0347d7a677e0a11a0c2abfdc4765f322  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_0_text_document.idx
+03c75e2d34be5355131d8bdb6cd0e82c  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_1_text_document.bin
+2788d70901646f1b0e23cfc08b9456c3  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_1_text_document.idx
+993311a1f20653fdfab01f4e818adfc3  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_2_text_document.bin
+b8f0ed28330c56a1545b939f65be92e0  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_2_text_document.idx
+b973d20f87df2699dba90daa9c077da8  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_3_text_document.bin
+041404a9fa03bf1db1c7ace633ed6e40  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_3_text_document.idx
+0c23d7b8630759654627fe32789062b0  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000.info.json
+4876e9678e0d52cfce01f797d5499936  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_text_document.bin
+f2f5e47dd7629dfed3efe8813a44056b  finemath-0.0.0/megatron-lm/finemath-4plus/shard_0000_text_document.idx
