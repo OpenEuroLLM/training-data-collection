@@ -12,6 +12,7 @@ import os;
 import re;
 import sys;
 import time;
+import yaml;
 
 def main():
 
@@ -21,6 +22,7 @@ def main():
   parser.add_argument("--pattern", type = str, default = None);
   parser.add_argument("--counts", type = str, default = "source.json");
   parser.add_argument("--format", type = str, default = "plain");
+  parser.add_argument("--test", action = "store_true", default = False);
   parser.add_argument("--sum", action = "store_true", default = False);
   parser.add_argument("--budget", action = "store_true", default = False);
   parser.add_argument("--finepdfs", action = "store_true", default = False);
@@ -53,8 +55,11 @@ def main():
     sys.exit(0);
 
   mix = dict();
-  if arguments.budget or arguments.finepdfs or arguments.hplt:
+  if arguments.test or arguments.budget or arguments.finepdfs or arguments.hplt:
     pattern = re.compile(r"(0\.[0-9]+)[ \t](.+)$")
+    filter = None;
+    if arguments.pattern is not None: filter = re.compile(arguments.pattern);
+    elif arguments.hplt: filter = re.compile(r"hplt-");
     
     with open(arguments.inputs[0], encoding = "utf-8") as stream:
       for i, line in enumerate(stream):
@@ -67,13 +72,69 @@ def main():
                   file = sys.stderr, flush = True);
           continue;
         ratio, path = _.groups();
-        mix[path] = float(ratio);
+        active = True if filter is None or filter.search(path) else False;
+        mix[path] = {"ratio": float(ratio), "active": active};
+      
+  if arguments.test:
+    datasets = set();
+    for path, data in mix.items():
+      if data["active"]: datasets.add(path.split("/")[0]);
+    if not arguments.quiet:
+      print("plan.py(): {} part(s) in {} dataset(s)."
+            "".format(len([_ for _ in mix.values() if _["active"]]),
+                      len(datasets)));
+    for dataset in datasets:
+      metadata = os.path.join(dataset, "metadata.yaml");
+      if not os.path.isfile(metadata):
+        print("plan.py(): no metadata for {}."
+              "".format(dataset));
+        continue;
+      with open(metadata, encoding = "utf-8") as _:
+        metadata = yaml.safe_load(_);
+      if "release" not in metadata:
+        print("plan.py(): no .release. block in metadata for {}."
+              "".format(dataset));
+        continue;
+      flat = False;
+      for part, data in metadata["release"].items():
+        if part in {"default"}:
+          if "pack" in data and data["pack"] == "flat": flat = True;
+          continue;
+        if flat and (data is None or "pack" not in data or data["pack"] == "flat"):
+          release = os.path.join(dataset, "release");
+          counts = os.path.join(dataset, "counts", "release.json");
+          tokens = os.path.join(dataset, "megatron-lm");
+          checksums = os.path.join(dataset, "md5", "megatron-lm.md5");
+        else:
+          release = os.path.join(dataset, "release", part);
+          counts = os.path.join(dataset, "counts", part, "release.json");
+          tokens = os.path.join(dataset, "release", part);
+          checksums = os.path.join(dataset, "md5", part, "megatron-lm.md5");
+        if not os.path.isdir(release):
+          print("plan.py(): no .release. directory for {}."
+                "".format(dataset + "/" + part));
+        else:
+          if not os.path.isfile(counts):
+            print("plan.py(): no .release. counts for {}."
+                  "".format(dataset + "/" + part));
+          elif os.path.getmtime(release) >= os.path.getmtime(counts):
+            print("plan.py(): out-of-date .release. counts for {}."
+                  "".format(dataset + "/" + part));
+          if not os.path.isdir(tokens):
+            print(flat, release, "plan.py(): no .megatron-lm. directory for {}."
+                  "".format(dataset + "/" + part));
+          elif not os.path.isfile(checksums):
+            print("plan.py(): no MD5 checksums for {}."
+                  "".format(dataset + "/" + part));
+          elif os.path.getmtime(tokens) >= os.path.getmtime(checksums):
+            print("plan.py(): out-of-date MD5 checksums for {}."
+                  "".format(dataset + "/" + part));
 
   if arguments.budget or arguments.hplt:
     pattern = None;
     if arguments.pattern is not None: pattern = re.compile(arguments.pattern);
     elif arguments.hplt: pattern = re.compile(r"hplt-");
-    for path, ratio in mix.items():
+    for path, data in mix.items():
       if pattern is not None and pattern.search(path) is None: continue
       _ = os.path.join(path.replace("/megatron-lm", "/counts"), arguments.counts)
       if not os.path.isfile(_):
@@ -84,7 +145,7 @@ def main():
         continue;
       with open(_, encoding = "utf-8") as _:
         counts = json.load(_);
-        budget = math.ceil(1e13 * ratio / 1e6);
+        budget = math.ceil(1e13 * data["ratio"] / 1e6);
         pool = math.floor(counts["tokens"] / 1e6);
         percent = budget / pool * 100;
         if arguments.hplt:
@@ -128,13 +189,13 @@ def main():
     sys.exit(0);
 
   if arguments.finepdfs:
-    for path, ratio in mix.items():
+    for path, data in mix.items():
       if path.startswith("finepdfs-1.0.0"):
         edu = path.replace("finepdfs-1.0.0", "finepdfs-edu-1.0.0");
         if edu not in mix:
-          print("{:,.6f} {}".format(ratio, path));
+          print("{:,.6f} {}".format(data["ratio"], path));
           continue;
-        sum = ratio + mix[edu];
+        sum = data["ratio"] + mix[edu];
         _ = os.path.join(edu.replace("/megatron-lm", "/counts"), arguments.counts)
         with open(_, encoding = "utf-8") as _:
           r = min(sum, json.load(_)["tokens"] / 1e13);
