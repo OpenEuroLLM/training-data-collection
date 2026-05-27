@@ -17,6 +17,18 @@
 #
 # for i in hplt-3.0/wds+register/*_*; do sbatch etc/count.slurm $i; done
 #
+# for i in dclm-1.0/release/*_*_of_10/*_*_of_10; do sbatch etc/count.slurm $i; done
+# sbatch etc/count.slurm finemath-0.0.0/release/finemath-4plus
+# for i in finepdfs-1.0.0/release/*_*; do sbatch etc/count.slurm $i; done
+# for i in finepdfs-edu-1.0.0/release/*_*; do sbatch etc/count.slurm $i; done
+# for i in hplt-3.0/release/*_*; do sbatch etc/count.slurm $i; done
+# for i in megamath-0.0.0/release/*; do sbatch etc/count.slurm $i; done
+# for i in nemotron-cc-1.0/release/*/actual; do sbatch etc/count.slurm $i; done
+# for i in nemotron-cc-opus-1.1/release/*_*; do sbatch etc/count.slurm $i; done
+# for i in nemotron-cc-tower+-0.1/release/parallel/*/*_*; do sbatch etc/count.slurm $i; done
+# for i in olmo-mix-1124/release/*; do sbatch etc/count.slurm $i; done
+# for i in starcoder-0.0.0/release/*; do sbatch etc/count.slurm $i; done
+#
 
 #SBATCH --job-name=count
 #SBATCH --output=log/%x-%j.out
@@ -97,10 +109,14 @@ if [ ! -f "${metadata}" ]; then
   exit 1;
 fi
 
-key=$(yq4 ".text" ${metadata});
-if [ -z "${key}" -o "${key}" = "null" ]; then
-  echo "count.slurm: unable to determine .text. key; exit." >&2;
-  exit 1;
+if [ ${infix} = "release" ]; then
+  key="text";
+else
+  key=$(yq4 ".text" ${metadata});
+  if [ -z "${key}" -o "${key}" = "null" ]; then
+    echo "count.slurm: unable to determine .text. key; exit." >&2;
+    exit 1;
+  fi
 fi
 
 pattern=$(yq4 ".suffix" ${metadata});
