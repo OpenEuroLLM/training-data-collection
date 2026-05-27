@@ -5,28 +5,28 @@
   "segments": 11987222,
   "tokens": 300703698,
   "characters": 1004394054,
-  "time": 436.5564212799072,
+  "time": 439.7856194972992,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
+      "full_doc_lid",
+      "token_count",
       "text",
-      "id",
-      "dump",
+      "extractor",
       "url",
-      "date",
+      "page_ends",
       "file_path",
       "offset",
-      "token_count",
+      "date",
       "language",
       "page_average_lid",
+      "id",
       "page_average_lid_score",
-      "full_doc_lid",
-      "full_doc_lid_score",
       "per_page_languages",
+      "dump",
       "is_truncated",
-      "extractor",
-      "page_ends"
+      "full_doc_lid_score"
     ],
     "optional": []
   }

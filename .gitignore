@@ -4,6 +4,7 @@ baby/dclm-1.0/pii
 baby/dclm-1.0/release
 baby/dclm-1.0/megatron-lm
 baby/finemath-0.0.0/source
+baby/finemath-0.0.0/uuid
 baby/finemath-0.0.0/contamination
 baby/finemath-0.0.0/pii
 baby/finemath-0.0.0/release
@@ -25,6 +26,7 @@ baby/hplt-3.0/pii
 baby/hplt-3.0/release
 baby/hplt-3.0/megatron-lm
 baby/megamath-0.0.0/source
+baby/megamath-0.0.0/uuid
 baby/megamath-0.0.0/contamination
 baby/megamath-0.0.0/pii
 baby/megamath-0.0.0/release

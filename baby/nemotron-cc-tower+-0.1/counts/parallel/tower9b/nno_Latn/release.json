@@ -5,15 +5,15 @@
   "segments": 406759513,
   "tokens": 11711911758,
   "characters": 42540308720,
-  "time": 13815.807540893555,
+  "time": 13800.690762758255,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
-      "text",
-      "tokens",
       "partition",
-      "id"
+      "id",
+      "tokens",
+      "text"
     ],
     "optional": [
       "pii_masks"

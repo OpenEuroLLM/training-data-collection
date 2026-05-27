@@ -1,23 +1,24 @@
 {
   "files": 1,
-  "bytes": 13345631282,
-  "documents": 14978856,
-  "segments": 739553653,
-  "tokens": 14183867585,
-  "characters": 52554372391,
-  "time": 18073.142294883728,
-  "errors": 14978856,
+  "bytes": 13748407364,
+  "documents": 14961445,
+  "segments": 737910152,
+  "tokens": 14147469034,
+  "characters": 52422181197,
+  "time": 17147.987964868546,
+  "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
-      "text",
-      "cc-path",
-      "domain",
       "lang",
-      "lang_score",
       "timestamp",
+      "id",
+      "cc-path",
+      "math_score",
+      "lang_score",
+      "text",
       "url",
-      "math_score"
+      "domain"
     ],
     "optional": []
   }
