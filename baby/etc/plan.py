@@ -117,17 +117,17 @@ def main():
           if not os.path.isfile(counts):
             print("plan.py(): no .release. counts for {}."
                   "".format(dataset + "/" + part));
-          elif os.path.getmtime(release) >= os.path.getmtime(counts):
+          elif os.path.getmtime(release) > os.path.getmtime(counts):
             print("plan.py(): out-of-date .release. counts for {}."
                   "".format(dataset + "/" + part));
           if not os.path.isdir(tokens):
             print(flat, release, "plan.py(): no .megatron-lm. directory for {}."
                   "".format(dataset + "/" + part));
           elif not os.path.isfile(checksums):
-            print("plan.py(): no MD5 checksums for {}."
+            print("plan.py(): no .megatron-lm. checksums for {}."
                   "".format(dataset + "/" + part));
-          elif os.path.getmtime(tokens) >= os.path.getmtime(checksums):
-            print("plan.py(): out-of-date MD5 checksums for {}."
+          elif os.path.getmtime(tokens) > os.path.getmtime(checksums):
+            print("plan.py(): out-of-date .megatron-lm. checksums for {}."
                   "".format(dataset + "/" + part));
 
   if arguments.budget or arguments.hplt:
