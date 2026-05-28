@@ -5,35 +5,35 @@
   "segments": 608084780,
   "tokens": 34137289154,
   "characters": 119442274757,
-  "time": 41266.40564250946,
+  "time": 41275.0531578064,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
+      "crawl_id",
+      "registers",
       "f",
-      "o",
-      "s",
+      "doc_scores",
+      "de",
+      "ts",
+      "cluster_size",
+      "text",
+      "id",
       "rs",
       "u",
-      "c",
-      "ts",
-      "de",
-      "crawl_id",
-      "lang",
-      "prob",
-      "text",
-      "cluster_size",
-      "seg_langs",
-      "id",
+      "s",
       "filter",
-      "pii",
-      "doc_scores",
+      "o",
       "web-register",
-      "registers"
+      "prob",
+      "pii",
+      "lang",
+      "seg_langs",
+      "c"
     ],
     "optional": [
-      "html_lang",
-      "pii_masks"
+      "pii_masks",
+      "html_lang"
     ]
   }
 }

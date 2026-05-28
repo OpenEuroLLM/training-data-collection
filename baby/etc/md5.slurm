@@ -153,6 +153,10 @@ cd ${root};
 find ${suffix} -mindepth 1 -maxdepth 1 ${pattern} \
 | eval ${parallel} run {} ${target};
 
+#
+# stall a bit, so that directory timestamps do not appear out of date
+#
+sleep 60;
 cat ${suffix}.*.md5 | sort -k 2,2 > ${target};
 
 #
