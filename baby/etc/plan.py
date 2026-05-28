@@ -108,7 +108,7 @@ def main():
         else:
           release = os.path.join(dataset, "release", part);
           counts = os.path.join(dataset, "counts", part, "release.json");
-          tokens = os.path.join(dataset, "release", part);
+          tokens = os.path.join(dataset, "megatron-lm", part);
           checksums = os.path.join(dataset, "md5", part, "megatron-lm.md5");
         if not os.path.isdir(release):
           print("plan.py(): no .release. directory for {}."
