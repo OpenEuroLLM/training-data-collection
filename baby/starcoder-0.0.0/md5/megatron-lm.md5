@@ -1,0 +1,9 @@
+5a80c013ee984356a10452a8192914ba  starcoder-0.0.0/megatron-lm/shard_0000.info.json
+2949601659df2443bd42122ec3677a07  starcoder-0.0.0/megatron-lm/shard_0000_text_document.bin
+6e6de8e0d6604eb72c7eec5708807d9c  starcoder-0.0.0/megatron-lm/shard_0000_text_document.idx
+382b2c77fa09e9cd8b48fdc829787a9d  starcoder-0.0.0/megatron-lm/shard_0001.info.json
+cb17835cd0945e5bb156e60d40527c3e  starcoder-0.0.0/megatron-lm/shard_0001_text_document.bin
+4127c0e0dda561d61762ed50d551b926  starcoder-0.0.0/megatron-lm/shard_0001_text_document.idx
+caaaf2347cf2e4c87f3f6b113a4e8de4  starcoder-0.0.0/megatron-lm/shard_0002.info.json
+2a7fb5b23d52dfbf8f0ceab3775c18f7  starcoder-0.0.0/megatron-lm/shard_0002_text_document.bin
+59350f9982d0a4296e6689b46534258b  starcoder-0.0.0/megatron-lm/shard_0002_text_document.idx
