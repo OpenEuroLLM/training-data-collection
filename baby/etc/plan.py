@@ -82,20 +82,21 @@ def main():
     if not arguments.quiet:
       print("plan.py(): {} part(s) in {} dataset(s)."
             "".format(len([_ for _ in mix.values() if _["active"]]),
-                      len(datasets)));
+                      len(datasets)), file = sys.stderr);
     for dataset in datasets:
       metadata = os.path.join(dataset, "metadata.yaml");
       if not os.path.isfile(metadata):
         print("plan.py(): no metadata for {}."
-              "".format(dataset));
+              "".format(dataset), file = sys.stderr);
         continue;
       with open(metadata, encoding = "utf-8") as _:
         metadata = yaml.safe_load(_);
       if "release" not in metadata:
         print("plan.py(): no .release. block in metadata for {}."
-              "".format(dataset));
+              "".format(dataset), file = sys.stderr);
         continue;
       flat = False;
+      flats = set();
       for part, data in metadata["release"].items():
         if part in {"default"}:
           if "pack" in data and data["pack"] == "flat": flat = True;
@@ -112,23 +113,33 @@ def main():
           checksums = os.path.join(dataset, "md5", part, "megatron-lm.md5");
         if not os.path.isdir(release):
           print("plan.py(): no .release. directory for {}."
-                "".format(dataset + "/" + part));
+                "".format(dataset + "/" + part), file = sys.stderr);
         else:
           if not os.path.isfile(counts):
             print("plan.py(): no .release. counts for {}."
-                  "".format(dataset + "/" + part));
+                  "".format(dataset + "/" + part), file = sys.stderr);
           elif os.path.getmtime(release) > os.path.getmtime(counts):
             print("plan.py(): out-of-date .release. counts for {}."
-                  "".format(dataset + "/" + part));
+                  "".format(dataset + "/" + part), file = sys.stderr);
+          elif arguments.format == "md" and dataset not in flats:
+            with open(os.path.join(dataset, "counts", part, "source.json")) as _:
+              s = json.load(_)["tokens"];
+            with open(counts) as _: r = json.load(_)["tokens"];
+            print(counts, r)
+            t = len(glob.glob(os.path.join(release, "*.jsonl.zst")));
+            print("| `{}` | {} | {:,} | {:,} | {:,.1f} | {} |"
+                  "".format(dataset, f"`{part}`" if not flat else "",
+                            s, r, r / s * 100, t));
+            if flat: flats.add(dataset);
           if not os.path.isdir(tokens):
             print("plan.py(): no .megatron-lm. directory for {}."
-                  "".format(dataset + "/" + part));
+                  "".format(dataset + "/" + part), file = sys.stderr);
           elif not os.path.isfile(checksums):
             print("plan.py(): no .megatron-lm. checksums for {}."
-                  "".format(dataset + "/" + part));
+                  "".format(dataset + "/" + part), file = sys.stderr);
           elif os.path.getmtime(tokens) > os.path.getmtime(checksums):
             print("plan.py(): out-of-date .megatron-lm. checksums for {}."
-                  "".format(dataset + "/" + part));
+                  "".format(dataset + "/" + part), file = sys.stderr);
           else:
             i = len(glob.glob(os.path.join(tokens, "*.info.json")));
             i += len(glob.glob(os.path.join(tokens, "*_text_document.bin")));
@@ -137,7 +148,7 @@ def main():
               j = sum(1 for _ in stream);
             if i != j:
               print("plan.py(): mismatch ({} vs. {}) in .megatron-lm. checksums for {}."
-                    "".format(i, j, dataset + "/" + part));
+                    "".format(i, j, dataset + "/" + part), file = sys.stderr);
               
 
   if arguments.budget or arguments.hplt:
@@ -162,7 +173,7 @@ def main():
           _ = os.path.join(path.replace("/megatron-lm", "/counts"), "wds+register.json")
           if not os.path.isfile(_):
             if not arguments.quiet:
-              print("plan.py(): no wds+register counts for {} (#{})."
+              print("plan.py(): no .wds+register. counts for {} (#{})."
                     "".format(path, i),
                     file = sys.stderr, flush = True);
             continue;
