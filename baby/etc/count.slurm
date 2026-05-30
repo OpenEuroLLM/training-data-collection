@@ -17,7 +17,7 @@
 #
 # for i in hplt-3.0/wds+register/*_*; do sbatch etc/count.slurm $i; done
 #
-# for i in dclm-1.0/release/*_*_of_10/*_*_of_10; do sbatch etc/count.slurm $i; done
+# sbatch etc/count.slurm dclm-1.0/release
 # sbatch etc/count.slurm finemath-0.0.0/release/finemath-4plus
 # for i in finepdfs-1.0.0/release/*_*; do sbatch etc/count.slurm $i; done
 # for i in finepdfs-edu-1.0.0/release/*_*; do sbatch etc/count.slurm $i; done
@@ -27,7 +27,7 @@
 # for i in nemotron-cc-opus-1.1/release/*_*; do sbatch etc/count.slurm $i; done
 # for i in nemotron-cc-tower+-0.1/release/parallel/*/*_*; do sbatch etc/count.slurm $i; done
 # for i in olmo-mix-1124/release/*; do sbatch etc/count.slurm $i; done
-# for i in starcoder-0.0.0/release/*; do sbatch etc/count.slurm $i; done
+# sbatch etc/count.slurm starcoder-0.0.0/release
 #
 
 #SBATCH --job-name=count
@@ -109,6 +109,10 @@ if [ ! -f "${metadata}" ]; then
   exit 1;
 fi
 
+#
+# _fix_me_
+# we should allow block-local metadata specifications in the next round
+#
 if [ ${infix} = "release" ]; then
   key="text";
 else
@@ -119,12 +123,16 @@ else
   fi
 fi
 
-pattern=$(yq4 ".suffix" ${metadata});
-if [ -z "${pattern}" -o "${key}" = "null" ]; then
-  echo "count.slurm: unable to determine .suffix. value; exit." >&2;
-  exit 1;
+if [ ${infix} = "release" ]; then
+  suffix=".jsonl.zst";
+else
+  suffix=$(yq4 ".suffix" ${metadata});
+  if [ -z "${pattern}" -o "${key}" = "null" ]; then
+    echo "count.slurm: unable to determine .suffix. value; exit." >&2;
+    exit 1;
+  fi
 fi
-pattern=$(echo $pattern | sed -e 's,\.,\\\\\.,g' -e 's,$,\$,g');
+pattern=$(echo ${suffix} | sed -e 's,\.,\\\\\.,g' -e 's,$,\$,g');
 
 if [ -z "${part}" ]; then
   target="${root}/${name}/counts";
