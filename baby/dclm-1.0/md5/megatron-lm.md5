@@ -26,6 +26,7 @@ e581d5107b5586cb6f5aa8465d4a062f  dclm-1.0/megatron-lm/01_7_0000_text_document.b
 3874d613dce66ecf3e9787640b67e399  dclm-1.0/megatron-lm/01_8_0000_text_document.bin
 81d7f9a5d7b6448edb25556ae78437ee  dclm-1.0/megatron-lm/01_8_0000_text_document.idx
 039710d4da8277f84599c35000239920  dclm-1.0/megatron-lm/01_9_0000.info.json
+8b7264c117096caa50acf5bdf2bb53d9  dclm-1.0/megatron-lm/01_9_0000_text_document.bin
 20c7bb96341d451352ca0fd83cbff923  dclm-1.0/megatron-lm/01_9_0000_text_document.idx
 04e92063753e9aa679eb26c209218fc2  dclm-1.0/megatron-lm/02_0_0000.info.json
 886a66d2bf76f1d07904fbba0a470b80  dclm-1.0/megatron-lm/02_0_0000_text_document.bin
@@ -52,6 +53,7 @@ e4bbcaa00a5609107ac5c61ffae0be44  dclm-1.0/megatron-lm/02_6_0000_text_document.b
 9ad3c0242da28e5471f3900fd774a4dd  dclm-1.0/megatron-lm/02_7_0000_text_document.bin
 c0da9f59074d9ed3d1a75fad0ddbf7cb  dclm-1.0/megatron-lm/02_7_0000_text_document.idx
 5d85151421ee411ba5bcc9f6d04e1c6e  dclm-1.0/megatron-lm/02_8_0000.info.json
+9fde35f313b8930afac74425b3d0d0b0  dclm-1.0/megatron-lm/02_8_0000_text_document.bin
 34023989e8c3b975036c7275fce60055  dclm-1.0/megatron-lm/02_8_0000_text_document.idx
 505e68c84b364a7265e00ed0c47b4774  dclm-1.0/megatron-lm/02_9_0000.info.json
 4387420bd3f3479a8ca271da92f97fe6  dclm-1.0/megatron-lm/02_9_0000_text_document.bin
@@ -84,6 +86,7 @@ caed707b455f63902aa59758693f483e  dclm-1.0/megatron-lm/03_7_0000_text_document.b
 db1a1d13320326b288107c76048fdbc6  dclm-1.0/megatron-lm/03_8_0000_text_document.bin
 80b557e5efa36e83b491b3110c9b2787  dclm-1.0/megatron-lm/03_8_0000_text_document.idx
 2542d574467f87020c1f3d9effbb7781  dclm-1.0/megatron-lm/03_9_0000.info.json
+1db5842b6912511f4819eff1121f1878  dclm-1.0/megatron-lm/03_9_0000_text_document.bin
 4cfc518beea1cb650db3ac7dae2b2f57  dclm-1.0/megatron-lm/03_9_0000_text_document.idx
 aa8d76615069ce92ca0ef63c47f0f347  dclm-1.0/megatron-lm/04_0_0000.info.json
 bcbfba38f9604274acd8f122c2acdf5c  dclm-1.0/megatron-lm/04_0_0000_text_document.bin
@@ -134,6 +137,7 @@ d15ab82730b70045e1fe2475117cbf4b  dclm-1.0/megatron-lm/05_1_0000.info.json
 c04913b8807dcdb1382c05664f8df098  dclm-1.0/megatron-lm/05_5_0000_text_document.bin
 1eba9d8d70e687ce45e21e162f7a1a61  dclm-1.0/megatron-lm/05_5_0000_text_document.idx
 873b4ad581f3dee42093310c83cade39  dclm-1.0/megatron-lm/05_6_0000.info.json
+0939dfedb93e5c71e671d81380bef562  dclm-1.0/megatron-lm/05_6_0000_text_document.bin
 0f8845dafbb7caa727e7c510b1fc0fb5  dclm-1.0/megatron-lm/05_6_0000_text_document.idx
 2cdb75b134984bcdf45945ea8ed614bf  dclm-1.0/megatron-lm/05_7_0000.info.json
 d2b8175c17d22257cec7fc0e77c83f98  dclm-1.0/megatron-lm/05_7_0000_text_document.bin
@@ -160,16 +164,19 @@ f2e7bfcac19976780eba6757db4033f2  dclm-1.0/megatron-lm/06_3_0000_text_document.i
 b48a4a47a3743fe084bb64cc6f397249  dclm-1.0/megatron-lm/06_4_0000_text_document.bin
 a850ded9876bde7c6d06c1ae8ab1485e  dclm-1.0/megatron-lm/06_4_0000_text_document.idx
 3a46d21d772963f454a8e59a68f45e7c  dclm-1.0/megatron-lm/06_5_0000.info.json
+63e13ed486d42c5c3c412637b2edef7c  dclm-1.0/megatron-lm/06_5_0000_text_document.bin
 01b72cf72936cba6af4b307488274faa  dclm-1.0/megatron-lm/06_5_0000_text_document.idx
 e542750cc70d229f1a760200f2137c9d  dclm-1.0/megatron-lm/06_6_0000.info.json
 3dae196bfacc04bfd6ba4dc491adda7f  dclm-1.0/megatron-lm/06_6_0000_text_document.bin
 baf86d829ab1f701d3134f437355f4c2  dclm-1.0/megatron-lm/06_6_0000_text_document.idx
 32a0963dfda49a7813408b53bc3ecb05  dclm-1.0/megatron-lm/06_7_0000.info.json
+210b828fb805a8d56e43c866e4d9ac71  dclm-1.0/megatron-lm/06_7_0000_text_document.bin
 8959ae0ffecc456b0b8432cce551b88e  dclm-1.0/megatron-lm/06_7_0000_text_document.idx
 37a237fce270f11e653cf47158d9568a  dclm-1.0/megatron-lm/06_8_0000.info.json
 8e2e4924585eee91e545ab3c0658b1f3  dclm-1.0/megatron-lm/06_8_0000_text_document.bin
 d2b89f716573ee010026be7f2220fb14  dclm-1.0/megatron-lm/06_8_0000_text_document.idx
 d375c0c5440d4bd52f6dd573499513b6  dclm-1.0/megatron-lm/06_9_0000.info.json
+289eebfc5853646bc6d62b3b776877b3  dclm-1.0/megatron-lm/06_9_0000_text_document.bin
 90c60fc0ac55533fb976a6307ac9f9b2  dclm-1.0/megatron-lm/06_9_0000_text_document.idx
 a0df1f715563d34ea08278c8ff916b50  dclm-1.0/megatron-lm/07_0_0000.info.json
 fac4ea5d4a245a05a4c09689960bf8b4  dclm-1.0/megatron-lm/07_0_0000_text_document.bin
@@ -224,6 +231,7 @@ ea4381dc964db3d2b56840432df30d84  dclm-1.0/megatron-lm/08_6_0000.info.json
 9ad21b696e7fa7f2e73a16b185acff69  dclm-1.0/megatron-lm/08_6_0000_text_document.idx
 e2d8f1980c6bcb5101b7f00cd4fc84cf  dclm-1.0/megatron-lm/08_7_0000.info.json
 91ab063b65528b2463b68bb13b1d5e60  dclm-1.0/megatron-lm/08_7_0000_text_document.bin
+f46247585c9826fcf128a7e866b02065  dclm-1.0/megatron-lm/08_7_0000_text_document.idx
 ae0a22c6ce44107f26508c9172431165  dclm-1.0/megatron-lm/08_8_0000.info.json
 73aab3a9c62e88d0e8356416ba5f91dd  dclm-1.0/megatron-lm/08_8_0000_text_document.bin
 0069190c36a19591f834b265ad88a610  dclm-1.0/megatron-lm/08_8_0000_text_document.idx

@@ -129,6 +129,16 @@ def main():
           elif os.path.getmtime(tokens) > os.path.getmtime(checksums):
             print("plan.py(): out-of-date .megatron-lm. checksums for {}."
                   "".format(dataset + "/" + part));
+          else:
+            i = len(glob.glob(os.path.join(tokens, "*.info.json")));
+            i += len(glob.glob(os.path.join(tokens, "*_text_document.bin")));
+            i += len(glob.glob(os.path.join(tokens, "*_text_document.idx")));
+            with open(checksums, "rb") as stream:
+              j = sum(1 for _ in stream);
+            if i != j:
+              print("plan.py(): mismatch ({} vs. {}) in .megatron-lm. checksums for {}."
+                    "".format(i, j, dataset + "/" + part));
+              
 
   if arguments.budget or arguments.hplt:
     pattern = None;
@@ -195,12 +205,12 @@ def main():
         if edu not in mix:
           print("{:,.6f} {}".format(data["ratio"], path));
           continue;
-        sum = data["ratio"] + mix[edu];
+        n = data["ratio"] + mix[edu];
         _ = os.path.join(edu.replace("/megatron-lm", "/counts"), arguments.counts)
         with open(_, encoding = "utf-8") as _:
-          r = min(sum, json.load(_)["tokens"] / 1e13);
+          r = min(n, json.load(_)["tokens"] / 1e13);
           print("{:,.6f} {}".format(r, edu));
-          if sum > r: print("{:,.6f} {}".format( sum - r, path));
+          if n > r: print("{:,.6f} {}".format(n - r, path));
     sys.exit(0);
     
 
