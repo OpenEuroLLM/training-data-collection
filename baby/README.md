@@ -30,7 +30,8 @@ there are a corresponding `megatron-lm/` directory trees, `release.json` files
 below `counts/`, and `megatron-lm.md5` checksums below `md5/`.
 The script further confirms that there is an MD5 record per tokenized shard,
 that timestamps on checksums are more recent than on the underlying binary files,
-and likewise for the `release.json` counts.
+and likewise for the `release.json` counts (note that the `ltg_Latn` directory
+ended up not included in the `baby` data mix).
 
 ```
 stoepen@uan02:/scratch/project_465002530/training/collection/baby> ./etc/plan.py --test datamix.txt
