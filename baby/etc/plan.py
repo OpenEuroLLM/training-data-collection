@@ -122,6 +122,9 @@ def main():
             print("plan.py(): out-of-date .release. counts for {}."
                   "".format(dataset + "/" + part), file = sys.stderr);
           elif arguments.format == "md" and dataset not in flats:
+            #
+            # Markdown table with summary statistics
+            #
             with open(os.path.join(dataset, "counts", part, "source.json")) as _:
               s = json.load(_)["tokens"];
             with open(counts) as _: r = json.load(_)["tokens"];

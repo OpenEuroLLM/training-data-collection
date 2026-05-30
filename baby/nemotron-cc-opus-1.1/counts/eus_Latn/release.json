@@ -1,15 +1,22 @@
 {
-  "files": 0,
-  "bytes": 0,
-  "documents": 0,
-  "segments": 0,
-  "tokens": 0,
-  "characters": 0,
-  "time": 0,
+  "files": 1,
+  "bytes": 19831487405,
+  "documents": 20330950,
+  "segments": 500661081,
+  "tokens": 13264550716,
+  "characters": 50548424358,
+  "time": 16389.078935861588,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
-    "required": [],
-    "optional": []
+    "required": [
+      "id",
+      "text",
+      "url",
+      "language"
+    ],
+    "optional": [
+      "pii_masks"
+    ]
   }
 }
