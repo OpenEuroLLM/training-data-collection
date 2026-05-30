@@ -121,7 +121,7 @@ def main():
             print("plan.py(): out-of-date .release. counts for {}."
                   "".format(dataset + "/" + part));
           if not os.path.isdir(tokens):
-            print(release, "plan.py(): no .megatron-lm. directory for {}."
+            print("plan.py(): no .megatron-lm. directory for {}."
                   "".format(dataset + "/" + part));
           elif not os.path.isfile(checksums):
             print("plan.py(): no .megatron-lm. checksums for {}."
