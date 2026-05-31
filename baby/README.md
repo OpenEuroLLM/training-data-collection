@@ -1,7 +1,15 @@
 # OpenEuroLLM Training Data Collection for the “Baby” Cycle
 
 This directory collects and documents the training data mix for the first
-“production” (or “mid-size”) [model cycle](https://docs.google.com/document/d/1gEJGJ30bcDzCcfcxZfpFS3OBHGubCCkoxZ8kpTWrff4/edit?usp=sharing), codenamed `baby`.
+“production” (or “mid-size”) [model cycle](https://github.com/OpenEuroLLM/training-data-collection/blob/main/README.md), codenamed `baby`.
+
+Training data preparation was carried out on LUMI.
+Select parts of the collection are mirrored to Leonardo,
+viz. the tokenized binary files for training with Megatron-LM,
+document and token counts, and MD5 checksums.
+
++ LUMI: `/scratch/project_465002530/training/collection/baby/`
++ Leonardo: `/leonardo_work/OELLM_prod2026/training/collection/baby/`
 
 ## Background Documents
 
@@ -170,12 +178,17 @@ This directory collects and documents the training data mix for the first
 | `olmo-mix-1124` | `wiki` | 3,836,025,828 | 3,819,092,981 | 99.6 | 1 |
 | `starcoder-0.0.0` |  | 78,051,681 | 276,861,687,159 | 354,715.9 | 3 |
 
-
 ## Annotations: Contamination Detection
+
+https://github.com/OpenEuroLLM/decontamination-benchmarks
 
 ## Annotations: PII Detection
 
+https://github.com/OpenEuroLLM/training-data-collection/issues/2
+
 ## Packing: Putting it all Together
+
+https://github.com/OpenEuroLLM/training-data-packer/blob/main/README.md
 
 ## Sanity Checking
 
