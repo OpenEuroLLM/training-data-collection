@@ -128,7 +128,6 @@ def main():
             with open(os.path.join(dataset, "counts", part, "source.json")) as _:
               s = json.load(_)["tokens"];
             with open(counts) as _: r = json.load(_)["tokens"];
-            print(counts, r)
             t = len(glob.glob(os.path.join(release, "*.jsonl.zst")));
             print("| `{}` | {} | {:,} | {:,} | {:,.1f} | {} |"
                   "".format(dataset, f"`{part}`" if not flat else "",
