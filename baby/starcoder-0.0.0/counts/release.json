@@ -5,7 +5,7 @@
   "segments": 22491235350,
   "tokens": 276861687159,
   "characters": 815450910997,
-  "time": 284802.8818566799,
+  "time": 282589.0521848202,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
@@ -14,20 +14,20 @@
       "id"
     ],
     "optional": [
+      "max_stars_repo_path",
       "avg_line_length",
-      "max_stars_repo_name",
+      "max_stars_count",
       "chain_length",
       "lang",
-      "max_stars_repo_licenses",
-      "license",
-      "path",
+      "size",
       "hexsha",
       "ext",
+      "license",
       "alphanum_fraction",
+      "path",
+      "max_stars_repo_name",
       "repo_name",
-      "max_stars_repo_path",
-      "size",
-      "max_stars_count"
+      "max_stars_repo_licenses"
     ]
   }
 }
