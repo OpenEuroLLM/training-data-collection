@@ -184,7 +184,7 @@ https://github.com/OpenEuroLLM/decontamination-benchmarks
 
 ## Annotations: PII Detection
 
-[https://github.com/OpenEuroLLM/training-data-collection/issues/2](https://github.com/OpenEuroLLM/training-data-collection/issues/2)
+https://github.com/OpenEuroLLM/training-data-collection/issues/2
 
 ## Packing: Putting it All Together
 
