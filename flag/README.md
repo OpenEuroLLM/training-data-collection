@@ -15,8 +15,8 @@ This directory collects and documents the training data mix for the first
 
 | Path | Data | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
 |------|------|----------|---------------|-----|----------|---------|--------|------|------------|
-| dclm-1.0             | | | | | | | | |
-| nemotron-cc-1.0      | | | | | | | | |
+| dclm-1.0             | ✅ | ➖ | | | | | | |
+| nemotron-cc-1.0      | ✅ | 🏃‍➡️ | | | | | | |
 
 ## Annotations: Contamination Detection
 
