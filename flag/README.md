@@ -19,12 +19,13 @@ This directory collects and documents the training data mix for the first
 | hplt-4.0 AB                          | 🏃‍➡️ | ➖ | | | | | | |
 | hplt-4.0 CC New                      | 🏃‍➡️ | ➖ | | | | | | |
 | finephrase-0.0.0                     | 🏃‍➡️ | ➖ | | | | | | |
+| finepdfs-1.0.0                       | ✅ | 🏃‍➡️ | | | | | | |
 | finepdfs-edu-1.0.0                   | ✅ | ❓ | | | | | | |
 | nemotron-cc-1.0                      | ✅ | 🏃‍➡️ | | | | | | |
 | nemotron-mind-0.0                    | 🏃‍➡️ | ➖ | | | | | | |
 | nemotron-pretraining-specialized-1.0 | 🏃‍➡️ | ➖ | | | | | | |
 | nemotron-pretraining-specialized-1.1 | 🏃‍➡️ | ➖ | | | | | | |
-| mixture-vitae-1.0                    |  | | ➖ | | | | | |
+| mixture-vitae-1.0                    | ✅ | ➖ | | | | | | |
 | olmo-mix-1124                        | ✅ | ➖ | | | | | | |
 
 ## Annotations: Contamination Detection
