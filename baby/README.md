@@ -134,9 +134,9 @@ document and token counts, and MD5 checksums.
 | `hplt-3.0` | `ukr_Cyrl` | 75,602,173,611 | 26,922,263,959 | 35.6 | 1 |
 | `megamath-0.0.0` | `megamath-text-code-block` | 48,138,848,818 | 22,617,868,611 | 47.0 | 1 |
 | `megamath-0.0.0` | `megamath-web-pro` | 14,183,867,585 | 14,147,469,034 | 99.7 | 1 |
-| `nemotron-cc-1.0` | `high/actual` | 565,924,264,266 |  |  | 6 |
-| `nemotron-cc-1.0` | `medium/actual` | 2,063,798,579,550 |  |  | 15 |
-| `nemotron-cc-1.0` | `medium-high/actual` | 515,465,110,905 |  |  | 5 |
+| `nemotron-cc-1.0` | `high/actual` | 565,924,264,266 | 564,839,963,667 | 99.8 | 6 |
+| `nemotron-cc-1.0` | `medium/actual` | 2,063,798,579,550 | 1,422,938,530,652 | 68.9 | 15 |
+| `nemotron-cc-1.0` | `medium-high/actual` | 515,465,110,905 | 514,882,927,275 | 99.9 | 5 |
 | `nemotron-cc-opus-1.1` | `bos_Latn` | 98,924,620,356 | 15,835,112,548 | 16.0 | 1 |
 | `nemotron-cc-opus-1.1` | `bul_Cyrl` | 123,243,592,462 | 19,703,429,671 | 16.0 | 1 |
 | `nemotron-cc-opus-1.1` | `cat_Latn` | 124,353,668,852 | 18,649,234,302 | 15.0 | 1 |
