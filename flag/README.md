@@ -11,6 +11,13 @@ This directory collects and documents the training data mix for the first
 + [posttraining benchmarks](https://mattermost.ufal.mff.cuni.cz/openeurollm/pl/rhoosmej4in99mujt7yhik9hmc)
 + [task-internal schedule](https://docs.google.com/spreadsheets/d/1CbuQfx8ZJVw1TaYXeGGkm17U4j5T_RrD9i0a2tYC5Y8/edit?usp=sharing)
 
+Legend:
+* ✅ - Done
+* 🏃‍➡️ - Running
+* ➖ - No need to run
+* 🫷- Wait for previous
+* 💣 - Problem
+
 ## English Source Datasets
 
 | Path                                 | Parts | Data | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
