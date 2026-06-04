@@ -79,4 +79,20 @@ downsampling, and values above `1` can introduce repetition of documents.
 One way of spelling out the weighting formula would be as a snippet of
 Python code, taking a full document as its input and returning its score.
 
+For each dataset, the individual filtering and resampling settings could then
+be specified as part of `metadata.yaml`, e.g.
+```
+
+```
+
+One open question is whether it will be possible to pre-compute target token
+budgets (and random sampling probabilities) independent of filtering or
+resampling.
+It seems likely, however, that a separate step of effectuating all filtering
+and resampling will be necessary (as was the case for `wds+register` sampling
+in the `baby` cycle), to then compute updated token counts and
+determine random sampling rates against the target budget for the `baby`
+data mix.
+
+
 ## Packing: Putting it all Together
