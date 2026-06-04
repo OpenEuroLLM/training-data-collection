@@ -11,14 +11,16 @@ This directory collects and documents the training data mix for the first
 + [posttraining benchmarks](https://mattermost.ufal.mff.cuni.cz/openeurollm/pl/rhoosmej4in99mujt7yhik9hmc)
 + [task-internal schedule](https://docs.google.com/spreadsheets/d/1CbuQfx8ZJVw1TaYXeGGkm17U4j5T_RrD9i0a2tYC5Y8/edit?usp=sharing)
 
-Legend:
-* ✅ - Done
-* 🏃‍➡️ - Running
-* ➖ - No need to run
-* 🫷 - Wait for previous
-* 💣 - Problem
 
 ## English Source Datasets
+
+**Legend**
+
+* ✅ - complete
+* 🏃‍➡️ - running
+* ➖ - not applicable
+* 🫷 - blocked on input
+* 💣 - problematic
 
 | Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:----:|:------:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
@@ -75,7 +77,7 @@ hplt-low-resource:
       propella-4b.content_safety: [illegal, harmful]
   - =:
       propella-4b.content_quality: unacceptable
-  - >=:
+  - <=:
       doc_scores.0: 2
   … 
 ```
