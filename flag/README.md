@@ -44,7 +44,7 @@ This directory collects and documents the training data mix for the first
 
 ## Annotations: Personally Identifiable Information
 
-## Filtering and Reampling
+## Filtering and Resampling
 
 There will likely be two layers of data selection for the `flag` cycle,
 **filtering** and **resampling**.
