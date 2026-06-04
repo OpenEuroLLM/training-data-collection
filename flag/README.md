@@ -40,10 +40,43 @@ This directory collects and documents the training data mix for the first
 | nemotron-cc-opus-1.1              | 37 | ✅‍ | ➖ | | | | | | |
 | nemotron-cc-tower+-0.1            | 16 | ✅ | ➖ | | | | | | |
 
-## Annotations: Contamination Detection
+## Annotations: Contamination
 
-## Annotations: PII Detection
+## Annotations: Personally Identifiable Information
 
-## Filtering and Up-Sampling
+## Filtering and Reampling
+
+There will likely be two layers of data selection for the `flag` cycle,
+**filtering** and **resampling**.
+Both will be based on available annotations, as e.g. web doc scores (WDS), 
+web registers, various propella properties, and ordinal “quality” signals
+from various classifiers, notably the BSC-edu model.
+To the highest degree possible (for transparency and replicability), the
+data selection processes should follow declarative specifications, e.g.
+inclusion of all relevant parameters and weighting formulas in the
+`metadata.yaml` files for each dataset.
+
+For filtering, one can imagine a tiny specification language, composed
+of a small inventory of operators, field identifiers, comparison values,
+and boolean connectives.
+A match of one or more filter expression will trigger removal of documents,
+for example:
+```
+hplt-low-resource:
+  or:
+  - in:
+      propella-4b.content_safety: [illegal, harmful]
+  - =:
+      propella-4b.content_quality: unacceptable
+  - >=:
+      doc_scores.0: 2
+  … 
+```
+
+Resampling will take a pseudo-probabilistic perspective, where each candidate
+document is assigned a numeric weight, where values below `1` correspond to
+downsampling, and values above `1` can introduce repetition of documents.
+One way of spelling out the weighting formula would be as a snippet of
+Python code, taking a full document as its input and returning its score.
 
 ## Packing: Putting it all Together
