@@ -27,7 +27,7 @@ Legend:
 | hplt-4.0 IA (eng_Latn)               | 1 | 🏃‍➡️ | ➖ | | | | | | | |
 | finephrase-0.0.0                     | 4 | 🏃‍➡️ | ➖ | | | | | | | |
 | finepdfs-1.0.0 (eng_Latn)            | 1 | ✅ | ✅ | | | | | | | |
-| finepdfs-edu-1.0.0 (eng_Latn)        | 1 | ✅ | ❓ | | | | | | | |
+| finepdfs-edu-1.0.0 (eng_Latn)        | 1 | ✅ | 🏃‍➡️ | | | | | | | |
 | nemotron-cc-1.0                      | 3 | ✅ | 🏃‍➡️ | | | | | | | |
 | nemotron-mind-0.0                    | ? | 🏃‍➡️ | ➖ | | | | | | | |
 | nemotron-pretraining-specialized-1.0 | ? | 🏃‍➡️ | ➖ | | | | | | | |
@@ -40,7 +40,7 @@ Legend:
 | Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:----:|:------:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
 | finepdfs-1.0.0 (multilingual)     | 37 | ✅ | ✅️ | | | | | | | |
-| finepdfs-edu-1.0.0 (multilingual) | 36 | ✅ | ❓ | | | | | | | |
+| finepdfs-edu-1.0.0 (multilingual) | 36 | ✅ | 🏃‍➡️ | | | | | | | |
 | fineweb2-hq-1.0.0                 | 20 | 🏃‍➡️ | 🫷 | | | | | | | |
 | finewiki-0-0-0                    |  | 🏃‍➡️ | 🫷 | | | | | | | |
 | hplt-4.0                          | 39 | 🏃‍➡️ | ➖ | | | | | | | |
