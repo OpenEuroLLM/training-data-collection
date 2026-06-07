@@ -178,6 +178,51 @@ document and token counts, and MD5 checksums.
 | `olmo-mix-1124` | `wiki` | 3,836,025,828 | 3,819,092,981 | 99.6 | 1 |
 | `starcoder-0.0.0` |  | 78,051,681 | 276,861,687,159 | 354,715.9 | 3 |
 
+
+## Per-language breakdown
+
+
+
+Language	Raw Release Tokens	Effective Tokens	Datasets 
+English	1.41T	1.130×10¹⁵	dclm, finepdfs, finepdfs-edu, hplt, nemotron-cc (3x), olmo-mix (3x)
+Code	276.86B	9.815×10¹⁴	starcoder
+German	99.82B	9.40B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+French	128.03B	9.34B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Spanish	169.20B	8.42B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Italian	87.48B	8.29B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Dutch	48.12B	7.84B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Polish	53.61B	7.57B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Portuguese	66.61B	7.38B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Swedish	32.74B	5.61B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Czech	33.95B	5.31B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Romanian	38.37B	5.13B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Hungarian	38.45B	5.08B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Greek	48.47B	4.86B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Danish	19.93B	4.05B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Bulgarian	28.15B	4.02B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Finnish	27.25B	4.01B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Turkish	44.81B	3.97B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Norwegian Bokmål	19.34B	3.86B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Slovak	23.55B	3.84B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Ukrainian	35.38B	3.82B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Catalan	24.41B	3.78B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Croatian	23.75B	3.76B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Albanian	24.38B	3.41B	nemotron-cc-opus (14%)
+Slovenian	20.87B	3.60B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Lithuanian	21.14B	3.49B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Serbian Cyrillic	13.99B	3.48B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Icelandic	6.02B	2.97B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Estonian	18.28B	2.90B	finepdfs, finepdfs-edu, hplt
+Georgian	57.85B	2.79B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Bosnian	19.98B	2.75B	finepdfs, finepdfs-edu, hplt
+Latvian	23.11B	2.69B	finepdfs, finepdfs-edu, hplt
+Norwegian Nynorsk	1.64B	2.22B	finepdfs, finepdfs-edu, hplt, nemotron-tower
+Macedonian	6.27B	2.20B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Galician	4.69B	1.83B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Basque	5.52B	1.78B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+Irish	540.98M	1.48B	finepdfs, hplt, nemotron-opus
+Maltese	19.77B	1.36B	finepdfs, finepdfs-edu, hplt, nemotron-opus
+
 ## Annotations: Contamination Detection
 
 https://github.com/OpenEuroLLM/decontamination-benchmarks
