@@ -182,7 +182,7 @@ document and token counts, and MD5 checksums.
 ## Per-language breakdown (To be reviewed)
 
 | Language | Code | Release Tokens | Datasets (abbreviated) |
-|----------|------|----------------|------------------------|
+|----------|------|----------------:|------------------------|
 | English | eng_Latn | 1.414T | dclm, finepdfs, finepdfs-edu, hplt, nemotron-cc (3x), olmo-mix (3x) |
 | German | deu_Latn | 99.82B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
 | French | fra_Latn | 128.03B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
