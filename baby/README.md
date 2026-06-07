@@ -181,47 +181,47 @@ document and token counts, and MD5 checksums.
 
 ## Per-language breakdown (To be reviewed)
 
+| Language | Code | Release Tokens | Datasets (abbreviated) |
+|----------|------|----------------|------------------------|
+| English | eng_Latn | 1.414T | dclm, finepdfs, finepdfs-edu, hplt, nemotron-cc (3x), olmo-mix (3x) |
+| German | deu_Latn | 99.82B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| French | fra_Latn | 128.03B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Spanish | spa_Latn | 169.20B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Italian | ita_Latn | 87.48B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Dutch | nld_Latn | 48.12B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Polish | pol_Latn | 53.61B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Portuguese | por_Latn | 66.61B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Swedish | swe_Latn | 32.74B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Czech | ces_Latn | 33.95B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Romanian | ron_Latn | 38.37B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Hungarian | hun_Latn | 38.45B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Greek | ell_Grek | 48.47B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Danish | dan_Latn | 19.93B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Bulgarian | bul_Cyrl | 28.15B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Finnish | fin_Latn | 27.25B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Turkish | tur_Latn | 44.81B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Norwegian Bokmål | nob_Latn | 19.34B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Slovak | slk_Latn | 23.55B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Ukrainian | ukr_Cyrl | 35.38B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Catalan | cat_Latn | 24.41B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Croatian | hrv_Latn | 23.75B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Albanian | sqi_Latn | 24.38B | nemotron-cc-opus |
+| Slovenian | slv_Latn | 20.87B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Lithuanian | lit_Latn | 21.14B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Serbian Cyrillic | srp_Cyrl | 13.99B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Icelandic | isl_Latn | 6.02B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Estonian | ekk_Latn | 18.28B | finepdfs, finepdfs-edu, hplt |
+| Georgian | kat_Geor | 57.85B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Bosnian | bos_Latn | 19.98B | finepdfs, finepdfs-edu, hplt |
+| Latvian | lvs_Latn | 23.11B | finepdfs, finepdfs-edu, hplt |
+| Norwegian Nynorsk | nno_Latn | 1.64B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
+| Macedonian | mkd_Cyrl | 6.27B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Galician | glg_Latn | 4.69B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Basque | eus_Latn | 5.52B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
+| Irish | gle_Latn | 540.98M | finepdfs, hplt, nemotron-opus |
+| Maltese | mlt_Latn | 19.77B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
 
 
-| Language | Code | Raw Release Tokens | Effective Tokens | Datasets (abbreviated) |
-|----------|------|--------------------|------------------|------------------------|
-| English | eng_Latn | 1.41T | 1.130×10¹⁵ | dclm, finepdfs, finepdfs-edu, hplt, nemotron-cc (3x), olmo-mix (3x) |
-| German | deu_Latn | 99.82B | 9.40B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| French | fra_Latn | 128.03B | 9.34B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Spanish | spa_Latn | 169.20B | 8.42B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Italian | ita_Latn | 87.48B | 8.29B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Dutch | nld_Latn | 48.12B | 7.84B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Polish | pol_Latn | 53.61B | 7.57B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Portuguese | por_Latn | 66.61B | 7.38B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Swedish | swe_Latn | 32.74B | 5.61B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Czech | ces_Latn | 33.95B | 5.31B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Romanian | ron_Latn | 38.37B | 5.13B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Hungarian | hun_Latn | 38.45B | 5.08B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Greek | ell_Grek | 48.47B | 4.86B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Danish | dan_Latn | 19.93B | 4.05B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Bulgarian | bul_Cyrl | 28.15B | 4.02B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Finnish | fin_Latn | 27.25B | 4.01B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Turkish | tur_Latn | 44.81B | 3.97B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Norwegian Bokmål | nob_Latn | 19.34B | 3.86B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Slovak | slk_Latn | 23.55B | 3.84B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Ukrainian | ukr_Cyrl | 35.38B | 3.82B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Catalan | cat_Latn | 24.41B | 3.78B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Croatian | hrv_Latn | 23.75B | 3.76B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Albanian | sqi_Latn | 24.38B | 3.41B | nemotron-cc-opus (14%) |
-| Slovenian | slv_Latn | 20.87B | 3.60B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Lithuanian | lit_Latn | 21.14B | 3.49B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Serbian Cyrillic | srp_Cyrl | 13.99B | 3.48B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Icelandic | isl_Latn | 6.02B | 2.97B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Estonian | ekk_Latn | 18.28B | 2.90B | finepdfs, finepdfs-edu, hplt |
-| Georgian | kat_Geor | 57.85B | 2.79B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Bosnian | bos_Latn | 19.98B | 2.75B | finepdfs, finepdfs-edu, hplt |
-| Latvian | lvs_Latn | 23.11B | 2.69B | finepdfs, finepdfs-edu, hplt |
-| Norwegian Nynorsk | nno_Latn | 1.64B | 2.22B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Macedonian | mkd_Cyrl | 6.27B | 2.20B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Galician | glg_Latn | 4.69B | 1.83B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Basque | eus_Latn | 5.52B | 1.78B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Irish | gle_Latn | 540.98M | 1.48B | finepdfs, hplt, nemotron-opus |
-| Maltese | mlt_Latn | 19.77B | 1.36B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
 
 ## Annotations: Contamination Detection
 
