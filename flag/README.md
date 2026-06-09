@@ -44,7 +44,7 @@ This directory collects and documents the training data mix for the first
 | finepdfs-1.0.0 (multilingual)     | 37 | ✅ | | ✅️ | | | | | | | |
 | finepdfs-edu-1.0.0 (multilingual) | 36 | ✅ | | ✅ | | | | | | | |
 | fineweb2-hq-1.0.0                 | 20 | ✅️| | 🏃‍➡️ | | | | | | | |
-| finewiki-0-0-0                    | 36 | ✅️| | 🏃‍➡️ | | | | | | | |
+| finewiki-0-0-0                    | 36 | ✅️| | ✅ | | | | | | | |
 | hplt-4.0                          | 39 | ✅‍| | ➖ | | | | | | | |
 | nemotron-cc-opus-1.1              | 37 | ✅‍| | ➖ | | | | | | | |
 | nemotron-cc-tower+-0.1            | 16 | ✅ | | ➖ | | | | | | | |
