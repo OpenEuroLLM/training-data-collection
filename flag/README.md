@@ -30,7 +30,7 @@ This directory collects and documents the training data mix for the first
 | finephrase-0.0.0                     | 4 | ✅️ | |➖ | | | | | | | |
 | finepdfs-1.0.0 (eng_Latn)            | 1 | ✅ | | ✅ | | | | | | | |
 | finepdfs-edu-1.0.0 (eng_Latn)        | 1 | ✅ | | ✅ | | | | | | | |
-| nemotron-cc-1.0                      | 3 | ✅ | | 🏃‍➡️ | | | | | | | |
+| nemotron-cc-1.0                      | 3 | ✅ | | ✅ | | | | | | | |
 | nemotron-mind-0.0                    | ? | ✅️ | |➖ | | | | | | | |
 | nemotron-pretraining-specialized-1.0 | ? | ✅️ | |➖ | | | | | | | |
 | nemotron-pretraining-specialized-1.1 | ? | ✅️ | |➖ | | | | | | | |
