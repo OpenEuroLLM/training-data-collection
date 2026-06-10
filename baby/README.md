@@ -182,7 +182,7 @@ document and token counts, and MD5 checksums.
 ## Per-language breakdown (To be reviewed)
 
 | Language       | Release Tokens   |
-|----------------|------------------|
+|----------------|------------------:|
 | eng_Latn       | 8,098,638,552,715 |
 | kat_Geor       | 193,717,854,688   |
 | spa_Latn       | 179,204,253,548   |
@@ -203,7 +203,6 @@ document and token counts, and MD5 checksums.
 | hun_Latn       | 37,486,343,456    |
 | lit_Latn       | 37,219,105,967    |
 | bos_Latn       | 36,978,520,929    |
-| math           | 36,765,337,645    |
 | slv_Latn       | 36,629,487,034    |
 | ukr_Cyrl       | 35,383,642,484    |
 | srp_Cyrl       | 33,935,209,113    |
