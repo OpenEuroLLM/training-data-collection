@@ -235,7 +235,9 @@ document and token counts, and MD5 checksums.
 | 42 | code           | 276,861,687,159   |
 | 43 | math           | 47,381,871,946    |
 
-| #  | Language       | Release Tokens   |
+**Totals:**
+
+|  |      | Release Tokens   |
 |----|----------------|------------------:|
 |   -  |       **Total**            | **9,761,315,067,743** |
 
