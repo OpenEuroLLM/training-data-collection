@@ -237,7 +237,7 @@ document and token counts, and MD5 checksums.
 
 | **Total**       |                | **9,761,315,067,743** |
 
-Note: some languages include various variants such as Latvian (lav and lvs), Norwegian (nob and nno) or Estonian (ekk and est). 
+Note: some of the 36 initial OpenEuroLLM covered languages include various variants such as Albanian (sqi and als) Latvian (lav and lvs), Estonian (ekk and est)and Norwegian (nob and nno). 
 
 
 
