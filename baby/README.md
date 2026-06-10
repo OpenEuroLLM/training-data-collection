@@ -288,7 +288,7 @@ two days:
 ```
 for i in $(cat etc/paths.txt); do
   ssh -xt data.leonardo.cineca.it rclone \
-    --config ${HOME}/.config/rclone/rclone.conf -v copy \
+    --config ${HOME}/.config/rclone/rclone.conf -v sync \
     sftp:/scratch/project_465002530/training/collection/baby/${i}/ \
     /leonardo_work/OELLM_prod2026/training/collection/baby/${i}/ \
     --sftp-ssh \"/bin/ssh -F ${HOME}/.ssh/config lumi\" \
@@ -310,7 +310,7 @@ done
 ```
 for i in $(sed 's,megatron-lm,counts,g' etc/paths.txt); do \
   ssh -xt data.leonardo.cineca.it rclone \
-    --config ${HOME}/.config/rclone/rclone.conf -v copy \
+    --config ${HOME}/.config/rclone/rclone.conf -v sync \
     sftp:/scratch/project_465002530/training/collection/baby/${i}/ \
     /leonardo_work/OELLM_prod2026/training/collection/baby/${i}/ \
     --sftp-ssh \"/bin/ssh -F ${HOME}/.ssh/config lumi\" \
