@@ -179,6 +179,8 @@ document and token counts, and MD5 checksums.
 | `starcoder-0.0.0` |  | 78,051,681 | 276,861,687,159 | 354,715.9 | 3 |
 
 
+
+
 ## Per-language breakdown (To be reviewed)
 
 
@@ -234,6 +236,8 @@ document and token counts, and MD5 checksums.
 | 43 | math           | 47,381,871,946    |
 
 | **Total**       |                | **9,761,315,067,743** |
+
+Note: some languages include various variants such as Latvian (lav and lvs), Norwegian (nob and nno) or Estonian (ekk and est). 
 
 
 
