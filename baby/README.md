@@ -181,46 +181,53 @@ document and token counts, and MD5 checksums.
 
 ## Per-language breakdown (To be reviewed)
 
-| Language | Code | Release Tokens | Datasets (abbreviated) |
-|----------|------|----------------|------------------------|
-| English | eng_Latn | 1.414T | dclm, finepdfs, finepdfs-edu, hplt, nemotron-cc (3x), olmo-mix (3x) |
-| Spanish | spa_Latn | 169.20B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| French | fra_Latn | 128.03B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| German | deu_Latn | 99.82B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Italian | ita_Latn | 87.48B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Portuguese | por_Latn | 66.61B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Georgian | kat_Geor | 57.85B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Polish | pol_Latn | 53.61B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Greek | ell_Grek | 48.47B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Dutch | nld_Latn | 48.12B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Turkish | tur_Latn | 44.81B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Hungarian | hun_Latn | 38.45B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Romanian | ron_Latn | 38.37B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Ukrainian | ukr_Cyrl | 35.38B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Czech | ces_Latn | 33.95B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Swedish | swe_Latn | 32.74B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Bulgarian | bul_Cyrl | 28.15B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Finnish | fin_Latn | 27.25B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Albanian | sqi_Latn | 24.38B | nemotron-cc-opus |
-| Catalan | cat_Latn | 24.41B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Croatian | hrv_Latn | 23.75B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Slovak | slk_Latn | 23.55B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Latvian | lvs_Latn | 23.11B | finepdfs, finepdfs-edu, hplt |
-| Lithuanian | lit_Latn | 21.14B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Slovenian | slv_Latn | 20.87B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Bosnian | bos_Latn | 19.98B | finepdfs, finepdfs-edu, hplt |
-| Danish | dan_Latn | 19.93B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Maltese | mlt_Latn | 19.77B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Norwegian Bokmål | nob_Latn | 19.34B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Estonian | ekk_Latn | 18.28B | finepdfs, finepdfs-edu, hplt |
-| Serbian Cyrillic | srp_Cyrl | 13.99B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Macedonian | mkd_Cyrl | 6.27B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Icelandic | isl_Latn | 6.02B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Basque | eus_Latn | 5.52B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Galician | glg_Latn | 4.69B | finepdfs, finepdfs-edu, hplt, nemotron-opus |
-| Norwegian Nynorsk | nno_Latn | 1.64B | finepdfs, finepdfs-edu, hplt, nemotron-tower |
-| Irish | gle_Latn | 0.54B | finepdfs, hplt, nemotron-opus |
-
+| Language       | Release Tokens   |
+|----------------|------------------|
+| eng_Latn       | 8,098,638,552,715 |
+| kat_Geor       | 193,717,854,688   |
+| spa_Latn       | 179,204,253,548   |
+| fra_Latn       | 128,030,007,968   |
+| deu_Latn       | 99,816,743,875    |
+| por_Latn       | 96,488,055,311    |
+| ita_Latn       | 86,978,119,052    |
+| ell_Grek       | 77,884,877,234    |
+| tur_Latn       | 69,581,777,278    |
+| ces_Latn       | 53,946,056,543    |
+| pol_Latn       | 53,760,844,849    |
+| nld_Latn       | 48,122,566,474    |
+| bul_Cyrl       | 47,852,340,833    |
+| cat_Latn       | 43,055,139,805    |
+| hrv_Latn       | 41,052,070,541    |
+| slk_Latn       | 40,528,859,424    |
+| ron_Latn       | 38,374,267,753    |
+| hun_Latn       | 37,486,343,456    |
+| lit_Latn       | 37,219,105,967    |
+| bos_Latn       | 36,978,520,929    |
+| math           | 36,765,337,645    |
+| slv_Latn       | 36,629,487,034    |
+| ukr_Cyrl       | 35,383,642,484    |
+| srp_Cyrl       | 33,935,209,113    |
+| swe_Latn       | 32,735,240,735    |
+| fin_Latn       | 27,254,587,294    |
+| sqi_Latn       | 24,382,901,025    |
+| lav_Latn       | 23,896,163,384    |
+| lvs_Latn       | 23,107,652,330    |
+| dan_Latn       | 22,707,372,866    |
+| mkd_Cyrl       | 22,576,744,999    |
+| nob_Latn       | 20,337,762,646    |
+| mlt_Latn       | 19,495,627,869    |
+| glg_Latn       | 18,965,278,077    |
+| eus_Latn       | 18,780,787,523    |
+| ekk_Latn       | 18,686,724,222    |
+| est_Latn       | 16,044,451,640    |
+| gle_Latn       | 15,982,655,821    |
+| als_Latn       | 15,561,190,551    |
+| isl_Latn       | 7,022,320,929     |
+| nno_Latn       | 1,674,503,843     |
+| ltg_Latn       | 0                 |
+|------|-------|
+| math           | 36,765,337,645    |
+| **Total**      | **9,194,908,036,340** |
 
 ## Annotations: Contamination Detection
 
