@@ -182,38 +182,36 @@ document and token counts, and MD5 checksums.
 ## Per-language breakdown (To be reviewed)
 
 | Language       | Release Tokens   |
-|----------------|------------------:|
-| eng_Latn       | 8,098,638,552,715 |
+|----------------|------------------|
+| eng_Latn       | 7,355,314,114,101 |
+| spa_Latn       | 253,364,476,233   |
 | kat_Geor       | 193,717,854,688   |
-| spa_Latn       | 179,204,253,548   |
-| fra_Latn       | 128,030,007,968   |
-| deu_Latn       | 99,816,743,875    |
-| por_Latn       | 96,488,055,311    |
-| ita_Latn       | 86,978,119,052    |
+| fra_Latn       | 181,228,995,955   |
+| pol_Latn       | 80,567,524,717    |
 | ell_Grek       | 77,884,877,234    |
+| nld_Latn       | 73,386,420,949    |
 | tur_Latn       | 69,581,777,278    |
+| ron_Latn       | 60,368,536,567    |
+| hun_Latn       | 59,444,927,952    |
+| ukr_Cyrl       | 55,868,518,834    |
 | ces_Latn       | 53,946,056,543    |
-| pol_Latn       | 53,760,844,849    |
-| nld_Latn       | 48,122,566,474    |
+| swe_Latn       | 51,553,933,988    |
 | bul_Cyrl       | 47,852,340,833    |
+| fin_Latn       | 44,027,347,287    |
 | cat_Latn       | 43,055,139,805    |
 | hrv_Latn       | 41,052,070,541    |
 | slk_Latn       | 40,528,859,424    |
-| ron_Latn       | 38,374,267,753    |
-| hun_Latn       | 37,486,343,456    |
+| dan_Latn       | 37,616,451,252    |
 | lit_Latn       | 37,219,105,967    |
 | bos_Latn       | 36,978,520,929    |
 | slv_Latn       | 36,629,487,034    |
-| ukr_Cyrl       | 35,383,642,484    |
+| nob_Latn       | 34,639,138,289    |
 | srp_Cyrl       | 33,935,209,113    |
-| swe_Latn       | 32,735,240,735    |
-| fin_Latn       | 27,254,587,294    |
 | sqi_Latn       | 24,382,901,025    |
 | lav_Latn       | 23,896,163,384    |
 | lvs_Latn       | 23,107,652,330    |
-| dan_Latn       | 22,707,372,866    |
 | mkd_Cyrl       | 22,576,744,999    |
-| nob_Latn       | 20,337,762,646    |
+| isl_Latn       | 19,662,896,633    |
 | mlt_Latn       | 19,495,627,869    |
 | glg_Latn       | 18,965,278,077    |
 | eus_Latn       | 18,780,787,523    |
@@ -221,12 +219,12 @@ document and token counts, and MD5 checksums.
 | est_Latn       | 16,044,451,640    |
 | gle_Latn       | 15,982,655,821    |
 | als_Latn       | 15,561,190,551    |
-| isl_Latn       | 7,022,320,929     |
-| nno_Latn       | 1,674,503,843     |
+| nno_Latn       | 13,386,415,601    |
 | ltg_Latn       | 0                 |
-|------|-------|
-| math           | 36,765,337,645    |
-| **Total**      | **9,194,908,036,340** |
+|------|---------|
+| code           | 276,861,687,159   |
+| math           | 47,381,871,946    |
+| **Total**      | **9,761,315,067,743** |
 
 ## Annotations: Contamination Detection
 
