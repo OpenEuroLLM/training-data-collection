@@ -235,7 +235,8 @@ document and token counts, and MD5 checksums.
 | 42 | code           | 276,861,687,159   |
 | 43 | math           | 47,381,871,946    |
 
-| **Total**       |                | **9,761,315,067,743** |
+| #  | Language       | Release Tokens   |
+|   -  | -      **Total**            | **9,761,315,067,743** |
 
 Note: some of the 36 initial OpenEuroLLM covered languages include various variants such as Albanian (sqi and als) Latvian (lav and lvs), Estonian (ekk and est)and Norwegian (nob and nno). 
 
