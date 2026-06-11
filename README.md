@@ -53,6 +53,9 @@ For datasets that are part of the [OpenEuroLLM Training Data Catalogue](https://
 identified uniquely through softlinks into the corresponding data subdirectories
 in the catalogue.
 Only files that contribute to the release cycle are linked into the collection.
+The contamination annotations (`contamination/`) are created using 
+[pretraining-decontamination reposistory](https://github.com/OpenEuroLLM/pretraining-decontamination) 
+and PII annotations using [PII-masking-oellm](https://github.com/OpenEuroLLM/pii-masking-oellm).
 
 The `release/` version of each dataset comprises the collection of files
 that serve as the exact point of departure for LLM training, i.e. feed
