@@ -57,10 +57,10 @@ This directory collects and documents the training data mix for the first
 | dolmino-mix-100b-1125                | 137 | ✅ |  | ➖ | | ➖ | | | | |
 | finemath-0.0.0                       |   1 | ✅ |  | ➖ | | ➖ | | | | |
 | megamath-0.0.0                       |   2 | ✅ |  | ➖ | | ➖ | | | | |
-| openwebmath-0.0.0                    |   1 | 🏃‍➡️ |  | ➖ | | ➖ | | | | |
+| openwebmath-0.0.0                    |   1 | ✅️ |  | ➖ | | ➖ | | | | |
 | starcoder-0.0.0                      |  92 | ✅ |  | ➖ | | ➖ | | | | |
-| swallow-code-2.0                     |   1 | 🏃‍➡️ |  | ➖ | | ➖ | | | | |
-| swallow-math-2.0                     |   2 | 🏃‍➡️ |  | ➖ | | ➖ | | | | |
+| swallow-code-2.0                     |   1 | ✅️ |  | ➖ | | ➖ | | | | |
+| swallow-math-2.0                     |   2 | ✅️ |  | ➖ | | ➖ | | | | |
 | the-stack-1.2                        | 361 | 🏃‍➡️ |  | ➖ | | ➖ | | | | |
 
 ## Parallel Datasets
