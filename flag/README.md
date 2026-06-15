@@ -67,7 +67,7 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:----:|:--:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
-| fineopus-filtered-0.4                | 77 | ✅ |    | ➖ | | | | | | | |
+| fineopus-filtered-0.4                |  77 | ✅ |    | ➖ | | | | | | | |
 
 
 ## Annotations: Contamination
@@ -112,7 +112,7 @@ Python code, taking a full document as its input and returning its score.
 For each dataset, the individual filtering and resampling settings could then
 be specified as part of `metadata.yaml`, e.g.
 ```
-
+  sample: high-density-sigmoid()
 ```
 
 One open question is whether it will be possible to pre-compute target token
