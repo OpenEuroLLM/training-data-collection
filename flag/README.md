@@ -25,7 +25,7 @@ This directory collects and documents the training data mix for the first
 | Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:----:|:-----:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
 | dclm-1.0                             |  1 | ✅ | | ➖ | | | | | | | |
-| hplt-4.0 (eng_Latn)                  |  4 | 🏃‍➡️ | | ➖ | | | | | | | |
+| hplt-4.0 (eng_Latn)                  |  4 | ✅️️ | | ➖ | | | | | | | |
 | finephrase-0.0.0                     |  4 | ✅️ | | ➖ | | | | | | | |
 | finepdfs-1.0.0 (eng_Latn)            |  1 | ✅ | | ✅ | | | | | | | |
 | finepdfs-edu-1.0.0 (eng_Latn)        |  1 | ✅ | | ✅ | | | | | | | |
@@ -68,7 +68,13 @@ This directory collects and documents the training data mix for the first
 | Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:----:|:--:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
 | fineopus-filtered-0.4                |  77 | ✅ |    | ➖ | | | | | | | |
+| dochplt-3.1                          |  ? | 🏃‍➡️ |    | ➖ | | | | | | | |
 
+## Reasoning Datasets
+
+| Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
+|--------------------------------------|:-----:|:----:|:--:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
+|                 |   | |    | | | | | | | | |
 
 ## Annotations: Contamination
 
