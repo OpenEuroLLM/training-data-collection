@@ -25,7 +25,7 @@ This directory collects and documents the training data mix for the first
 | Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:----:|:-----:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
 | dclm-1.0                             |  1 | ✅ | | ➖ | | | | | | | |
-| hplt-4.0 (eng_Latn)                  |  4 | 🏃‍➡️ | | ➖ | | | | | | | |
+| hplt-4.0 (eng_Latn)                  |  4 | ✅️️ | | ➖ | | | | | | | |
 | finephrase-0.0.0                     |  4 | ✅️ | | ➖ | | | | | | | |
 | finepdfs-1.0.0 (eng_Latn)            |  1 | ✅ | | ✅ | | | | | | | |
 | finepdfs-edu-1.0.0 (eng_Latn)        |  1 | ✅ | | ✅ | | | | | | | |
@@ -52,8 +52,8 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:----:|:------:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
-| common-pile-stackv2-0.1              |   2 | ✅ |  | ➖ | | ➖ | | | | |
-| common-pile-stackv2-edu-0.1          |   1 | ✅️ |  | ➖ | | ➖ | | | | |
+| common-pile-stackv2-0.1              |   2 | ✅ |  |  🏃‍➡️  | | ➖ | | | | |
+| common-pile-stackv2-edu-0.1          |   1 | ✅️ |  |  🏃‍➡️  | | ➖ | | | | |
 | dolmino-mix-100b-1125                | 137 | ✅ |  | ➖ | | ➖ | | | | |
 | finemath-0.0.0                       |   1 | ✅ |  | ➖ | | ➖ | | | | |
 | megamath-0.0.0                       |   2 | ✅ |  | ➖ | | ➖ | | | | |
@@ -67,8 +67,14 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:----:|:--:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
-| fineopus-filtered-0.4                | 77 | ✅ |    | ➖ | | | | | | | |
+| fineopus-filtered-0.4                |  77 | ✅ |    | ➖ | | | | | | | |
+| dochplt-3.1                          |  ? | 🏃‍➡️ |    | ➖ | | | | | | | |
 
+## Reasoning Datasets
+
+| Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
+|--------------------------------------|:-----:|:----:|:--:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
+|                 |   | |    | | | | | | | | |
 
 ## Annotations: Contamination
 
@@ -112,7 +118,7 @@ Python code, taking a full document as its input and returning its score.
 For each dataset, the individual filtering and resampling settings could then
 be specified as part of `metadata.yaml`, e.g.
 ```
-
+  sample: high-density-sigmoid()
 ```
 
 One open question is whether it will be possible to pre-compute target token
