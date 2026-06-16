@@ -1,0 +1,24 @@
+{
+  "files": 279,
+  "bytes": 72102365481,
+  "documents": 29459776,
+  "segments": 1657674572,
+  "tokens": 38914301290,
+  "characters": 165512717890,
+  "time": 97397.18773269653,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "fasttext_openhermes_reddit_eli5_vs_rw_v2_bigram_200k_train_prob",
+      "previous_word_count",
+      "url",
+      "text",
+      "language_id_whole_page_fasttext",
+      "bff_contained_ngram_count_before_dedupe",
+      "metadata",
+      "warcinfo"
+    ],
+    "optional": []
+  }
+}
