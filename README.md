@@ -227,5 +227,88 @@ release:
 
 ## Metadata 
 
+This section describes fields in the `metadata.yaml` not described elsewhere.
+
+Source data sets have different properties. Some of them are described 
+on the top level in `metadata.yaml`.
+
+The default input format is Zstandard-compressed JSON Lines files with
+the `.jsonl.zst` suffix, which can be customized using the suffix field.
+While input files must always be in JSON Lines format, they can be
+uncompressed or compressed using Zstandard (ending in `.zst` or `.zstd`)
+or Gzip (ending in `.gz`). Any other file extension is assumed to be
+uncompressed plain text.
+
+The two primary fields in the documents represent the document ID and 
+its content. By default, these fields are named `id` and `text`,
+respectively. You can change these to other field names by modifying
+the `id` and `text` properties in `metadata.yaml`. If a field is located
+within a nested JSON sub-record, it can be referenced using dot notation
+(e.g., `metadata.WARC-Record-ID`). Final output will always use `id`and `text`.
+
+
+```yaml
+suffix: .jsonl.zst
+text: text
+id: metadata.WARC-Record-ID
+```
+
+
+### Parts
+
+As mentioned above the release section in `metadata.yaml` consists of parts. The packaging of parts
+can partly be controlled by extra configurations.
+
+Some fields might not be desirable in the final release, these can be removed using the 
+scrub-configuration. Value under `scrub` are removed in the package output.
+
+```yaml
+release:
+  default:
+    scrub:
+    - xml
+    - md
+```
+
+There might be a hand full number of documents that for some reason must manually be removed.
+This is done using the `block` field and is a list of document id:s.
+
+```yaml
+release:
+  default:
+    block:
+    - f70a59b2-4638-4f1a-8689-a1f1f4d1d975
+```
+
+A margin can be added to the intended budget. For this `rubber` is used. In the baby cycle this is
+a percentage and is added on top of budget. The following example means 20% of the documents are kept.
+
+```yaml
+release:
+  parallel/tower9b/ukr_Cyrl:
+    budget: 15%
+    rubber: 5%
+```
+
+In flag cycle and onward `rubber` is a float and is multiplied with the budget. The following example
+means 22.5% (15*1.5) are kept.
+
+```
+release:
+  parallel/tower9b/ukr_Cyrl:
+    budget: 15%
+    rubber: 1.5
+```
+
+The packager has an optional extra merge step. This is used to reduce the number of files
+produced and make them into a similar size. The shard size is controled by `shard` field.
+Size is set by the number of documents in the shard. Unit `md` is used for million of documents
+and `bd`for billion of documents.
+
+```yaml
+release:
+  default:
+    shard: 100md
+```
 
 ## Mirroring across EuroHPC Systems
