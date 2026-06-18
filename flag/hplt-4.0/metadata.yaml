@@ -92,7 +92,12 @@ source:
 sample:
   default:
     source: source
-    filter: hplt_high_resource()
+    sample: dynamic
+    filter: sample/example.py
+  clean/nob_Latn:
+    parameters: {"tokens": 4711}
+  noisy/nob_Latn:
+    parameters: {"tokens": 4711}
 #
 nemo-curator:
   default:
