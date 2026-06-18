@@ -4,6 +4,7 @@
 # find dclm-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 # for i in finepdfs-1.0.0/source/*; do sbatch etc/count.slurm $i; done
 # find hplt-4.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# find nemotron-cc-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 #
 
 #SBATCH --job-name=count
@@ -101,14 +102,16 @@ else
   fi
 fi
 
-if [ ${infix} = "release" ]; then
-  suffix=".jsonl.zst";
-else
+suffix=$(yq4 ".${infix}.${part}.suffix" ${metadata});
+if [ -z "${suffix}" -o "${suffix}" = "null" ]; then
+  suffix=$(yq4 ".${infix}.default.suffix" ${metadata});
+fi    
+if [ -z "${suffix}" -o "${suffix}" = "null" ]; then
   suffix=$(yq4 ".suffix" ${metadata});
-  if [ -z "${suffix}" -o "${key}" = "null" ]; then
-    echo "count.slurm: unable to determine .suffix. value; exit." >&2;
-    exit 1;
-  fi
+fi    
+if [ -z "${suffix}" -o "${suffix}" = "null" ]; then
+  echo "count.slurm: unable to determine .suffix. value; exit." >&2;
+  exit 1;
 fi
 pattern=$(echo ${suffix} | sed -e 's,\.,\\\\\.,g' -e 's,$,\$,g');
 
