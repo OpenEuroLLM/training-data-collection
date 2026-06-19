@@ -1,0 +1,30 @@
+{
+  "files": 1,
+  "bytes": 535958947,
+  "documents": 284820,
+  "segments": 6090577,
+  "tokens": 228451189,
+  "characters": 749950127,
+  "time": 327.54042387008667,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "in_language",
+      "wikidata_id",
+      "has_math",
+      "page_id",
+      "title",
+      "wikitext",
+      "date_modified",
+      "wikiname",
+      "text",
+      "id",
+      "infoboxes",
+      "version",
+      "bytes_html",
+      "url"
+    ],
+    "optional": []
+  }
+}

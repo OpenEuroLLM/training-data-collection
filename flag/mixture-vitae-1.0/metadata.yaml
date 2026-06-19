@@ -1,0 +1,11 @@
+name:
+huggingface:
+id: id
+text: text
+suffix: .jsonl.zst
+propella-4b:
+  suffix: .jsonl.zst
+  hash: sha256
+source:
+  default:
+    suffix: .jsonl.gz

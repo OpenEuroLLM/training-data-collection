@@ -6,5 +6,5 @@
 
 import random;
 
-def hplt_high_resource(document):
+def sample(document, documents, tokens):
   return random.uniform(0, 4);

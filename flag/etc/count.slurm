@@ -3,7 +3,10 @@
 #
 # find dclm-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 # for i in finepdfs-1.0.0/source/*; do sbatch etc/count.slurm $i; done
+# find finephrase-0.0.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# find finewiki-0.0.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 # find hplt-4.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# find mixture-vitae-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 # find nemotron-cc-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 #
 
