@@ -1,0 +1,20 @@
+{
+  "files": 100,
+  "bytes": 188337925081,
+  "documents": 156431999,
+  "segments": 3851874477,
+  "tokens": 134951009011,
+  "characters": 446284453336,
+  "time": 220954.45189976692,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "warc_record_id",
+      "url",
+      "text",
+      "language"
+    ],
+    "optional": []
+  }
+}
