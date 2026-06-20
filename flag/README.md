@@ -16,65 +16,68 @@ This directory collects and documents the training data mix for the first
 
 **Legend**
 
-* ✅ - complete
+* ❓ - undecided
 * 🏃‍➡️ - running
-* ➖ - not applicable
-* 🫷 - blocked on input, waiting to run
+* ✅ - complete
+* ➕ - included
+* ➖ - inapplicable
+* 🫷 - blocked
 * 💣 - problematic
 
-| Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
-|--------------------------------------|:-----:|:----:|:-----:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
-| dclm-1.0                             |  1 | ✅ | | ➖ | | | | | | | |
-| hplt-4.0 (eng_Latn)                  |  4 | ✅️️ | | ➖ | | | | | | | |
-| finephrase-0.0.0                     |  4 | ✅️ | | ➖ | | | | | | | |
-| finepdfs-1.0.0 (eng_Latn)            |  1 | ✅ | | ✅ | | | | | | | |
-| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | ✅ | | ✅ | | | | | | | |
-| nemotron-cc-1.0                      |  3 | ✅ | | ✅ | | | | | | | |
-| nemotron-mind-0.0                    |  7 | ✅️ | | ➖ | | | | | | | |
-| nemotron-pretraining-specialized-1.0 |  6 | ✅️ | | ➖ | | | | | | | |
-| nemotron-pretraining-specialized-1.1 |  5 | ✅️ | | ➖ | | | | | | | |
-| mixture-vitae-1.0                    | 13 | ✅ | | 🏃‍➡️ | | | | | | | |
-| olmo-mix-1124                        |  3 | ✅ | | ➖ | | | | | | | |
+| Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
+|--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
+| dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | 🏃‍➡️ | | ➖ | | | | |
+| hplt-4.0 (eng_Latn)                  |  4 |   | ✅️️ | ✅ | ➖ | | | ❓ | | | | |
+| finephrase-0.0.0                     |  4 |   | ✅️ | ✅ | ➖ | | | ➖ | | | | |
+| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | 🏃‍➡️ | | ❓ | | | | |
+| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | | | ❓ | | | | |
+| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | 🏃‍➡️ | | ❓ | | | | |
+| nemotron-mind-0.0                    |  7 |   | ✅️ | 🏃‍➡️ | ➖ | | | ➖ | | | | |
+| nemotron-pretraining-specialized-1.0 |  6 |   | ✅️ | 🏃‍➡️ | ➖ | | | ➖ | | | | |
+| nemotron-pretraining-specialized-1.1 |  5 |   | ✅️ | 🏃‍➡️ | ➖ | | | ➖ | | | | |
+| mixture-vitae-1.0                    | 13 |   | ✅ | ✅ | 🏃‍➡️ | | | ➖ | | | | |
+| olmo-mix-1124                        |  3 |   | ✅ | 🏃‍➡️ | ➖ | | | ➖ | | | | |
 
 ## Multilingual Source Datasets
 
-| Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
-|--------------------------------------|:-----:|:----:|:------:|:-------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
-| finepdfs-1.0.0 (multilingual)        | 37 | ✅ | | ✅️ | | | | | | | |
-| finepdfs-edu-1.0.0 (multilingual)    | 36 | ✅ | | ✅ | | | | | | | |
-| fineweb2-hq-1.0.0                    | 20 | ✅️ | | ✅️ | | | | | | | |
-| finewiki-0.0.0                       | 36 | ✅️ | | ✅ | | | | | | | |
-| hplt-4.0                             | 64 | ✅ ‍| | ➖ | | | | | | | |
-| nemotron-cc-opus-1.1                 | 37 | ✅‍ | | ➖ | | | | | | | |
-| nemotron-cc-tower+-0.1               | 16 | ✅ | | ➖ | | | | | | | |
+| Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
+|--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
+| finepdfs-1.0.0 (multilingual)        | 37 | 2 | ✅ | ✅️ | ✅️ | 🏃‍➡️ | | ❓ | | | | |
+| finepdfs-edu-1.0.0 (multilingual)    | 36 | 2 | ✅ | ✅ | ✅ | | | ❓ | | | | |
+| fineweb2-hq-1.0.0                    | 20 | 3 | ✅️ | ✅ | ✅️ | | | ❓ | | | | |
+| finewiki-0.0.0                       | 36 | 3 | ✅️ | ✅️ | ✅ | | | ❓ | | | | |
+| hplt-4.0                             | 64 | 1 | ✅ ‍| ✅ | ➕ | | | ❓ | | | | |
+| nemotron-cc-opus-1.1                 | 20 | 3 | ✅‍ | 🏃‍➡️ | ➖ | ➖ | | ➖ | | | | |
+| nemotron-cc-tower+-0.1               | 16 | 3 | ✅ | 🏃‍➡️ | ➖ | ➖ | | ➖ | | | | |
 
 ## Code and Math Datasets
 
-| Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
-|--------------------------------------|:-----:|:----:|:------:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
-| common-pile-stackv2-0.1              |   2 | ✅ |  |  🏃‍➡️  | | ➖ | | | | |
-| common-pile-stackv2-edu-0.1          |   1 | ✅️ |  |  🏃‍➡️  | | ➖ | | | | |
-| dolmino-mix-100b-1125                | 137 | ✅ |  | ➖ | | ➖ | | | | |
-| finemath-0.0.0                       |   1 | ✅ |  | ➖ | | ➖ | | | | |
-| megamath-0.0.0                       |   2 | ✅ |  | ➖ | | ➖ | | | | |
-| openwebmath-0.0.0                    |   1 | ✅️ |  | ➖ | | ➖ | | | | |
-| starcoder-0.0.0                      |  92 | ✅ |  | ➖ | | ➖ | | | | |
-| swallow-code-2.0                     |   1 | ✅️ |  | ➖ | | ➖ | | | | |
-| swallow-math-2.0                     |   2 | ✅️ |  | ➖ | | ➖ | | | | |
-| the-stack-1.2                        | 361 | 🏃‍➡️ |  | ➖ | | ➖ | | | | |
+| Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
+|--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
+| common-pile-stackv2-0.1              |     2 | | ✅ |  | 🏃‍➡️ | ➖ | ➖ | ➖ | | | |
+| common-pile-stackv2-edu-0.1          |     1 | | ✅️ |  | 🏃‍➡️ | ➖ | ➖ | ➖ | | | |
+| dolmino-mix-100b-1125                |   137 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| finemath-0.0.0                       |     1 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| megamath-0.0.0                       |     2 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| openwebmath-0.0.0                    |     1 | | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| starcoder-0.0.0                      |    92 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| swallow-code-2.0                     |     1 | | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| swallow-math-2.0                     |     2 | | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| the-stack-1.2                        |   361 | | 🏃‍➡️ |  | ➖ | ➖ | ➖ | ➖ | | | |
 
 ## Parallel Datasets
 
-| Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
-|--------------------------------------|:-----:|:----:|:--:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
-| fineopus-filtered-0.4                |  77 | ✅ |    | ➖ | | | | | | | |
-| dochplt-3.1                          |  ? | 🏃‍➡️ |    | ➖ | | | | | | | |
+| Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
+|--------------------------------------|:-----:|:-:|:-----:|:-----:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
+| fineopus-filtered-0.4                |    77 |   | ✅ |    | ➖ | | | ➖ | | | | |
+| dochplt-3.1                          |    ?  |   | 🏃‍➡️ |    | ➖ | | | ➖ | | | | |
 
 ## Reasoning Datasets
 
-| Path                                 | Parts | Data | Counts | Propella | Contamination | PII | Metadata | Packing | Tokens | Copy | Validation |
-|--------------------------------------|:-----:|:----:|:--:|:--------:|:-------------:|:---:|:--------:|:-------:|:------:|:----:|:----------:|
-|                 |   | |    | | | | | | | | |
+| Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
+|--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
+| agenttrove-0.0                       |     1 |   | 🏃‍➡️ |    | ➖ | | | ➖ | | | | |
+| openthoughts-3                       |     1 |   | 🏃‍➡️ |    | ➖ | | | ➖ | | | | |
 
 ## Annotations: Contamination
 
