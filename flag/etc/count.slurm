@@ -8,6 +8,12 @@
 # find hplt-4.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 # find mixture-vitae-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 # find nemotron-cc-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# find nemotron-cc-opus-1.1/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# find nemotron-cc-tower+-0.1/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# find nemotron-mind-0.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# find nemotron-pretraining-specialized-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# find nemotron-pretraining-specialized-1.1/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# find olmo-mix-1124/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 #
 
 #SBATCH --job-name=count
