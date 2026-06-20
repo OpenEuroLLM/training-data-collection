@@ -16,11 +16,12 @@ This directory collects and documents the training data mix for the first
 
 **Legend**
 
-* ✅ - complete
+* ❓ - undecided
 * 🏃‍➡️ - running
+* ✅ - complete
 * ➕ - included
-* ➖ - not applicable
-* 🫷 - blocked on input, waiting to run
+* ➖ - inapplicable
+* 🫷 - blocked
 * 💣 - problematic
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
