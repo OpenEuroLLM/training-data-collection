@@ -1,0 +1,6 @@
+name:
+catalogue: finewiki/0.0.0
+suffix: .jsonl.zst
+id: id
+text: text
+

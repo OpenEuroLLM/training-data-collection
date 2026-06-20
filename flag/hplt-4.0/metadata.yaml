@@ -30,6 +30,9 @@ source:
   clean/eng_Latn/cc:
     annotations:
     - bsc-edu
+  clean/eng_Latn/cc++:
+    annotations:
+    - bsc-edu
   clean/eng_Latn/ia:
     annotations:
     - bsc-edu
@@ -93,7 +96,7 @@ sample:
   default:
     source: source
     sample: dynamic
-    filter: sample/example.py
+    filter: ../sample/example.py
   clean/nob_Latn:
     parameters: {"tokens": 4711}
   noisy/nob_Latn:
@@ -115,7 +118,7 @@ release:
     - xml
     - md
     sample: random
-    rubber: 5%
+    rubber: 1.05
 #
 # ./etc/plan.py --pattern hplt --counts wds+register.json --format yaml \
 #   --budget datamix.txt >> hplt-3.0/metadata.yaml

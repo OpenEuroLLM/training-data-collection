@@ -1,0 +1,6 @@
+name:
+huggingface:
+suffix: .jsonl.zst
+id: Document Id
+text: Text
+

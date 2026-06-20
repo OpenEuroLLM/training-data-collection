@@ -1,0 +1,6 @@
+name:
+catalogue: finephrase/0.0.0
+suffix: .jsonl.zst
+id: id
+text: text
+

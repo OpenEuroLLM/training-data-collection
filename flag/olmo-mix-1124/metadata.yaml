@@ -1,0 +1,25 @@
+name: OLMo 2 (November 2024) Pretraining Set
+huggingface: allenai/olmo-mix-1124
+branch: main
+commit: 99ee6aa
+suffix: .jsonl.zst
+text: text
+id: id
+source:
+  default:
+    suffix: .json.gz
+release:
+  default:
+    input: source
+    pack: tree
+    sample: full
+#
+# ./etc/plan.py --pattern olmo-mix --format yaml \
+#   --budget datamix.txt | grep -v sample: >> olmo-mix-1124/metadata.yaml
+#
+  arxiv:
+    shard: 18md
+  pes2o:
+    shard: 64md
+  wiki:
+    shard: 161md
