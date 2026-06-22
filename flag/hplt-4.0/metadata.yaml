@@ -96,11 +96,11 @@ sample:
   default:
     source: source
     sample: dynamic
-    filter: ../sample/example.py
-  clean/nob_Latn:
-    parameters: {"tokens": 4711}
-  noisy/nob_Latn:
-    parameters: {"tokens": 4711}
+    filter: ../sample/hplt.py
+  clean/nno_Latn:
+    parameters: {"tokens": 3036192519}
+  noisy/nno_Latn:
+    parameters: {"tokens": 3036192519}
 #
 nemo-curator:
   default:
