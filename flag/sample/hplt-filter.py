@@ -9,8 +9,8 @@ def sample(document: dict, parameters: dict) -> bool:
     """
     Inputs:
         document - json document
-        parameters - dictionary, including .tokens. count    Returns True for documents to keep and False for documents to discard
-    Returns True for documents to keep and False for documents to discard
+        parameters - dictionary, including .tokens. count
+    Returns 1.0 for documents to keep and 0.0 for documents to discard
     """
 
     token_count = parameters["tokens"];
@@ -49,7 +49,7 @@ def sample(document: dict, parameters: dict) -> bool:
 
     # if document do not pass the filter we return 0
     if not evaluate_block(document, COMPILED_FILTERS["and"]):
-        return False
+        return 0.0
 
     if COMPILED_FILTERS["or"]:
         passed_or = any(
@@ -58,26 +58,26 @@ def sample(document: dict, parameters: dict) -> bool:
         )
 
         if not passed_or:
-            return False
+            return 0.0
 
     if len(document.get("text", "")) < 200:
-        return False
+        return 0.0
 
     # special case for small languages:
     # we can identify a noisy document by it having "noise" field,
     # according to Stephan: https://github.com/OpenEuroLLM/Taskboard/issues/219#issuecomment-4732960717
     is_noisy = "noise" in document
     if token_count < 15e9 and not is_noisy:
-        return True
+        return 1.0
 
     # handle registers
     probs = document.get("web-register", None)
     if probs:
         r = assign_labels(probs, 0.4)
         if is_hybrid(r) and r != {"HI", "IN"}:
-            return False
+            return 0.0
     
-    return True
+    return 1.0
 
 def main():
     for line in sys.stdin:
