@@ -6,5 +6,5 @@
 
 import random;
 
-def sample(document, documents, tokens):
+def sample(document, parameters):
   return random.uniform(0, 4);
