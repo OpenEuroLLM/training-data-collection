@@ -32,14 +32,16 @@ FILTER_CONFIG = {
 }
 
 
-def get_sampling_ratio(document: dict, token_count: int, sampling="linear"):
+def sample(document: dict, paramters: dict, sampling="linear"):
     """
     Inputs:
         document - json document
-        token_count - size of the language subset in tokens
+        parameters - dictionary, including .tokens. count
         sampling - sampling strategy, by default it's 'linear', but we can also use 'flat' and 'ease_in_out'
     Returns sampling ratio S in range 0 - 4
     """
+
+    token_count = parameters["tokens"];
     
     def propella_hq(record):
         # Assign score based on propella quality metrics
