@@ -127,7 +127,7 @@ if [ ${infix} = "release" ]; then
   suffix=".jsonl.zst";
 else
   suffix=$(yq4 ".suffix" ${metadata});
-  if [ -z "${pattern}" -o "${key}" = "null" ]; then
+  if [ -z "${suffix}" -o "${key}" = "null" ]; then
     echo "count.slurm: unable to determine .suffix. value; exit." >&2;
     exit 1;
   fi
