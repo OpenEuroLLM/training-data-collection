@@ -84,12 +84,9 @@ def evaluate_block(record, compiled_block):
     if "downsample" in compiled_block:
         if random.random() >= compiled_block["downsample"]: return False
 
-    # 2. Propella features
-    if compiled_block["propella"]:
-
-        prop = record.get("propella-4b", {})
-        if not prop: return False
-
+    # 2. Propella features        
+    prop = record.get("propella-4b", {})
+    if compiled_block["propella"] and prop:
         for feat, (filter_type, rules) in compiled_block["propella"].items():
             val = prop.get(feat)
             if val is None: return False
