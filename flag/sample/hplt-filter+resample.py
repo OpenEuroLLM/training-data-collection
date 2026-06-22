@@ -249,7 +249,9 @@ def sample(document: dict, parameters: dict, sampling="linear"):
 
 def main():
     for line in sys.stdin:
-        print(sample(json.loads(line.strip()), {"tokens": random.uniform(1e8, 1e12)}));
+        _ = json.loads(line.strip());
+        _["score"] = sample(_, {"tokens": random.uniform(1e8, 1e12)});
+        print(json.dumps(_));
         
 if __name__ == "__main__":
-    main()
+    main();
