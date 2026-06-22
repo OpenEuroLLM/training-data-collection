@@ -24,6 +24,7 @@ def main():
   parser.add_argument("--format", type = str, default = "plain");
   parser.add_argument("--test", action = "store_true", default = False);
   parser.add_argument("--sum", action = "store_true", default = False);
+  parser.add_argument("--sample", action = "store_true", default = False);
   parser.add_argument("--budget", action = "store_true", default = False);
   parser.add_argument("--finepdfs", action = "store_true", default = False);
   parser.add_argument("--hplt", action = "store_true", default = False);
@@ -55,7 +56,7 @@ def main():
     sys.exit(0);
 
   mix = dict();
-  if arguments.test or arguments.budget or arguments.finepdfs or arguments.hplt:
+  if arguments.test or arguments.budget or arguments.budget or arguments.finepdfs or arguments.hplt:
     pattern = re.compile(r"(0\.[0-9]+)[ \t](.+)$")
     filter = None;
     if arguments.pattern is not None: filter = re.compile(arguments.pattern);

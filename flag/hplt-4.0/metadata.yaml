@@ -96,7 +96,7 @@ sample:
   default:
     source: source
     sample: dynamic
-    filter: ../sample/hplt.py
+    filter: ../sample/hplt-filter+resample.py
   clean/nno_Latn:
     parameters: {"tokens": 3036192519}
   noisy/nno_Latn:
