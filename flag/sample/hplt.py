@@ -32,7 +32,7 @@ FILTER_CONFIG = {
 }
 
 
-def sample(document: dict, paramters: dict, sampling="linear"):
+def sample(document: dict, parameters: dict, sampling="linear"):
     """
     Inputs:
         document - json document
