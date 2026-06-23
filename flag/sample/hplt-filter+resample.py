@@ -179,6 +179,10 @@ def sample(document: dict, parameters: dict, sampling="linear"):
     if token_count < 15e9 and not is_noisy:
         return 1.0
 
+    # If lang subscore is less than 1 and the document is noisy, we reject it - return 0.
+    if is_noisy and document.get("doc_scores", [0])[1] < 1.0:
+        return 0.0
+
     BSC = document.get("bsc-edu", 0)
 
     probs = document.get("web-register", None)
