@@ -27,10 +27,7 @@ source:
   clean/eng_Latn/ab:
     annotations:
     - bsc-edu
-  clean/eng_Latn/cc:
-    annotations:
-    - bsc-edu
-  clean/eng_Latn/cc++:
+  clean/eng_Latn/ccc:
     annotations:
     - bsc-edu
   clean/eng_Latn/ia:
@@ -138,6 +135,15 @@ sample:
     parameters: {tokens: 21050157158}
   clean/ell_Grek:
     parameters: {tokens: 102689593671}
+  clean/eng_Latn/ab:
+    filter: ../sample/bsc-edu-filter.py
+    parameters: {threshold: 1.5}
+  clean/eng_Latn/ccc:
+    filter: ../sample/bsc-edu-filter.py
+    parameters: {threshold: 1.5}
+  clean/eng_Latn/ia:
+    filter: ../sample/bsc-edu-filter.py
+    parameters: {threshold: 1.5}
   noisy/eus_Latn:
     parameters: {tokens: 3323719422}
   clean/eus_Latn:
