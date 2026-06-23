@@ -1,4 +1,5 @@
 *~
+__pycache__
 baby/dclm-1.0/source
 baby/dclm-1.0/contamination
 baby/dclm-1.0/pii
@@ -103,10 +104,12 @@ flag/fineopus-filtered-0.4/release
 flag/fineopus-filtered-0.4/megatron-lm
 flag/fineopus-filtered-0.4/tmp
 flag/finepdfs-1.0.0/source
+flag/finepdfs-1.0.0/propella-4b
 flag/finepdfs-1.0.0/release
 flag/finepdfs-1.0.0/megatron-lm
 flag/finepdfs-1.0.0/tmp
 flag/finepdfs-edu-1.0.0/source
+flag/finepdfs-edu-1.0.0/propella-4b
 flag/finepdfs-edu-1.0.0/release
 flag/finepdfs-edu-1.0.0/megatron-lm
 flag/finepdfs-edu-1.0.0/tmp
@@ -119,6 +122,7 @@ flag/fineweb2-hq-1.0.0/release
 flag/fineweb2-hq-1.0.0/megatron-lm
 flag/fineweb2-hq-1.0.0/tmp
 flag/finewiki-0.0.0/source
+flag/finewiki-0.0.0/propella-4b
 flag/finewiki-0.0.0/release
 flag/finewiki-0.0.0/megatron-lm
 flag/finewiki-0.0.0/tmp
@@ -131,6 +135,7 @@ flag/megamath-0.0.0/release
 flag/megamath-0.0.0/megatron-lm
 flag/megamath-0.0.0/tmp
 flag/mixture-vitae-1.0/source
+flag/mixture-vitae-1.0/propella-4b
 flag/mixture-vitae-1.0/release
 flag/mixture-vitae-1.0/megatron-lm
 flag/mixture-vitae-1.0/tmp
@@ -139,6 +144,7 @@ flag/nemo-curator/release
 flag/nemo-curator/megatron-lm
 flag/nemo-curator/tmp
 flag/nemotron-cc-1.0/source
+flag/nemotron-cc-1.0/propella-4b
 flag/nemotron-cc-1.0/release
 flag/nemotron-cc-1.0/megatron-lm
 flag/nemotron-cc-1.0/tmp
@@ -190,3 +196,6 @@ flag/the-stack-1.2/source
 flag/the-stack-1.2/release
 flag/the-stack-1.2/megatron-lm
 flag/the-stack-1.2/tmp
+flag/evaluation
+flag/log
+flag/nemo-curator
