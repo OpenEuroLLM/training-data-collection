@@ -195,7 +195,10 @@ def sample(document: dict, parameters: dict, sampling="linear"):
             if r == {"HI", "IN"}:
                 register = "HI-IN"
             else:
-                return 0.0
+                register = "-".join(sorted(r))
+#
+# https://mattermost.ufal.mff.cuni.cz/openeurollm/pl/x15c3ooobinkxeripb4febtw1e
+#                return 0.0
         else:
             selected = [j for j in r if j in REGISTERS]
             register = "-".join(sorted(selected))
