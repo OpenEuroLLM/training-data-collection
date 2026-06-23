@@ -109,133 +109,133 @@ sample:
 # done
 #
   noisy/als_Latn:
-    parameters: {tokens: 13710416584}
+    parameters: {tokens: 12833178865}
   clean/als_Latn:
-    parameters: {tokens: 13710416584}
+    parameters: {tokens: 12833178865}
   noisy/bos_Latn:
-    parameters: {tokens: 18287464322}
+    parameters: {tokens: 13326122123}
   clean/bos_Latn:
-    parameters: {tokens: 18287464322}
+    parameters: {tokens: 13326122123}
   noisy/bul_Cyrl:
-    parameters: {tokens: 56041762047}
+    parameters: {tokens: 52792273466}
   clean/bul_Cyrl:
-    parameters: {tokens: 56041762047}
+    parameters: {tokens: 52792273466}
   noisy/cat_Latn:
-    parameters: {tokens: 28311875305}
+    parameters: {tokens: 25783512758}
   clean/cat_Latn:
-    parameters: {tokens: 28311875305}
+    parameters: {tokens: 25783512758}
   clean/ces_Latn:
     parameters: {tokens: 97860267851}
   noisy/dan_Latn:
-    parameters: {tokens: 82593086417}
+    parameters: {tokens: 70665790674}
   clean/dan_Latn:
-    parameters: {tokens: 82593086417}
+    parameters: {tokens: 70665790674}
   clean/deu_Latn:
     parameters: {tokens: 934582601352}
   noisy/ekk_Latn:
-    parameters: {tokens: 23349635763}
+    parameters: {tokens: 21050157158}
   clean/ekk_Latn:
-    parameters: {tokens: 23349635763}
+    parameters: {tokens: 21050157158}
   clean/ell_Grek:
     parameters: {tokens: 102689593671}
   noisy/eus_Latn:
-    parameters: {tokens: 3572442473}
+    parameters: {tokens: 3323719422}
   clean/eus_Latn:
-    parameters: {tokens: 3572442473}
+    parameters: {tokens: 3323719422}
   noisy/fin_Latn:
-    parameters: {tokens: 87861866431}
+    parameters: {tokens: 75771522821}
   clean/fin_Latn:
-    parameters: {tokens: 87861866431}
+    parameters: {tokens: 75771522821}
   clean/fra_Latn:
     parameters: {tokens: 974451524823}
   noisy/gle_Latn:
-    parameters: {tokens: 1284895321}
+    parameters: {tokens: 1184659163}
   clean/gle_Latn:
-    parameters: {tokens: 1284895321}
+    parameters: {tokens: 1184659163}
   noisy/glg_Latn:
-    parameters: {tokens: 4164499108}
+    parameters: {tokens: 3649944276}
   clean/glg_Latn:
-    parameters: {tokens: 4164499108}
+    parameters: {tokens: 3649944276}
   noisy/hrv_Latn:
-    parameters: {tokens: 35972569305}
+    parameters: {tokens: 28460593016}
   clean/hrv_Latn:
-    parameters: {tokens: 35972569305}
+    parameters: {tokens: 28460593016}
   clean/hun_Latn:
     parameters: {tokens: 92766016105}
   noisy/isl_Latn:
-    parameters: {tokens: 5524839292}
+    parameters: {tokens: 5158925898}
   clean/isl_Latn:
-    parameters: {tokens: 5524839292}
+    parameters: {tokens: 5158925898}
   clean/ita_Latn:
     parameters: {tokens: 290292176536}
   noisy/kat_Geor:
-    parameters: {tokens: 57797346162}
+    parameters: {tokens: 55503517839}
   clean/kat_Geor:
-    parameters: {tokens: 57797346162}
+    parameters: {tokens: 55503517839}
   noisy/lit_Latn:
-    parameters: {tokens: 29043677424}
+    parameters: {tokens: 27223710710}
   clean/lit_Latn:
-    parameters: {tokens: 29043677424}
+    parameters: {tokens: 27223710710}
   noisy/ltg_Latn:
-    parameters: {tokens: 27820861}
+    parameters: {tokens: 24374040}
   clean/ltg_Latn:
-    parameters: {tokens: 27820861}
+    parameters: {tokens: 24374040}
   noisy/lvs_Latn:
-    parameters: {tokens: 24711586891}
+    parameters: {tokens: 22631864012}
   clean/lvs_Latn:
-    parameters: {tokens: 24711586891}
+    parameters: {tokens: 22631864012}
   noisy/mkd_Cyrl:
-    parameters: {tokens: 6198929149}
+    parameters: {tokens: 5816326388}
   clean/mkd_Cyrl:
-    parameters: {tokens: 6198929149}
+    parameters: {tokens: 5816326388}
   noisy/mlt_Latn:
-    parameters: {tokens: 1311166211}
+    parameters: {tokens: 1166685953}
   clean/mlt_Latn:
-    parameters: {tokens: 1311166211}
+    parameters: {tokens: 1166685953}
   clean/nld_Latn:
     parameters: {tokens: 170546788814}
   noisy/nno_Latn:
-    parameters: {tokens: 3036192519}
+    parameters: {tokens: 1962160199}
   clean/nno_Latn:
-    parameters: {tokens: 3036192519}
+    parameters: {tokens: 1962160199}
   noisy/nob_Latn:
-    parameters: {tokens: 90995467215}
+    parameters: {tokens: 82279607424}
   clean/nob_Latn:
-    parameters: {tokens: 90995467215}
+    parameters: {tokens: 82279607424}
   clean/pol_Latn:
     parameters: {tokens: 232252106309}
   clean/por_Latn:
     parameters: {tokens: 329046295379}
   noisy/ron_Latn:
-    parameters: {tokens: 129255848564}
+    parameters: {tokens: 121255888067}
   clean/ron_Latn:
-    parameters: {tokens: 129255848564}
+    parameters: {tokens: 121255888067}
   noisy/slk_Latn:
-    parameters: {tokens: 50638918102}
+    parameters: {tokens: 44256696997}
   clean/slk_Latn:
-    parameters: {tokens: 50638918102}
+    parameters: {tokens: 44256696997}
   noisy/slv_Latn:
-    parameters: {tokens: 24373947147}
+    parameters: {tokens: 21620285831}
   clean/slv_Latn:
-    parameters: {tokens: 24373947147}
+    parameters: {tokens: 21620285831}
   clean/spa_Latn:
     parameters: {tokens: 1067551121362}
   noisy/srp_Cyrl:
-    parameters: {tokens: 11422899353}
+    parameters: {tokens: 10617857516}
   clean/srp_Cyrl:
-    parameters: {tokens: 11422899353}
+    parameters: {tokens: 10617857516}
   noisy/srp_Latn:
-    parameters: {tokens: 13222916403}
+    parameters: {tokens: 11588484405}
   clean/srp_Latn:
-    parameters: {tokens: 13222916403}
+    parameters: {tokens: 11588484405}
   clean/swe_Latn:
     parameters: {tokens: 98222963393}
   clean/tur_Latn:
     parameters: {tokens: 156494515621}
   noisy/ukr_Cyrl:
-    parameters: {tokens: 100482009237}
+    parameters: {tokens: 95537893603}
   clean/ukr_Cyrl:
-    parameters: {tokens: 100482009237}
+    parameters: {tokens: 95537893603}
 #
 nemo-curator:
   default:
