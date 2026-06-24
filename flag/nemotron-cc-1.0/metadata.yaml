@@ -31,8 +31,9 @@ openai-privacy-filter:
     input: source
 #
 sample:
-  high/actual:
+  default:
     input: source
+  high/actual:
     annotations: [propella-4b]
     sample: dynamic
     filter: ../sample/propella-filter.py
