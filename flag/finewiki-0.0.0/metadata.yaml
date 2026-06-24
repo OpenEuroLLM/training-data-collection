@@ -48,6 +48,43 @@ propella-4b:
 #
 sample:
   default:
-    source: source
+    input: source
     sample: dynamic
     filter: ../sample/propella-filter.py
+    parameters: {}
+  finewiki-0.0.0/source/fra_Latn:
+  finewiki-0.0.0/source/lav_Latn:
+  finewiki-0.0.0/source/kat_Geor:
+  finewiki-0.0.0/source/nld_Latn:
+  finewiki-0.0.0/source/bos_Latn:
+  finewiki-0.0.0/source/dan_Latn:
+  finewiki-0.0.0/source/glg_Latn:
+  finewiki-0.0.0/source/ita_Latn:
+  finewiki-0.0.0/source/slk_Latn:
+  finewiki-0.0.0/source/srp_Cyrl:
+  finewiki-0.0.0/source/spa_Latn:
+  finewiki-0.0.0/source/bul_Cyrl:
+  finewiki-0.0.0/source/ron_Latn:
+  finewiki-0.0.0/source/fin_Latn:
+  finewiki-0.0.0/source/cat_Latn:
+  finewiki-0.0.0/source/gle_Latn:
+  finewiki-0.0.0/source/lit_Latn:
+  finewiki-0.0.0/source/sqi_Latn:
+  finewiki-0.0.0/source/slv_Latn:
+  finewiki-0.0.0/source/pol_Latn:
+  finewiki-0.0.0/source/tur_Latn:
+  finewiki-0.0.0/source/eus_Latn:
+  finewiki-0.0.0/source/isl_Latn:
+  finewiki-0.0.0/source/hrv_Latn:
+  finewiki-0.0.0/source/mlt_Latn:
+  finewiki-0.0.0/source/por_Latn:
+  finewiki-0.0.0/source/nor_Latn:
+  finewiki-0.0.0/source/est_Latn:
+  finewiki-0.0.0/source/hun_Latn:
+  finewiki-0.0.0/source/swe_Latn:
+  finewiki-0.0.0/source/mkd_Cyrl:
+  finewiki-0.0.0/source/deu_Latn:
+  finewiki-0.0.0/source/ell_Grek:
+  finewiki-0.0.0/source/ces_Latn:
+  finewiki-0.0.0/source/eng_Latn:
+  finewiki-0.0.0/source/ukr_Cyrl:
