@@ -25,14 +25,11 @@ source:
   clean/ell_Grek:
   clean/eng_Latn:
   clean/eng_Latn/ab:
-    annotations:
-    - bsc-edu
+    annotations: [bsc-edu]
   clean/eng_Latn/ccc:
-    annotations:
-    - bsc-edu
+    annotations: [bsc-edu]
   clean/eng_Latn/ia:
-    annotations:
-    - bsc-edu
+    annotations: [bsc-edu]
   clean/eus_Latn:
   clean/fin_Latn:
   clean/fra_Latn:
@@ -91,7 +88,7 @@ source:
 #
 sample:
   default:
-    source: source
+    input: source
     sample: dynamic
     filter: ../sample/hplt-filter+resample.py
 #
@@ -245,11 +242,11 @@ sample:
 #
 nemo-curator:
   default:
-    source: source
+    input: source
 #
 openai-privacy-filter:
   default:
-    source: source
+    input: source
 #
 release:
   default:
