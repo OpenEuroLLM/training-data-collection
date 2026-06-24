@@ -9,7 +9,7 @@ release:
     annotations: [nemo-curator, openai-privacy-filter]
     pack: tree
     sample: full
-    rubber: 5%
+    rubber: 1.2
 #
 # ./etc/plan.py --pattern nemotron-cc-1.0 --format yaml \
 #   --budget datamix.txt | grep -v sample: >> nemotron-cc-1.0/metadata.yaml
@@ -18,10 +18,26 @@ release:
     annotations: [propella-4b, nemo-curator, openai-privacy-filter]
   medium/actual:
   medium-high/actual:
+#
 propella-4b:
   high/actual:
+#
 nemo-curator:
+  default:
+    input: source
+#
 openai-privacy-filter:
+  default:
+    input: source
+#
+sample:
+  high/actual:
+    input: source
+    annotations: [propella-4b]
+    sample: dynamic
+    filter: ../sample/propella-filter.py
+    parameters: {}
+#
 source:
   default:
     suffix: .jsonl.zstd
