@@ -284,7 +284,6 @@
 0.000000 dolmino-mix-100b-1125/megatron-lm/reasoning2
 0.000000 dolmino-mix-100b-1125/megatron-lm/stack1
 0.000000 dolmino-mix-100b-1125/megatron-lm/stack2
-0.000000 dolmino-mix-100b-1125/megatron-lm/group
 0.000000 finemath-0.0.0/megatron-lm/finemath-4plus
 0.000000 megamath-0.0.0/megatron-lm/megamath-text-code-block
 0.000000 megamath-0.0.0/megatron-lm/megamath-web-pro
