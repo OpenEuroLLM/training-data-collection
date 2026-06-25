@@ -27,7 +27,7 @@ This directory collects and documents the training data mix for the first
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
 | dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | 🏃‍➡️ | | ➖ | | | | |
-| hplt-4.0 (eng_Latn)                  |  4 |   | ✅️️ | ✅ | ➖ | | | 🏃‍➡️ | | | | |
+| hplt-4.0 (eng_Latn)                  |  3 |   | ✅️️ | ✅ | ➖ | | | 🏃‍➡️ | | | | |
 | finephrase-0.0.0                     |  4 |   | ✅️ | ✅ | ➖ | | | ➖ | | | | |
 | finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | 🏃‍➡️ | | ❓ | | | | |
 | finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | | | ❓ | | | | |
@@ -54,7 +54,7 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| common-pile-stackv2-0.1              |     2 | | ✅ |  | 🏃‍➡️ | ➖ | ➖ | ➖ | | | |
+| common-pile-stackv2-0.1              |     1 | | ✅ |  | 🏃‍➡️ | ➖ | ➖ | ➖ | | | |
 | common-pile-stackv2-edu-0.1          |     1 | | ✅️ |  | 🏃‍➡️ | ➖ | ➖ | ➖ | | | |
 | dolmino-mix-100b-1125                |   137 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
 | finemath-0.0.0                       |     1 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
@@ -63,20 +63,20 @@ This directory collects and documents the training data mix for the first
 | starcoder-0.0.0                      |    92 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
 | swallow-code-2.0                     |     1 | | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
 | swallow-math-2.0                     |     2 | | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
-| the-stack-1.2                        |   361 | | 🏃‍➡️ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| the-stack-1.2                        |   361 | | ✅️️ |  | ➖ | ➖ | ➖ | ➖ | | | |
 
 ## Parallel Datasets
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:-----:|:-----:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| fineopus-filtered-0.4                |    77 |   | ✅ |    | ➖ | | | ➖ | | | | |
+| fineopus-filtered-0.4                |    41 |   | ✅ |    | ➖ | | | ➖ | | | | |
 | dochplt-3.1                          |    ?  |   | 🏃‍➡️ |    | ➖ | | | ➖ | | | | |
 
 ## Reasoning Datasets
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| agenttrove-0.0                       |     1 |   | 🏃‍➡️ |    | ➖ | | | ➖ | | | | |
+| agenttrove-0.0                       |     1 |   | ✅️️ |    | ➖ | | | ➖ | | | | |
 | openthoughts-3                       |     1 |   | ✅ |    | ➖ | | | ➖ | | | | |
 
 ## Annotations: Contamination
