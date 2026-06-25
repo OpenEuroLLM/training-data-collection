@@ -144,9 +144,6 @@ def sample(document: dict, parameters: dict = None) -> bool:
         if not passed_or:
             return 0.0
 
-    if len(document.get("text", "")) < 200:
-        return 0.0
-
     # we can identify a noisy document by it having "noise" field,
     # according to Stephan: https://github.com/OpenEuroLLM/Taskboard/issues/219#issuecomment-4732960717
     is_noisy = "noise" in document

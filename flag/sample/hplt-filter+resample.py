@@ -123,6 +123,7 @@ def evaluate_block(record, compiled_block):
 # end include from “filter.py”
 #
 
+small_language = 2e9;
 
 # Variables for scoring function and
 L_wds = 0.5 # weight for WDS
@@ -280,9 +281,6 @@ def sample(document: dict, parameters: dict, sampling="linear"):
         if not passed_or:
             return 0.0
 
-    if len(document.get("text", "")) < 200:
-        return 0.0
-
     min_ratio, max_ratio = get_size_ratios(token_count)
 
     WDS = document.get("doc_scores", [0])[0] * 10
@@ -292,7 +290,7 @@ def sample(document: dict, parameters: dict, sampling="linear"):
     is_noisy = "noise" in document
 
     # special case for small languages:
-    if token_count < 15e9 and not is_noisy:
+    if token_count < small_language and not is_noisy:
         return 1.0
 
     # If lang subscore is smallish, and the document is noisy, we reject it
@@ -311,11 +309,8 @@ def sample(document: dict, parameters: dict, sampling="linear"):
         r = assign_labels(probs, 0.4)
         if len(r) == 0:
             register = "no-label"
-        elif is_hybrid(r):
-            if r == {"HI", "IN"}:
-                register = "HI-IN"
-            else:
-                register = "-".join(sorted(r))
+        elif is_hybrid(r) and r == {"HI", "IN"}:
+            register = "HI-IN"
 #
 # https://mattermost.ufal.mff.cuni.cz/openeurollm/pl/x15c3ooobinkxeripb4febtw1e
 #                return 0.0
@@ -368,7 +363,10 @@ def sample(document: dict, parameters: dict, sampling="linear"):
         )
     
     # I use clip to make sure that sampling ratio is not out of bounds
-    return float(np.clip(S,min_ratio,max_ratio))
+    if token_count < small_language:
+      return float(np.clip(S,min_ratio,1))
+    else:
+      return float(np.clip(S,min_ratio,max_ratio))
 
 def main():
     for line in sys.stdin:
