@@ -123,7 +123,7 @@ def evaluate_block(record, compiled_block):
 # end include from “filter.py”
 #
 
-small_language = 2e9;
+small_language = 5e9;
 
 # Variables for scoring function and
 L_wds = 0.5 # weight for WDS
@@ -281,7 +281,7 @@ def sample(document: dict, parameters: dict, sampling="linear"):
         if not passed_or:
             return 0.0
 
-    min_ratio, max_ratio = get_size_ratios(token_count)
+    min_ratio, max_ratio = get_size_ratios(token_count) # This works larger languages
 
     WDS = document.get("doc_scores", [0])[0] * 10
 
@@ -292,7 +292,12 @@ def sample(document: dict, parameters: dict, sampling="linear"):
     # special case for small languages:
     if token_count < small_language and not is_noisy:
         return 1.0
-
+    elif token_count < small_language and is_noisy:
+        # instead of clipping we set ratio to be in 0.005 1.0 range.
+        # if we just clip max ratio to 1, noisy documents for small languages will be just sampled to 1
+        min_ratio = 0.005
+        max_ratio = 1.0
+    
     # If lang subscore is smallish, and the document is noisy, we reject it
     if is_noisy and "doc_scores" in document and document["doc_scores"][1] < 0.75:
         return 0.0
