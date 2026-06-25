@@ -365,11 +365,9 @@ def sample(document: dict, parameters: dict, sampling="linear"):
     # I use clip to make sure that sampling ratio is not out of bounds
     # for small languages should return always 1.
     if token_count < small_language:
-      return float(np.clip(S,min_ratio,1))
+        return float(np.clip(S,min_ratio,1))
     else:
-      return float(np.clip(S,min_ratio,max_ratio))
-
-    return float(np.clip(S,min_ratio,max_ratio))
+        return float(np.clip(S,min_ratio,max_ratio))
 
 def main():
     for line in sys.stdin:
