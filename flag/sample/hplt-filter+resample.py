@@ -292,9 +292,10 @@ def sample(document: dict, parameters: dict, sampling="linear"):
     # special case for small languages:
     if token_count < small_language and not is_noisy:
         return 1.0
-    elif token_count < small_language and is_noisy:
+    if is_noisy:
         # instead of clipping we set ratio to be in 0.005 1.0 range.
         # if we just clip max ratio to 1, noisy documents for small languages will be just sampled to 1
+        # this way we ensure that for all noisy data sampling is in same range
         min_ratio = 0.005
         max_ratio = 1.0
     
