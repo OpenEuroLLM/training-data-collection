@@ -1,0 +1,26 @@
+name:
+catalogue: common-pile/0.1/stackv2-edu
+id: id
+text: text
+suffix: .jsonl.zst
+#
+release:
+  default:
+    input: source
+    pack: tree
+    sample: full
+#
+sample:
+  default:
+    input: source
+    annotations: [propella-4b]
+    sample: dynamic
+    filter: ../sample/propella-filter.py
+    parameters: {}
+#
+propella-4b:
+  hash: sha256-32
+#
+source:
+  default:
+    suffix: .json.gz

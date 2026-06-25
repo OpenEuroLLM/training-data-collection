@@ -1,0 +1,105 @@
+name:
+suffix: .jsonl.zst
+hash:
+  type: sha256
+  key: hash
+parallel:
+  source:
+    text: source_text
+    language: src_lang
+  target:
+    text: target_text
+    language: tgt_lang
+source:
+  fineopus-filtered-0.4/source/als_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/bos_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/bul_Cyrl-eng_Latn:
+  fineopus-filtered-0.4/source/cat_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/ces_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/dan_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/deu_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/ekk_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/ell_Grek-eng_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-als_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-bul_Cyrl:
+  fineopus-filtered-0.4/source/eng_Latn-cat_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-ces_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-dan_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-deu_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-ekk_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-ell_Grek:
+  fineopus-filtered-0.4/source/eng_Latn-est_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-eus_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-fin_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-fra_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-gle_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-glg_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-hrv_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-hun_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-isl_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-ita_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-kat_Geor:
+  fineopus-filtered-0.4/source/eng_Latn-lav_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-lit_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-ltg_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-lvs_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-mkd_Cyrl:
+  fineopus-filtered-0.4/source/eng_Latn-mlt_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-nld_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-nno_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-nob_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-nor_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-pol_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-por_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-ron_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-slk_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-slv_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-spa_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-sqi_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-srp_Cyrl:
+  fineopus-filtered-0.4/source/eng_Latn-srp_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-swe_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-tur_Latn:
+  fineopus-filtered-0.4/source/eng_Latn-ukr_Cyrl:
+  fineopus-filtered-0.4/source/est_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/eus_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/fin_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/fra_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/glg_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/hrv_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/hun_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/isl_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/ita_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/lit_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/lvs_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/mkd_Cyrl-eng_Latn:
+  fineopus-filtered-0.4/source/nld_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/nno_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/nob_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/nor_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/pol_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/por_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/ron_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/slk_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/slv_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/spa_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/srp_Cyrl-eng_Latn:
+  fineopus-filtered-0.4/source/srp_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/swe_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/tur_Latn-eng_Latn:
+  fineopus-filtered-0.4/source/ukr_Cyrl-eng_Latn:
+nemo-curator:
+  default:
+    source: source
+openai-privacy-filter:
+  default:
+    source: source
+release:
+  default:
+    source: source
+    parallel:
+      count: 40
+    annotations:
+    - nemo-curator
+    - openai-privacy-filter
+    pack: tree

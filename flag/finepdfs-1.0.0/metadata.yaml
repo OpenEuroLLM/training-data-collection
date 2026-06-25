@@ -14,6 +14,7 @@ release:
 sample:
   default:
     input: source
+    annotations: [propella-4b]
     sample: dynamic
     filter: ../sample/propella-filter.py
     parameters: {}
