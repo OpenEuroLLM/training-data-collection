@@ -27,3 +27,16 @@ openai-privacy-filter:
     input: source
 #
 source:
+  ces_Latn:
+  dan_Latn:
+  deu_Latn:
+  ell_Grek:
+  fra_Latn:
+  hun_Latn:
+  ita_Latn:
+  nld_Latn:
+  pol_Latn:
+  por_Latn:
+  spa_Latn:
+  swe_Latn:
+  tur_Latn:

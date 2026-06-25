@@ -24,3 +24,4 @@ propella-4b:
 source:
   default:
     suffix: .json.gz
+  documents:
