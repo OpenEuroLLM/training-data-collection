@@ -54,16 +54,16 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| common-pile-stackv2-0.1              |     1 | | ✅ |  | 🏃‍➡️ | ➖ | ➖ |    | | | |
-| common-pile-stackv2-edu-0.1          |     1 | | ✅️ |  | 🏃‍➡️ | ➖ | ➖ |    | | | |
-| dolmino-mix-100b-1125                |   137 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
-| finemath-0.0.0                       |     1 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
-| megamath-0.0.0                       |     2 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
-| openwebmath-0.0.0                    |     1 | | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
-| starcoder-0.0.0                      |    92 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
-| swallow-code-2.0                     |     1 | | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
-| swallow-math-2.0                     |     2 | | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
-| the-stack-1.2                        |   361 | | ✅️️ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| common-pile-stackv2-0.1              |     1 |   | ✅ |  | 🏃‍➡️ | ➖ | ➖ |    | | | |
+| common-pile-stackv2-edu-0.1          |     1 |   | ✅️ |  | 🏃‍➡️ | ➖ | ➖ |    | | | |
+| dolmino-mix-100b-1125                |   137 |   | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| finemath-0.0.0                       |     1 | 4 | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| megamath-0.0.0                       |     2 | 4 | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| openwebmath-0.0.0                    |     1 |   | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| starcoder-0.0.0                      |    92 | 4 | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| swallow-code-2.0                     |     1 | 4 | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| swallow-math-2.0                     |     2 | 4 | ✅️ |  | ➖ | ➖ | ➖ | ➖ | | | |
+| the-stack-1.2                        |   361 | 4 | ✅️️ |  | ➖ | ➖ | ➖ | ➖ | | | |
 
 ## Parallel Datasets
 
