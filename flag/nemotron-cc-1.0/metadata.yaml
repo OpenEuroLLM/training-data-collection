@@ -3,6 +3,7 @@ catalogue: nemotron-cc/1.0/data
 suffix: .jsonl.zst
 text: text
 id: warc_record_id
+#
 release:
   default:
     input: source
@@ -15,20 +16,9 @@ release:
 #   --budget datamix.txt | grep -v sample: >> nemotron-cc-1.0/metadata.yaml
 #
   high/actual:
-    annotations: [propella-4b, nemo-curator, openai-privacy-filter]
+    input: sample
   medium/actual:
   medium-high/actual:
-#
-propella-4b:
-  high/actual:
-#
-nemo-curator:
-  default:
-    input: source
-#
-openai-privacy-filter:
-  default:
-    input: source
 #
 sample:
   default:
@@ -38,6 +28,17 @@ sample:
     sample: dynamic
     filter: ../sample/propella-filter.py
     parameters: {}
+#
+nemo-curator:
+  default:
+    input: source
+#
+openai-privacy-filter:
+  default:
+    input: source
+#
+propella-4b:
+  high/actual:
 #
 source:
   default:
