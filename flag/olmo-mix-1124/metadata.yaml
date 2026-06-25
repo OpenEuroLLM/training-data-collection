@@ -5,12 +5,11 @@ commit: 99ee6aa
 suffix: .jsonl.zst
 text: text
 id: id
-source:
-  default:
-    suffix: .json.gz
+#
 release:
   default:
     input: source
+    annotations: [nemo-curator, openai-privacy-filter]
     pack: tree
     sample: full
 #
@@ -23,3 +22,18 @@ release:
     shard: 64md
   wiki:
     shard: 161md
+#
+nemo-curator:
+  default:
+    input: source
+#
+openai-privacy-filter:
+  default:
+    input: source
+#
+source:
+  default:
+    suffix: .json.gz
+  arxiv:
+  pes2o:
+  wiki:
