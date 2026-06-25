@@ -281,7 +281,7 @@ def sample(document: dict, parameters: dict, sampling="linear"):
         if not passed_or:
             return 0.0
 
-    min_ratio, max_ratio = get_size_ratios(token_count) # This works larger languages
+    min_ratio, max_ratio = get_size_ratios(token_count)
 
     WDS = document.get("doc_scores", [0])[0] * 10
 
@@ -292,12 +292,6 @@ def sample(document: dict, parameters: dict, sampling="linear"):
     # special case for small languages:
     if token_count < small_language and not is_noisy:
         return 1.0
-    if is_noisy:
-        # instead of clipping we set ratio to be in 0.005 1.0 range.
-        # if we just clip max ratio to 1, noisy documents for small languages will be just sampled to 1
-        # this way we ensure that for all noisy data sampling is in same range
-        min_ratio = 0.005
-        max_ratio = 1.0
     
     # If lang subscore is smallish, and the document is noisy, we reject it
     if is_noisy and "doc_scores" in document and document["doc_scores"][1] < 0.75:
@@ -369,10 +363,13 @@ def sample(document: dict, parameters: dict, sampling="linear"):
         )
     
     # I use clip to make sure that sampling ratio is not out of bounds
+    # for small languages should return always 1.
     if token_count < small_language:
       return float(np.clip(S,min_ratio,1))
     else:
       return float(np.clip(S,min_ratio,max_ratio))
+
+    return float(np.clip(S,min_ratio,max_ratio))
 
 def main():
     for line in sys.stdin:
