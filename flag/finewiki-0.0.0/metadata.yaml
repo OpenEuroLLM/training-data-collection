@@ -7,6 +7,7 @@ text: text
 release:
   default:
     input: source
+    annotations: [nemo-curator, openai-privacy-filter]
     pack: tree
     sample: full
 #
@@ -16,6 +17,78 @@ sample:
     sample: dynamic
     filter: ../sample/propella-filter.py
     parameters: {}
+  bos_Latn:
+  bul_Cyrl:
+  cat_Latn:
+  ces_Latn:
+  dan_Latn:
+  deu_Latn:
+  ell_Grek:
+  eng_Latn:
+  est_Latn:
+  eus_Latn:
+  fin_Latn:
+  fra_Latn:
+  gle_Latn:
+  glg_Latn:
+  hrv_Latn:
+  hun_Latn:
+  isl_Latn:
+  ita_Latn:
+  kat_Geor:
+  lav_Latn:
+  lit_Latn:
+  mkd_Cyrl:
+  mlt_Latn:
+  nld_Latn:
+  nor_Latn:
+  pol_Latn:
+  por_Latn:
+  ron_Latn:
+  slk_Latn:
+  slv_Latn:
+  spa_Latn:
+  sqi_Latn:
+  srp_Cyrl:
+  swe_Latn:
+  tur_Latn:
+  ukr_Cyrl:
+  bos_Latn:
+  bul_Cyrl:
+  cat_Latn:
+  ces_Latn:
+  dan_Latn:
+  deu_Latn:
+  ell_Grek:
+  eng_Latn:
+  est_Latn:
+  eus_Latn:
+  fin_Latn:
+  fra_Latn:
+  gle_Latn:
+  glg_Latn:
+  hrv_Latn:
+  hun_Latn:
+  isl_Latn:
+  ita_Latn:
+  kat_Geor:
+  lav_Latn:
+  lit_Latn:
+  mkd_Cyrl:
+  mlt_Latn:
+  nld_Latn:
+  nor_Latn:
+  pol_Latn:
+  por_Latn:
+  ron_Latn:
+  slk_Latn:
+  slv_Latn:
+  spa_Latn:
+  sqi_Latn:
+  srp_Cyrl:
+  swe_Latn:
+  tur_Latn:
+  ukr_Cyrl:
 #
 nemo-curator:
   default:
