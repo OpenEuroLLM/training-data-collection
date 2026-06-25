@@ -3,9 +3,11 @@ catalogue: dclm/1.0/baseline
 suffix: .jsonl.zst
 text: text
 id: metadata.WARC-Record-ID
+#
 release:
   default:
     input: source
+    annotations: [nemo-curator, openai-privacy-filter]
     pack: flat
     sample: random
     budget: 85%
@@ -211,6 +213,15 @@ release:
     prefix: 10_8
   global-shard_10_of_10/local-shard_9_of_10:
     prefix: 10_9
+#
+nemo-curator:
+  default:
+    input: source
+#
+openai-privacy-filter:
+  default:
+    input: source
+#
 source:
   global-shard_01_of_10/local-shard_0_of_10:
   global-shard_01_of_10/local-shard_1_of_10:

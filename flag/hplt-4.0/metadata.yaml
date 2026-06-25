@@ -4,97 +4,23 @@ suffix: .jsonl.zst
 text: text
 id: id
 #
-source:
+release:
   default:
-    annotations:
-    - doc_scores
-    - web-register
-    - bsc-edu
-    - finepdfs-edu
-    - fineweb2-hq
-    - jql
-    - propella-4b
-  clean/als_Latn:
-  clean/bos_Latn:
-  clean/bul_Cyrl:
-  clean/cat_Latn:
-  clean/ces_Latn:
-  clean/dan_Latn:
-  clean/deu_Latn:
-  clean/ekk_Latn:
-  clean/ell_Grek:
-  clean/eng_Latn:
-  clean/eng_Latn/ab:
-    annotations:
-    - bsc-edu
-  clean/eng_Latn/cc:
-    annotations:
-    - bsc-edu
-  clean/eng_Latn/cc++:
-    annotations:
-    - bsc-edu
-  clean/eng_Latn/ia:
-    annotations:
-    - bsc-edu
-  clean/eus_Latn:
-  clean/fin_Latn:
-  clean/fra_Latn:
-  clean/gle_Latn:
-  clean/glg_Latn:
-  clean/hrv_Latn:
-  clean/hun_Latn:
-  clean/isl_Latn:
-  clean/ita_Latn:
-  clean/kat_Geor:
-  clean/lit_Latn:
-  clean/ltg_Latn:
-  clean/lvs_Latn:
-  clean/mkd_Cyrl:
-  clean/mlt_Latn:
-  clean/nld_Latn:
-  clean/nno_Latn:
-  clean/nob_Latn:
-  clean/pol_Latn:
-  clean/por_Latn:
-  clean/ron_Latn:
-  clean/slk_Latn:
-  clean/slv_Latn:
-  clean/spa_Latn:
-  clean/srp_Cyrl:
-  clean/srp_Latn:
-  clean/swe_Latn:
-  clean/tur_Latn:
-  clean/ukr_Cyrl:
-  noisy/als_Latn:
-  noisy/bos_Latn:
-  noisy/bul_Cyrl:
-  noisy/cat_Latn:
-  noisy/dan_Latn:
-  noisy/ekk_Latn:
-  noisy/eus_Latn:
-  noisy/fin_Latn:
-  noisy/gle_Latn:
-  noisy/glg_Latn:
-  noisy/hrv_Latn:
-  noisy/isl_Latn:
-  noisy/kat_Geor:
-  noisy/lit_Latn:
-  noisy/ltg_Latn:
-  noisy/lvs_Latn:
-  noisy/mkd_Cyrl:
-  noisy/mlt_Latn:
-  noisy/nno_Latn:
-  noisy/nob_Latn:
-  noisy/ron_Latn:
-  noisy/slk_Latn:
-  noisy/slv_Latn:
-  noisy/srp_Cyrl:
-  noisy/srp_Latn:
-  noisy/ukr_Cyrl:
+    input: source
+    annotations: [nemo-curator, openai-privacy-filter]
+    pack: tree
+    scrub:
+    - xml
+    - md
+    sample: random
+    rubber: 1.2
+#
+# ./etc/plan.py --pattern hplt --counts sample.json --format yaml \
+#   --budget datamix.txt
 #
 sample:
   default:
-    source: source
+    input: source
     sample: dynamic
     filter: ../sample/hplt-filter+resample.py
 #
@@ -138,6 +64,15 @@ sample:
     parameters: {tokens: 21050157158}
   clean/ell_Grek:
     parameters: {tokens: 102689593671}
+  clean/eng_Latn/ab:
+    filter: ../sample/bsc-edu-filter.py
+    parameters: {threshold: 1.5}
+  clean/eng_Latn/ccc:
+    filter: ../sample/bsc-edu-filter.py
+    parameters: {threshold: 1.5}
+  clean/eng_Latn/ia:
+    filter: ../sample/bsc-edu-filter.py
+    parameters: {threshold: 1.5}
   noisy/eus_Latn:
     parameters: {tokens: 3323719422}
   clean/eus_Latn:
@@ -239,22 +174,90 @@ sample:
 #
 nemo-curator:
   default:
-    source: source
+    input: source
 #
 openai-privacy-filter:
   default:
-    source: source
-#
-release:
-  default:
     input: source
-    pack: tree
-    scrub:
-    - xml
-    - md
-    sample: random
-    rubber: 1.05
 #
-# ./etc/plan.py --pattern hplt --counts wds+register.json --format yaml \
-#   --budget datamix.txt >> hplt-3.0/metadata.yaml
-#
+source:
+  default:
+    annotations:
+    - doc_scores
+    - web-register
+    - bsc-edu
+    - finepdfs-edu
+    - fineweb2-hq
+    - jql
+    - propella-4b
+  clean/als_Latn:
+  clean/bos_Latn:
+  clean/bul_Cyrl:
+  clean/cat_Latn:
+  clean/ces_Latn:
+  clean/dan_Latn:
+  clean/deu_Latn:
+  clean/ekk_Latn:
+  clean/ell_Grek:
+  clean/eng_Latn:
+  clean/eng_Latn/ab:
+    annotations: [bsc-edu]
+  clean/eng_Latn/ccc:
+    annotations: [bsc-edu]
+  clean/eng_Latn/ia:
+    annotations: [bsc-edu]
+  clean/eus_Latn:
+  clean/fin_Latn:
+  clean/fra_Latn:
+  clean/gle_Latn:
+  clean/glg_Latn:
+  clean/hrv_Latn:
+  clean/hun_Latn:
+  clean/isl_Latn:
+  clean/ita_Latn:
+  clean/kat_Geor:
+  clean/lit_Latn:
+  clean/ltg_Latn:
+  clean/lvs_Latn:
+  clean/mkd_Cyrl:
+  clean/mlt_Latn:
+  clean/nld_Latn:
+  clean/nno_Latn:
+  clean/nob_Latn:
+  clean/pol_Latn:
+  clean/por_Latn:
+  clean/ron_Latn:
+  clean/slk_Latn:
+  clean/slv_Latn:
+  clean/spa_Latn:
+  clean/srp_Cyrl:
+  clean/srp_Latn:
+  clean/swe_Latn:
+  clean/tur_Latn:
+  clean/ukr_Cyrl:
+  noisy/als_Latn:
+  noisy/bos_Latn:
+  noisy/bul_Cyrl:
+  noisy/cat_Latn:
+  noisy/dan_Latn:
+  noisy/ekk_Latn:
+  noisy/eus_Latn:
+  noisy/fin_Latn:
+  noisy/gle_Latn:
+  noisy/glg_Latn:
+  noisy/hrv_Latn:
+  noisy/isl_Latn:
+  noisy/kat_Geor:
+  noisy/lit_Latn:
+  noisy/ltg_Latn:
+  noisy/lvs_Latn:
+  noisy/mkd_Cyrl:
+  noisy/mlt_Latn:
+  noisy/nno_Latn:
+  noisy/nob_Latn:
+  noisy/ron_Latn:
+  noisy/slk_Latn:
+  noisy/slv_Latn:
+  noisy/srp_Cyrl:
+  noisy/srp_Latn:
+  noisy/ukr_Cyrl:

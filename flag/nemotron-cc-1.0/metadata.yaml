@@ -3,25 +3,43 @@ catalogue: nemotron-cc/1.0/data
 suffix: .jsonl.zst
 text: text
 id: warc_record_id
+#
 release:
   default:
     input: source
     annotations: [nemo-curator, openai-privacy-filter]
     pack: tree
     sample: full
-    rubber: 5%
+    rubber: 1.2
 #
 # ./etc/plan.py --pattern nemotron-cc-1.0 --format yaml \
 #   --budget datamix.txt | grep -v sample: >> nemotron-cc-1.0/metadata.yaml
 #
   high/actual:
-    annotations: [propella-4b, nemo-curator, openai-privacy-filter]
+    input: sample
   medium/actual:
   medium-high/actual:
+#
+sample:
+  default:
+    input: source
+  high/actual:
+    annotations: [propella-4b]
+    sample: dynamic
+    filter: ../sample/propella-filter.py
+    parameters: {}
+#
+nemo-curator:
+  default:
+    input: source
+#
+openai-privacy-filter:
+  default:
+    input: source
+#
 propella-4b:
   high/actual:
-nemo-curator:
-openai-privacy-filter:
+#
 source:
   default:
     suffix: .jsonl.zstd

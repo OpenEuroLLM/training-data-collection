@@ -27,26 +27,26 @@ This directory collects and documents the training data mix for the first
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
 | dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | 🏃‍➡️ | | ➖ | | | | |
-| hplt-4.0 (eng_Latn)                  |  3 |   | ✅️️ | ✅ | 🏃‍➡️ | | | 🏃‍➡️ | | | | |
-| finephrase-0.0.0                     |  4 |   | ✅️ | ✅ | ➖ | | | ➖ | | | | |
-| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | 🏃‍➡️ | | ❓ | | | | |
-| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | | | ❓ | | | | |
+| hplt-4.0 (eng_Latn)                  |  3 |   | ✅️️ | ✅ | 🏃‍➡️ |    | | 🏃‍➡️ | | | | |
+| finephrase-0.0.0                     |  4 |   | ✅️ | ✅ | ➖ |    | | ➖ | | | | |
+| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | 🏃‍➡️ | |    | | | | |
+| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ |    | |    | | | | |
 | nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | 🏃‍➡️ | | ✅ | | | | |
-| nemotron-mind-0.0                    |  7 |   | ✅️ | ✅️️ | ➖ | | | ➖ | | | | |
-| nemotron-pretraining-specialized-1.0 |  6 |   | ✅️ | ✅️️️ | ➖ | | | ➖ | | | | |
-| nemotron-pretraining-specialized-1.1 |  5 |   | ✅️ | ✅️️️ | ➖ | | | ➖ | | | | |
-| mixture-vitae-1.0                    | 13 |   | ✅ | ✅ | ✅ | | | ➖ | | | | |
-| olmo-mix-1124                        |  3 | 4 | ✅ | ✅️️️ | ➖ | | | ➖ | | | | |
+| nemotron-mind-0.0                    |  7 |   | ✅️ | ✅️️ | ➖ |    | | ➖ | | | | |
+| nemotron-pretraining-specialized-1.0 |  6 |   | ✅️ | ✅️️️ | ➖ |    | | ➖ | | | | |
+| nemotron-pretraining-specialized-1.1 |  5 |   | ✅️ | ✅️️️ | ➖ |    | | ➖ | | | | |
+| mixture-vitae-1.0                    | 13 |   | ✅ | ✅ | ✅ |    | | ➖ | | | | |
+| olmo-mix-1124                        |  3 | 4 | ✅ | ✅️️️ | ➖ |    | | ➖ | | | | |
 
 ## Multilingual Source Datasets
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| finepdfs-1.0.0 (multilingual)        | 37 | 2 | ✅ | ✅️ | ✅️ | 🏃‍➡️ | | ❓ | | | | |
-| finepdfs-edu-1.0.0 (multilingual)    | 36 | 2 | ✅ | ✅ | ✅ | | | ❓ | | | | |
-| fineweb2-hq-1.0.0                    | 20 | 3 | ✅️ | 🏃‍➡️ | ✅️ | | | ❓ | | | | |
-| finewiki-0.0.0                       | 36 | 3 | ✅️ | ✅️ | ✅ | | | 🏃‍➡️ | | | | |
-| hplt-4.0                             | 64 | 1 | ✅ ‍| 🏃‍➡️ | ➕ | | | 🏃‍➡️ | | | | |
+| finepdfs-1.0.0 (multilingual)        | 37 | 2 | ✅ | ✅️ | ✅️ | 🏃‍➡️ | |    | | | | |
+| finepdfs-edu-1.0.0 (multilingual)    | 36 | 2 | ✅ | ✅ | ✅ |    | |    | | | | |
+| fineweb2-hq-1.0.0                    | 20 | 3 | ✅️ | 🏃‍➡️ | ✅️ |    | |    | | | | |
+| finewiki-0.0.0                       | 36 | 3 | ✅️ | ✅️ | ✅ |    | | 🏃‍➡️ | | | | |
+| hplt-4.0                             | 64 | 1 | ✅ ‍| 🏃‍➡️ | ➕ |    | | 🏃‍➡️ | | | | |
 | nemotron-cc-opus-1.1                 | 20 | 3 | ✅‍ | ✅️ | ➖ | ➖ | | ➖ | | | | |
 | nemotron-cc-tower+-0.1               | 16 | 3 | ✅ | ✅️️ | ➖ | ➖ | | ➖ | | | | |
 
@@ -54,8 +54,8 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| common-pile-stackv2-0.1              |     1 | | ✅ |  | 🏃‍➡️ | ➖ | ➖ | ➖ | | | |
-| common-pile-stackv2-edu-0.1          |     1 | | ✅️ |  | 🏃‍➡️ | ➖ | ➖ | ➖ | | | |
+| common-pile-stackv2-0.1              |     1 | | ✅ |  | 🏃‍➡️ | ➖ | ➖ |    | | | |
+| common-pile-stackv2-edu-0.1          |     1 | | ✅️ |  | 🏃‍➡️ | ➖ | ➖ |    | | | |
 | dolmino-mix-100b-1125                |   137 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
 | finemath-0.0.0                       |     1 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |
 | megamath-0.0.0                       |     2 | | ✅ |  | ➖ | ➖ | ➖ | ➖ | | | |

@@ -122,15 +122,12 @@ def evaluate_block(record, compiled_block):
 #
 
 
-def sample(document: dict, parameters: dict) -> bool:
+def sample(document: dict, parameters: dict = None) -> bool:
     """
     Inputs:
         document - json document
-        parameters - dictionary, including .tokens. count
     Returns 1.0 for documents to keep and 0.0 for documents to discard
     """
-
-    token_count = parameters["tokens"];
 
     COMPILED_FILTERS = compile_filter_config(FILTER_CONFIG)
 
@@ -147,15 +144,9 @@ def sample(document: dict, parameters: dict) -> bool:
         if not passed_or:
             return 0.0
 
-    if len(document.get("text", "")) < 200:
-        return 0.0
-
-    # special case for small languages:
     # we can identify a noisy document by it having "noise" field,
     # according to Stephan: https://github.com/OpenEuroLLM/Taskboard/issues/219#issuecomment-4732960717
     is_noisy = "noise" in document
-    if token_count < 15e9 and not is_noisy:
-        return 1.0
 
     # If lang subscore is smallish, and the document is noisy, we reject it
     if is_noisy and "doc_scores" in document and document["doc_scores"][1] < 0.75:
@@ -166,7 +157,7 @@ def sample(document: dict, parameters: dict) -> bool:
 def main():
     for line in sys.stdin:
         _ = json.loads(line.strip());
-        _["score"] = sample(_, {"tokens": random.uniform(1e9, 1e12)});
+        _["score"] = sample(_);
         print(json.dumps(_));
         
 if __name__ == "__main__":

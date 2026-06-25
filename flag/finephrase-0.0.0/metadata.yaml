@@ -1,6 +1,27 @@
 name:
-catalogue: finephrase/0.0.0
+catalogue: finephrase/0.0.0/data
 suffix: .jsonl.zst
 id: id
 text: text
-
+#
+release:
+  default:
+    input: source
+    annotations: [nemo-curator, openai-privacy-filter]
+    pack: tree
+    scrub:
+    - xml
+    - md
+    sample: random
+    rubber: 1.2
+#
+nemo-curator:
+  default:
+    input: source
+#
+openai-privacy-filter:
+  default:
+    input: source
+#
+source:
+  default:
