@@ -10,14 +10,95 @@ release:
     annotations: [nemo-curator, openai-privacy-filter]
     pack: tree
     sample: full
+  als_Latn:
+  bos_Latn:
+  bul_Cyrl:
+  cat_Latn:
+  ces_Latn:
+    source: sample
+  dan_Latn:
+    source: sample
+  deu_Latn:
+    source: sample
+  ekk_Latn:
+  ell_Grek:
+  eng_Latn:
+    source: sample
+  eus_Latn:
+  fin_Latn:
+    source: sample
+  fra_Latn:
+    source: sample
+  gle_Latn:
+  glg_Latn:
+  hrv_Latn:
+  hun_Latn:
+    source: sample
+  isl_Latn:
+  ita_Latn:
+    source: sample
+  kat_Geor:
+  lit_Latn:
+  lvs_Latn:
+  mkd_Cyrl:
+  mlt_Latn:
+  nld_Latn:
+    source: sample
+  nno_Latn:
+  nob_Latn:
+    source: sample
+  pol_Latn:
+    source: sample
+  por_Latn:
+    source: sample
+  ron_Latn:
+    source: sample
+  slk_Latn:
+  slv_Latn:
+  spa_Latn:
+    source: sample
+  srp_Cyrl:
+  swe_Latn:
+    source: sample
+  tur_Latn:
+  ukr_Cyrl:
 #
 sample:
   default:
     input: source
-    annotations: [propella-4b]
     sample: dynamic
     filter: ../sample/propella-filter.py
     parameters: {}
+  ces_Latn:
+    annotations: [propella-4b]
+  dan_Latn:
+    annotations: [propella-4b]
+  deu_Latn:
+    annotations: [propella-4b]
+  eng_Latn:
+    annotations: [propella-4b]
+  fin_Latn:
+    annotations: [propella-4b]
+  fra_Latn:
+    annotations: [propella-4b]
+  hun_Latn:
+    annotations: [propella-4b]
+  ita_Latn:
+    annotations: [propella-4b]
+  nld_Latn:
+    annotations: [propella-4b]
+  nob_Latn:
+    annotations: [propella-4b]
+  pol_Latn:
+    annotations: [propella-4b]
+  por_Latn:
+    annotations: [propella-4b]
+  ron_Latn:
+    annotations: [propella-4b]
+  spa_Latn:
+    annotations: [propella-4b]
+  swe_Latn:
+    annotations: [propella-4b]
 #
 nemo-curator:
   default:

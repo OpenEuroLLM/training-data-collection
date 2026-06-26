@@ -10,14 +10,16 @@ release:
     annotations: [nemo-curator, openai-privacy-filter]
     pack: tree
     sample: full
-    rubber: 1.2
+    rubber: 1.1
 #
 # ./etc/plan.py --pattern nemotron-cc-1.0 --format yaml \
-#   --budget datamix.txt | grep -v sample: >> nemotron-cc-1.0/metadata.yaml
+#   --budget datamix.txt | grep -v sample:
 #
   high/actual:
     input: sample
   medium/actual:
+    sample: random
+    budget: 
   medium-high/actual:
 #
 sample:
