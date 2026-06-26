@@ -21,11 +21,12 @@
 #SBATCH --output=log/%x-%j.out
 #SBATCH --partition=small
 #SBATCH --account=project_465002530
-#SBATCH --time=72:00:00
 #SBATCH --mail-type=FAIL
+#SBATCH --time=72:00:00
+#SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=128
-#SBATCH --mem-per-cpu=2G
+#SBATCH --cpus-per-task=64
+#SBATCH --mem-per-cpu=1750M
 
 #
 # determine our root directory, where the SLURM script resides
