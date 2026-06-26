@@ -5,37 +5,37 @@
   "segments": 20473619,
   "tokens": 1031609180,
   "characters": 3692166047,
-  "time": 1376.4085686206818,
+  "time": 1386.2501776218414,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
-      "cluster_size",
-      "de",
-      "ts",
-      "c",
+      "id",
+      "pii",
+      "glotlid_v3",
       "rs",
-      "openlid_v3",
       "doc_scores",
       "seg_langs_openlid_v3",
-      "u",
-      "filter",
-      "s",
-      "openlid_v2",
-      "crawl_id",
       "f",
-      "pii",
+      "u",
+      "c",
+      "openlid_v3",
+      "filter",
       "md",
-      "glotlid_v3",
+      "text",
       "o",
+      "openlid_v2",
+      "de",
+      "s",
+      "cluster_size",
       "xml",
-      "id",
-      "text"
+      "crawl_id",
+      "ts"
     ],
     "optional": [
+      "metalang",
       "htmllang",
-      "allowed",
-      "metalang"
+      "allowed"
     ]
   }
 }
