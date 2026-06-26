@@ -27,15 +27,15 @@ This directory collects and documents the training data mix for the first
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
 | dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | 🏃‍➡️ | | ➖ | | | | |
-| hplt-4.0 (eng_Latn)                  |  3 |   | ✅️️ | ✅️ | ➖ |    | | 🏃‍➡️ | | | | |
+| hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ |    | | 🏃‍➡️ | | | | |
 | finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | 🏃‍➡️ | | 🏃‍➡️ | | | | |
 | finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ |    | | 🏃‍➡️ | | | | |
-| finephrase-0.0.0                     |  4 |   | ✅️ | ✅ | ➖ |    | | ➖ | | | | |
+| finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅ | ➖ |    | | ➖ | | | | |
 | nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | 🏃‍➡️ | | 🏃‍➡️ | | | | |
-| nemotron-mind-0.0                    |  7 |   | ✅️ | ✅️️ | ➖ |    | | ➖ | | | | |
-| nemotron-pretraining-specialized-1.0 |  6 |   | ✅️ | ✅️️️ | ➖ |    | | ➖ | | | | |
-| nemotron-pretraining-specialized-1.1 |  5 |   | ✅️ | ✅️️️ | ➖ |    | | ➖ | | | | |
-| mixture-vitae-1.0                    | 13 |   | ✅ | ✅ | ✅ |    | | ➖ | | | | |
+| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ |    | | ➖ | | | | |
+| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ |    | | ➖ | | | | |
+| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ |    | | ➖ | | | | |
+| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ |    | | ➖ | | | | |
 | olmo-mix-1124                        |  3 | 4 | ✅ | ✅️️️ | ➖ |    | | ➖ | | | | |
 
 ## Multilingual Source Datasets
@@ -54,22 +54,22 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| common-pile-stackv2-0.1              |     1 | 3 | ✅ |  | 🏃‍➡️ |  | ➖ |    | | | |
-| common-pile-stackv2-edu-0.1          |     1 | 3 | ✅️ |  | ✅️ |  | ➖ | 🏃‍➡️ | | | |
-| dolmino-mix-100b-1125                |     9 |   | ✅ |  | ➖ |  | ➖ | ➖ | | | |
-| finemath-0.0.0                       |     1 | 4 | ✅ |  | ➖ |  | ➖ | ➖ | | | |
-| megamath-0.0.0                       |     2 | 4 | ✅ |  | ➖ |  | ➖ | ➖ | | | |
-| openwebmath-0.0.0                    |     1 |   | ✅️ |  | ➖ |  | ➖ | ➖ | | | |
-| starcoder-0.0.0                      |     1 | 4 | ✅ |  | ➖ |  | ➖ | ➖ | | | |
-| swallow-code-2.0                     |     1 | 4 | ✅️ |  | ➖ |  | ➖ | ➖ | | | |
-| swallow-math-2.0                     |     2 | 4 | ✅️ |  | ➖ |  | ➖ | ➖ | | | |
-| the-stack-1.2                        |     1 | 4 | ✅️️ |  | ➖ |  | ➖ | ➖ | | | |
+| common-pile-stackv2-0.1              |     1 | 3 | ✅ | 🏃‍➡️ | 🏃‍➡️ |  | ➖ |    | | | |
+| common-pile-stackv2-edu-0.1          |     1 | 3 | ✅️ | 🏃‍➡️ | ✅️ |  | ➖ | 🏃‍➡️ | | | |
+| dolmino-mix-100b-1125                |     9 | 5 | ✅ |    | ➖ |  | ➖ | ➖ | | | |
+| finemath-0.0.0                       |     1 | 4 | ✅ | 🏃‍➡️ | ➖ |  | ➖ | ➖ | | | |
+| megamath-0.0.0                       |     2 | 4 | ✅ | 🏃‍➡️ | ➖ |  | ➖ | ➖ | | | |
+| openwebmath-0.0.0                    |     1 | 5 | ✅️ |    | ➖ |  | ➖ | ➖ | | | |
+| starcoder-0.0.0                      |     1 | 4 | ✅ | 🏃‍➡️ | ➖ |  | ➖ | ➖ | | | |
+| swallow-code-2.0                     |     1 | 4 | ✅️ |    | ➖ |  | ➖ | ➖ | | | |
+| swallow-math-2.0                     |     2 | 4 | ✅️ |    | ➖ |  | ➖ | ➖ | | | |
+| the-stack-1.2                        |     1 | 5 | ✅️️ |    | ➖ |  | ➖ | ➖ | | | |
 
 ## Parallel Datasets
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:-----:|:-----:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| fineopus-filtered-0.4                |    41 |   | ✅ |    | ➖ | | | ➖ | | | | |
+| fineopus-filtered-0.4                |    41 | 5 | ✅ |    | ➖ | | | ➖ | | | | |
 | dochplt-3.1                          |    ?  |   | 🏃‍➡️ |    | ➖ | | | ➖ | | | | |
 
 ## Reasoning Datasets
