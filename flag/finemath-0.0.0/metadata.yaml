@@ -1,0 +1,27 @@
+name: FineMath 0.0.0
+catalogue: finemath/0.0.0/data
+suffix: .jsonl.zst
+id: uuid
+text: text
+#
+release:
+  default:
+    input: uuid
+    pack: tree
+#
+# ./etc/plan.py --pattern finemath-0.0.0 --format yaml --budget datamix.txt
+#
+  finemath-4plus:
+    sample: full
+    shard: 63md
+#
+nemo-curator:
+  default:
+    input: uuid
+#
+uuid:
+  default:
+    input: source
+#
+source:
+  finemath-4plus:
