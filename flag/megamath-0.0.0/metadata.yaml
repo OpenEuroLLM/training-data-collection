@@ -16,6 +16,16 @@ nemo-curator:
     input: uuid
 #
 uuid:
+#
+# find megamath-0.0.0/source -name \*.jsonl.zst \
+# | while read i; do \
+#   t=megamath-0.0.0/uuid/${i##megamath*/source/};
+# mkdir -p $(dirname $t);
+# /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#   --mode json --uuid $i \
+# | zstd -z -o $t;
+# done
+#
   default:
     input: source
 #

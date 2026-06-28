@@ -1,0 +1,30 @@
+catalogue: /0.0.0/data
+suffix: .jsonl.zst
+id: uuid
+text: text
+#
+release:
+  default:
+    input: uuid
+    pack: tree
+#
+nemo-curator:
+  default:
+    input: uuid
+#
+uuid:
+#
+# for i in swallow-math-2.0/source/*/*.jsonl.zst; do
+#   t=swallow-math-2.0/uuid/${i##swallow-math-2.0/source/};
+#   mkdir -p $(dirname $t); echo $i;
+#   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#     --mode json --uuid $i | zstd -z -o $t;
+# done
+#
+  default:
+    input: source
+#
+source:
+  stage3-qa:
+  stage3-textbook:
+
