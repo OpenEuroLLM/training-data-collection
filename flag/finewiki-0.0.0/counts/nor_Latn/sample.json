@@ -5,25 +5,25 @@
   "segments": 13856668,
   "tokens": 398567315,
   "characters": 1405030547,
-  "time": 541.6177289485931,
+  "time": 543.5695712566376,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
-      "has_math",
-      "in_language",
-      "id",
       "date_modified",
-      "url",
-      "page_id",
-      "wikiname",
-      "title",
       "infoboxes",
+      "has_math",
+      "url",
+      "in_language",
+      "title",
+      "text",
       "version",
-      "wikitext",
-      "wikidata_id",
       "bytes_html",
-      "text"
+      "page_id",
+      "id",
+      "wikidata_id",
+      "wikitext",
+      "wikiname"
     ],
     "optional": [
       "propella-4b"
