@@ -1,0 +1,32 @@
+{
+  "files": 4,
+  "bytes": 4255934422,
+  "documents": 1238753,
+  "segments": 34374613,
+  "tokens": 1299603384,
+  "characters": 4108424850,
+  "time": 1789.5289618968964,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "id",
+      "infoboxes",
+      "in_language",
+      "title",
+      "bytes_html",
+      "page_id",
+      "text",
+      "version",
+      "wikitext",
+      "wikiname",
+      "url",
+      "has_math",
+      "wikidata_id",
+      "date_modified"
+    ],
+    "optional": [
+      "propella-4b"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "files": 8,
+  "bytes": 11323662412,
+  "documents": 14563059,
+  "segments": 138405885,
+  "tokens": 3154880098,
+  "characters": 9616694668,
+  "time": 5148.176683187485,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "noise",
+      "doc_scores",
+      "de",
+      "pii",
+      "xml",
+      "openlid_v3",
+      "openlid_v2",
+      "ts",
+      "id",
+      "c",
+      "s",
+      "seg_langs_openlid_v3",
+      "glotlid_v3",
+      "u",
+      "finepdfs-edu",
+      "filter",
+      "rs",
+      "cluster_size",
+      "bsc-edu",
+      "md",
+      "text",
+      "f",
+      "web-register",
+      "propella-4b",
+      "o",
+      "jql",
+      "crawl_id"
+    ],
+    "optional": [
+      "allowed",
+      "metalang",
+      "htmllang"
+    ]
+  }
+}

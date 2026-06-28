@@ -1,0 +1,31 @@
+{
+  "files": 570,
+  "bytes": 407490009402,
+  "documents": 42448142,
+  "segments": 738816198,
+  "tokens": 35004003901,
+  "characters": 157252192336,
+  "time": 120719.09153699875,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "date",
+      "language_score",
+      "top_langs",
+      "url",
+      "file_path",
+      "language_script",
+      "dump",
+      "embeddings",
+      "text",
+      "language",
+      "id",
+      "quality_score",
+      "minhash_cluster_size"
+    ],
+    "optional": [
+      "propella-4b"
+    ]
+  }
+}
