@@ -15,6 +15,7 @@
 # find nemotron-pretraining-specialized-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 # find nemotron-pretraining-specialized-1.1/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 # find olmo-mix-1124/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# find starcoder-0.0.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 #
 
 #SBATCH --job-name=count
@@ -25,7 +26,7 @@
 #SBATCH --time=72:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=64
+#SBATCH --cpus-per-task=32
 #SBATCH --mem-per-cpu=1750M
 
 #
