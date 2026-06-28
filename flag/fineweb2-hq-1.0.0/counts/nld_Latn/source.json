@@ -1,0 +1,29 @@
+{
+  "files": 163,
+  "bytes": 95096079252,
+  "documents": 12920963,
+  "segments": 187229461,
+  "tokens": 10057000833,
+  "characters": 39068422411,
+  "time": 31077.072795152664,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "file_path",
+      "language",
+      "dump",
+      "text",
+      "date",
+      "language_script",
+      "embeddings",
+      "url",
+      "top_langs",
+      "quality_score",
+      "language_score",
+      "id",
+      "minhash_cluster_size"
+    ],
+    "optional": []
+  }
+}
