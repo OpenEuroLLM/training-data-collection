@@ -1,0 +1,42 @@
+{
+  "files": 988,
+  "bytes": 856786195750,
+  "documents": 257277060,
+  "segments": 9820754989,
+  "tokens": 350080839934,
+  "characters": 1629288575825,
+  "time": 1563591.5002963543,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "openlid_v3",
+      "o",
+      "ts",
+      "md",
+      "filter",
+      "xml",
+      "rs",
+      "c",
+      "pii",
+      "web-register",
+      "id",
+      "openlid_v2",
+      "text",
+      "de",
+      "u",
+      "s",
+      "f",
+      "seg_langs_openlid_v3",
+      "glotlid_v3",
+      "bsc-edu",
+      "crawl_id",
+      "cluster_size",
+      "doc_scores"
+    ],
+    "optional": [
+      "htmllang",
+      "metalang"
+    ]
+  }
+}

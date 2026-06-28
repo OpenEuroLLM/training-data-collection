@@ -1,0 +1,42 @@
+{
+  "files": 8,
+  "bytes": 11668385913,
+  "documents": 13089935,
+  "segments": 158672791,
+  "tokens": 7531339631,
+  "characters": 26911350424,
+  "time": 10166.575486183167,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "ts",
+      "glotlid_v3",
+      "f",
+      "md",
+      "doc_scores",
+      "id",
+      "openlid_v2",
+      "noise",
+      "openlid_v3",
+      "c",
+      "crawl_id",
+      "xml",
+      "rs",
+      "o",
+      "text",
+      "u",
+      "s",
+      "filter",
+      "seg_langs_openlid_v3",
+      "cluster_size",
+      "de",
+      "pii"
+    ],
+    "optional": [
+      "metalang",
+      "htmllang",
+      "allowed"
+    ]
+  }
+}
