@@ -11,13 +11,6 @@ release:
 #
 # ./etc/plan.py --pattern finemath-0.0.0 --format yaml --budget datamix.txt
 #
-  megamath-text-code-block:
-    budget: 42%
-    shard: 109md
-  megamath-web-pro:
-    sample: full
-    shard: 106md
-#
 nemo-curator:
   default:
     input: uuid
