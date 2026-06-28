@@ -14,7 +14,7 @@ nemo-curator:
 #
 uuid:
 #
-# for i in swallow-code-2.0/source/*/*.jsonl.zst; do
+# for i in swallow-code-2.0/source/stage5-auto-format/python/medium/*.jsonl.zst; do
 #   t=swallow-code-2.0/uuid/${i##swallow-code-2.0/source/};
 #   mkdir -p $(dirname $t); echo $i;
 #   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \

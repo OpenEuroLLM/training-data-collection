@@ -1,8 +1,8 @@
 name: 
 huggingface: 
 suffix: .jsonl.zst
-id: 
-text: 
+id: id
+text: text
 #
 release:
   default:
