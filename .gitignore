@@ -253,12 +253,14 @@ flag/starcoder-0.0.0/release
 flag/starcoder-0.0.0/megatron-lm
 flag/starcoder-0.0.0/tmp
 flag/swallow-code-2.0/source
+flag/swallow-code-2.0/uuid
 flag/swallow-code-2.0/nemo-curator
 flag/swallow-code-2.0/openai-privacy-filter
 flag/swallow-code-2.0/release
 flag/swallow-code-2.0/megatron-lm
 flag/swallow-code-2.0/tmp
 flag/swallow-math-2.0/source
+flag/swallow-math-2.0/uuid
 flag/swallow-math-2.0/nemo-curator
 flag/swallow-math-2.0/openai-privacy-filter
 flag/swallow-math-2.0/release
