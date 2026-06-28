@@ -5,25 +5,25 @@
   "segments": 1019596,
   "tokens": 32813154,
   "characters": 107066041,
-  "time": 42.106196641922,
+  "time": 42.437615394592285,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
-      "has_math",
-      "url",
-      "wikiname",
+      "version",
       "title",
-      "text",
+      "bytes_html",
       "page_id",
+      "wikitext",
+      "id",
+      "date_modified",
+      "wikiname",
       "infoboxes",
       "wikidata_id",
       "in_language",
-      "wikitext",
-      "id",
-      "bytes_html",
-      "version",
-      "date_modified"
+      "url",
+      "text",
+      "has_math"
     ],
     "optional": []
   }

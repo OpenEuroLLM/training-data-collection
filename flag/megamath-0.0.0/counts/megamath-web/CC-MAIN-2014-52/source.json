@@ -1,0 +1,25 @@
+{
+  "files": 50,
+  "bytes": 2285849853,
+  "documents": 1279413,
+  "segments": 117843246,
+  "tokens": 2154916158,
+  "characters": 7810048660,
+  "time": 3589.7592182159424,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "math_score",
+      "timestamp",
+      "url",
+      "lang",
+      "cc-path",
+      "text",
+      "domain",
+      "lang_score",
+      "id"
+    ],
+    "optional": []
+  }
+}

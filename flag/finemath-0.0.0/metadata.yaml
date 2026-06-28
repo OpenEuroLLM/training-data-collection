@@ -20,6 +20,14 @@ nemo-curator:
     input: uuid
 #
 uuid:
+#
+# for i in finemath-0.0.0/source/finemath-3plus/*.jsonl.zst; do
+#   echo $i;
+#   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#     --mode json --uuid $i \
+#   | zstd -z -o finemath-0.0.0/uuid/${i##finemath*/source/};
+# done
+#
   default:
     input: source
 #

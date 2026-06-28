@@ -20,8 +20,6 @@ release:
     shard: 18md
   pes2o:
     shard: 64md
-  wiki:
-    shard: 161md
 #
 nemo-curator:
   default:
@@ -36,4 +34,3 @@ source:
     suffix: .json.gz
   arxiv:
   pes2o:
-  wiki:

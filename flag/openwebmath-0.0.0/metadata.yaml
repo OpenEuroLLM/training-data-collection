@@ -1,0 +1,32 @@
+catalogue: openwebmath/0.0.0/data
+suffix: .jsonl.zst
+id: uuid
+text: text
+#
+release:
+  default:
+    input: uuid
+    pack: tree
+#
+# ./etc/plan.py --pattern megamath-0.0.0 --format yaml --budget datamix.txt
+#
+  data:
+#
+nemo-curator:
+  default:
+    input: uuid
+#
+uuid:
+#
+# for i in openwebmath-0.0.0/source/data/*.jsonl.zst; do
+#   echo $i;
+#   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#     --mode json --uuid $i \
+#   | zstd -z -o openwebmath-0.0.0/uuid/${i##openwebmath*/source/};
+# done
+#
+  default:
+    input: source
+#
+source:
+  data:

@@ -2,20 +2,7 @@
 
 #
 # find dclm-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# for i in finepdfs-1.0.0/source/*; do sbatch etc/count.slurm $i; done
-# find finephrase-0.0.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find fineweb2-hq-1.0.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find finewiki-0.0.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find hplt-4.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find mixture-vitae-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find nemotron-cc-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find nemotron-cc-opus-1.1/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find nemotron-cc-tower+-0.1/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find nemotron-mind-0.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find nemotron-pretraining-specialized-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find nemotron-pretraining-specialized-1.1/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find olmo-mix-1124/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
-# find starcoder-0.0.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
+# for i in finepdfs-1.0.0/source/*_*; do sbatch etc/count.slurm $i; done
 #
 
 #SBATCH --job-name=count
@@ -26,7 +13,7 @@
 #SBATCH --time=72:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task=128
 #SBATCH --mem-per-cpu=1750M
 
 #
@@ -104,14 +91,10 @@ fi
 # _fix_me_
 # we should allow block-local metadata specifications in the next round
 #
-if [ ${infix} = "release" ]; then
-  key="text";
-else
-  key=$(yq4 ".text" ${metadata});
-  if [ -z "${key}" -o "${key}" = "null" ]; then
-    echo "count.slurm: unable to determine .text. key; exit." >&2;
-    exit 1;
-  fi
+key=$(yq4 ".text" ${metadata});
+if [ -z "${key}" -o "${key}" = "null" ]; then
+  echo "count.slurm: unable to determine .text. key; exit." >&2;
+  exit 1;
 fi
 
 suffix=$(yq4 ".${infix}.${part}.suffix" ${metadata});
