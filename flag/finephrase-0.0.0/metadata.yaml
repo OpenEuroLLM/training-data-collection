@@ -2,7 +2,7 @@ name:
 catalogue: finephrase/0.0.0/data
 suffix: .jsonl.zst
 id: id
-text: text
+text: rollout_results[0].text
 #
 release:
   default:
