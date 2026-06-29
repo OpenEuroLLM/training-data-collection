@@ -55,7 +55,7 @@ This directory collects and documents the training data mix for the first
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
 | common-pile-stackv2-0.1              |     1 | 3 | ✅ | 🏃‍➡️ | 🏃‍➡️ |  | ➖ |    | | | |
-| common-pile-stackv2-edu-0.1          |     1 | 3 | ✅️ | ✅️️ | ✅️ |  | ➖ | 🏃‍➡️ | | | |
+| common-pile-stackv2-edu-0.1          |     1 | 3 | ✅️ | ✅️️ | ✅️ |  | ➖ | ✅️ | | | |
 | dolmino-mix-100b-1125                |     9 | 5 | ✅ | 🏃‍➡️ | ➖ |  | ➖ | ➖ | | | |
 | finemath-0.0.0                       |     1 | 4 | ✅ | ✅️ | ➖ |  | ➖ | ➖ | | | |
 | megamath-0.0.0                       |   105 | 4 | ✅ | ✅️️ | ➖ |  | ➖ | ➖ | | | |
