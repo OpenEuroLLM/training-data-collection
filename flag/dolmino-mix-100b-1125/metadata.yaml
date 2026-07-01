@@ -6,150 +6,20 @@ text: text
 #
 release:
   default:
-    input: source
-    pack: group
+    input: openeurollm
+    pack: tree
     sample: 
     shard: 
-  ingredient2-code-meta-reasoning:
-    group: reasoning2
-  ingredient2-cranecode:
-    group: code2
-  ingredient2-cranemath:
-    group: math2
-  ingredient2-dolmino-math:
-    group: math2
-  ingredient2-megamatt:
-    group: math2
-  ingredient2-omr-rewrite-fullthoughts:
-    group: reasoning2
-  ingredient2-program_verifiable:
-    group: code2
-  ingredient2-stack_edu-fim_vigintile_15_C:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_Cpp:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_CSharp:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_Go:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_Java:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_JavaScript:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_Markdown:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_PHP:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_Python:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_Ruby:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_Rust:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_Shell:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_SQL:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_Swift:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_15_TypeScript:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_C:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_Cpp:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_CSharp:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_Go:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_Java:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_JavaScript:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_Markdown:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_PHP:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_Python:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_Ruby:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_Rust:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_Shell:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_SQL:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_Swift:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_16_TypeScript:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_C:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_Cpp:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_CSharp:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_Go:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_Java:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_JavaScript:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_Markdown:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_PHP:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_Python:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_Ruby:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_Rust:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_Shell:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_SQL:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_Swift:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_17_TypeScript:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_C:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_Cpp:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_CSharp:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_Go:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_Java:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_JavaScript:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_Markdown:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_PHP:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_Python:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_Ruby:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_Rust:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_Shell:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_SQL:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_Swift:
-    group: stack2
-  ingredient2-stack_edu-fim_vigintile_19_TypeScript:
-    group: stack2
-  ingredient2-tinymath-mind:
-    group: math2
 #
-source:
+nemo-curator:
+  input: openeurollm
 #
-# ( cd dolmino-mix-100b-1125/source; for i in *; do echo "  $i:"; done; ) \
+openai-privacy-filter:
+  input: openeurollm
+#
+openeurollm:
+#
+# ( cd dolmino-mix-100b-1125/openeurollm; for i in *; do echo "  $i:"; done; ) \
 # | sort >> dolmino-mix-100b-1125/metadata.yaml
 #
   ingredient2-code-meta-reasoning:
@@ -159,64 +29,5 @@ source:
   ingredient2-megamatt:
   ingredient2-omr-rewrite-fullthoughts:
   ingredient2-program_verifiable:
-  ingredient2-stack_edu-fim_vigintile_15_C:
-  ingredient2-stack_edu-fim_vigintile_15_Cpp:
-  ingredient2-stack_edu-fim_vigintile_15_CSharp:
-  ingredient2-stack_edu-fim_vigintile_15_Go:
-  ingredient2-stack_edu-fim_vigintile_15_Java:
-  ingredient2-stack_edu-fim_vigintile_15_JavaScript:
-  ingredient2-stack_edu-fim_vigintile_15_Markdown:
-  ingredient2-stack_edu-fim_vigintile_15_PHP:
-  ingredient2-stack_edu-fim_vigintile_15_Python:
-  ingredient2-stack_edu-fim_vigintile_15_Ruby:
-  ingredient2-stack_edu-fim_vigintile_15_Rust:
-  ingredient2-stack_edu-fim_vigintile_15_Shell:
-  ingredient2-stack_edu-fim_vigintile_15_SQL:
-  ingredient2-stack_edu-fim_vigintile_15_Swift:
-  ingredient2-stack_edu-fim_vigintile_15_TypeScript:
-  ingredient2-stack_edu-fim_vigintile_16_C:
-  ingredient2-stack_edu-fim_vigintile_16_Cpp:
-  ingredient2-stack_edu-fim_vigintile_16_CSharp:
-  ingredient2-stack_edu-fim_vigintile_16_Go:
-  ingredient2-stack_edu-fim_vigintile_16_Java:
-  ingredient2-stack_edu-fim_vigintile_16_JavaScript:
-  ingredient2-stack_edu-fim_vigintile_16_Markdown:
-  ingredient2-stack_edu-fim_vigintile_16_PHP:
-  ingredient2-stack_edu-fim_vigintile_16_Python:
-  ingredient2-stack_edu-fim_vigintile_16_Ruby:
-  ingredient2-stack_edu-fim_vigintile_16_Rust:
-  ingredient2-stack_edu-fim_vigintile_16_Shell:
-  ingredient2-stack_edu-fim_vigintile_16_SQL:
-  ingredient2-stack_edu-fim_vigintile_16_Swift:
-  ingredient2-stack_edu-fim_vigintile_16_TypeScript:
-  ingredient2-stack_edu-fim_vigintile_17_C:
-  ingredient2-stack_edu-fim_vigintile_17_Cpp:
-  ingredient2-stack_edu-fim_vigintile_17_CSharp:
-  ingredient2-stack_edu-fim_vigintile_17_Go:
-  ingredient2-stack_edu-fim_vigintile_17_Java:
-  ingredient2-stack_edu-fim_vigintile_17_JavaScript:
-  ingredient2-stack_edu-fim_vigintile_17_Markdown:
-  ingredient2-stack_edu-fim_vigintile_17_PHP:
-  ingredient2-stack_edu-fim_vigintile_17_Python:
-  ingredient2-stack_edu-fim_vigintile_17_Ruby:
-  ingredient2-stack_edu-fim_vigintile_17_Rust:
-  ingredient2-stack_edu-fim_vigintile_17_Shell:
-  ingredient2-stack_edu-fim_vigintile_17_SQL:
-  ingredient2-stack_edu-fim_vigintile_17_Swift:
-  ingredient2-stack_edu-fim_vigintile_17_TypeScript:
-  ingredient2-stack_edu-fim_vigintile_19_C:
-  ingredient2-stack_edu-fim_vigintile_19_Cpp:
-  ingredient2-stack_edu-fim_vigintile_19_CSharp:
-  ingredient2-stack_edu-fim_vigintile_19_Go:
-  ingredient2-stack_edu-fim_vigintile_19_Java:
-  ingredient2-stack_edu-fim_vigintile_19_JavaScript:
-  ingredient2-stack_edu-fim_vigintile_19_Markdown:
-  ingredient2-stack_edu-fim_vigintile_19_PHP:
-  ingredient2-stack_edu-fim_vigintile_19_Python:
-  ingredient2-stack_edu-fim_vigintile_19_Ruby:
-  ingredient2-stack_edu-fim_vigintile_19_Rust:
-  ingredient2-stack_edu-fim_vigintile_19_Shell:
-  ingredient2-stack_edu-fim_vigintile_19_SQL:
-  ingredient2-stack_edu-fim_vigintile_19_Swift:
-  ingredient2-stack_edu-fim_vigintile_19_TypeScript:
+  ingredient2-stack_edu-fim:
   ingredient2-tinymath-mind:
