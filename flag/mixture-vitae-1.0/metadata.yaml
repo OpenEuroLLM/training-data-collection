@@ -17,7 +17,6 @@ sample:
     parameters: {}
 #
 propella-4b:
-  suffix: .jsonl.zst
   hash: sha256
 #
 source:
