@@ -68,7 +68,6 @@
 0.00170	finepdfs-1.0.0/megatron-lm/deu_Latn
 0.00004	finepdfs-1.0.0/megatron-lm/ekk_Latn
 0.00019	finepdfs-1.0.0/megatron-lm/ell_Grek
-0.00000	finepdfs-1.0.0/megatron-lm/est_Latn
 0.00002	finepdfs-1.0.0/megatron-lm/eus_Latn
 0.00012	finepdfs-1.0.0/megatron-lm/fin_Latn
 0.00179	finepdfs-1.0.0/megatron-lm/fra_Latn
