@@ -13,7 +13,7 @@ release:
     sample: random
     rubber: 1.5
 #
-# ./etc/plan.py --budget --format yaml --pattern finepdfs-1.0.0 datamix.txt
+# ./etc/plan.py --budget --counts sample.json --format yaml --pattern finepdfs-1.0.0 datamix.txt
 #
   als_Latn:
     budget: 20%
@@ -32,7 +32,7 @@ release:
     shard: 22md
   dan_Latn:
     budget: 15%
-    shard: 21md
+    shard: 20md
   deu_Latn:
     budget: 17%
     shard: 23md
@@ -68,7 +68,7 @@ release:
     shard: 12md
   ita_Latn:
     budget: 11%
-    shard: 22md
+    shard: 21md
   lit_Latn:
     budget: 17%
     shard: 16md
