@@ -1,0 +1,33 @@
+name:
+huggingface:
+suffix: .jsonl.zst
+id: uuid
+text: text
+#
+release:
+  default:
+    input: uuid
+    pack: flat
+#
+# ./etc/plan.py --pattern megamath-0.0.0 --format yaml --budget datamix.txt
+#
+  data:
+#
+nemo-curator:
+  default:
+    input: uuid
+#
+uuid:
+#
+# for i in agenttrove-0.0/source/data/*.jsonl.zst; do
+#   echo $i;
+#   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#     --mode json --uuid $i \
+#   | zstd -z -o agenttrove-0.0/uuid/${i##agenttrove-0.0/source/};
+# done
+#
+  default:
+    input: source
+#
+source:
+  data:
