@@ -1,0 +1,19 @@
+{
+  "files": 330,
+  "bytes": 228873243242,
+  "documents": 60655840,
+  "segments": 17494486355,
+  "tokens": 297262744790,
+  "characters": 951759598759,
+  "time": 493557.574518919,
+  "errors": 0,
+  "keys": {
+    "required": [
+      "text",
+      "uuid",
+      "license",
+      "metadata"
+    ],
+    "optional": []
+  }
+}
