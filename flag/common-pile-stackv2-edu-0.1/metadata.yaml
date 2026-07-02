@@ -6,9 +6,14 @@ suffix: .jsonl.zst
 #
 release:
   default:
-    input: source
-    pack: flat
+    input: sample
+    pack: tree
+#
+# ./etc/plan.py --budget --format yaml --pattern stackv2-edu datamix.txt
+#
+  documents:
     sample: full
+    shard: 85md
 #
 sample:
   default:
