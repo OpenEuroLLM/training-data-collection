@@ -28,14 +28,14 @@ This directory collects and documents the training data mix for the first
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------:|:------:|:----:|:----------:|
 | dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | 🏃‍➡️ | ✅ | ➖ | | | | |
 | finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | 🏃‍➡️ | ✅ | ✅ | | | | |
-| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ |    | ➖ | ✅ | | | | |
-| finephrase-0.0.0                     |  4 | 4 | ✅️ | 🏃‍➡️ | ➖ |    | ➖ | ➖ | | | | |
+| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ |    | ❓ | ✅ | | | | |
+| finephrase-0.0.0                     |  4 | 4 | ✅️ | 🏃‍➡️ | ➖ |    | ❓ | ➖ | | | | |
 | hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ |    | ✅ | ✅ | | | | |
 | nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | 🏃‍➡️ | ✅ | ✅ | | | | |
-| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ |    | ➖ | ➖ | | | | |
-| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ |    | ➖ | ➖ | | | | |
-| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ |    | ➖ | ➖ | | | | |
-| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ |    | ➖ | ✅ | | | | |
+| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ |    | ❓ | ➖ | | | | |
+| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ |    | ❓ | ➖ | | | | |
+| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ |    | ❓ | ➖ | | | | |
+| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ |    | ❓ | ✅ | | | | |
 | olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ |    | ➖ | ➖ | | | | |
 
 ## Multilingual Source Datasets
@@ -43,12 +43,12 @@ This directory collects and documents the training data mix for the first
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------:|:------:|:----:|:----------:|
 | finepdfs-1.0.0 (multilingual)        | 36 | 2 | ✅ | ✅️ | ✅️ | 🏃‍➡️ | ✅ | ✅ | | | | |
-| finepdfs-edu-1.0.0 (multilingual)    | 35 | 2 | ✅ | ✅ | ✅ |    | ➖ | ✅ | | | | |
+| finepdfs-edu-1.0.0 (multilingual)    | 35 | 2 | ✅ | ✅ | ✅ |    | ❓ | ✅ | | | | |
 | fineweb2-hq-1.0.0                    | 13 | 3 | ✅️ | ✅️ | ✅️ |    | ✅ | ✅ | | | | |
 | finewiki-0.0.0                       | 36 | 3 | ✅️ | ✅️ | ✅ |    | ➖ | ✅ | | | | |
 | hplt-4.0                             | 64 | 1 | ✅ ‍| ✅️️ | ➕ |    | ✅ | ✅ | | | | |
-| nemotron-cc-opus-1.1                 | 20 | 3 | ✅‍ | ✅️ | ➖ | ➖ | ➖ | ➖ | | | | |
-| nemotron-cc-tower+-0.1               | 16 | 3 | ✅ | ✅️️ | ➖ | ➖ | ➖ | ➖ | | | | |
+| nemotron-cc-opus-1.1                 | 20 | 3 | ✅‍ | ✅️ | ➖ | ➖ | 🏃‍➡️ | ➖ | | | | |
+| nemotron-cc-tower+-0.1               | 16 | 3 | ✅ | ✅️️ | ➖ | ➖ | 🏃‍➡️ | ➖ | | | | |
 
 ## Code and Math Datasets
 
@@ -76,8 +76,13 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
+<<<<<<< HEAD
+| agenttrove-0.0                       |     1 |   | ✅️️ | 🏃‍➡️ | ➖ | | | ➖ | | | | |
+| openthoughts-3                       |     1 |   | ✅ |    | ➖ | | | ➖ | | | | |
+=======
 | agenttrove-0.0                       |     1 |   | ✅️️ |    | ➖ | | ➖ | ➖ | | | | |
 | openthoughts-3                       |     1 |   | ✅ |    | ➖ | | ➖ | ➖ | | | | |
+>>>>>>> 7aea7f45ba59afcadde25d1007337da855ad26ed
 
 ## Annotations: Contamination
 
