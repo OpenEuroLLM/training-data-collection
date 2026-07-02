@@ -7,6 +7,7 @@ suffix: .jsonl.zst
 release:
   default:
     input: sample
+    pack: flat
 #
 sample:
   default:
