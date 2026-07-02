@@ -7,12 +7,9 @@ release:
   default:
     input: source
     pack: flat
-    sample: full
+    sample: random
+    budget: 91%
     shard: 75md
-#
-nemo-curator:
-  default:
-    input: source
 #
 source:
   ada:
