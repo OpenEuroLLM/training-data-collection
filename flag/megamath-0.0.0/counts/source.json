@@ -1,0 +1,26 @@
+{
+  "files": 5314,
+  "bytes": 289258270030,
+  "documents": 204140616,
+  "segments": 22009070412,
+  "tokens": 318049344118,
+  "characters": 1079578967168,
+  "time": 594766.6279363632,
+  "errors": 13359261,
+  "keys": {
+    "required": [],
+    "optional": [
+      "math_score",
+      "url",
+      "text",
+      "id",
+      "timestamp",
+      "repo_info",
+      "lang_score",
+      "file_info",
+      "domain",
+      "cc-path",
+      "lang"
+    ]
+  }
+}
