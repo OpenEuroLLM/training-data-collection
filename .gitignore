@@ -106,6 +106,7 @@ flag/dochplt-2.0/release
 flag/dochplt-2.0/megatron-lm
 flag/dochplt-2.0/tmp
 flag/dolmino-mix-100b-1125/source
+flag/dolmino-mix-100b-1125/openeurollm
 flag/dolmino-mix-100b-1125/nemo-curator
 flag/dolmino-mix-100b-1125/openai-privacy-filter
 flag/dolmino-mix-100b-1125/release
