@@ -3,9 +3,36 @@ huggingface:
 id: id
 text: text
 suffix: .jsonl.zst
+#
+release:
+  default:
+    input: sample
+#
+sample:
+  default:
+    input: source
+    annotations: [propella-4b]
+    sample: dynamic
+    filter: ../sample/propella-filter.py
+    parameters: {}
+#
 propella-4b:
   suffix: .jsonl.zst
   hash: sha256
+#
 source:
   default:
     suffix: .jsonl.gz
+  business:
+  fineweb:
+  formatted_text:
+  law:
+  math:
+  nemo_maga:
+  news:
+  science_tech:
+  software:
+  stackexchange:
+  synthetic_instruct:
+  wiki:
+  youtube:

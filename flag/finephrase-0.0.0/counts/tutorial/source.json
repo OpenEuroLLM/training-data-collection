@@ -2,26 +2,26 @@
   "files": 6754,
   "bytes": 737146594012,
   "documents": 337711099,
-  "segments": 7048496706,
-  "tokens": 348985745732,
-  "characters": 1595945316365,
-  "time": 1941799.3693125248,
+  "segments": 8551132621,
+  "tokens": 147477285631,
+  "characters": 669454139311,
+  "time": 654502.269657135,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
-      "language",
-      "id",
-      "text",
+      "rollout_results",
       "score",
+      "int_score",
+      "dataset",
+      "language",
       "url",
       "dump",
       "token_count",
+      "text",
+      "id",
       "language_score",
-      "int_score",
-      "file_path",
-      "dataset",
-      "rollout_results"
+      "file_path"
     ],
     "optional": []
   }
