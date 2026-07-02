@@ -12,9 +12,9 @@
 0.121867 nemotron-cc-1.0/megatron-lm/medium/actual
 0.034364 nemotron-cc-1.0/megatron-lm/medium-high/actual
 0.008819941385 nemotron-mind-0.0/megatron-lm/nemotron-mind
-0.019817516319 nemotron-pretraining-specialized-1.0/megatron-lm/Nemotron-Pretraining-Specialized-1.0
-0.0006841027 nemotron-pretraining-specialized-1.1/megatron-lm/Nemotron-Pretraining-Specialized-1.1
-0.0286712417462 mixture-vitae-1.0/megatron-lm/mixture-vitae-decontaminated-v1
+0.019817516319 nemotron-pretraining-specialized-1.0/megatron-lm
+0.0006841027 nemotron-pretraining-specialized-1.1/megatron-lm
+0.0286712417462 mixture-vitae-1.0/megatron-lm
 0.01172 olmo-mix-1124/megatron-lm/pes2o
 0.004 olmo-mix-1124/megatron-lm/arxiv
 #
@@ -291,11 +291,11 @@
 # Math
 #
 0.002266 finemath-0.0.0/megatron-lm/finemath3plus
-0.024773 megamath-0.0.0/megatron-lm/megamath
+0.024773 megamath-0.0.0/megatron-lm
 0.00098 openwebmath-0.0.0/megatron-lm
-0.00213 swallow-math-2.0/megatron-lm/swallow-math
+0.00213 swallow-math-2.0/megatron-lm
 #
 # Reasoning & Agentic
 #
-0.0013470727822 openthoughts-3/megatron-lm/openthoughts-3
-0.0013482555286 agenttrove-0.0megatron-lm/agenttrove
+0.0013470727822 openthoughts-3/megatron-lm/data
+0.0013482555286 agenttrove-0.0megatron-lm/data
