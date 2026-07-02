@@ -65,6 +65,7 @@ def main():
     with open(arguments.inputs[0], encoding = "utf-8") as stream:
       for i, line in enumerate(stream):
         line = line.strip();
+        if line.startswith("#"): continue;
         _ = pattern.match(line)
         if _ is None:
           if not arguments.quiet:
@@ -169,7 +170,7 @@ def main():
         continue;
       with open(_, encoding = "utf-8") as _:
         counts = json.load(_);
-        budget = math.ceil(1e13 * data["ratio"] / 1e6);
+        budget = math.ceil(15e12 * data["ratio"] / 1e6);
         pool = math.floor(counts["tokens"] / 1e6);
         percent = budget / pool * 100;
         if arguments.hplt:

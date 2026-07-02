@@ -1,6 +1,9 @@
 dclm-1.0/counts/source.json: dclm-1.0/counts/*/*/source.json
 	./etc/plan.py --sum $^ > $@;
 
+megamath-0.0.0/counts/source.json: megamath-0.0.0/counts/*/source.json megamath-0.0.0/counts/*/*/source.json
+	./etc/plan.py --sum $^ > $@;
+
 starcoder-0.0.0/counts/source.json: starcoder-0.0.0/counts/*/source.json
 	./etc/plan.py --sum $^ > $@;
 
