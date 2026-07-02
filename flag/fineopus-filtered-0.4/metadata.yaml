@@ -21,7 +21,8 @@ openai-privacy-filter:
     input: parallel
 #
 parallel:
-  input: source
+  default:
+    input: source
   source:
     text: source_text
     language: src_lang

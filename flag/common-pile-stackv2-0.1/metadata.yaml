@@ -7,7 +7,7 @@ suffix: .jsonl.zst
 release:
   default:
     input: source
-    pack: tree
+    pack: flat
     sample: full
 #
 sample:

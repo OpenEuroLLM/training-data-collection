@@ -6,7 +6,7 @@ text: text
 release:
   default:
     input: uuid
-    pack: tree
+    pack: flat
 #
 nemo-curator:
   default:

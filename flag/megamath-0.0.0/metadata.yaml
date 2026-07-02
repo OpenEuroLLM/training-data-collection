@@ -1,4 +1,4 @@
-name: FineMath 0.0.0
+name: 
 catalogue: finemath/0.0.0/data
 suffix: .jsonl.zst
 id: uuid
@@ -7,7 +7,7 @@ text: text
 release:
   default:
     input: uuid
-    pack: tree
+    pack: flat
 #
 # ./etc/plan.py --pattern finemath-0.0.0 --format yaml --budget datamix.txt
 #

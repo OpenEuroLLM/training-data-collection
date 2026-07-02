@@ -6,7 +6,7 @@ text: text
 release:
   default:
     input: uuid
-    pack: tree
+    pack: pack
 #
 # ./etc/plan.py --pattern megamath-0.0.0 --format yaml --budget datamix.txt
 #

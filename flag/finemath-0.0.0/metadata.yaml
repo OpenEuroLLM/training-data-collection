@@ -7,7 +7,7 @@ text: text
 release:
   default:
     input: uuid
-    pack: tree
+    pack: flat
 #
 # ./etc/plan.py --pattern finemath-0.0.0 --format yaml --budget datamix.txt
 #
