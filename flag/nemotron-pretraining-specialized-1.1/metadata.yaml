@@ -2,5 +2,15 @@ name:
 huggingface:
 suffix: .jsonl.zst
 id: uuid
+#
 text: text
-
+  default:
+    input: source
+    pack: flat
+#
+source:
+  Nemotron-Pretraining-Code-Concepts
+  Nemotron-Pretraining-Economics
+  Nemotron-Pretraining-Formal-Logic
+  Nemotron-Pretraining-Multiple-Choice
+  Nemotron-Pretraining-Unconditional-Algorithmic

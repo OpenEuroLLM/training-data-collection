@@ -2,5 +2,17 @@ name:
 huggingface:
 suffix: .jsonl.zst
 id: uuid
+#
 text: text
-
+  default:
+    input: source
+    pack: flat
+    sample: 
+#
+source:
+  Nemotron-Pretraining-InfiniByte-Reasoning
+  Nemotron-Pretraining-Math-Textbooks
+  Nemotron-Pretraining-RQA
+  Nemotron-Pretraining-Scientific-Coding
+  Nemotron-Pretraining-STEM-SFT
+  Nemotron-Pretraining-Wiki-Rewrite
