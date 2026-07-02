@@ -78,9 +78,7 @@
 0.00020	finepdfs-1.0.0/megatron-lm/hun_Latn
 0.00002	finepdfs-1.0.0/megatron-lm/isl_Latn
 0.00059	finepdfs-1.0.0/megatron-lm/ita_Latn
-0.00000	finepdfs-1.0.0/megatron-lm/lav_Latn
 0.00006	finepdfs-1.0.0/megatron-lm/lit_Latn
-0.00000	finepdfs-1.0.0/megatron-lm/ltg_Latn
 0.00005	finepdfs-1.0.0/megatron-lm/lvs_Latn
 0.00002	finepdfs-1.0.0/megatron-lm/mkd_Cyrl
 0.00001	finepdfs-1.0.0/megatron-lm/mlt_Latn
@@ -93,7 +91,6 @@
 0.00009	finepdfs-1.0.0/megatron-lm/slk_Latn
 0.00005	finepdfs-1.0.0/megatron-lm/slv_Latn
 0.00202	finepdfs-1.0.0/megatron-lm/spa_Latn
-0.00000	finepdfs-1.0.0/megatron-lm/srp_Latn
 0.00004	finepdfs-1.0.0/megatron-lm/srp_Cyrl
 0.00019	finepdfs-1.0.0/megatron-lm/swe_Latn
 0.00027	finepdfs-1.0.0/megatron-lm/tur_Latn
