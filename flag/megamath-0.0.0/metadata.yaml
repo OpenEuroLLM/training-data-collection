@@ -6,14 +6,10 @@ text: text
 #
 release:
   default:
-    input: uuid
+    input: source
     pack: flat
-#
-# ./etc/plan.py --pattern finemath-0.0.0 --format yaml --budget datamix.txt
-#
-nemo-curator:
-  default:
-    input: uuid
+    sample: full
+    shard: 64md
 #
 uuid:
 #
