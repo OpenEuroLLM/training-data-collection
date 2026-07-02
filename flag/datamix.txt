@@ -259,21 +259,21 @@
 #
 # Code
 #
-0.046478 common-pile-stackv2-0.1/megatron-lm/documents
-0.005333 common-pile-stackv2-edu-0.1/megatron-lm/documents
+0.046478 common-pile-stackv2-0.1/megatron-lm
+0.005333 common-pile-stackv2-edu-0.1/megatron-lm
 0.0028 dolmino-mix-100b-1125/megatron-lm/code
 0.001466 dolmino-mix-100b-1125/megatron-lm/math
 0.016666 starcoder-0.0.0/megatron-lm
-0.00332 swallow-code-2.0/megatron-lm/stage5-auto-format/python/medium
+0.00332 swallow-code-2.0/megatron-lm
 #
 # Math
 #
-0.002266 finemath-0.0.0/megatron-lm/finemath3plus
-0.024773 megamath-0.0.0/megatron-lm/megamath
+0.002266 finemath-0.0.0/megatron-lm
+0.024773 megamath-0.0.0/megatron-lm
 0.00098 openwebmath-0.0.0/megatron-lm
-0.00213 swallow-math-2.0/megatron-lm/swallow-math
+0.00213 swallow-math-2.0/megatron-lm
 #
 # Reasoning & Agentic
 #
-0.0013470727822 openthoughts-3/megatron-lm/openthoughts-3
-0.0013482555286 agenttrove-0.0megatron-lm/agenttrove
+0.0013470727822 openthoughts-3/megatron-lm
+0.0013482555286 agenttrove-0.0megatron-lm
