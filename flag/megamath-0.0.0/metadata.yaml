@@ -6,7 +6,7 @@ text: text
 #
 release:
   default:
-    input: source
+    input: uuid
     pack: flat
     sample: full
     shard: 64md
@@ -26,7 +26,6 @@ uuid:
     input: source
 #
 source:
-  megamath-code:
   megamath-qa/llama-3.3:
   megamath-qa/qwen-2.5:
   megamath-text-code-block:
