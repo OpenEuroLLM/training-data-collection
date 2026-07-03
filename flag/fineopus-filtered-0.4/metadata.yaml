@@ -4,9 +4,17 @@ hash:
   type: sha256
   key: hash
 #
+parallel:
+  source:
+    text: source_text
+    language: src_lang
+  target:
+    text: target_text
+    language: tgt_lang
+#
 release:
   default:
-    input: parallel
+    input: source
     annotations: [nemo-curator, openai-privacy-filter]
     pack: tree
     parallel:
@@ -15,20 +23,10 @@ release:
 #
 nemo-curator:
   default:
-    input: parallel
+    input: source
 openai-privacy-filter:
   default:
-    input: parallel
-#
-parallel:
-  default:
     input: source
-  source:
-    text: source_text
-    language: src_lang
-  target:
-    text: target_text
-    language: tgt_lang
 #
 source:
   fineopus-filtered-0.4/source/eng_Latn-als_Latn:
