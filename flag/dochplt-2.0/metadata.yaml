@@ -1,0 +1,59 @@
+name:
+suffix: .jsonl.zst
+hash:
+  type: sha256
+  key: hash
+#
+parallel:
+  source:
+    text: src_text
+    language: src_lang
+  target:
+    text: tgt_text
+    language: tgt_lang
+#
+release:
+  default:
+    input: source
+    annotations: [nemo-curator, openai-privacy-filter]
+    pack: tree
+    parallel:
+      count: 1
+      flip: 0.5
+#
+nemo-curator:
+  default:
+    input: source
+openai-privacy-filter:
+  default:
+    input: source
+#
+source:
+  bos_Latn-eng_Latn.docs_joined.jsonl.zst:
+  bul_Cyrl-eng_Latn.docs_joined.jsonl.zst:
+  cat_Latn-eng_Latn.docs_joined.jsonl.zst:
+  ces_Latn-eng_Latn.docs_joined.jsonl.zst:
+  dan_Latn-eng_Latn.docs_joined.jsonl.zst:
+  ell_Grek-eng_Latn.docs_joined.jsonl.zst:
+  eng_Latn-est_Latn.docs_joined.jsonl.zst:
+  eng_Latn-eus_Latn.docs_joined.jsonl.zst:
+  eng_Latn-fin_Latn.docs_joined.jsonl.zst:
+  eng_Latn-gle_Latn.docs_joined.jsonl.zst:
+  eng_Latn-glg_Latn.docs_joined.jsonl.zst:
+  eng_Latn-hrv_Latn.docs_joined.jsonl.zst:
+  eng_Latn-hun_Latn.docs_joined.jsonl.zst:
+  eng_Latn-isl_Latn.docs_joined.jsonl.zst:
+  eng_Latn-kat_Geor.docs_joined.jsonl.zst:
+  eng_Latn-lav_Latn.docs_joined.jsonl.zst:
+  eng_Latn-lit_Latn.docs_joined.jsonl.zst:
+  eng_Latn-mkd_Cyrl.docs_joined.jsonl.zst:
+  eng_Latn-mlt_Latn.docs_joined.jsonl.zst:
+  eng_Latn-nob_Latn.docs_joined.jsonl.zst:
+  eng_Latn-nor_Latn.docs_joined.jsonl.zst:
+  eng_Latn-ron_Latn.docs_joined.jsonl.zst:
+  eng_Latn-slk_Latn.docs_joined.jsonl.zst:
+  eng_Latn-slv_Latn.docs_joined.jsonl.zst:
+  eng_Latn-sqi_Latn.docs_joined.jsonl.zst:
+  eng_Latn-srp_Cyrl.docs_joined.jsonl.zst:
+  eng_Latn-tur_Latn.docs_joined.jsonl.zst:
+  eng_Latn-ukr_Cyrl.docs_joined.jsonl.zst:
