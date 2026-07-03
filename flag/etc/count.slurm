@@ -88,13 +88,19 @@ if [ ! -f "${metadata}" ]; then
 fi
 
 #
-# _fix_me_
-# we should allow block-local metadata specifications in the next round
+# first, see whether we are looking at a parallel, translation-aligned dataset
 #
-key=$(yq4 ".text" ${metadata});
-if [ -z "${key}" -o "${key}" = "null" ]; then
-  echo "count.slurm: unable to determine .text. key; exit." >&2;
-  exit 1;
+source=$(yq4 ".parallel.source.text" ${metadata});
+target=$(yq4 ".parallel.target.text" ${metadata});
+if [ "${source}" -a "${source}" != "null" -a "${target}" -a "${target}" != "null" ]; then
+  key="[\"${source}\", \"${target}\"]";
+else    
+  key=$(yq4 ".text" ${metadata});
+  if [ -z "${key}" -o "${key}" = "null" ]; then
+    echo "count.slurm: unable to determine .text. key; exit." >&2;
+    exit 1;
+  fi
+  key="\"${key}\"";
 fi
 
 suffix=$(yq4 ".${infix}.${part}.suffix" ${metadata});
@@ -130,7 +136,7 @@ python -c "
 import sys;
 sys.path.append(\"${base}/etc\");
 import counts;
-counts.count_directory(\"${path}\", pattern = \"${pattern}\", cores = ${cores}, tokenizer = \"${tokenizer}\", key = \"${key}\", target = \"${target}\", force = True);
+counts.count_directory(\"${path}\", pattern = \"${pattern}\", cores = ${cores}, tokenizer = \"${tokenizer}\", key = ${key}, target = \"${target}\", force = True);
 "
 
 #

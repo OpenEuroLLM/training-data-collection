@@ -1,0 +1,36 @@
+{
+  "files": 38,
+  "bytes": 7163315435,
+  "documents": 1568412,
+  "segments": 1058623366,
+  "tokens": 20220696106,
+  "characters": 61051158262,
+  "time": 29690.941596746445,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "__index_level_0__",
+      "model_provider",
+      "path",
+      "agent",
+      "episode",
+      "verifier_output",
+      "trial_name",
+      "model",
+      "trace_source",
+      "judgment",
+      "result",
+      "text",
+      "split",
+      "original_source",
+      "run_id",
+      "ground_truth",
+      "original_teacher",
+      "date",
+      "task",
+      "instruction"
+    ],
+    "optional": []
+  }
+}

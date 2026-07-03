@@ -8,14 +8,29 @@ release:
   default:
     input: openeurollm
     pack: tree
-    sample: 
-    shard: 
+    sample: full
 #
-nemo-curator:
-  input: openeurollm
+# ./etc/plan.py --budget --counts openeurollm.json --format yaml \
+#   --pattern dolmino-mix datamix.txt | grep -v sample
 #
-openai-privacy-filter:
-  input: openeurollm
+  ingredient2-code-meta-reasoning:
+    shard: 67md
+  ingredient2-cranecode:
+    shard: 82md
+  ingredient2-cranemath:
+    shard: 105md
+  ingredient2-dolmino-math:
+    shard: 177md
+  ingredient2-megamatt:
+    shard: 158md
+  ingredient2-omr-rewrite-fullthoughts:
+    shard: 32md
+  ingredient2-program_verifiable:
+    shard: 77md
+  ingredient2-stack_edu-fim:
+    shard: 112md
+  ingredient2-tinymath-mind:
+    shard: 160md
 #
 openeurollm:
 #

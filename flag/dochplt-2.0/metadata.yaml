@@ -1,0 +1,59 @@
+name:
+suffix: .jsonl.zst
+hash:
+  type: sha256
+  key: hash
+#
+parallel:
+  source:
+    text: src_text
+    language: src_lang
+  target:
+    text: tgt_text
+    language: tgt_lang
+#
+release:
+  default:
+    input: source
+    annotations: [nemo-curator, openai-privacy-filter]
+    pack: tree
+    parallel:
+      count: 1
+      flip: 0.5
+#
+nemo-curator:
+  default:
+    input: source
+openai-privacy-filter:
+  default:
+    input: source
+#
+source:
+  bos_Latn-eng_Latn:
+  bul_Cyrl-eng_Latn:
+  cat_Latn-eng_Latn:
+  ces_Latn-eng_Latn:
+  dan_Latn-eng_Latn:
+  ell_Grek-eng_Latn:
+  eng_Latn-est_Latn:
+  eng_Latn-eus_Latn:
+  eng_Latn-fin_Latn:
+  eng_Latn-gle_Latn:
+  eng_Latn-glg_Latn:
+  eng_Latn-hrv_Latn:
+  eng_Latn-hun_Latn:
+  eng_Latn-isl_Latn:
+  eng_Latn-kat_Geor:
+  eng_Latn-lav_Latn:
+  eng_Latn-lit_Latn:
+  eng_Latn-mkd_Cyrl:
+  eng_Latn-mlt_Latn:
+  eng_Latn-nno_Latn:
+  eng_Latn-nob_Latn:
+  eng_Latn-ron_Latn:
+  eng_Latn-slk_Latn:
+  eng_Latn-slv_Latn:
+  eng_Latn-sqi_Latn:
+  eng_Latn-srp_Cyrl:
+  eng_Latn-tur_Latn:
+  eng_Latn-ukr_Cyrl:

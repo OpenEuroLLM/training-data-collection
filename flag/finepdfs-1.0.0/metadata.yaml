@@ -6,62 +6,120 @@ text: text
 #
 release:
   default:
-    input: source
+    input: sample
     annotations: [nemo-curator, openai-privacy-filter]
+    mask: [private_email, private_phone, private_url, secret]
     pack: tree
-    sample: full
+    sample: random
+    rubber: 1.5
+#
+# ./etc/plan.py --budget --counts sample.json --format yaml --pattern finepdfs-1.0.0 datamix.txt
+#
   als_Latn:
+    budget: 20%
+    shard: 8md
   bos_Latn:
+    budget: 8%
+    shard: 12md
   bul_Cyrl:
+    budget: 17%
+    shard: 16md
   cat_Latn:
+    budget: 9%
+    shard: 17md
   ces_Latn:
-    source: sample
+    budget: 15%
+    shard: 22md
   dan_Latn:
-    source: sample
+    budget: 15%
+    shard: 20md
   deu_Latn:
-    source: sample
+    budget: 17%
+    shard: 23md
   ekk_Latn:
+    budget: 21%
+    shard: 19md
   ell_Grek:
-  eng_Latn:
-    source: sample
+    budget: 18%
+    shard: 12md
   eus_Latn:
+    budget: 12%
+    shard: 13md
   fin_Latn:
-    source: sample
+    budget: 14%
+    shard: 15md
   fra_Latn:
-    source: sample
+    budget: 16%
+    shard: 16md
   gle_Latn:
+    budget: 50%
+    shard: 11md
   glg_Latn:
+    budget: 18%
+    shard: 17md
   hrv_Latn:
+    budget: 9%
+    shard: 14md
   hun_Latn:
-    source: sample
+    budget: 11%
+    shard: 11md
   isl_Latn:
+    budget: 10%
+    shard: 12md
   ita_Latn:
-    source: sample
-  kat_Geor:
+    budget: 11%
+    shard: 21md
   lit_Latn:
+    budget: 17%
+    shard: 16md
   lvs_Latn:
+    budget: 18%
+    shard: 13md
   mkd_Cyrl:
+    budget: 19%
+    shard: 10md
   mlt_Latn:
+    budget: 21%
+    shard: 21md
   nld_Latn:
-    source: sample
+    budget: 12%
+    shard: 18md
   nno_Latn:
+    budget: 89%
+    shard: 27md
   nob_Latn:
-    source: sample
+    budget: 13%
+    shard: 15md
   pol_Latn:
-    source: sample
+    budget: 16%
+    shard: 23md
   por_Latn:
-    source: sample
+    budget: 11%
+    shard: 13md
   ron_Latn:
-    source: sample
+    budget: 14%
+    shard: 16md
   slk_Latn:
+    budget: 13%
+    shard: 21md
   slv_Latn:
+    budget: 11%
+    shard: 13md
   spa_Latn:
-    source: sample
+    budget: 15%
+    shard: 12md
   srp_Cyrl:
+    budget: 6%
+    shard: 9md
   swe_Latn:
-    source: sample
+    budget: 14%
+    shard: 19md
   tur_Latn:
+    budget: 27%
+    shard: 11md
   ukr_Cyrl:
+    budget: 11%
+    shard: 11md
 #
 sample:
   default:
@@ -111,9 +169,6 @@ openai-privacy-filter:
 propella-4b:
 #
 source:
-  default:
-    annotations:
-    - propella-4b
   als_Latn:
   bos_Latn:
   bul_Cyrl:
