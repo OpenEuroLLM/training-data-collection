@@ -2,8 +2,9 @@ name:
 huggingface:
 suffix: .jsonl.zst
 id: uuid
-#
 text: text
+#
+release:
   default:
     input: source
     pack: flat
