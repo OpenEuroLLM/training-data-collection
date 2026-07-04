@@ -74,8 +74,15 @@ def main():
                   file = sys.stderr, flush = True);
           continue;
         ratio, path = _.groups();
+        ratio = float(ratio);
+        if ratio == 0:
+          if not arguments.quiet:
+            print("plan.py(): ignoring line #{}: {}."
+                  "".format(i, line),
+                  file = sys.stderr, flush = True);
+          continue;
         active = True if filter is None or filter.search(path) else False;
-        mix[path] = {"ratio": float(ratio), "active": active};
+        mix[path] = {"ratio": ratio, "active": active};
       
   if arguments.test:
     datasets = set();
