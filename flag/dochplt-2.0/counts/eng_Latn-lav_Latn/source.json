@@ -1,0 +1,22 @@
+{
+  "files": 1,
+  "bytes": 1665626740,
+  "documents": 2893702,
+  "segments": 134842823,
+  "tokens": 6353836051,
+  "characters": 20444785102,
+  "time": 8721.086439371109,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "src_text",
+      "tgt_text",
+      "src_lang",
+      "src_doc",
+      "tgt_doc",
+      "tgt_lang"
+    ],
+    "optional": []
+  }
+}
