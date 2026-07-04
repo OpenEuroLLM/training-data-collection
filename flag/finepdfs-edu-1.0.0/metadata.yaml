@@ -17,6 +17,7 @@ release:
 #   --pattern finepdfs-edu-1.0.0 datamix.txt | grep -v full
 #
   eng_Latn:
+    mask: [account_number, private_email, private_phone, private_url, secret]
     shard: 16md
   als_Latn:
     shard: 4md
