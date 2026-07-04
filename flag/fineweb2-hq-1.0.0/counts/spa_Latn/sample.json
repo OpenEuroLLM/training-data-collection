@@ -5,24 +5,24 @@
   "segments": 626414085,
   "tokens": 31872857689,
   "characters": 130638989447,
-  "time": 104241.215123415,
+  "time": 111449.59832119942,
   "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
-      "embeddings",
+      "text",
+      "dump",
+      "url",
+      "language_score",
+      "quality_score",
+      "language_script",
+      "id",
+      "top_langs",
+      "file_path",
       "date",
       "language",
       "minhash_cluster_size",
-      "url",
-      "file_path",
-      "quality_score",
-      "language_script",
-      "language_score",
-      "top_langs",
-      "text",
-      "id",
-      "dump"
+      "embeddings"
     ],
     "optional": [
       "propella-4b"
