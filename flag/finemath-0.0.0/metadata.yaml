@@ -12,12 +12,9 @@ release:
 # ./etc/plan.py --pattern finemath-0.0.0 --format yaml --budget datamix.txt
 #
   finemath-3plus:
+    sample: random
     budget: 87%
     shard: 54md
-#
-nemo-curator:
-  default:
-    input: uuid
 #
 uuid:
 #

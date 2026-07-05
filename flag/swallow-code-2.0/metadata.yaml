@@ -8,9 +8,12 @@ release:
     input: uuid
     pack: flat
 #
-nemo-curator:
-  default:
-    input: uuid
+# ./etc/plan.py --pattern swallow-code --format yaml --budget datamix.txt
+#
+  stage5-auto-format/python/medium:
+    sample: random
+    budget: 80%
+    shard: 46md
 #
 uuid:
 #
@@ -25,6 +28,4 @@ uuid:
     input: source
 #
 source:
-  stage3-qa:
-  stage3-textbook:
-
+  stage5-auto-format/python/medium:

@@ -8,9 +8,12 @@ release:
     input: uuid
     pack: flat
 #
-nemo-curator:
-  default:
-    input: uuid
+# ./etc/plan.py --pattern swallow-math --format yaml --budget datamix.txt
+#
+  swallow-math-2.0/megatron-lm:
+    sample: random
+    budget: 92%
+    shard: 74md
 #
 uuid:
 #
