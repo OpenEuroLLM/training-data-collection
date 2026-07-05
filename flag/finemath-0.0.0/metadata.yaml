@@ -7,17 +7,14 @@ text: text
 release:
   default:
     input: uuid
-    pack: flat
+    pack: tree
 #
 # ./etc/plan.py --pattern finemath-0.0.0 --format yaml --budget datamix.txt
 #
   finemath-3plus:
-    sample: full
-    shard: 
-#
-nemo-curator:
-  default:
-    input: uuid
+    sample: random
+    budget: 87%
+    shard: 54md
 #
 uuid:
 #

@@ -16,6 +16,9 @@ nemotron-pretraining-specialized-1.1/counts/source.json: nemotron-pretraining-sp
 starcoder-0.0.0/counts/source.json: starcoder-0.0.0/counts/*/source.json
 	./etc/plan.py --sum $^ > $@;
 
+swallow-math-2.0/counts/source.json: swallow-math-2.0/counts/*/source.json swallow-math-2.0/counts/*/source.json
+	./etc/plan.py --sum $^ > $@;
+
 dclm-1.0/counts/release.json: dclm-1.0/counts/*/*/release.json
 	./etc/plan.py --sum $^ > $@;
 

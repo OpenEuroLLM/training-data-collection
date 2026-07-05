@@ -286,9 +286,9 @@
 #
 # Math
 #
-0.002266 finemath-0.0.0/megatron-lm/finemath3plus
+0.002266 finemath-0.0.0/megatron-lm/finemath-3plus
 0.024773 megamath-0.0.0/megatron-lm
-0.00098 openwebmath-0.0.0/megatron-lm
+0.00098 openwebmath-0.0.0/megatron-lm/data
 0.00213 swallow-math-2.0/megatron-lm
 #
 # Reasoning & Agentic
