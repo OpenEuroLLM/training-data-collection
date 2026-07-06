@@ -8,15 +8,211 @@ release:
   default:
     input: source
     annotations: [nemo-curator, openai-privacy-filter]
+    mask: [private_email, private_phone, private_url, secret]
     pack: tree
-    scrub:
-    - xml
-    - md
+    scrub: [xml, md]
     sample: random
-    rubber: 1.2
+    rubber: 1.5
 #
 # ./etc/plan.py --pattern hplt --counts sample.json --format yaml \
 #   --budget datamix.txt
+#
+  clean/eng_Latn/ab:
+    mask: [account_number, private_email, private_phone, private_url, secret]
+    sample: full
+    shard: 76md
+  clean/eng_Latn/ccc:
+    mask: [account_number, private_email, private_phone, private_url, secret]
+    sample: full
+    shard: 73md
+  clean/eng_Latn/ia:
+    mask: [account_number, private_email, private_phone, private_url, secret]
+    sample: full
+    shard: 78md
+  clean/als_Latn:
+    budget: 36%
+    shard: 99md
+  clean/bos_Latn:
+    budget: 43%
+    shard: 132md
+  clean/bul_Cyrl:
+    budget: 21%
+    shard: 78md
+  clean/cat_Latn:
+    budget: 27%
+    shard: 118md
+  clean/ces_Latn:
+    budget: 45%
+    shard: 95md
+  clean/dan_Latn:
+    budget: 25%
+    shard: 88md
+  clean/deu_Latn:
+    sample: full
+    shard: 93md
+  clean/ekk_Latn:
+    budget: 18%
+    shard: 68md
+  clean/ell_Grek:
+    budget: 33%
+    shard: 72md
+  clean/eus_Latn:
+    sample: full
+    shard: 129md
+  clean/fin_Latn:
+    budget: 27%
+    shard: 74md
+  clean/fra_Latn:
+    sample: full
+    shard: 74md
+  clean/gle_Latn:
+    sample: full
+    shard: 90md
+  clean/glg_Latn:
+    budget: 86%
+    shard: 136md
+  clean/hrv_Latn:
+    budget: 27%
+    shard: 71md
+  clean/hun_Latn:
+    budget: 33%
+    shard: 70md
+  clean/isl_Latn:
+    budget: 43%
+    shard: 99md
+  clean/ita_Latn:
+    budget: 76%
+    shard: 111md
+  clean/lit_Latn:
+    budget: 21%
+    shard: 76md
+  clean/ltg_Latn:
+    sample: full
+    shard: 74md
+  clean/lvs_Latn:
+    budget: 20%
+    shard: 51md
+  clean/mkd_Cyrl:
+    budget: 38%
+    shard: 135md
+  clean/mlt_Latn:
+    sample: full
+    shard: 88md
+  clean/nld_Latn:
+    budget: 49%
+    shard: 104md
+  clean/nno_Latn:
+    sample: full
+    shard: 121md
+  clean/nob_Latn:
+    budget: 31%
+    shard: 83md
+  clean/pol_Latn:
+    budget: 58%
+    shard: 99md
+  clean/por_Latn:
+    budget: 79%
+    shard: 90md
+  clean/ron_Latn:
+    budget: 25%
+    shard: 95md
+  clean/slk_Latn:
+    budget: 28%
+    shard: 99md
+  clean/slv_Latn:
+    budget: 22%
+    shard: 83md
+  clean/spa_Latn:
+    sample: full
+    shard: 82md
+  clean/srp_Latn:
+    sample: full
+    shard: 127md
+  clean/srp_Cyrl:
+    budget: 38%
+    shard: 66md
+  clean/swe_Latn:
+    budget: 41%
+    shard: 96md
+  clean/tur_Latn:
+    budget: 41%
+    shard: 93md
+  clean/ukr_Cyrl:
+    budget: 27%
+    shard: 80md
+  noisy/als_Latn:
+    budget: 2%
+    shard: 286md
+  noisy/bos_Latn:
+    budget: 9%
+    shard: 334md
+  noisy/bul_Cyrl:
+    budget: 1%
+    shard: 462md
+  noisy/cat_Latn:
+    budget: 3%
+    shard: 343md
+  noisy/dan_Latn:
+    budget: 2%
+    shard: 293md
+  noisy/ekk_Latn:
+    budget: 2%
+    shard: 291md
+  noisy/eus_Latn:
+    budget: 13%
+    shard: 500md
+  noisy/fin_Latn:
+    budget: 2%
+    shard: 383md
+  noisy/gle_Latn:
+    budget: 29%
+    shard: 361md
+  noisy/glg_Latn:
+    budget: 12%
+    shard: 542md
+  noisy/hrv_Latn:
+    budget: 2%
+    shard: 324md
+  noisy/isl_Latn:
+    budget: 4%
+    shard: 345md
+  noisy/lit_Latn:
+    budget: 2%
+    shard: 368md
+  noisy/lvs_Latn:
+    budget: 2%
+    shard: 220md
+  noisy/mkd_Cyrl:
+    budget: 3%
+    shard: 580md
+  noisy/mlt_Latn:
+    budget: 24%
+    shard: 244md
+  noisy/nno_Latn:
+    budget: 50%
+    shard: 402md
+  noisy/nob_Latn:
+    budget: 3%
+    shard: 236md
+  noisy/ron_Latn:
+    budget: 12%
+    shard: 46md
+  noisy/slk_Latn:
+    budget: 4%
+    shard: 291md
+  noisy/slv_Latn:
+    budget: 2%
+    shard: 368md
+  noisy/srp_Latn:
+    budget: 16%
+    shard: 174md
+  noisy/srp_Cyrl:
+    budget: 2%
+    shard: 359md
+  noisy/ukr_Cyrl:
+    budget: 1%
+    shard: 490md
+
 #
 sample:
   default:
