@@ -8,7 +8,10 @@ release:
   default:
     input: sample
     annotations: [nemo-curator, openai-privacy-filter]
-    mask: [private_email, private_phone, private_url, secret]
+    #
+    # FinePDFs has already pseudonomized email and web addresses
+    #
+    mask: [private_phone, secret]
     pack: tree
     sample: full
     rubber: 1.5
@@ -17,7 +20,7 @@ release:
 #   --pattern finepdfs-edu-1.0.0 datamix.txt | grep -v full
 #
   eng_Latn:
-    mask: [account_number, private_email, private_phone, private_url, secret]
+    mask: [account_number, private_phone, secret]
     shard: 16md
   als_Latn:
     shard: 4md

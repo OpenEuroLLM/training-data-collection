@@ -8,7 +8,10 @@ release:
   default:
     input: sample
     annotations: [nemo-curator, openai-privacy-filter]
-    mask: [private_email, private_phone, private_url, secret]
+    #
+    # FinePDFs has already pseudonomized email and web addresses
+    #
+    mask: [private_phone, secret]
     pack: tree
     sample: random
     rubber: 1.5
@@ -16,7 +19,7 @@ release:
 # ./etc/plan.py --budget --counts sample.json --format yaml --pattern finepdfs-1.0.0 datamix.txt
 #
   eng_Latn:
-    mask: [account_number, private_email, private_phone, private_url, secret]
+    mask: [account_number, private_phone, secret]
     sample: full
     shard: 16md
   als_Latn:
