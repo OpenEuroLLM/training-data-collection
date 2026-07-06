@@ -395,7 +395,6 @@ source:
   clean/deu_Latn:
   clean/ekk_Latn:
   clean/ell_Grek:
-  clean/eng_Latn:
   clean/eng_Latn/ab:
     annotations: [bsc-edu]
   clean/eng_Latn/ccc:
