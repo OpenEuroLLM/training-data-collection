@@ -17,7 +17,8 @@ gle: Irish: gle_Latn
 hrv: Croatian: hrv_Latn
 hun: Hungarian: hun_Latn
 ita: Italian: ita_Latn
-lav: Latvian: lav_Latn ltg_Latn lvs_Latn
+lav: Latgalian: ltg_Latn
+lav: Latvian: lav_Latn lvs_Latn
 lit: Lithuanian: lit_Latn
 mlt: Maltese: mlt_Latn
 nld: Dutch: nld_Latn
@@ -38,7 +39,6 @@ glg: Galician: glg_Latn
 # Candidate EU Members
 #
 bos: Bosnian: bos_Latn
-kat: Georgian: kat_Geor
 mkd: Macedonian: mkd_Cyrl
 sqi: Albanian: sqi_Latn als_Latn
 srp: Serbian: srp_Cyrl srp_Latn
@@ -48,4 +48,5 @@ ukr: Ukrainian: ukr_Cyrl
 # Closely Associated Scandinavian
 #
 isl: Icelandic: isl_Latn
-nor: Norwegian: nor_Latn nno_Latn nob_Latn
+nor: Norwegian Bokmål: nor_Latn nob_Latn
+nor: Norwegian Nynorsk: nno_Latn
