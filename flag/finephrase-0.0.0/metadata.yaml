@@ -8,12 +8,8 @@ release:
   default:
     input: source
     annotations: [nemo-curator, openai-privacy-filter]
-    pack: tree
-    scrub:
-    - xml
-    - md
-    sample: random
-    rubber: 1.2
+    pack: flat
+    sample: 
 #
 nemo-curator:
   default:
