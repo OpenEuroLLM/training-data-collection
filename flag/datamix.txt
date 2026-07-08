@@ -6,12 +6,12 @@
 0.0232045386724 hplt-4.0/megatron-lm/clean/eng_Latn/ccc
 0.0116426180869 hplt-4.0/megatron-lm/clean/eng_Latn/ia
 0.0877536157518 finepdfs-1.0.0/megatron-lm/eng_Latn
-0.0324244717955 finephrase-0.0.0/megatron-lm/finephrase
+0.0324244717955 finephrase-0.0.0/megatron-lm
 0.009455 finepdfs-edu-1.0.0/megatron-lm/eng_Latn
 0.037728 nemotron-cc-1.0/megatron-lm/high/actual
 0.121867 nemotron-cc-1.0/megatron-lm/medium/actual
 0.034364 nemotron-cc-1.0/megatron-lm/medium-high/actual
-0.008819941385 nemotron-mind-0.0/megatron-lm/nemotron-mind
+0.008819941385 nemotron-mind-0.0/megatron-lm
 0.019817516319 nemotron-pretraining-specialized-1.0/megatron-lm
 0.0006841027 nemotron-pretraining-specialized-1.1/megatron-lm
 0.0286712417462 mixture-vitae-1.0/megatron-lm
