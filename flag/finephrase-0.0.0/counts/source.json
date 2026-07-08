@@ -1,0 +1,27 @@
+{
+  "files": 27104,
+  "bytes": 2789607032451,
+  "documents": 1353978711,
+  "segments": 25856098457,
+  "tokens": 487543850560,
+  "characters": 2193599053915,
+  "time": 1588812.1797657013,
+  "errors": 0,
+  "keys": {
+    "required": [
+      "language_score",
+      "text",
+      "id",
+      "score",
+      "rollout_results",
+      "dump",
+      "int_score",
+      "token_count",
+      "file_path",
+      "dataset",
+      "language",
+      "url"
+    ],
+    "optional": []
+  }
+}

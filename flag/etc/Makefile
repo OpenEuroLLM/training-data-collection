@@ -1,10 +1,16 @@
 dclm-1.0/counts/source.json: dclm-1.0/counts/*/*/source.json
 	./etc/plan.py --sum $^ > $@;
 
+finephrase-0.0.0/counts/source.json: finephrase-0.0.0/counts/*/source.json
+	./etc/plan.py --sum $^ > $@;
+
 megamath-0.0.0/counts/source.json: megamath-0.0.0/counts/*/source.json megamath-0.0.0/counts/*/*/source.json
 	./etc/plan.py --sum $^ > $@;
 
 mixture-vitae-1.0/counts/source.json: mixture-vitae-1.0/counts/*/source.json
+	./etc/plan.py --sum $^ > $@;
+
+nemotron-mind-0.0/counts/source.json: nemotron-mind-0.0/counts/*/source.json
 	./etc/plan.py --sum $^ > $@;
 
 nemotron-pretraining-specialized-1.0/counts/source.json: nemotron-pretraining-specialized-1.0/counts/*/source.json
