@@ -7,12 +7,8 @@ release:
   default:
     input: uuid
     pack: flat
-#
-# ./etc/plan.py --pattern swallow-math --format yaml --budget datamix.txt
-#
+    sample: full
   swallow-math-2.0/megatron-lm:
-    sample: random
-    budget: 92%
     shard: 74md
 #
 uuid:
