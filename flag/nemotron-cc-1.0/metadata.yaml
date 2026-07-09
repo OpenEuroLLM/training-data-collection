@@ -6,21 +6,23 @@ id: warc_record_id
 #
 release:
   default:
-    input: source
+    input: sample
     annotations: [nemo-curator, openai-privacy-filter]
+    mask: [account_number, private_email, private_phone, private_url, secret]
     pack: tree
     sample: full
-    rubber: 1.1
 #
 # ./etc/plan.py --pattern nemotron-cc-1.0 --format yaml \
 #   --budget datamix.txt | grep -v sample:
 #
   high/actual:
-    input: sample
+    shard: 130md
+  medium-high/actual:
+    shard: 108md
   medium/actual:
     sample: random
-    budget: 
-  medium-high/actual:
+    budget: 89%
+    shard: 111md
 #
 sample:
   default:
