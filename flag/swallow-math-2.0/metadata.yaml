@@ -1,4 +1,4 @@
-catalogue: /0.0.0/data
+catalogue: swallow-math/0.0.0/data
 suffix: .jsonl.zst
 id: uuid
 text: text
@@ -8,7 +8,6 @@ release:
     input: uuid
     pack: flat
     sample: full
-  swallow-math-2.0/megatron-lm:
     shard: 74md
 #
 uuid:

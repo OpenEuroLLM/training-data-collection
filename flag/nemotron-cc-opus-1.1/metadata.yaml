@@ -3,18 +3,16 @@ catalogue: nemotron-cc-opus/1.1/openeurollm
 suffix: .jsonl.zst
 text: text
 id: warc_record_id
-source:
-  default:
-    suffix: .jsonl.gz
+#
 release:
   default:
     input: source
     pack: tree
     sample: random
-    rubber: 5%
+    rubber: 1.5
 #
 # ./etc/plan.py --pattern nemotron-cc-opus-1.1 --format yaml \
-#   --budget datamix.txt >> nemotron-cc-opus-1.1/metadata.yaml
+#   --budget datamix.txt
 #
   bos_Latn:
     budget: 11%
@@ -76,3 +74,27 @@ release:
   tur_Latn:
     budget: 17%
     shard: 133md
+#
+source:
+  default:
+    suffix: .jsonl.gz
+  nemotron-cc-opus-1.1/source/lav_Latn:
+  nemotron-cc-opus-1.1/source/kat_Geor:
+  nemotron-cc-opus-1.1/source/bos_Latn:
+  nemotron-cc-opus-1.1/source/glg_Latn:
+  nemotron-cc-opus-1.1/source/slk_Latn:
+  nemotron-cc-opus-1.1/source/srp_Cyrl:
+  nemotron-cc-opus-1.1/source/bul_Cyrl:
+  nemotron-cc-opus-1.1/source/cat_Latn:
+  nemotron-cc-opus-1.1/source/gle_Latn:
+  nemotron-cc-opus-1.1/source/lit_Latn:
+  nemotron-cc-opus-1.1/source/sqi_Latn:
+  nemotron-cc-opus-1.1/source/slv_Latn:
+  nemotron-cc-opus-1.1/source/tur_Latn:
+  nemotron-cc-opus-1.1/source/eus_Latn:
+  nemotron-cc-opus-1.1/source/hrv_Latn:
+  nemotron-cc-opus-1.1/source/mlt_Latn:
+  nemotron-cc-opus-1.1/source/est_Latn:
+  nemotron-cc-opus-1.1/source/mkd_Cyrl:
+  nemotron-cc-opus-1.1/source/ell_Grek:
+  nemotron-cc-opus-1.1/source/ces_Latn:
