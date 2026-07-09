@@ -3,12 +3,13 @@ catalogue: nemotron-cc-tower+/0.1/parallel
 suffix: .jsonl.zst
 text: text
 id: warc_record_id
+#
 release:
   default:
     input: source
     pack: tree
     sample: random
-    rubber: 5%
+    rubber: 1.5
 #
 # ./etc/plan.py --pattern nemotron-cc-tower\\+-0.1 --format yaml \
 #   --budget datamix.txt >> nemotron-cc-tower+-0.1/metadata.yaml
@@ -93,3 +94,21 @@ release:
   parallel/tower9b/ukr_Cyrl:
     budget: 15%
     shard: 137md
+#
+source:
+  nemotron-cc-tower+-0.1/source/parallel/tower72b/ita_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower72b/spa_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower72b/fin_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower72b/swe_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower72b/deu_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/fra_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/nld_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/dan_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/ron_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/nno_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/pol_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/isl_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/por_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/hun_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/nob_Latn:
+  nemotron-cc-tower+-0.1/source/parallel/tower9b/ukr_Cyrl:
