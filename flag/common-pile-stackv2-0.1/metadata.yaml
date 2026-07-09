@@ -8,7 +8,10 @@ release:
   default:
     input: sample
     pack: tree
-    sample: full
+  documents:
+    sample: random
+    budget: 25%
+    shard: 7md
 #
 sample:
   default:

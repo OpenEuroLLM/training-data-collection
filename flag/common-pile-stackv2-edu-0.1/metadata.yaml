@@ -9,7 +9,7 @@ release:
     input: sample
     pack: tree
 #
-# ./etc/plan.py --budget --format yaml --pattern stackv2-edu datamix.txt
+# ./etc/plan.py --budget --counts sample --format yaml --pattern stackv2-edu datamix.txt
 #
   documents:
     sample: full
