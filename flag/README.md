@@ -28,16 +28,16 @@ This directory collects and documents the training data mix for the first
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------:|:------:|:----:|:----------:|
 | dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ | ✅ | | | |
-| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |🏃‍➡️ | | | |
+| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🏃‍➡️ | | | |
 | finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🏃‍➡️ | | | |
-| finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅️️ | ➖ |    | ❓ | ➖ | | | | |
-| hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ | 🏃‍➡️ | ✅ | ✅ | | | | |
-| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | 🏃‍➡️ | ✅ | ✅ | | | | |
-| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ |    | ❓ | ➖ | | | | |
-| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ |    | ❓ | ➖ | | | | |
-| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ |    | ❓ | ➖ | | | | |
-| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ |    | ❓ | ✅ | | | | |
-| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ |    | ➖ | ➖ | | | | |
+| finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅️️ | ➖ |    | ❓ | ➖ |    | | | |
+| hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ | 🏃‍➡️ | ✅ | ✅ |    | | | |
+| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | 🏃‍➡️ | ✅ | ✅ |    | | | |
+| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ |    | ❓ | ➖ |    | | | |
+| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ |    | ❓ | ➖ |    | | | |
+| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ |    | ❓ | ➖ |    | | | |
+| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ |    | ❓ | ✅ |    | | | |
+| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ |    | ➖ | ➖ |    | | | |
 
 ## Multilingual Source Datasets
 
