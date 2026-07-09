@@ -14,23 +14,36 @@ import sys;
 import time;
 import yaml;
 
+def summarize_counts(path, argument):
+  result = dict();
+  for suffix in ["sample", "openeurollm", "source", "release"] if argument is None else [argument]:
+    path = path.replace("/megatron-lm", "/counts");
+    _ = os.path.join(path, suffix + ".json");
+    if os.path.isfile(_):
+      with open(_, encoding = "utf-8") as _:
+        result[suffix] = json.load(_);
+  return result;
+  
 def main():
 
   start = time.time();
 
   parser = argparse.ArgumentParser(description = "Maintenance of OpenEuroLLM Training Data Collection");
+  parser.add_argument("--horizon", type = int, default = 15e12);
   parser.add_argument("--pattern", type = str, default = None);
-  parser.add_argument("--counts", type = str, default = "source.json");
+  parser.add_argument("--counts", type = str, default = None);
   parser.add_argument("--format", type = str, default = "plain");
   parser.add_argument("--test", action = "store_true", default = False);
   parser.add_argument("--sum", action = "store_true", default = False);
-  parser.add_argument("--sample", action = "store_true", default = False);
   parser.add_argument("--budget", action = "store_true", default = False);
+  parser.add_argument("--sample", action = "store_true", default = False);
   parser.add_argument("--finepdfs", action = "store_true", default = False);
-  parser.add_argument("--hplt", action = "store_true", default = False);
   parser.add_argument("--quiet", action = "store_true", default = False);
   parser.add_argument("inputs", nargs = "*");
   arguments = parser.parse_args();
+
+  if arguments.counts is not None and arguments.counts.endswith(".json"):
+    arguments.counts = arguments.counts[:-len(".json")];
 
   if arguments.sum:
     result = {"files": 0, "bytes": 0,
@@ -56,11 +69,14 @@ def main():
     sys.exit(0);
 
   mix = dict();
-  if arguments.test or arguments.budget or arguments.budget or arguments.finepdfs or arguments.hplt:
+  if arguments.test or arguments.budget or arguments.finepdfs or arguments.sample:
     pattern = re.compile(r"(0\.[0-9]+)[ \t](.+)$")
     filter = None;
-    if arguments.pattern is not None: filter = re.compile(arguments.pattern);
-    elif arguments.hplt: filter = re.compile(r"hplt-");
+    if arguments.pattern is not None:
+      filter = re.compile(arguments.pattern);
+    if arguments.sample:
+      arguments.budget = True;
+      arguments.format = "sample";
     
     with open(arguments.inputs[0], encoding = "utf-8") as stream:
       for i, line in enumerate(stream):
@@ -73,6 +89,7 @@ def main():
                   "".format(i, line),
                   file = sys.stderr, flush = True);
           continue;
+
         ratio, path = _.groups();
         ratio = float(ratio);
         if ratio == 0:
@@ -81,8 +98,14 @@ def main():
                   "".format(i, line),
                   file = sys.stderr, flush = True);
           continue;
+
+        dataset = re.sub(r"/megatron-lm.*", "", path);
+        part = re.sub(r".+/megatron-lm/?", "", path);
+        counts = summarize_counts(path, arguments.counts);
         active = True if filter is None or filter.search(path) else False;
-        mix[path] = {"ratio": ratio, "active": active};
+        mix[path] = {"dataset": dataset, "part": part,
+                     "ratio": ratio, "active": active,
+                     "counts": counts};
       
   if arguments.test:
     datasets = set();
@@ -161,63 +184,74 @@ def main():
               print("plan.py(): mismatch ({} vs. {}) in .megatron-lm. checksums for {}."
                     "".format(i, j, dataset + "/" + part), file = sys.stderr);
               
-
-  if arguments.budget or arguments.hplt:
-    pattern = None;
-    if arguments.pattern is not None: pattern = re.compile(arguments.pattern);
-    elif arguments.hplt: pattern = re.compile(r"hplt-");
+  if arguments.budget:
+    if arguments.format == ",":
+      print("dataset,part,budget,usage"
+            ",source tokens,source documents,source length"
+            ",sample tokens,sample documents,sample length"
+            ",token reduction,document reduction");
     for path, data in mix.items():
-      if pattern is not None and pattern.search(path) is None: continue
-      _ = os.path.join(path.replace("/megatron-lm", "/counts"), arguments.counts)
-      if not os.path.isfile(_):
+      if not data["active"]: continue;
+      counts = data["counts"];
+      if "source" not in counts and "openeurollm" not in counts:
         if not arguments.quiet:
-          print("plan.py(): no counts for {} (#{})."
+          print("plan.py(): no .source. counts for {} (#{})."
                 "".format(path, i),
                 file = sys.stderr, flush = True);
         continue;
-      with open(_, encoding = "utf-8") as _:
-        counts = json.load(_);
-        budget = math.ceil(15e12 * data["ratio"] / 1e6);
-        pool = math.floor(counts["tokens"] / 1e6);
-        percent = budget / pool * 100;
-        if arguments.hplt:
-          _ = os.path.join(path.replace("/megatron-lm", "/counts"), "wds+register.json")
-          if not os.path.isfile(_):
-            if not arguments.quiet:
-              print("plan.py(): no .wds+register. counts for {} (#{})."
-                    "".format(path, i),
-                    file = sys.stderr, flush = True);
-            continue;
-          with open(_, encoding = "utf-8") as _:
-            new = json.load(_);
-            part = re.sub(r"[^/]+/megatron-lm/", "", path);
-            print("{}: {:,}m / {:,} source tokens = |{:,.1f}|; "
-                  "{:,}m / {:,} wds+register tokens = |{:,.1f}| "
-                  "({:,.1f}% / {:,.1f}%)."
-                  "".format(part, counts["tokens"] // 1e6, counts["documents"],
-                            counts["tokens"] / counts["documents"],
-                            new["tokens"] // 1e6, new["documents"],
-                            new["tokens"] / new["documents"],
-                            new["tokens"] / counts["tokens"] * 100,
-                            new["documents"] / counts["documents"] * 100));
-        elif arguments.format == "plain":
-           print("{}: {:,}m tokens of {:,}m ({:,.1f}%)."
-                 "".format(path, budget, pool, percent));
-        elif arguments.format == "yaml":
-          print("  {}:".format(re.sub(r".+/megatron-lm/", "", path)));
-          #
-          # per suggestion by @spyysalo, aim for shards around 100b tokens
-          #
-          shard = 1e11 / (counts["tokens"] / counts["documents"]);
-          if shard > 1e6: shard = "{}md".format(round(shard / 1e6));
-          elif shard > 1e3: shard = "{}md".format(round(shard / 1e3));
-          else: shard = "{}d".format(shard);
-          percent = math.ceil(percent);
-          if percent >= 100:
-            print(f"    sample: full\n    shard: {shard}");
-          else:
-            print("    budget: {}%\n    shard: {}"
-                  "".format(percent, shard));
+      source = counts["openeurollm"] if "openeurollm" in counts else counts["source"];
+      sample = counts["sample"] if "sample" in counts else None;
+      tokens = source["tokens"] if sample is None else sample["tokens"];
+      documents = source["documents"] if sample is None else sample["documents"];
+      budget = math.ceil(arguments.horizon * data["ratio"] / 1e6);
+      pool = math.floor(tokens / 1e6);
+      percent = budget / pool * 100;
+      if arguments.format == "plain":
+         print("{}:{}: {:,}m tokens of {:,}m ({:,.1f}%)."
+               "".format(data["dataset"], data["part"], budget, pool, percent));
+      elif arguments.format == "yaml":
+        print("  {}:".format(data["part"]));
+        #
+        # per suggestion by @spyysalo, aim for shards around 100b tokens
+        #
+        shard = 1e11 / (tokens / documents);
+        if shard > 1e6: shard = "{}md".format(round(shard / 1e6));
+        elif shard > 1e3: shard = "{}kd".format(round(shard / 1e3));
+        else: shard = "{}d".format(round(shard));
+        percent = math.ceil(percent);
+        if percent >= 100:
+          print(f"    sample: full\n    shard: {shard}");
+        else:
+          print("    sample: random\n    budget: {}%\n    shard: {}"
+                "".format(percent, shard));
+      elif arguments.format == "sample":
+        if sample is None: continue;
+        print("{}:{}: {:,}m source tokens |{:,.1f}|; "
+              "{:,}m sample tokens |{:,.1f}| "
+              "({:,.1f}%)."
+              "".format(data["dataset"], data["part"],
+                        source["tokens"] // 1e6,
+                        source["tokens"] / source["documents"],
+                        sample["tokens"] // 1e6,
+                        sample["tokens"] / sample["documents"],
+                        sample["tokens"] / source["tokens"] * 100));
+      elif arguments.format == ",":
+        budget = math.ceil(arguments.horizon * data["ratio"]);
+        print("{},{},{},{:.3f}"
+              ",{},{},{:.1f}"
+              "".format(data["dataset"], data["part"], budget, budget / tokens,
+                        source["tokens"], source["documents"],
+                        source["tokens"] / source["documents"]),
+              end = "");
+        if sample is None:
+          print(",,,,,");
+        else:
+          print(",{},{},{:.1f}"
+                ",{:.3f},{:.3f}"
+                "".format(sample["tokens"], sample["documents"],
+                          sample["tokens"] / sample["documents"],
+                          sample["tokens"] / source["tokens"],
+                          sample["documents"] / source["documents"]));
     sys.exit(0);
 
   if arguments.finepdfs:
@@ -230,7 +264,7 @@ def main():
         n = data["ratio"] + mix[edu];
         _ = os.path.join(edu.replace("/megatron-lm", "/counts"), arguments.counts)
         with open(_, encoding = "utf-8") as _:
-          r = min(n, json.load(_)["tokens"] / 1e13);
+          r = min(n, json.load(_)["tokens"] / arguments.horizon);
           print("{:,.6f} {}".format(r, edu));
           if n > r: print("{:,.6f} {}".format(n - r, path));
     sys.exit(0);

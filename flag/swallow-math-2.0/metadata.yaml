@@ -7,8 +7,8 @@ release:
   default:
     input: uuid
     pack: flat
-    sample: random
-    budget: 92%
+    sample: full
+  swallow-math-2.0/megatron-lm:
     shard: 74md
 #
 uuid:

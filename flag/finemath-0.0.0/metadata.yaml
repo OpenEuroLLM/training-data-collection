@@ -8,12 +8,8 @@ release:
   default:
     input: uuid
     pack: tree
-#
-# ./etc/plan.py --pattern finemath-0.0.0 --format yaml --budget datamix.txt
-#
+    sample: full
   finemath-3plus:
-    sample: random
-    budget: 87%
     shard: 54md
 #
 uuid:

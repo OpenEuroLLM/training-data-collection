@@ -1,0 +1,52 @@
+#
+# Prioritized Target Languages in OpenEuroLLM
+#
+#
+# EU Official Languages
+#
+bul: Bulgarian: bul_Cyrl
+ces: Czech: ces_Latn
+dan: Danish: dan_Latn
+deu: German: deu_Latn
+ell: Greek: ell_Grek
+eng: English: eng_Latn
+est: Estonian: est_Latn ekk_Latn
+fin: Finnish: fin_Latn
+fra: French: fra_Latn
+gle: Irish: gle_Latn
+hrv: Croatian: hrv_Latn
+hun: Hungarian: hun_Latn
+ita: Italian: ita_Latn
+lav: Latgalian: ltg_Latn
+lav: Latvian: lav_Latn lvs_Latn
+lit: Lithuanian: lit_Latn
+mlt: Maltese: mlt_Latn
+nld: Dutch: nld_Latn
+pol: Polish: pol_Latn
+por: Portuguese: por_Latn
+ron: Romanian: ron_Latn
+slk: Slovak: slk_Latn
+slv: Slovene: slv_Latn
+spa: Spanish: spa_Latn
+swe: Swedish: swe_Latn
+#
+# Co-official Languages in Member States
+#
+cat: Catalan: cat_Latn
+eus: Basque: eus_Latn
+glg: Galician: glg_Latn
+#
+# Candidate EU Members
+#
+bos: Bosnian: bos_Latn
+mkd: Macedonian: mkd_Cyrl
+sqi: Albanian: sqi_Latn als_Latn
+srp: Serbian: srp_Cyrl srp_Latn
+tur: Turkish: tur_Latn
+ukr: Ukrainian: ukr_Cyrl
+#
+# Closely Associated Scandinavian
+#
+isl: Icelandic: isl_Latn
+nor: Norwegian Bokmål: nor_Latn nob_Latn
+nor: Norwegian Nynorsk: nno_Latn

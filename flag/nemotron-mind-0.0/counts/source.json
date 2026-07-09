@@ -1,0 +1,18 @@
+{
+  "files": 238,
+  "bytes": 127499482038,
+  "documents": 231590130,
+  "segments": 4876748907,
+  "tokens": 132299120775,
+  "characters": 550535607023,
+  "time": 207560.77861905098,
+  "errors": 0,
+  "keys": {
+    "required": [
+      "Conversational Style",
+      "Document ID",
+      "Text"
+    ],
+    "optional": []
+  }
+}
