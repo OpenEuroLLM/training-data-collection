@@ -21,7 +21,6 @@
 # Multilingual
 #
 0.0000332950	fineopus-filtered-0.4/megatron-lm/eng_Latn-als_Latn
-0.0000330748	fineopus-filtered-0.4/megatron-lm/eng_Latn-bos_Latn
 0.0000012390	fineopus-filtered-0.4/megatron-lm/eng_Latn-bul_Cyrl
 0.0000038000	fineopus-filtered-0.4/megatron-lm/eng_Latn-cat_Latn
 0.0000045700	fineopus-filtered-0.4/megatron-lm/eng_Latn-ces_Latn
