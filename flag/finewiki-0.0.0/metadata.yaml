@@ -6,10 +6,79 @@ text: text
 #
 release:
   default:
-    input: source
+    input: sample
     annotations: [nemo-curator, openai-privacy-filter]
+    mask: [private_email, private_phone, private_url, secret]
     pack: tree
     sample: full
+  bos_Latn:
+    shard: 92md
+  bul_Cyrl:
+    shard: 125md
+  cat_Latn:
+    shard: 93md
+  ces_Latn:
+    shard: 99md
+  dan_Latn:
+    shard: 151md
+  deu_Latn:
+    shard: 74md
+  ell_Grek:
+    shard: 70md
+  est_Latn:
+    shard: 154md
+  eus_Latn:
+    shard: 196md
+  fin_Latn:
+    shard: 130md
+  fra_Latn:
+    shard: 71md
+  gle_Latn:
+    shard: 275md
+  glg_Latn:
+    shard: 116md
+  hrv_Latn:
+    shard: 124md
+  hun_Latn:
+    shard: 76md
+  isl_Latn:
+    shard: 179md
+  ita_Latn:
+    shard: 82md
+  lav_Latn:
+    shard: 109md
+  lit_Latn:
+    shard: 149md
+  mkd_Cyrl:
+    shard: 104md
+  mlt_Latn:
+    shard: 41md
+  nld_Latn:
+    shard: 181md
+  nor_Latn:
+    shard: 156md
+  pol_Latn:
+    shard: 142md
+  por_Latn:
+    shard: 95md
+  ron_Latn:
+    shard: 133md
+  slk_Latn:
+    shard: 145md
+  slv_Latn:
+    shard: 113md
+  spa_Latn:
+    shard: 81md
+  sqi_Latn:
+    shard: 116md
+  srp_Cyrl:
+    shard: 56md
+  swe_Latn:
+    shard: 378md
+  tur_Latn:
+    shard: 135md
+  ukr_Cyrl:
+    shard: 95md
 #
 sample:
   default:
