@@ -14,10 +14,9 @@ release:
     mask: [private_phone, secret]
     pack: tree
     sample: full
-    rubber: 1.5
 #
 # ./etc/plan.py --budget --counts sample.json --format yaml \
-#   --pattern finepdfs-edu-1.0.0 datamix.txt | grep -v full
+#   --pattern finepdfs-edu-1.0.0 datamix.txt | egrep -v 'sample|budget'
 #
   eng_Latn:
     mask: [account_number, private_phone, secret]
@@ -25,7 +24,6 @@ release:
   als_Latn:
     shard: 4md
   bos_Latn:
-    budget: 92%
     shard: 7md
   bul_Cyrl:
     shard: 11md
@@ -84,7 +82,6 @@ release:
   spa_Latn:
     shard: 10md
   srp_Cyrl:
-    budget: 63%
     shard: 5md
   swe_Latn:
     shard: 13md
