@@ -193,13 +193,17 @@ def main():
     for path, data in mix.items():
       if not data["active"]: continue;
       counts = data["counts"];
-      if "source" not in counts and "openeurollm" not in counts:
+      if ("source" not in counts and "openeurollm" not in counts
+          and (arguments.counts is None or arguments.counts not in counts)):
         if not arguments.quiet:
-          print("plan.py(): no .source. counts for {} (#{})."
-                "".format(path, i),
+          print("plan.py(): no .source. counts for {}:{} (#{})."
+                "".format(data["dataset"], data["part"], i),
                 file = sys.stderr, flush = True);
         continue;
-      source = counts["openeurollm"] if "openeurollm" in counts else counts["source"];
+      if arguments.counts is not None:
+        source = counts[arguments.counts];
+      else:
+        source = counts["openeurollm"] if "openeurollm" in counts else counts["source"];
       sample = counts["sample"] if "sample" in counts else None;
       tokens = source["tokens"] if sample is None else sample["tokens"];
       documents = source["documents"] if sample is None else sample["documents"];
