@@ -58,8 +58,8 @@ This directory collects and documents the training data mix for the first
 | common-pile-stackv2-0.1              |     1 | 3 | ✅ | ✅️️️ | ✅️ | ➖ | ➖ | ✅️ |   🏃‍🕛    |           |    |
 | common-pile-stackv2-edu-0.1          |     1 | 3 | ✅️ | ✅️️ | ✅️ | ➖ | ➖ | ✅️ |     ✅️     | ✅️(80BT)  |    |
 | dolmino-mix-100b-1125                |     9 | 5 | ✅ | ✅️️️ | ➖ | ➖ | ➖ | ➖ |    ✅️️️    | ✅️(0.5BT) |    |
-| finemath-0.0.0                       |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ |    ✅️️️    |           |    |
-| megamath-0.0.0                       |     1 | 4 | ✅ | ✅️️ | ➖ | ➖ | ➖ | ➖ |    ✅️️️    |           |    |
+| finemath-0.0.0                       |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ |    ✅️️️    |🏃‍|    |
+| megamath-0.0.0                       |     1 | 4 | ✅ | ✅️️ | ➖ | ➖ | ➖ | ➖ |    ✅️️️    |🏃‍|    |
 | openwebmath-0.0.0                    |     1 | 5 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ |     ✅️     | ✅️(14BT)  |    |
 | starcoder-0.0.0                      |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ |     ✅️     | ✅️(113BT) |    |
 | swallow-code-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ |     ✅️     | ✅️(50BT)  |    |
