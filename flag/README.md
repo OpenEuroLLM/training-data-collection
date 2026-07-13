@@ -136,3 +136,11 @@ data mix.
 
 
 ## Packing: Putting it all Together
+
+Instructions on how to run packaging are found in 
+[training-data-packer repository](https://github.com/OpenEuroLLM/training-data-packer).
+
+## Tokenization: Nemotron tokanization
+Instructions on how to run tokenization are found in 
+[tokenization repository](https://github.com/mrunesson/tokenizer/tree/flag/flag-tokenization).
+TODO: Will be merged into https://github.com/openEuroLLM/tokenizer
