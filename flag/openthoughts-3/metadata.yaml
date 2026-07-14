@@ -1,0 +1,32 @@
+name:
+huggingface:
+suffix: .jsonl.zst
+id: uuid
+text: text
+#
+release:
+  default:
+    input: uuid
+    pack: tree
+    sample: full
+    shard: 
+  data:
+#
+nemo-curator:
+  default:
+    input: uuid
+#
+uuid:
+#
+# for i in openthoughts-3/source/data/*.jsonl.zst; do
+#   echo $i;
+#   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#     --mode json --uuid $i \
+#   | zstd -z -o openthoughts-3/uuid/${i##openthoughts-3/source/};
+# done
+#
+  default:
+    input: source
+#
+source:
+  data:
