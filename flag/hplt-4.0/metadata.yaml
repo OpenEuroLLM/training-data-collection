@@ -310,14 +310,7 @@ openai-privacy-filter:
 #
 source:
   default:
-    annotations:
-    - doc_scores
-    - web-register
-    - bsc-edu
-    - finepdfs-edu
-    - fineweb2-hq
-    - jql
-    - propella-4b
+    annotations: [doc_scores, web-register, bsc-edu, finepdfs-edu, fineweb2-hq, jql, propella-4b]
   clean/als_Latn:
   clean/bos_Latn:
   clean/bul_Cyrl:
