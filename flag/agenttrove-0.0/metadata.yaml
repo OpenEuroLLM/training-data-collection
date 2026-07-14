@@ -7,10 +7,9 @@ text: text
 release:
   default:
     input: uuid
-    pack: flat
-#
-# ./etc/plan.py --pattern megamath-0.0.0 --format yaml --budget datamix.txt
-#
+    pack: tree
+    sample: full
+    shard: 
   data:
 #
 nemo-curator:
