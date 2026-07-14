@@ -235,10 +235,6 @@ sample:
     parameters: {tokens: 5158925898}
   clean/ita_Latn:
     parameters: {tokens: 290292176536}
-  noisy/kat_Geor:
-    parameters: {tokens: 55503517839}
-  clean/kat_Geor:
-    parameters: {tokens: 55503517839}
   noisy/lit_Latn:
     parameters: {tokens: 27223710710}
   clean/lit_Latn:
@@ -346,7 +342,6 @@ source:
   clean/hun_Latn:
   clean/isl_Latn:
   clean/ita_Latn:
-  clean/kat_Geor:
   clean/lit_Latn:
   clean/ltg_Latn:
   clean/lvs_Latn:
@@ -378,7 +373,6 @@ source:
   noisy/glg_Latn:
   noisy/hrv_Latn:
   noisy/isl_Latn:
-  noisy/kat_Geor:
   noisy/lit_Latn:
   noisy/ltg_Latn:
   noisy/lvs_Latn:
