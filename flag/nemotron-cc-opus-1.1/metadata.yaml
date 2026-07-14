@@ -15,62 +15,62 @@ release:
 #   --budget datamix.txt | egrep -v random
 #
   bos_Latn:
-    budget: 11%
+    budget: 3%
     shard: 158md
   bul_Cyrl:
-    budget: 11%
-    shard: 127md
+    budget: 2%
+    shard: 109md
   cat_Latn:
-    budget: 10%
+    budget: 3%
     shard: 126md
   ces_Latn:
-    budget: 16%
-    shard: 164md
+    budget: 7%
+    shard: 142md
   ell_Grek:
-    budget: 14%
+    budget: 7%
     shard: 101md
   est_Latn:
-    budget: 9%
-    shard: 136md
+    budget: 1%
+    shard: 118md
   eus_Latn:
-    budget: 8%
+    budget: 2%
     shard: 153md
   gle_Latn:
-    budget: 7%
-    shard: 124md
+    budget: 1%
+    shard: 106md
   glg_Latn:
-    budget: 8%
+    budget: 1%
     shard: 142md
   hrv_Latn:
-    budget: 11%
+    budget: 4%
     shard: 145md
   lav_Latn:
-    budget: 9%
+    budget: 2%
     shard: 92md
   lit_Latn:
-    budget: 9%
+    budget: 2%
     shard: 136md
   mkd_Cyrl:
-    budget: 8%
+    budget: 2%
     shard: 125md
   mlt_Latn:
-    budget: 8%
+    budget: 1%
     shard: 116md
   slk_Latn:
-    budget: 10%
+    budget: 5%
     shard: 138md
   slv_Latn:
-    budget: 9%
+    budget: 3%
     shard: 139md
   sqi_Latn:
-    budget: 9%
+    budget: 2%
     shard: 90md
   srp_Cyrl:
-    budget: 9%
+    budget: 3%
     shard: 119md
   tur_Latn:
-    budget: 17%
-    shard: 133md
+    budget: 6%
+    shard: 115md
 #
 source:
   default:
