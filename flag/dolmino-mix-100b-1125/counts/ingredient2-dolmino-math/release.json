@@ -1,0 +1,20 @@
+{
+  "files": 1,
+  "bytes": 10987201467,
+  "documents": 20952603,
+  "segments": 551462121,
+  "tokens": 11812289415,
+  "characters": 40786059683,
+  "time": 13014.337238311768,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "dolminos_category",
+      "metadata",
+      "text",
+      "id"
+    ],
+    "optional": []
+  }
+}
