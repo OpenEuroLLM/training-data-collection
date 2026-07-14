@@ -20,6 +20,7 @@ release:
     parallel:
       count: 1
       flip: 0.5
+    sample: 
 #
 nemo-curator:
   default:
@@ -44,7 +45,6 @@ source:
   eng_Latn-hrv_Latn:
   eng_Latn-hun_Latn:
   eng_Latn-isl_Latn:
-  eng_Latn-kat_Geor:
   eng_Latn-lav_Latn:
   eng_Latn-lit_Latn:
   eng_Latn-mkd_Cyrl:
