@@ -25,37 +25,37 @@ This directory collects and documents the training data mix for the first
 * 🫷 - blocked
 * 💣 - problematic
 
-| Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |  Tokens   | Copy | Validation |
-|--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------:|:---------:|:----:|:----------:|
-| dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ |    ✅    | ✅(3.88TT) | | |
-| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |  🏃‍  |           | | |
-| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |    ✅    | 🏃‍➡️   | | |
-| finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ❓ | ➖ |         |           | | |
-| hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ | 🏃‍➡️ | ✅ | ✅ |         |           | | |
-| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ |  🏃‍➡️  |           | | |
-| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ❓ | ➖ |         |           | | |
-| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | 🏃‍➡️ | ❓ | ➖ |         |           | | |
-| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | 🏃‍➡️ | ❓ | ➖ |         |           | | |
-| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ | 🏃‍➡️ | ❓ | ✅ |         |           | | |
-| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | 🏃‍➡️ | ➖ | ➖ |         |           | | |
+| Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |       Tokens       | Copy | Validation |
+|--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------:|:------------------:|:----:|:----------:|
+| dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ |    ✅    |     ✅(3.88TT)      | | |
+| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |  🏃‍  |                    | | |
+| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |    ✅    | ✅(279BT inc multi) | | |
+| finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ❓ | ➖ |         |                    | | |
+| hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ | 🏃‍➡️ | ✅ | ✅ |         |                    | | |
+| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ |  🏃‍➡️  |                    | | |
+| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ❓ | ➖ |         |                    | | |
+| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | 🏃‍➡️ | ❓ | ➖ |         |                    | | |
+| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | 🏃‍➡️ | ❓ | ➖ |         |                    | | |
+| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ | 🏃‍➡️ | ❓ | ✅ |         |                    | | |
+| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | 🏃‍➡️ | ➖ | ➖ |         |                    | | |
 
 ## Multilingual Source Datasets
 
-| Path                                                                                                   | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |  Tokens  | Copy | Validation |
-|--------------------------------------------------------------------------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------:|:--------:|:---:|:---------:|
-| finepdfs-1.0.0 (multilingual)     | 36     | 2 | ✅ | ✅️ | ✅️ | ✅ | ✅ | ✅ |   🏃‍   |          | | |
-| finepdfs-edu-1.0.0 (multilingual) | 35     | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |    ✅    |  🏃‍➡️   | | |
-| ~~fineweb2-hq-1.0.0~~             | ~~13~~ |   | ✅️ | ✅️ | ✅️ | ✅ | ✅ | ✅ |    ➖    |    ➖     |➖|➖|
-| finewiki-0.0.0                    | 34     | 3 | ✅️ | ✅️ | ✅ | ✅ | ➖ | ✅ |    ✅    |  🏃‍➡️   | | |
-| hplt-4.0                          | 63     | 1 | ✅ ‍| ✅️️ | ➕ | ✅ | ✅ | ✅ |         |          | | |
-| nemotron-cc-opus-1.1              | 20     | 3 | ✅‍ | ✅️ | ➖ | ➖ | ✅ | ➖ | ✅ |          | | |
-| nemotron-cc-tower+-0.1            | 16     | 3 | ✅ | ✅️️ | ➖ | ➖ | ✅ | ➖ |    ✅    | ✅(562BT) | | |
+| Path                                                                                                   | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |      Tokens      | Copy | Validation |
+|--------------------------------------------------------------------------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------:|:----------------:|:---:|:---------:|
+| finepdfs-1.0.0 (multilingual)     | 36     | 2 | ✅ | ✅️ | ✅️ | ✅ | ✅ | ✅ |   🏃‍   |                  | | |
+| finepdfs-edu-1.0.0 (multilingual) | 35     | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |    ✅    | ✅(279BT inc eng) | | |
+| ~~fineweb2-hq-1.0.0~~             | ~~13~~ |   | ✅️ | ✅️ | ✅️ | ✅ | ✅ | ✅ |    ➖    |        ➖         |➖|➖|
+| finewiki-0.0.0                    | 34     | 3 | ✅️ | ✅️ | ✅ | ✅ | ➖ | ✅ |    ✅    |     ✅(25BT)      | | |
+| hplt-4.0                          | 63     | 1 | ✅ ‍| ✅️️ | ➕ | ✅ | ✅ | ✅ |         |                  | | |
+| nemotron-cc-opus-1.1              | 20     | 3 | ✅‍ | ✅️ | ➖ | ➖ | ✅ | ➖ | ✅ |                  | | |
+| nemotron-cc-tower+-0.1            | 16     | 3 | ✅ | ✅️️ | ➖ | ➖ | ✅ | ➖ |    ✅    |     ✅(562BT)     | | |
 
 ## Code and Math Datasets
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |  Tokens   | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:----:|:---------:|:----:|:----------:|
-| common-pile-stackv2-0.1              |     1 | 3 | ✅ | ✅️️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | 🏃‍        |    |
+| common-pile-stackv2-0.1              |     1 | 3 | ✅ | ✅️️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | ✅️(710B)  |    |
 | common-pile-stackv2-edu-0.1          |     1 | 3 | ✅️ | ✅️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | ✅️(80BT)  |    |
 | dolmino-mix-100b-1125                |     9 | 5 | ✅ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(49BT)  |    |
 | finemath-0.0.0                       |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(40BT)  |    |
@@ -63,8 +63,8 @@ This directory collects and documents the training data mix for the first
 | openwebmath-0.0.0                    |     1 | 5 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(14BT)  |    |
 | starcoder-0.0.0                      |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(252BT) |    |
 | swallow-code-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(50BT)  |    |
-| swallow-math-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | 🏃‍        |    |
-| ~~the-stack-1.2~~                    | ~~1~~ |   | ✅️️ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ➖ | ➖        | ➖ |
+| swallow-math-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(35BT)  |    |
+| ~~the-stack-1.2~~                    | ~~1~~ |   | ✅️️ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ➖ |     ➖     | ➖ |
 
 ## Parallel Datasets
 
