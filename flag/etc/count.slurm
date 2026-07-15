@@ -3,14 +3,16 @@
 #
 # find dclm-1.0/source -type d -links 2 -exec sbatch etc/count.slurm {} \;
 # for i in finepdfs-1.0.0/source/*_*; do sbatch etc/count.slurm $i; done
+# sbatch --partition standard --cpus-per-task 128 --time 48:00:00 \
+#   etc/count.slurm common-pile-stackv2-0.1/sample/documents
 #
 
 #SBATCH --job-name=count
 #SBATCH --output=log/%x-%j.out
-#SBATCH --partition=small
+#SBATCH --partition=standard
 #SBATCH --account=project_465002530
 #SBATCH --mail-type=FAIL
-#SBATCH --time=72:00:00
+#SBATCH --time=48:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=128
