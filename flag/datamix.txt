@@ -259,6 +259,36 @@
 0.00063173	nemotron-cc-tower+-0.1/megatron-lm/parallel/tower9b/ron_Latn
 0.00063730	nemotron-cc-tower+-0.1/megatron-lm/parallel/tower9b/ukr_Cyrl
 #
+# docHPLT as additional parallel data source
+0.0000335210	dochplt-3.1/megatron-lm//bos_Latn-eng_Latn
+0.0000012390	dochplt-3.1/megatron-lm//bul_Cyrl-eng_Latn
+0.0000038000	dochplt-3.1/megatron-lm//cat_Latn-eng_Latn
+0.0000045700	dochplt-3.1/megatron-lm//ces_Latn-eng_Latn
+0.0000402000	dochplt-3.1/megatron-lm//dan_Latn-eng_Latn
+0.0000021800	dochplt-3.1/megatron-lm//ell_Grek-eng_Latn
+0.0000442900	dochplt-3.1/megatron-lm//eng_Latn-est_Latn
+0.0000202950	dochplt-3.1/megatron-lm//eng_Latn-eus_Latn
+0.0001133770	dochplt-3.1/megatron-lm//eng_Latn-fin_Latn
+0.0000133040	dochplt-3.1/megatron-lm//eng_Latn-gle_Latn
+0.0000190890	dochplt-3.1/megatron-lm//eng_Latn-glg_Latn
+0.0000606141	dochplt-3.1/megatron-lm//eng_Latn-hrv_Latn
+0.0001956566	dochplt-3.1/megatron-lm//eng_Latn-hun_Latn
+0.0000233224	dochplt-3.1/megatron-lm//eng_Latn-isl_Latn
+0.0000323522	dochplt-3.1/megatron-lm//eng_Latn-lav_Latn
+0.0000385249	dochplt-3.1/megatron-lm//eng_Latn-lit_Latn
+0.0000224440	dochplt-3.1/megatron-lm//eng_Latn-mkd_Cyrl
+0.0000141000	dochplt-3.1/megatron-lm//eng_Latn-mlt_Latn
+0.0000137695	dochplt-3.1/megatron-lm//eng_Latn-nno_Latn
+0.0000832260	dochplt-3.1/megatron-lm//eng_Latn-nob_Latn
+0.0001751000	dochplt-3.1/megatron-lm//eng_Latn-ron_Latn
+0.0000858100	dochplt-3.1/megatron-lm//eng_Latn-slk_Latn
+0.0000517066	dochplt-3.1/megatron-lm//eng_Latn-slv_Latn
+0.0000332950	dochplt-3.1/megatron-lm//eng_Latn-sqi_Latn
+0.0000476437	dochplt-3.1/megatron-lm//eng_Latn-srp_Cyrl
+0.0002700670	dochplt-3.1/megatron-lm//eng_Latn-tur_Latn
+0.0000164193	dochplt-3.1/megatron-lm//eng_Latn-ukr_Cyrl
+
+#
 # Code
 #
 0.046478 common-pile-stackv2-0.1/megatron-lm/documents
