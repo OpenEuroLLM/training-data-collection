@@ -48,8 +48,8 @@ This directory collects and documents the training data mix for the first
 | ~~fineweb2-hq-1.0.0~~             | ~~13~~ |   | ✅️ | ✅️ | ✅️ | ✅ | ✅ | ✅ |    ➖    |        ➖         |➖|➖|
 | finewiki-0.0.0                    | 34     | 3 | ✅️ | ✅️ | ✅ | ✅ | ➖ | ✅ |    ✅    |     ✅(25BT)      | | |
 | hplt-4.0                          | 63     | 1 | ✅ ‍| ✅️️ | ➕ | ✅ | ✅ | ✅ |   🏃‍(est Thu am)   |                  | | |
-| nemotron-cc-opus-1.1              | 20     | 3 | ✅‍ | ✅️ | ➖ | ➖ | ✅ | ➖ | ✅ |   🫷(datamix)    | | |
-| nemotron-cc-tower+-0.1            | 16     | 3 | ✅ | ✅️️ | ➖ | ➖ | ✅ | ➖ |    ✅    |     ✅(562BT)     | | |
+| nemotron-cc-opus-1.1              | 20     | 3 | ✅‍ | ✅️ | ➖ | ➖ | ✅ | ➖ |🏃‍|| | |
+| nemotron-cc-tower+-0.1            | 16     | 3 | ✅ | ✅️️ | ➖ | ➖ | ✅ | ➖ |🏃‍|| | |
 
 ## Code and Math Datasets
 
