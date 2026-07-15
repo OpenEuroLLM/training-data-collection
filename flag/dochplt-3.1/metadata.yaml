@@ -16,11 +16,98 @@ release:
   default:
     input: source
     annotations: [nemo-curator, openai-privacy-filter]
+    mask: [private_email, private_phone, private_url, secret]
     pack: tree
     parallel:
       count: 1
       flip: 0.5
-    sample: 
+    sample: random
+    rubber: 1.05
+#
+# ./etc/plan.py --pattern dochplt --format yaml \
+#  --budget datamix.txt | egrep -v random
+#
+  bos_Latn-eng_Latn:
+    budget: 35%
+    shard: 104md
+  bul_Cyrl-eng_Latn:
+    budget: 1%
+    shard: 74md
+  cat_Latn-eng_Latn:
+    budget: 2%
+    shard: 123md
+  ces_Latn-eng_Latn:
+    budget: 3%
+    shard: 99md
+  dan_Latn-eng_Latn:
+    budget: 17%
+    shard: 100md
+  ell_Grek-eng_Latn:
+    budget: 1%
+    shard: 80md
+  eng_Latn-est_Latn:
+    budget: 21%
+    shard: 63md
+  eng_Latn-eus_Latn:
+    budget: 68%
+    shard: 98md
+  eng_Latn-fin_Latn:
+    budget: 57%
+    shard: 92md
+  eng_Latn-gle_Latn:
+    budget: 21%
+    shard: 63md
+  eng_Latn-glg_Latn:
+    budget: 44%
+    shard: 107md
+  eng_Latn-hrv_Latn:
+    budget: 15%
+    shard: 86md
+  eng_Latn-hun_Latn:
+    sample: full
+    shard: 83md
+  eng_Latn-isl_Latn:
+    budget: 23%
+    shard: 88md
+  eng_Latn-lav_Latn:
+    budget: 8%
+    shard: 46md
+  eng_Latn-lit_Latn:
+    budget: 12%
+    shard: 63md
+  eng_Latn-mkd_Cyrl:
+    budget: 36%
+    shard: 78md
+  eng_Latn-mlt_Latn:
+    budget: 19%
+    shard: 26md
+  eng_Latn-nno_Latn:
+    sample: full
+    shard: 175md
+  eng_Latn-nob_Latn:
+    budget: 21%
+    shard: 99md
+  eng_Latn-ron_Latn:
+    budget: 97%
+    shard: 92md
+  eng_Latn-slk_Latn:
+    budget: 19%
+    shard: 83md
+  eng_Latn-slv_Latn:
+    budget: 21%
+    shard: 58md
+  eng_Latn-sqi_Latn:
+    budget: 33%
+    shard: 65md
+  eng_Latn-srp_Cyrl:
+    budget: 41%
+    shard: 64md
+  eng_Latn-tur_Latn:
+    sample: full
+    shard: 105md
+  eng_Latn-ukr_Cyrl:
+    sample: full
+    shard: 252md
 #
 nemo-curator:
   default:
