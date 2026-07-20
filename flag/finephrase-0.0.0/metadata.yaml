@@ -14,6 +14,7 @@ release:
 nemo-curator:
   default:
     input: source
+    text: text
 #
 openai-privacy-filter:
   default:
