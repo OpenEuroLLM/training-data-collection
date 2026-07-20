@@ -35,7 +35,7 @@ This directory collects and documents the training data mix for the first
 | nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ | ✅ | 🏃‍➡️ | | |
 | nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ✅ | ➖ |                     |                    | | |
 | nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | 🏃‍➡️ |                    | | |
-| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | 🏃‍➡️ |                    | | |
+| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | ✅ | 🏃‍➡️ | | |
 | mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ | 🏃‍➡️ | ✅ | ✅ |                     |                    | | |
 | olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | ✅ | ➖ | ➖ |                     |                    | | |
 
