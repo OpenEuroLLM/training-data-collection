@@ -37,7 +37,7 @@ This directory collects and documents the training data mix for the first
 | nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ |✅|       🏃‍➡️        || |
 | nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ |✅ |       ✅(10B)       | | |
 | mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |       🏃‍➡️        |                    | | |
-| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ |       🏃‍➡️        | | |
+| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ |      ✅(83BT)       | | |
 
 ## Multilingual Source Datasets
 
