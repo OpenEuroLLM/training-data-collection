@@ -27,14 +27,14 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample |      Packing       |       Tokens       | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:------------------:|:------------------:|:----:|:----------:|
-| dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ |         ✅          |     ✅(3.88TT)      | | |
+| dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ |         ✅          |     ✅(3.88TT)      | 🏃‍➡️ | 🏃‍➡️ |
 | finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |         ✅          | ✅(2.36T inc multi) | | |
 | finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |         ✅          | ✅(279BT inc multi) | | |
 | finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ✅ | ➖ |                    |                    | | |
 | hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ | 🏃‍➡️ | ✅ | ✅ | 🏃‍(eng_Latn/ccc)️ |                    | | |
-| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ |         ✅          |     ✅(2.91TT)      | | |
+| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ |         ✅          |     ✅(2.91TT)      | 🏃‍➡️ | 🏃‍➡️ |
 | nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ✅ | ➖ |                    |                    | | |
-| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ |✅|      ✅(297BT)      || |
+| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ |✅ |      ✅(297BT)      || |
 | nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ |✅ |      ✅(10BT)       | | |
 | mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |       🏃‍➡️        |                    | | |
 | olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ |      ✅(83BT)       | | |
