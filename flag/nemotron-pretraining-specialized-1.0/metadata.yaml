@@ -7,13 +7,24 @@ text: text
 release:
   default:
     input: source
+    annotations: [nemo-curator, openai-privacy-filter]
+    mask: [account_number, private_email, private_phone, private_url, secret]
     pack: flat
-    sample: 
+    sample: full
+    shard: 20md
+#
+nemo-curator:
+  default:
+    input: source
+#
+openai-privacy-filter:
+  default:
+    input: source
 #
 source:
-  Nemotron-Pretraining-InfiniByte-Reasoning
-  Nemotron-Pretraining-Math-Textbooks
-  Nemotron-Pretraining-RQA
-  Nemotron-Pretraining-Scientific-Coding
-  Nemotron-Pretraining-STEM-SFT
-  Nemotron-Pretraining-Wiki-Rewrite
+  Nemotron-Pretraining-InfiniByte-Reasoning:
+  Nemotron-Pretraining-Math-Textbooks:
+  Nemotron-Pretraining-RQA:
+  Nemotron-Pretraining-Scientific-Coding:
+  Nemotron-Pretraining-STEM-SFT:
+  Nemotron-Pretraining-Wiki-Rewrite:

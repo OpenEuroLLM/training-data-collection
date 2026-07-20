@@ -7,11 +7,23 @@ text: text
 release:
   default:
     input: source
+    annotations: [nemo-curator, openai-privacy-filter]
+    mask: [account_number, private_email, private_phone, private_url, secret]
     pack: flat
+    sample: full
+    shard: 193md
+#
+nemo-curator:
+  default:
+    input: source
+#
+openai-privacy-filter:
+  default:
+    input: source
 #
 source:
-  Nemotron-Pretraining-Code-Concepts
-  Nemotron-Pretraining-Economics
-  Nemotron-Pretraining-Formal-Logic
-  Nemotron-Pretraining-Multiple-Choice
-  Nemotron-Pretraining-Unconditional-Algorithmic
+  Nemotron-Pretraining-Code-Concepts:
+  Nemotron-Pretraining-Economics:
+  Nemotron-Pretraining-Formal-Logic:
+  Nemotron-Pretraining-Multiple-Choice:
+  Nemotron-Pretraining-Unconditional-Algorithmic:
