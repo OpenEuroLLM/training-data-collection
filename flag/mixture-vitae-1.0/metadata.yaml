@@ -7,7 +7,19 @@ suffix: .jsonl.zst
 release:
   default:
     input: sample
+    annotations: [nemo-curator, openai-privacy-filter]
+    mask: [account_number, private_email, private_phone, private_url, secret]
     pack: flat
+    sample: full
+    shard: 77md
+#
+nemo-curator:
+  default:
+    input: source
+#
+openai-privacy-filter:
+  default:
+    input: source
 #
 sample:
   default:
