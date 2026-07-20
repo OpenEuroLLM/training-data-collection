@@ -10,11 +10,12 @@ release:
   default:
     input: source
     annotations: [nemo-curator, openai-privacy-filter]
+    mask: [account_number, private_email, private_phone, private_url, secret]
     pack: tree
     sample: full
 #
 # ./etc/plan.py --pattern olmo-mix --format yaml \
-#   --budget datamix.txt | grep -v sample: >> olmo-mix-1124/metadata.yaml
+#   --budget datamix.txt | grep -v sample:
 #
   arxiv:
     shard: 18md
