@@ -7,10 +7,11 @@ text: text
 release:
   default:
     input: uuid
+    annotations: [nemo-curator]
     pack: tree
     sample: full
-    shard: 
   data:
+    shard: 2md
 #
 nemo-curator:
   default:
