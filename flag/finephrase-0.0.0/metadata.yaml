@@ -2,14 +2,17 @@ name:
 catalogue: finephrase/0.0.0/data
 suffix: .jsonl.zst
 id: id
-text: rollout_results[0].text
+#text: rollout_results[0].text
+text: text
 #
 release:
   default:
     input: source
     annotations: [nemo-curator, openai-privacy-filter]
+    mask: [account_number, private_email, private_phone, private_url, secret]
     pack: flat
-    sample: 
+    sample: full
+    shard: 278md
 #
 nemo-curator:
   default:
@@ -22,3 +25,7 @@ openai-privacy-filter:
 #
 source:
   default:
+  finephrase-0.0.0/source/table:
+  finephrase-0.0.0/source/tutorial:
+  finephrase-0.0.0/source/math:
+  finephrase-0.0.0/source/faq:
