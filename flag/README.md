@@ -77,8 +77,8 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| agenttrove-0.0                       |     1 |   | ✅️️ | ✅️️️ | ➖ | 🏃‍➡️ | ➖ | ➖ | | | | |
-| openthoughts-3                       |     1 |   | ✅️️ | ✅️️️ | ➖ | 🏃‍➡️ | ➖ | ➖ | | | | |
+| agenttrove-0.0                       |     1 |   | ✅️️ | ✅️️️ | ➖ | 🏃‍➡️ | ➖ | ➖ | 🏃‍➡️ | | | |
+| openthoughts-3                       |     1 |   | ✅️️ | ✅️️️ | ➖ | 🏃‍➡️ | ➖ | ➖ | 🏃‍➡️ | | | |
 
 ## Annotations: Contamination
 
