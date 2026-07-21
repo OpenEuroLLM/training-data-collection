@@ -1,0 +1,168 @@
+#!/bin/bash
+
+#
+# for i in dclm-1.0/source/*_*_of_10/*_*_of_10; do sbatch etc/md5.slurm $i; done
+# sbatch etc/md5.slurm finemath-0.0.0/source/finemath-4plus
+# for i in finepdfs-1.0.0/source/*_*; do sbatch etc/md5.slurm $i; done
+# for i in finepdfs-edu-1.0.0/source/*_*; do sbatch etc/md5.slurm $i; done
+# for i in hplt-3.0/source/*_*; do sbatch etc/md5.slurm $i; done
+# for i in megamath-0.0.0/source/*; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-1.0/source/*/actual; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-opus-1.1/source/*_*; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-tower+-0.1/source/parallel/*/*_*; do sbatch etc/md5.slurm $i; done
+# for i in olmo-mix-1124/source/*; do sbatch etc/md5.slurm $i; done
+# for i in starcoder-0.0.0/source/*; do sbatch etc/md5.slurm $i; done
+#
+# sbatch etc/md5.slurm dclm-1.0/megatron-lm
+# sbatch etc/md5.slurm finemath-0.0.0/megatron-lm/finemath-4plus
+# for i in finepdfs-1.0.0/megatron-lm/*_*; do sbatch etc/md5.slurm $i; done
+# for i in finepdfs-edu-1.0.0/megatron-lm/*_*; do sbatch etc/md5.slurm $i; done
+# for i in hplt-3.0/megatron-lm/*_*; do sbatch etc/md5.slurm $i; done
+# for i in megamath-0.0.0/megatron-lm/*; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-1.0/megatron-lm/*/actual; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-opus-1.1/megatron-lm/*_*; do sbatch etc/md5.slurm $i; done
+# for i in nemotron-cc-tower+-0.1/megatron-lm/parallel/*/*_*; do sbatch etc/md5.slurm $i; done
+# for i in olmo-mix-1124/megatron-lm/*; do sbatch etc/md5.slurm $i; done
+# for i in starcoder-0.0.0/megatron-lm/*; do sbatch etc/md5.slurm $i; done
+# 
+
+
+#SBATCH --job-name=md5
+#SBATCH --output=log/%x-%j.out
+#SBATCH --partition=small
+#SBATCH --account=project_465002530
+#SBATCH --time=24:00:00
+#SBATCH --mail-type=FAIL
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=64
+#SBATCH --mem-per-cpu=4G
+
+#
+# determine our root directory, where the SLURM script resides
+#
+if [ -n "${SLURM_JOB_ID}" ]; then
+  script=$(scontrol show job ${SLURM_JOB_ID} \
+  | awk '/^ *Command=/ {sub(/^ *Command=/, "", $1); print $1;}');
+  path=$(dirname ${script});
+  root="${path%/etc}";
+else
+  path=$(dirname $0);
+  if [ "${path#./}" != "${path}" ]; then
+    path="$(pwd)/${path#./}";
+  fi
+  if [ "${path#/}" = "${path}" ]; then
+    if [ "${path}" = "." ]; then
+      path="$(pwd)";
+    else 
+      path="$(pwd)/${path}";
+    fi
+  fi
+  root="${path%/etc}";
+fi
+root=$(realpath ${root});
+
+cores=${SLURM_CPUS_ON_NODE:-8};
+
+set -x
+#
+# determine the root of the Training Data Catalogue
+#
+if [ -d /appl/local/openeurollm/training/catalogue ]; then
+  base=/appl/local/openeurollm/training/catalogue;
+else
+  echo "md5.slurm: missing OpenEuroLLM Training Data Catalogue; exit." >&2;
+  exit 1;
+fi
+
+module reset;
+module load cray-python;
+source ${base}/local/bin/activate;
+
+if [ "$1" = "--trial" ]; then
+  trial=1;
+  shift;
+fi
+
+#
+# command-line argument is one (source) directory with JSONLines files
+#
+path=$(realpath -s ${1});
+if [ -z "${path}" ]; then
+  echo "md5.slurm: missing or invalid directory argument; exit." >&2;
+  exit 1;
+fi
+path=${path%/};
+
+suffix="${path##${root}/}/";
+infix="${suffix#*/}";
+infix="${infix%%/*}";
+name="${suffix%%/${infix}/*}";
+part="${suffix##*/${infix}/}";
+part="${part%/}";
+metadata="${root}/${name}/metadata.yaml";
+
+if [ ! -f "${metadata}" ]; then
+  echo "md5.slurm: no metadata for ${root}/${name}; exit." >&2;
+  exit 1;
+fi
+
+if [ "${infix}" = "megatron-lm" ]; then
+  pattern="( -name *.bin -o -name *.idx -o -name *.json )";
+else
+  pattern="$(yq4 ".suffix" ${metadata})";
+  if [ -z "${pattern}" -o "${key}" = "null" ]; then
+    echo "md5.slurm: unable to determine .suffix. value; exit." >&2;
+    exit 1;
+  fi
+  pattern="-name *${pattern}";
+fi
+export pattern;
+
+if [ -z "${part}" ]; then
+  target="${root}/${name}/md5";
+else
+  target="${root}/${name}/md5/${part}";
+fi
+if [ ! -d ${target} ]; then mkdir -p ${target}; fi
+target=${target}/${infix}.md5;
+if [ -e ${target} ]; then rm -f ${target}; fi
+
+echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] md5.slurm: root in ${root}; data: ${1}."
+echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] md5.slurm: target: ${target}."
+echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] md5.slurm: using ${cores} cores."
+
+module reset;
+module load LUMI parallel;
+
+function run() {
+  local file=${1};
+  echo ${file};  
+  local target="$(dirname ${file})/.$(basename ${file}).md5";
+  local command="md5sum ${file} > ${target}";
+  if [ ! -f ${target} -o ${file} -nt ${target} ]; then eval ${command}; fi;
+} # run()
+export -f run;
+
+parallel="LC_ALL=C parallel --plain --will-cite";
+parallel="${parallel} --group --jobs ${cores}";
+
+#
+# finally, iterate through all the files in this directory
+#
+cd ${root};
+find ${suffix} -mindepth 1 -maxdepth 1 ${pattern} \
+| eval ${parallel} run {} ${target};
+
+#
+# stall a bit, so that directory timestamps do not appear out of date
+#
+sleep 60;
+cat ${suffix}.*.md5 | sort -k 2,2 > ${target};
+
+#
+# make sure everything is group-readable (and directories searchable)
+#
+chmod -R g+rX ${root}/${name}/md5;
+
+echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] md5.slurm: all files processed."
+exit 0;
