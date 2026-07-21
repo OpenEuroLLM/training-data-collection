@@ -25,25 +25,25 @@ This directory collects and documents the training data mix for the first
 * 🫷 - blocked
 * 💣 - problematic
 
-| Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample |       Packing       |       Tokens       | Copy | Validation |
-|--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------------------:|:------------------:|:----:|:----------:|
-| dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ |          ✅          |     ✅(3.88TT)      | | |
-| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | 🏃‍➡️ | | |
-| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |          ✅          | ✅(279BT inc multi) | | |
-| finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ✅ | ➖ |                     |                    | | |
-| hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ | 🏃‍➡️ | ✅ | ✅ |                     |                    | | |
-| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ | ✅ | 🏃‍➡️ | | |
-| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ✅ | ➖ |                     |                    | | |
-| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | 🏃‍➡️ |                    | | |
-| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | ✅ | 🏃‍➡️ | | |
-| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |                     |                    | | |
-| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | ✅ | ➖ | ➖ |                     |                    | | |
+| Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample |     Packing      |       Tokens       | Copy | Validation |
+|--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:----------------:|:------------------:|:----:|:----------:|
+| dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ |        ✅         |     ✅(3.88TT)      | 🏃‍➡️ | 🏃‍➡️ |
+| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |        ✅         | ✅(2.36T inc multi) | | |
+| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |        ✅         | ✅(279BT inc multi) | | |
+| finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ✅ | ➖ |                  |                    | | |
+| hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ | ✅ | ✅ | ✅ | 🏃‍ | (eng_Latn/ccc)️ | | |
+| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ |        ✅         |     ✅(2.91TT)      | 🏃‍➡️ | 🏃‍➡️ |
+| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ | 🏃‍➡️ | ✅ | ➖ |                  |                    | | |
+| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ |        ✅         |      ✅(297BT)      || |
+| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ |        ✅         |      ✅(10BT)       | | |
+| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |✅|      ✅(429BT)      | | |
+| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | ✅ | ➖ | ➖ |        ✅         |      ✅(83BT)       | | |
 
 ## Multilingual Source Datasets
 
 | Path                                                                                                   | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |      Tokens       | Copy | Validation |
 |--------------------------------------------------------------------------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------:|:-----------------:|:---:|:---------:|
-| finepdfs-1.0.0 (multilingual)     | 36     | 2 | ✅ | ✅️ | ✅️ | ✅ | ✅ | ✅ | ✅ |       🏃‍➡️       | | |
+| finepdfs-1.0.0 (multilingual)     | 36     | 2 | ✅ | ✅️ | ✅️ | ✅ | ✅ | ✅ | ✅ | ✅(2.36T inc eng)  | | |
 | finepdfs-edu-1.0.0 (multilingual) | 35     | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |    ✅    | ✅(279BT inc eng)  | | |
 | ~~fineweb2-hq-1.0.0~~             | ~~13~~ |   | ✅️ | ✅️ | ✅️ | ✅ | ✅ | ✅ |    ➖    |         ➖         |➖|➖|
 | finewiki-0.0.0                    | 34     | 3 | ✅️ | ✅️ | ✅ | ✅ | ➖ | ✅ |    ✅    |      ✅(25BT)      | | |
@@ -70,15 +70,15 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:-----:|:-----:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| fineopus-filtered-0.4                |    41 | 5 | ✅ | ✅️ | ➖ | | ✅ | ➖ | | | | |
+| fineopus-filtered-0.4                |    41 | 5 | ✅ | ✅️ | ➖ | 🏃‍➡️ | ✅ | ➖ | | | | |
 | dochplt-3.1                          |    28 | 5 | ✅️️️ | ✅️ | ➖ | | ✅ | ➖ | | | | |
 
 ## Reasoning Datasets
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing | Tokens | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:------:|:----:|:----------:|
-| agenttrove-0.0                       |     1 |   | ✅️️ | ✅️️️ | ➖ | | ➖ | ➖ | | | | |
-| openthoughts-3                       |     1 |   | ✅️️ | ✅️️️ | ➖ | | ➖ | ➖ | | | | |
+| agenttrove-0.0                       |     1 |   | ✅️️ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | 🏃‍➡️ | | | |
+| openthoughts-3                       |     1 |   | ✅️️ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | 🏃‍➡️ | | | |
 
 ## Annotations: Contamination
 
