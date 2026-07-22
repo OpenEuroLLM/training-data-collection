@@ -71,7 +71,7 @@ This directory collects and documents the training data mix for the first
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample |   Packing   |     Tokens     | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:-----:|:-----:|:--------:|:-------------:|:---:|:------:|:-----------:|:--------------:|:----:|:----------:|
 | fineopus-filtered-0.4                |    41 | 5 | ✅ | ✅️ | ➖ | 🏃‍➡️ | ✅ | ➖ | (no decont) | 🏃‍(no decont) | | |
-| dochplt-3.1                          |    28 | 5 | ✅️️️ | ✅️ | ➖ | | ✅ | ➖ |🏃‍(no decont)|                | | |
+| dochplt-3.1                          |    28 | 5 | ✅️️️ | ✅️ | ➖ | | ✅ | ➖ |(no decont)|🏃‍(no decont)| | |
 
 ## Reasoning Datasets
 
