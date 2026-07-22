@@ -143,4 +143,41 @@ Instructions on how to run packaging are found in
 ## Tokenization: Nemotron tokanization
 Instructions on how to run tokenization are found in 
 [tokenization repository](https://github.com/mrunesson/tokenizer/tree/flag/flag-tokenization).
-TODO: Will be merged into https://github.com/openEuroLLM/tokenizer
+[PR](https://github.com/OpenEuroLLM/tokenizer/pull/3) for merge
+into https://github.com/openEuroLLM/tokenizer
+
+
+### Per-dataset rollup
+
+| Dataset | Shards | Documents | Sequences | Zero-seq docs | Tokens | .bin size |
+|---|---:|---:|---:|---:|---:|---:|
+| `agenttrove-0.0` | 1 | 1,568,413 | 1,568,412 | 0 | **20.22B** (20,222,264,518) | 75.3 GB |
+| `common-pile-stackv2-0.1` | 8 | 53,178,535 | 53,178,498 | 29 | **709.80B** (709,796,742,143) | 2.6 TB |
+| `common-pile-stackv2-edu-0.1` | 1 | 67,741,991 | 67,738,215 | 3,775 | **80.13B** (80,127,925,281) | 298.5 GB |
+| `dclm-1.0` | 100 | 2,938,207,599 | 2,938,207,499 | 0 | **3.88T** (3,881,440,468,527) | 14.1 TB |
+| `dolmino-mix-100b-1125` | 9 | 58,827,943 | 58,827,934 | 0 | **49.12B** (49,115,755,676) | 183.0 GB |
+| `finemath-0.0.0` | 1 | 21,405,611 | 21,405,610 | 0 | **39.39B** (39,392,831,972) | 146.7 GB |
+| `finepdfs-1.0.0` | 52 | 381,257,191 | 381,257,139 | 0 | **2.36T** (2,363,087,814,974) | 8.6 TB |
+| `finepdfs-edu-1.0.0` | 36 | 41,829,242 | 41,829,206 | 0 | **278.22B** (278,220,221,477) | 1.0 TB |
+| `finewiki-0.0.0` | 34 | 25,542,775 | 25,542,741 | 0 | **24.68B** (24,680,252,446) | 91.9 GB |
+| `hplt-4.0` | 85 | 3,060,134,483 | 3,060,134,398 | 0 | **3.46T** (3,464,728,446,893) | 12.6 TB |
+| `megamath-0.0.0` | 4 | 204,140,620 | 201,627,951 | 2,512,665 | **318.25B** (318,250,972,069) | 1.2 TB |
+| `mixture-vitae-1.0` | 5 | 331,820,120 | 331,820,115 | 0 | **428.55B** (428,553,045,248) | 1.6 TB |
+| `nemotron-cc-1.0` | 30 | 3,312,610,617 | 3,312,610,587 | 0 | **2.91T** (2,906,643,850,905) | 10.6 TB |
+| `nemotron-cc-opus-1.1` | 19 | 174,458,237 | 174,457,659 | 559 | **142.03B** (142,026,750,931) | 529.1 GB |
+| `nemotron-cc-tower+-0.1` | 17 | 835,840,554 | 835,832,012 | 8,525 | **541.43B** (541,429,591,377) | 2.0 TB |
+| `nemotron-pretraining-specialized-1.0` | 4 | 60,570,166 | 60,570,162 | 0 | **296.89B** (296,892,525,288) | 1.1 TB |
+| `nemotron-pretraining-specialized-1.1` | 1 | 19,630,063 | 19,630,061 | 1 | **10.22B** (10,223,996,293) | 38.1 GB |
+| `olmo-mix-1124` | 2 | 42,737,264 | 42,737,259 | 3 | **82.55B** (82,554,462,771) | 307.5 GB |
+| `openthoughts-3` | 1 | 1,200,001 | 1,200,000 | 0 | **20.20B** (20,204,891,733) | 75.3 GB |
+| `openwebmath-0.0.0` | 1 | 6,315,234 | 6,315,233 | 0 | **13.80B** (13,799,966,008) | 51.4 GB |
+| `starcoder-0.0.0` | 3 | 188,045,986 | 188,045,983 | 0 | **252.14B** (252,143,641,106) | 939.3 GB |
+| `swallow-code-2.0` | 1 | 22,963,269 | 22,942,344 | 20,924 | **50.20B** (50,195,195,420) | 187.0 GB |
+| `swallow-math-2.0` | 1 | 25,938,076 | 25,938,075 | 0 | **35.07B** (35,067,810,215) | 130.6 GB |
+| **total** | 416 | | | | **16.01T** (16,008,799,423,271) | 58.2 TB |
+
+Following datasets are not yet packed or tokenized:
+* finephrase-0.0.0
+* nemotron-mind-0.0
+* fineopus-filtered-0.4 
+* dochplt-3.1
