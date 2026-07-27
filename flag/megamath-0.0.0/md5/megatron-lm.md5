@@ -1,0 +1,12 @@
+b91bd388e8c85fccfa5ad422450088f2  megamath-0.0.0/megatron-lm/shard_0000.info.json
+8b492346a24f447f52a8b5a2a4f5e2e3  megamath-0.0.0/megatron-lm/shard_0000_text_document.bin
+8ee50368c2ce12647dfba368750f59ce  megamath-0.0.0/megatron-lm/shard_0000_text_document.idx
+0978c7648ea2527aae2351ddc0caee9f  megamath-0.0.0/megatron-lm/shard_0001.info.json
+3c0749c77639964a42cc249b005a915b  megamath-0.0.0/megatron-lm/shard_0001_text_document.bin
+01755d4f77f32ffe3732e93b8eb67654  megamath-0.0.0/megatron-lm/shard_0001_text_document.idx
+83871c8e813bd37e2118398cab28358d  megamath-0.0.0/megatron-lm/shard_0002.info.json
+f86944ded036c77cf6d576ee690c7a7e  megamath-0.0.0/megatron-lm/shard_0002_text_document.bin
+7273f457f440a5c8cde95ec5c6cd3e9f  megamath-0.0.0/megatron-lm/shard_0002_text_document.idx
+831869fd214a20ee681ac21558df6ecc  megamath-0.0.0/megatron-lm/shard_0003.info.json
+5f4512c2cd3af5407de076b2526566f0  megamath-0.0.0/megatron-lm/shard_0003_text_document.bin
+316f9b270918929a82052af2666984c6  megamath-0.0.0/megatron-lm/shard_0003_text_document.idx

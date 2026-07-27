@@ -1,0 +1,12 @@
+fb740aa131d7c8379130386c7d6b9889  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0000.info.json
+76a6e09b712de0b3eb873cfd91d0f6c1  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0000_text_document.bin
+d21d6b74693a46b695db3272e39842ea  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0000_text_document.idx
+886e35a3bf450b74b3d29418e1232c12  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0001.info.json
+f65f4230b3d6f258055838537fec165b  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0001_text_document.bin
+3b847e55836e2e3e90dbe3e2987bafd6  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0001_text_document.idx
+9d3022c24b644187a3ec0508af0357dd  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0002.info.json
+7eac7d72a57dd9c1606c781b6cfef8d1  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0002_text_document.bin
+6835e0987d56bc98db36d97cf13976d6  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0002_text_document.idx
+52af1aded8d62218905755cf3a1a879e  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0003.info.json
+6eeaa6ca9931996a04b0b5ff2842e976  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0003_text_document.bin
+36782dc131684c9e0fae1822f607a83d  nemotron-pretraining-specialized-1.0/megatron-lm/shard_0003_text_document.idx

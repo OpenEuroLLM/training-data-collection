@@ -1,0 +1,15 @@
+6b7718109c6628e6e0b7504949e9f312  mixture-vitae-1.0/megatron-lm/shard_0000.info.json
+f14a458cbcb537dbc55a5c8c57a94a43  mixture-vitae-1.0/megatron-lm/shard_0000_text_document.bin
+f3e1b4b43e9647561badaa2d3ccf4510  mixture-vitae-1.0/megatron-lm/shard_0000_text_document.idx
+5de6f4a4a12a509cbc96562020211bb1  mixture-vitae-1.0/megatron-lm/shard_0001.info.json
+1ed4eba2a05dc850b3aa4e989f47c95e  mixture-vitae-1.0/megatron-lm/shard_0001_text_document.bin
+7a0e39d16eb024e1567628cd892a4903  mixture-vitae-1.0/megatron-lm/shard_0001_text_document.idx
+25bac18b1a6bc1077f5096f347bdace5  mixture-vitae-1.0/megatron-lm/shard_0002.info.json
+ca63ca2ae5bb83734c1fd6541c4fab62  mixture-vitae-1.0/megatron-lm/shard_0002_text_document.bin
+0415a05e95b383089de7e0584e493164  mixture-vitae-1.0/megatron-lm/shard_0002_text_document.idx
+32fce5dec86786f8b6c5b417336de0b7  mixture-vitae-1.0/megatron-lm/shard_0003.info.json
+79a7b0f9d788b4cd70bc2f09b38646d3  mixture-vitae-1.0/megatron-lm/shard_0003_text_document.bin
+7e98d4c52e8cb558d84c74c5c6dbeb5d  mixture-vitae-1.0/megatron-lm/shard_0003_text_document.idx
+496dd32cd437a069bcef303536d9b57a  mixture-vitae-1.0/megatron-lm/shard_0004.info.json
+ce93bd5fea258846323e17736d23a3a2  mixture-vitae-1.0/megatron-lm/shard_0004_text_document.bin
+b7414222164190317e27bc87d4776bd6  mixture-vitae-1.0/megatron-lm/shard_0004_text_document.idx
