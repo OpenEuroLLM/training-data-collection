@@ -1,0 +1,36 @@
+{
+  "files": 1,
+  "bytes": 1890828468,
+  "documents": 198441,
+  "segments": 64895855,
+  "tokens": 2353276308,
+  "characters": 6106356300,
+  "time": 2751.2246837615967,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "file_path",
+      "offset",
+      "per_page_languages",
+      "full_doc_lid",
+      "page_average_lid_score",
+      "id",
+      "date",
+      "language",
+      "page_average_lid",
+      "full_doc_lid_score",
+      "is_truncated",
+      "dump",
+      "extractor",
+      "page_ends",
+      "url",
+      "token_count",
+      "text"
+    ],
+    "optional": [
+      "pii_masks",
+      "pii_masks_ignored"
+    ]
+  }
+}
