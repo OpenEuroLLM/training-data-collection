@@ -97,9 +97,15 @@ target=$(yq4 ".parallel.target.text" ${metadata});
 if [ "${source}" -a "${source}" != "null" -a "${target}" -a "${target}" != "null" ]; then
   key="[\"${source}\", \"${target}\"]";
 else    
-  key=$(yq4 ".text" ${metadata});
+  key=$(yq4 ".${infix}.${part}.text" ${metadata});
   if [ -z "${key}" -o "${key}" = "null" ]; then
-    echo "count.slurm: unable to determine .text. key; exit." >&2;
+    key=$(yq4 ".${infix}.default.text" ${metadata});
+  fi    
+  if [ -z "${key}" -o "${key}" = "null" ]; then
+    key=$(yq4 ".text" ${metadata});
+  fi    
+  if [ -z "${key}" -o "${key}" = "null" ]; then
+    echo "count.slurm: unable to determine .text. value; exit." >&2;
     exit 1;
   fi
   key="\"${key}\"";
