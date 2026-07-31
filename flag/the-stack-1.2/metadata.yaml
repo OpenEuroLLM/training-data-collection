@@ -7,6 +7,7 @@ text: content
 release:
   default:
     input: source
+    text: text
     pack: flat
     sample: 
     shard: 

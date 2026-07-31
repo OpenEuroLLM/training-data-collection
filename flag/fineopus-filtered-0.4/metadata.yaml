@@ -15,6 +15,7 @@ parallel:
 release:
   default:
     input: source
+    text: text
     annotations: [nemo-curator, openai-privacy-filter]
     mask: [private_email, private_phone, private_url, secret]
     pack: tree
