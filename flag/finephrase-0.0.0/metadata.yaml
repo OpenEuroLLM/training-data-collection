@@ -2,12 +2,13 @@ name:
 catalogue: finephrase/0.0.0/data
 suffix: .jsonl.zst
 id: id
-#text: rollout_results[0].text
-text: text
+#text: text # for contamination annotation, use original string
+text: rollout_results[0].text
 #
 release:
   default:
     input: source
+    text: text
     annotations: [nemo-curator, openai-privacy-filter]
     mask: [account_number, private_email, private_phone, private_url, secret]
     pack: flat
