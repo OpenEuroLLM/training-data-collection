@@ -5,5 +5,28 @@ id: Document Id
 text: Text
 #
 release:
-  pack: flat
-
+  default:
+    input: source
+    text: text
+    annotations: [nemo-curator, openai-privacy-filter]
+    mask: [account_number, private_email, private_phone, private_url, secret]
+    pack: flat
+    sample: full
+    shard: 175md
+#
+nemo-curator:
+  default:
+    input: source
+#
+openai-privacy-filter:
+  default:
+    input: source
+#
+source:
+  TEACHER_STUDENT:
+  DEBATE:
+  PROBLEM_SOLVING:
+  TWO_PROFESSORS:
+  TWO_STUDENTS:
+  INTERVIEW:
+  LAYMAN_KNOWALL:
