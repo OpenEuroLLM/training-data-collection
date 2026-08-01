@@ -1,13 +1,12 @@
 name:
 huggingface:
 suffix: .jsonl.zst
-id: Document Id
+id: Document ID
 text: Text
 #
 release:
   default:
     input: source
-    text: text
     annotations: [nemo-curator, openai-privacy-filter]
     mask: [account_number, private_email, private_phone, private_url, secret]
     pack: flat
