@@ -5,7 +5,7 @@
   "segments": 0,
   "tokens": 0,
   "characters": 0,
-  "time": 10.905059814453125,
+  "time": 11.875013828277588,
   "errors": 131414,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
