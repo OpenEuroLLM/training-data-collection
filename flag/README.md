@@ -140,14 +140,12 @@ data mix.
 Instructions on how to run packaging are found in 
 [training-data-packer repository](https://github.com/OpenEuroLLM/training-data-packer).
 
-## Tokenization: Nemotron tokanization
+## Tokenization and Roll-Up
 Instructions on how to run tokenization are found in 
 [tokenization repository](https://github.com/mrunesson/tokenizer/tree/flag/flag-tokenization).
 [PR](https://github.com/OpenEuroLLM/tokenizer/pull/3) for merge
 into https://github.com/openEuroLLM/tokenizer
 
-
-### Per-dataset rollup
 
 | Dataset | Shards | Documents | Sequences | Zero-seq docs | Tokens | .bin size |
 |---|---:|---:|---:|---:|---:|---:|
@@ -176,8 +174,18 @@ into https://github.com/openEuroLLM/tokenizer
 | `swallow-math-2.0` | 1 | 25,938,076 | 25,938,075 | 0 | **35.07B** (35,067,810,215) | 130.6 GB |
 | **total** | 416 | | | | **16.01T** (16,008,799,423,271) | 58.2 TB |
 
-Following datasets are not yet packed or tokenized:
-* finephrase-0.0.0
-* nemotron-mind-0.0
-* fineopus-filtered-0.4 
-* dochplt-3.1
+## Mirroring and Validation
+
+```
+for t in megatron-lm md5 counts; do
+  for d in $(cat etc/datasets.txt); do
+    if [ -d ${d}/${t} ]; then
+      echo ${d};
+      rclone --transfers 16 --checkers 32 --config ${HOME}/.config/rclone/jsc.conf -v \
+        sync ${d}/${t} sftp:/e/scratch/e-sta-openeurollm/training/collection/flag/${d}/${t} \
+        --sftp-ssh "ssh -F ${HOME}/.ssh/config judac" 2>&1 \
+      | tee -a ${d}/tmp/rclone.log;
+    fi;
+  done;
+done
+```
