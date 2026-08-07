@@ -1,11 +1,3 @@
 837d3cb098ea8dd64361786be58a37aa  agenttrove-0.0/megatron-lm/data/shard_0000.info.json
-abc3c535c1e01f0dfa78d4d2ea3a3908  agenttrove-0.0/megatron-lm/data/shard_0000_0_text_document.bin
-4f26677e1e2777003a3da5002ba0cc94  agenttrove-0.0/megatron-lm/data/shard_0000_0_text_document.idx
-86a1be6060b1bb5c772285431ea173eb  agenttrove-0.0/megatron-lm/data/shard_0000_1_text_document.bin
-842c5aeafd83bd554948756fb27d07b2  agenttrove-0.0/megatron-lm/data/shard_0000_1_text_document.idx
-78d3d307c409608944d54d6fc37c9549  agenttrove-0.0/megatron-lm/data/shard_0000_2_text_document.bin
-9aa7adf6d4b6864ede186e55acbfd31f  agenttrove-0.0/megatron-lm/data/shard_0000_2_text_document.idx
-1d522aaf8fbd25f07242b6d75906b8c4  agenttrove-0.0/megatron-lm/data/shard_0000_3_text_document.bin
-f1aed55504c58c169198b313d638b017  agenttrove-0.0/megatron-lm/data/shard_0000_3_text_document.idx
 a26e44581f4b15f94e81457e53c778f7  agenttrove-0.0/megatron-lm/data/shard_0000_text_document.bin
 402cd1d0117b8fe1488613c61ff58ee6  agenttrove-0.0/megatron-lm/data/shard_0000_text_document.idx
