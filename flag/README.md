@@ -16,69 +16,64 @@ This directory collects and documents the training data mix for the first
 
 **Legend**
 
-* ❓ - undecided
-* 🏃‍➡️ - running
 * ✅ - complete
-* 🔁 - Need to rerun
 * ➕ - included
 * ➖ - inapplicable
-* 🫷 - blocked
-* 💣 - problematic
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample |     Packing      |        Tokens        | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:----------------:|:--------------------:|:----:|:----------:|
-| dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(3.88TT)           | ✅ | 🏃‍➡️ |
-| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(2.36T inc multi)  | ✅ | 🏃‍➡️ |
-| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(279BT inc multi)  | ✅ | 🏃‍➡️ |
-| finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅️️ | ➖ | ✅ | ✅ | ➖ | ✅ | 🏃‍➡️                   | | |
-| hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ | ✅ | ✅ | ✅ | ✅ | ✅‍(3.46TT inc multi) | ✅ | |
-| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(2.91TT)           | ✅ | 🏃‍➡️ |
-| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ | ✅ | ✅ | ➖ | ✅ |                      | | |
-| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(297BT)            | ✅ | |
-| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(10BT)             | ✅ | |
-| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(429BT)            | ✅ | |
-| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅(83BT)             | ✅ | |
+| dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(3.88TT)           | ✅ | ✅ |
+| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(2.36T inc multi)  | ✅ | ✅ |
+| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(279BT inc multi)  | ✅ | ✅ |
+| finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅                   | ✅ | ✅ |
+| hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ | ✅ | ✅ | ✅ | ✅ | ✅‍(3.46TT inc multi) | ✅ | ✅ |
+| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(2.91TT)           | ✅ | ✅ |
+| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅                    | ✅ | ✅ |
+| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(297BT)            | ✅ | ✅ |
+| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(10BT)             | ✅ | ✅ |
+| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(429BT)            | ✅ | ✅ |
+| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅(83BT)             | ✅ | ✅ |
 
 ## Multilingual Source Datasets
 
 | Path                                                                                                   | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |      Tokens       | Copy | Validation |
 |--------------------------------------------------------------------------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------:|:-----------------:|:---:|:---------:|
 | finepdfs-1.0.0 (multilingual)     | 36     | 2 | ✅ | ✅️ | ✅️ | ✅ | ✅ | ✅ | ✅ | ✅(2.36T inc eng)  | ✅ | ✅ |
-| finepdfs-edu-1.0.0 (multilingual) | 35     | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(279BT inc eng)  | ✅ | 🏃‍➡️ |
-| ~~fineweb2-hq-1.0.0~~             | ~~13~~ |   | ✅️ | ✅️ | ✅️ | ✅ | ✅ | ✅ | ➖ |         ➖         |➖|➖|
-| finewiki-0.0.0                    | 34     | 3 | ✅️ | ✅️ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅(25BT)           | ✅ | |
-| hplt-4.0                          | 63     | 1 | ✅ ‍| ✅️️ | ➕ | ✅ | ✅ | ✅ | ✅ | ✅(3.46TT inc eng) | ✅ | |
-| nemotron-cc-opus-1.1              | 20     | 3 | ✅‍ | ✅️ | ➖ | ➖ | ✅ | ➖ | ✅ | ✅(142BT)          | ✅ | |
-| nemotron-cc-tower+-0.1            | 16     | 3 | ✅ | ✅️️ | ➖ | ➖ | ✅ | ➖ | ✅ | ✅(541BT)          | ✅ | |
+| finepdfs-edu-1.0.0 (multilingual) | 35     | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(279BT inc eng)  | ✅ | ✅ |
+| ~~fineweb2-hq-1.0.0~~             | ~~13~~ |   | ✅️ | ✅️ | ✅️ | ✅ | ✅ | ✅ | ➖ |         ➖         | ➖ | ➖ |
+| finewiki-0.0.0                    | 34     | 3 | ✅️ | ✅️ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅(25BT)           | ✅ | ✅ |
+| hplt-4.0                          | 63     | 1 | ✅ ‍| ✅️️ | ➕ | ✅ | ✅ | ✅ | ✅ | ✅(3.46TT inc eng) | ✅ | ✅ |
+| nemotron-cc-opus-1.1              | 20     | 3 | ✅‍ | ✅️ | ➖ | ➖ | ✅ | ➖ | ✅ | ✅(142BT)          | ✅ | ✅ |
+| nemotron-cc-tower+-0.1            | 16     | 3 | ✅ | ✅️️ | ➖ | ➖ | ✅ | ➖ | ✅ | ✅(541BT)          | ✅ | ✅ |
 
 ## Code and Math Datasets
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |  Tokens   | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:----:|:---------:|:----:|:----------:|
-| common-pile-stackv2-0.1              |     1 | 3 | ✅ | ✅️️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | ✅️(710B)  |    ✅ | 🏃‍➡️ |
-| common-pile-stackv2-edu-0.1          |     1 | 3 | ✅️ | ✅️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | ✅️(80BT)  |    ✅ ||
-| dolmino-mix-100b-1125                |     9 | 5 | ✅ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(49BT)  |    ✅ ||
-| finemath-0.0.0                       |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(40BT)  |    ✅ ||
-| megamath-0.0.0                       |     1 | 4 | ✅ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(318BT) |    ✅ ||
-| openwebmath-0.0.0                    |     1 | 5 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(14BT)  |    ✅ ||
-| starcoder-0.0.0                      |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(252BT) |    ✅ ||
-| swallow-code-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(50BT)  |    ✅ ||
-| swallow-math-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(35BT)  |    ✅ ||
-| ~~the-stack-1.2~~                    | ~~1~~ |   | ✅️️ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ➖ |     ➖     | ➖ ||
+| common-pile-stackv2-0.1              |     1 | 3 | ✅ | ✅️️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | ✅️(710B)  |    ✅ | ✅ |
+| common-pile-stackv2-edu-0.1          |     1 | 3 | ✅️ | ✅️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | ✅️(80BT)  |    ✅ | ✅ |
+| dolmino-mix-100b-1125                |     9 | 5 | ✅ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(49BT)  |    ✅ | ✅ |
+| finemath-0.0.0                       |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(40BT)  |    ✅ | ✅ |
+| megamath-0.0.0                       |     1 | 4 | ✅ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(318BT) |    ✅ | ✅ |
+| openwebmath-0.0.0                    |     1 | 5 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(14BT)  |    ✅ | ✅ |
+| starcoder-0.0.0                      |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(252BT) |    ✅ | ✅ |
+| swallow-code-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(50BT)  |    ✅ | ✅ |
+| swallow-math-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(35BT)  |    ✅ | ✅ |
+| ~~the-stack-1.2~~                    | ~~1~~ |   | ✅️️ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ➖ |     ➖     | ➖ | ➖ |
 
 ## Parallel Datasets
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample |   Packing   |        Tokens        | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:-----:|:-----:|:--------:|:-------------:|:---:|:------:|:-----------:|:--------------------:|:----:|:----------:|
-| fineopus-filtered-0.4                |    41 | 5 | ✅ | ✅️ | ➖ | ✅ | ✅ | ➖ | ✅ | 🏃‍➡️ | | |
-| dochplt-3.1                          |    28 | 5 | ✅️️️ | ✅️ | ➖ | ✅ | ✅ | ➖ | ✅ | 🏃‍➡️ | | |
+| fineopus-filtered-0.4                |    41 | 5 | ✅ | ✅️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ | ✅ |
+| dochplt-3.1                          |    28 | 5 | ✅️️️ | ✅️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ | ✅ |
 
 ## Reasoning Datasets
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |  Tokens  | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:--------:|:----:|:----------:|
-| agenttrove-0.0                       |     1 |   | ✅️️ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅️(20BT) | ✅ | |
-| openthoughts-3                       |     1 |   | ✅️️ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅(20BT)️ | ✅ | |
+| agenttrove-0.0                       |     1 |   | ✅️️ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅️(20BT) | ✅ | ✅ |
+| openthoughts-3                       |     1 |   | ✅️️ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅(20BT)️ | ✅ | ✅ |
 
 ## Annotations: Contamination
 
@@ -140,14 +135,12 @@ data mix.
 Instructions on how to run packaging are found in 
 [training-data-packer repository](https://github.com/OpenEuroLLM/training-data-packer).
 
-## Tokenization: Nemotron tokanization
+## Tokenization and Roll-Up
 Instructions on how to run tokenization are found in 
 [tokenization repository](https://github.com/mrunesson/tokenizer/tree/flag/flag-tokenization).
 [PR](https://github.com/OpenEuroLLM/tokenizer/pull/3) for merge
 into https://github.com/openEuroLLM/tokenizer
 
-
-### Per-dataset rollup
 
 | Dataset | Shards | Documents | Sequences | Zero-seq docs | Tokens | .bin size |
 |---|---:|---:|---:|---:|---:|---:|
@@ -176,8 +169,18 @@ into https://github.com/openEuroLLM/tokenizer
 | `swallow-math-2.0` | 1 | 25,938,076 | 25,938,075 | 0 | **35.07B** (35,067,810,215) | 130.6 GB |
 | **total** | 416 | | | | **16.01T** (16,008,799,423,271) | 58.2 TB |
 
-Following datasets are not yet packed or tokenized:
-* finephrase-0.0.0
-* nemotron-mind-0.0
-* fineopus-filtered-0.4 
-* dochplt-3.1
+## Mirroring and Validation
+
+```
+for t in megatron-lm md5 counts; do
+  for d in $(cat etc/datasets.txt); do
+    if [ -d ${d}/${t} ]; then
+      echo ${d};
+      rclone --transfers 16 --checkers 32 --config ${HOME}/.config/rclone/jsc.conf -v \
+        sync ${d}/${t} sftp:/e/scratch/e-sta-openeurollm/training/collection/flag/${d}/${t} \
+        --sftp-ssh "ssh -F ${HOME}/.ssh/config judac" 2>&1 \
+      | tee -a ${d}/tmp/rclone.log;
+    fi;
+  done;
+done
+```
