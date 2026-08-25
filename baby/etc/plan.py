@@ -62,7 +62,7 @@ def main():
     elif arguments.hplt: filter = re.compile(r"hplt-");
     
     with open(arguments.inputs[0], encoding = "utf-8") as stream:
-      suffix = re.compile(r"/[0-9_]+_text_document$");
+      suffix = re.compile(r"/(:?shard)?[0-9_]+_text_document$");
       for i, line in enumerate(stream):
         line = line.strip();
         _ = pattern.match(line)
