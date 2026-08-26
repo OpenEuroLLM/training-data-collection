@@ -62,6 +62,7 @@ def main():
     elif arguments.hplt: filter = re.compile(r"hplt-");
     
     with open(arguments.inputs[0], encoding = "utf-8") as stream:
+      suffix = re.compile(r"/(:?shard)?[0-9_]+_text_document$");
       for i, line in enumerate(stream):
         line = line.strip();
         _ = pattern.match(line)
@@ -72,9 +73,15 @@ def main():
                   file = sys.stderr, flush = True);
           continue;
         ratio, path = _.groups();
+        _ = suffix.search(path);
+        if _ is not None:
+          path = path[:_.start()];
         active = True if filter is None or filter.search(path) else False;
-        mix[path] = {"ratio": float(ratio), "active": active};
-      
+        if path in mix:
+          mix[path]["ratio"] += float(ratio);
+        else:
+          mix[path] = {"ratio": float(ratio), "active": active};
+          
   if arguments.test:
     datasets = set();
     for path, data in mix.items():
