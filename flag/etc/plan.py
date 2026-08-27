@@ -16,7 +16,7 @@ import yaml;
 
 def summarize_counts(path, argument):
   result = dict();
-  for suffix in ["sample", "openeurollm", "source", "release"] if argument is None else [argument]:
+  for suffix in ["wds+register", "sample", "openeurollm", "source", "release"] if argument is None else [argument]:
     path = path.replace("/megatron-lm", "/counts");
     _ = os.path.join(path, suffix + ".json");
     if os.path.isfile(_):
@@ -29,7 +29,7 @@ def main():
   start = time.time();
 
   parser = argparse.ArgumentParser(description = "Maintenance of OpenEuroLLM Training Data Collection");
-  parser.add_argument("--horizon", type = int, default = 15e12);
+  parser.add_argument("--horizon", type = lambda _: int(float(_)), default = 15e12);
   parser.add_argument("--pattern", type = str, default = None);
   parser.add_argument("--counts", type = str, default = None);
   parser.add_argument("--format", type = str, default = "plain");
@@ -79,6 +79,7 @@ def main():
       arguments.format = "sample";
     
     with open(arguments.inputs[0], encoding = "utf-8") as stream:
+      suffix = re.compile(r"/(:?shard)?[0-9_]+_text_document$");
       for i, line in enumerate(stream):
         line = line.strip();
         if line.startswith("#"): continue;
@@ -99,13 +100,18 @@ def main():
                   file = sys.stderr, flush = True);
           continue;
 
-        dataset = re.sub(r"/megatron-lm.*", "", path);
-        part = re.sub(r".+/megatron-lm/?", "", path);
-        counts = summarize_counts(path, arguments.counts);
-        active = True if filter is None or filter.search(path) else False;
-        mix[path] = {"dataset": dataset, "part": part,
-                     "ratio": ratio, "active": active,
-                     "counts": counts};
+        _ = suffix.search(path);
+        if _ is not None: path = path[:_.start()];
+        if path in mix:
+          mix[path]["ratio"] += float(ratio);
+        else:
+          dataset = re.sub(r"/megatron-lm.*", "", path);
+          part = re.sub(r".+/megatron-lm/?", "", path);
+          counts = summarize_counts(path, arguments.counts);
+          active = True if filter is None or filter.search(path) else False;
+          mix[path] = {"dataset": dataset, "part": part,
+                       "ratio": ratio, "active": active,
+                       "counts": counts};
       
   if arguments.test:
     datasets = set();
@@ -204,7 +210,9 @@ def main():
         source = counts[arguments.counts];
       else:
         source = counts["openeurollm"] if "openeurollm" in counts else counts["source"];
-      sample = counts["sample"] if "sample" in counts else None;
+      sample = None;
+      for _ in {"wds+register", "sample"}:
+        if _ in counts: sample = counts[_];
       tokens = source["tokens"] if sample is None else sample["tokens"];
       documents = source["documents"] if sample is None else sample["documents"];
       budget = math.ceil(arguments.horizon * data["ratio"] / 1e6);
