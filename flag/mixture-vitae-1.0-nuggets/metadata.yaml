@@ -13,7 +13,7 @@ release:
     sample: full
     shard: 77md
 #
-nuggets:
+nugget:
 #
 # ( cd ../mixture-vitae-1.0/sample;
 #   find * -name \*.jsonl.zst | while read f; do \
