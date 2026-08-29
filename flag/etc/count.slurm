@@ -9,10 +9,10 @@
 
 #SBATCH --job-name=count
 #SBATCH --output=log/%x-%j.out
-#SBATCH --partition=standard
+#SBATCH --partition=small
 #SBATCH --account=project_465002530
 #SBATCH --mail-type=FAIL
-#SBATCH --time=48:00:00
+#SBATCH --time=72:00:00
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=128
@@ -144,7 +144,7 @@ python -c "
 import sys;
 sys.path.append(\"${base}/etc\");
 import counts;
-counts.count_directory(\"${path}\", pattern = \"${pattern}\", cores = ${cores}, tokenizer = \"${tokenizer}\", key = ${key}, target = \"${target}\", force = True);
+counts.count_directory(\"${path}\", pattern = \"${pattern}\", cores = ${cores}, tokenizer = \"${tokenizer}\", key = ${key}, target = \"${target}\", force = False);
 "
 
 #
