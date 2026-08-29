@@ -1,0 +1,115 @@
+name:
+huggingface:
+id: id
+text: text
+suffix: .jsonl.zst
+#
+release:
+  default:
+    input: nuggets
+    annotations: [nemo-curator, openai-privacy-filter]
+    mask: [account_number, private_email, private_phone, private_url, secret]
+    pack: tree
+    sample: full
+    shard: 77md
+#
+nuggets:
+#
+# ( cd ../mixture-vitae-1.0/sample;
+#   find * -name \*.jsonl.zst | while read f; do \
+#     d=$(dirname $f);
+#     g=$(echo $f | sed -e 's,.jsonl.zst$,,g' -e 's,[-_][0-9]$,,g' -e 's,/,:,g');
+#     echo "$g $d $(basename $f)";
+#  done | sort; ) > nuggets.txt;
+# mkdir nuggets;
+# cd nuggets;
+# cat ../nuggets.txt | while read g d f; do
+#   [ -d $g ] || mkdir "$g";
+#   ln -s ../../../mixture-vitae-1.0/sample/$d/$f $g;
+# done
+# cd ..;
+# for i in nemo-curator openai-privacy-filter; do
+#   mkdir $i; cd $i;
+#   cat ../nuggets.txt | while read g d f; do
+#     [ -d $g ] || mkdir "$g";
+#     if [ ! -f ../../mixture-vitae-1.0/$i/$d/$f ]; then echo "missing: $f";
+#     else ln -s ../../../mixture-vitae-1.0/$i/$d/$f $g; fi;
+#   done;
+#   cd ..;
+# done
+#
+  "business:business":
+  "fineweb:fineweb":
+  "formatted_text:formatted_text":
+  "law:law":
+  "math:dart-math":
+  "math:math":
+  "math:math_word_problems":
+  "math:prism_math":
+  "nemo_maga:maga":
+  "nemo_maga:nemo":
+  "nemo_maga:nemo_science_math":
+  "nemo_maga:stackexchange":
+  "news:news":
+  "science_tech:arxiv":
+  "science_tech:peS2o":
+  "science_tech:pubmed":
+  "science_tech:science_tech":
+  "software:ling-coder-dpo":
+  "software:ling-coder-sft":
+  "software:ling-coder-syntheticqa":
+  "software:pyedu_reasoning":
+  "software:python_edu_repo":
+  "software:software":
+  "stackexchange:stackexchange":
+  "synthetic_instruct:europat":
+  "synthetic_instruct:few-shot":
+  "synthetic_instruct:glaiveai-reasoning":
+  "synthetic_instruct:misc_instruct":
+  "synthetic_instruct:multi-europat":
+  "synthetic_instruct:open_thoughts":
+  "synthetic_instruct:os-q2":
+  "synthetic_instruct:ring-lite-sft":
+  "wiki:multi-wiki":
+  "wiki:wiki":
+  "youtube:multi-youtube":
+  "youtube:youtube":
+#
+# remaining sections inherited from originap processing of mixture-vitae-1.0,
+# which was flat-packed, prior to breaking it up into separate parts.
+#
+nemo-curator:
+  default:
+    input: source
+#
+openai-privacy-filter:
+  default:
+    input: source
+#
+sample:
+  default:
+    input: source
+    annotations: [propella-4b]
+    sample: dynamic
+    filter: ../sample/propella-filter.py
+    parameters: {}
+#
+propella-4b:
+  hash: sha256
+#
+source:
+  default:
+    suffix: .jsonl.gz
+  business:
+  fineweb:
+  formatted_text:
+  law:
+  math:
+  nemo_maga:
+  news:
+  science_tech:
+  software:
+  stackexchange:
+  synthetic_instruct:
+  wiki:
+  youtube:
