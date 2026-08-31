@@ -1,15 +1,18 @@
 {
   "files": 1,
   "bytes": 5515042,
-  "documents": 0,
-  "segments": 0,
-  "tokens": 0,
-  "characters": 0,
-  "time": 0.36012959480285645,
-  "errors": 3358,
+  "documents": 3358,
+  "segments": 399581,
+  "tokens": 5121755,
+  "characters": 13830690,
+  "time": 4.705540657043457,
+  "errors": 0,
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
-    "required": [],
+    "required": [
+      "text",
+      "id"
+    ],
     "optional": []
   }
 }
