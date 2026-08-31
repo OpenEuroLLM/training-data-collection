@@ -12,6 +12,42 @@ release:
     pack: tree
     sample: full
     shard: 77md
+  "business:business":
+  "fineweb:fineweb":
+  "formatted_text:formatted_text":
+  "law:law":
+  "math:dart-math":
+  "math:math":
+  "math:math_word_problems":
+  "math:prism_math":
+  "nemo_maga:maga":
+  "nemo_maga:nemo":
+  "nemo_maga:nemo_science_math":
+  "nemo_maga:stackexchange":
+  "news:news":
+  "science_tech:arxiv":
+  "science_tech:peS2o":
+  "science_tech:pubmed":
+  "science_tech:science_tech":
+  "software:ling-coder-dpo":
+  "software:ling-coder-sft":
+  "software:ling-coder-syntheticqa":
+  "software:pyedu_reasoning":
+  "software:python_edu_repo":
+  "software:software":
+  "stackexchange:stackexchange":
+  "synthetic_instruct:europat":
+  "synthetic_instruct:few-shot":
+  "synthetic_instruct:glaiveai-reasoning":
+  "synthetic_instruct:misc_instruct":
+  "synthetic_instruct:multi-europat":
+  "synthetic_instruct:open_thoughts":
+  "synthetic_instruct:os-q2":
+  "synthetic_instruct:ring-lite-sft":
+  "wiki:multi-wiki":
+  "wiki:wiki":
+  "youtube:multi-youtube":
+  "youtube:youtube":
 #
 nugget:
 #
