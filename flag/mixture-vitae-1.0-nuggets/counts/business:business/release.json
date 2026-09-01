@@ -1,0 +1,24 @@
+{
+  "files": 1,
+  "bytes": 253319383,
+  "documents": 71405,
+  "segments": 3923388,
+  "tokens": 189992466,
+  "characters": 911111867,
+  "time": 418.4987542629242,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "id",
+      "metadata",
+      "text"
+    ],
+    "optional": [
+      "pii_masks_ignored",
+      "propella-4b",
+      "hash",
+      "pii_masks"
+    ]
+  }
+}
