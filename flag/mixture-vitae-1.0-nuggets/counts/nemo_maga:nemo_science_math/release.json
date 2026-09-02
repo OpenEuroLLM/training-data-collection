@@ -15,10 +15,10 @@
       "metadata"
     ],
     "optional": [
-      "pii_masks_ignored",
       "hash",
-      "propella-4b",
-      "pii_masks"
+      "pii_masks_ignored",
+      "pii_masks",
+      "propella-4b"
     ]
   }
 }

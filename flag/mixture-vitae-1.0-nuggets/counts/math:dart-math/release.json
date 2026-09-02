@@ -10,15 +10,15 @@
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
-      "text",
       "id",
+      "text",
       "metadata"
     ],
     "optional": [
-      "propella-4b",
       "pii_masks",
-      "hash",
-      "pii_masks_ignored"
+      "pii_masks_ignored",
+      "propella-4b",
+      "hash"
     ]
   }
 }

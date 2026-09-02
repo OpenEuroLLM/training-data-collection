@@ -11,12 +11,12 @@
   "keys": {
     "required": [
       "text",
-      "id",
-      "metadata"
+      "metadata",
+      "id"
     ],
     "optional": [
-      "pii_masks",
-      "pii_masks_ignored"
+      "pii_masks_ignored",
+      "pii_masks"
     ]
   }
 }

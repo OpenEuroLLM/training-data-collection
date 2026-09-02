@@ -11,14 +11,14 @@
   "keys": {
     "required": [
       "text",
-      "metadata",
-      "id"
+      "id",
+      "metadata"
     ],
     "optional": [
-      "hash",
-      "pii_masks_ignored",
+      "propella-4b",
       "pii_masks",
-      "propella-4b"
+      "pii_masks_ignored",
+      "hash"
     ]
   }
 }
