@@ -195,6 +195,8 @@ def main():
       print("dataset,part,budget,usage"
             ",source tokens,source documents,source length"
             ",sample tokens,sample documents,sample length"
+            ",token reduction,document reduction",
+            ",release tokens,release documents,release length"
             ",token reduction,document reduction");
     for path, data in mix.items():
       if not data["active"]: continue;
@@ -213,6 +215,8 @@ def main():
       sample = None;
       for _ in {"wds+register", "sample"}:
         if _ in counts: sample = counts[_];
+      if "release" in counts: release = counts["release"];
+      else: release = None;
       tokens = source["tokens"] if sample is None else sample["tokens"];
       documents = source["documents"] if sample is None else sample["documents"];
       budget = math.ceil(arguments.horizon * data["ratio"] / 1e6);
@@ -256,14 +260,24 @@ def main():
                         source["tokens"] / source["documents"]),
               end = "");
         if sample is None:
-          print(",,,,,");
+          print(",,,,,", end = "");
         else:
           print(",{},{},{:.1f}"
                 ",{:.3f},{:.3f}"
                 "".format(sample["tokens"], sample["documents"],
                           sample["tokens"] / sample["documents"],
                           sample["tokens"] / source["tokens"],
-                          sample["documents"] / source["documents"]));
+                          sample["documents"] / source["documents"]),
+                end = "");
+        if release is None or release["tokens"] == 0 or release["documents"] == 0:
+          print(",,,,,");
+        else:
+          print(",{},{},{:.1f}"
+                ",{:.3f},{:.3f}"
+                "".format(release["tokens"], release["documents"],
+                          release["tokens"] / release["documents"],
+                          release["tokens"] / source["tokens"],
+                          release["documents"] / source["documents"]));
     sys.exit(0);
 
   if arguments.finepdfs:

@@ -11,7 +11,7 @@ The OpenEuroLLM consortium will collectively exectute at least three full LLM **
 This repository serves to coordinate training data management for this work.
 Data preparation for each cycle encompasses a series of steps, including
 
-1. identification and acquisition of suitable **source datasets**;
+1. identification and acquisition of suitable **source datasets** and **parts**;
 2. definition of **subsets**, e.g. by volume or based on available metadata;
 3. **annotation** with e.g. contamination against benchmarks and PII flags;
 4. possibly additional annotation, e.g. “quality” signals, WDS, registers;
@@ -24,6 +24,18 @@ beyond the consortium, for example via general download.
 If public restribution of the full and exact training data should prove legally
 impossible, steps 2. through 5. above must be fully specified and automated, so
 as to be able to publish the exact “recipe” for training data preparation.
+
+## Terminology
+
+Individual resources like Nemotron-CC or HPLT are referred to as **datasets**.
+Many resources have internal structure, for example `high/actual` in Nemotron-CC
+or per-language subdivisions like `clean/nob_Latn` in HPLT.
+These internal components are referred to as **(dataset) parts**.
+For convenience, training data preparation for OpenEuroLLM can collapse multiple
+source parts into a single release part, for example where a resource like
+StarCoder is internally organized by distinct programming languages, but the
+OpenEuroLLM data mixture specification chooses to treat the union of these
+internal source parts as a single set of code examples.
 
 ## Organization
 
@@ -44,18 +56,17 @@ For each dataset, all relevant information is gathered in one subdirectory,
 e.g. `dclm-1.0/`, `finepdfs-1.0.0/`, `hplt-3.0/`, etc.
 
 There are five mandatory components to each dataset in the collection,
-the original `source/` and the final `release/` version, plus at least
-annotations of benchmark contamination (`contamination/`)
-and personally identifiable information (`pii/`).
+the original `source/` and the final `release/` version, plus (for most
+datasets) at least annotations of [benchmark contamination](https://github.com/OpenEuroLLM/pretraining-decontamination) and [personally identifiable information](https://github.com/OpenEuroLLM/pii-masking-oellm).
+For the “flag” cycle, the subdirectories containing these latter annotations are
+named after the tools used, `nemo-curator/` and `openai-privacy-filter/`, respectively.
 Furthermore, cycle-specific statistics are compiled in a separate directory
 `counts/` (see below).
+
 For datasets that are part of the [OpenEuroLLM Training Data Catalogue](https://github.com/OpenEuroLLM/training-data-catalogue), the source data is not copied into the collection but rather
 identified uniquely through softlinks into the corresponding data subdirectories
 in the catalogue.
 Only files that contribute to the release cycle are linked into the collection.
-The contamination annotations (`contamination/`) are created using 
-[pretraining-decontamination reposistory](https://github.com/OpenEuroLLM/pretraining-decontamination) 
-and PII annotations using [PII-masking-oellm](https://github.com/OpenEuroLLM/pii-masking-oellm).
 
 The `release/` version of each dataset comprises the collection of files
 that serve as the exact point of departure for LLM training, i.e. feed
@@ -66,7 +77,7 @@ for the actual document contents.
 
 Reflecting step 2. in the above, creation of the release version for each
 dataset will typically encompass selection of a subset of data and|or possibly
-metadata-based upsampling.
+metadata-based resampling.
 This process is implemented by code associated with the training data
 collection (this repository), which we tentatively dub the
 [OpenEuroLLM **packer**](https://github.com/OpenEuroLLM/training-data-packer).
@@ -88,7 +99,7 @@ training budget.
 
 ## Workflow
 
-Training data preparation for each cycle typically spans several months,
+Training data preparation for each cycle typically spans a few months,
 moving sequentially through steps 1. (source data identification and acqusition)
 through 5. (creation of the actual collection, the `release` version).
 Scripts and instructions for data acquisition, annotation, and packing are
