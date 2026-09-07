@@ -1,5 +1,5 @@
-name:
-huggingface:
+name: Nemotron pretrainint specialized v1
+huggingface: https://huggingface.co/datasets/nvidia/Nemotron-Pretraining-Specialized-v1
 suffix: .jsonl.zst
 id: uuid
 text: text

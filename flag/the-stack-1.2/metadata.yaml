@@ -1,4 +1,4 @@
-name: 
+name: The Stack v1.2
 catalogue: the-stack/1.2/data
 suffix: .jsonl.zst
 id: hexsha
@@ -7,10 +7,9 @@ text: content
 release:
   default:
     input: source
-    text: text
     pack: flat
-    sample: 
-    shard: 
+    sample: full
+    shard: 100md
 #
 source:
 #

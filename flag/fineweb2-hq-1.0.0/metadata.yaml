@@ -1,5 +1,5 @@
-name:
-huggingface:
+name: Fine Web 2 HQ
+huggingface: https://huggingface.co/datasets/epfml/FineWeb2-HQ
 id: id
 text: text
 suffix: .jsonl.zst

@@ -1,5 +1,5 @@
-name:
-huggingface:
+name: Nemotron mind
+huggingface: https://huggingface.co/datasets/nvidia/Nemotron-MIND
 suffix: .jsonl.zst
 id: Document ID
 text: Text

@@ -1,3 +1,4 @@
+name: Open web math
 catalogue: openwebmath/0.0.0/data
 suffix: .jsonl.zst
 id: uuid

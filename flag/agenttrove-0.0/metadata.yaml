@@ -1,5 +1,5 @@
-name:
-huggingface:
+name: Agent Trove
+huggingface: https://huggingface.co/datasets/open-thoughts/AgentTrove
 suffix: .jsonl.zst
 id: uuid
 text: text

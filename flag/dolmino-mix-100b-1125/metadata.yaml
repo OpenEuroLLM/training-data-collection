@@ -1,5 +1,5 @@
-name: 
-huggingface: 
+name: Dolmino mix 100b 1125
+huggingface: https://huggingface.co/datasets/allenai/dolma3_dolmino_mix-100B-1125
 suffix: .jsonl.zst
 id: id
 text: text
