@@ -10,6 +10,7 @@ release:
     annotations: [nemo-curator, openai-privacy-filter]
     pack: tree
     sample: full
+    shard: 100md
 #
 sample:
   default:
