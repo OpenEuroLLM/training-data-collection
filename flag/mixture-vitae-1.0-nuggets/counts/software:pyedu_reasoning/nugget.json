@@ -1,0 +1,22 @@
+{
+  "files": 1,
+  "bytes": 2470999387,
+  "documents": 1609358,
+  "segments": 247734033,
+  "tokens": 3361253720,
+  "characters": 10330276623,
+  "time": 3295.114995241165,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "metadata",
+      "id",
+      "text"
+    ],
+    "optional": [
+      "propella-4b",
+      "hash"
+    ]
+  }
+}
