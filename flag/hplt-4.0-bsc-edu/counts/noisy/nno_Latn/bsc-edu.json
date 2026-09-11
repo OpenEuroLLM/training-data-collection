@@ -1,0 +1,207 @@
+[
+  {
+    "score_bin": 0.0,
+    "token_count_at_score": 36204712,
+    "token_count_at_or_above_score": 366487972
+  },
+  {
+    "score_bin": 0.1,
+    "token_count_at_score": 11098172,
+    "token_count_at_or_above_score": 330283259
+  },
+  {
+    "score_bin": 0.2,
+    "token_count_at_score": 13054296,
+    "token_count_at_or_above_score": 319185087
+  },
+  {
+    "score_bin": 0.3,
+    "token_count_at_score": 13862316,
+    "token_count_at_or_above_score": 306130790
+  },
+  {
+    "score_bin": 0.4,
+    "token_count_at_score": 15171814,
+    "token_count_at_or_above_score": 292268474
+  },
+  {
+    "score_bin": 0.5,
+    "token_count_at_score": 17664350,
+    "token_count_at_or_above_score": 277096659
+  },
+  {
+    "score_bin": 0.6,
+    "token_count_at_score": 19519489,
+    "token_count_at_or_above_score": 259432308
+  },
+  {
+    "score_bin": 0.7,
+    "token_count_at_score": 23382548,
+    "token_count_at_or_above_score": 239912819
+  },
+  {
+    "score_bin": 0.8,
+    "token_count_at_score": 26976956,
+    "token_count_at_or_above_score": 216530270
+  },
+  {
+    "score_bin": 0.9,
+    "token_count_at_score": 29543940,
+    "token_count_at_or_above_score": 189553313
+  },
+  {
+    "score_bin": 1.0,
+    "token_count_at_score": 23727261,
+    "token_count_at_or_above_score": 160009373
+  },
+  {
+    "score_bin": 1.1,
+    "token_count_at_score": 16947477,
+    "token_count_at_or_above_score": 136282111
+  },
+  {
+    "score_bin": 1.2,
+    "token_count_at_score": 13462806,
+    "token_count_at_or_above_score": 119334633
+  },
+  {
+    "score_bin": 1.3,
+    "token_count_at_score": 13121868,
+    "token_count_at_or_above_score": 105871827
+  },
+  {
+    "score_bin": 1.4,
+    "token_count_at_score": 15454727,
+    "token_count_at_or_above_score": 92749959
+  },
+  {
+    "score_bin": 1.5,
+    "token_count_at_score": 12736972,
+    "token_count_at_or_above_score": 77295231
+  },
+  {
+    "score_bin": 1.6,
+    "token_count_at_score": 12093314,
+    "token_count_at_or_above_score": 64558259
+  },
+  {
+    "score_bin": 1.7,
+    "token_count_at_score": 11420308,
+    "token_count_at_or_above_score": 52464944
+  },
+  {
+    "score_bin": 1.8,
+    "token_count_at_score": 9082575,
+    "token_count_at_or_above_score": 41044635
+  },
+  {
+    "score_bin": 1.9,
+    "token_count_at_score": 6504783,
+    "token_count_at_or_above_score": 31962060
+  },
+  {
+    "score_bin": 2.0,
+    "token_count_at_score": 5282342,
+    "token_count_at_or_above_score": 25457276
+  },
+  {
+    "score_bin": 2.1,
+    "token_count_at_score": 4589524,
+    "token_count_at_or_above_score": 20174933
+  },
+  {
+    "score_bin": 2.2,
+    "token_count_at_score": 3113045,
+    "token_count_at_or_above_score": 15585408
+  },
+  {
+    "score_bin": 2.3,
+    "token_count_at_score": 2949479,
+    "token_count_at_or_above_score": 12472363
+  },
+  {
+    "score_bin": 2.4,
+    "token_count_at_score": 2208989,
+    "token_count_at_or_above_score": 9522883
+  },
+  {
+    "score_bin": 2.5,
+    "token_count_at_score": 1580577,
+    "token_count_at_or_above_score": 7313894
+  },
+  {
+    "score_bin": 2.6,
+    "token_count_at_score": 1511917,
+    "token_count_at_or_above_score": 5733316
+  },
+  {
+    "score_bin": 2.7,
+    "token_count_at_score": 1270329,
+    "token_count_at_or_above_score": 4221398
+  },
+  {
+    "score_bin": 2.8,
+    "token_count_at_score": 1061811,
+    "token_count_at_or_above_score": 2951068
+  },
+  {
+    "score_bin": 2.9,
+    "token_count_at_score": 849019,
+    "token_count_at_or_above_score": 1889257
+  },
+  {
+    "score_bin": 3.0,
+    "token_count_at_score": 542200,
+    "token_count_at_or_above_score": 1040237
+  },
+  {
+    "score_bin": 3.1,
+    "token_count_at_score": 309810,
+    "token_count_at_or_above_score": 498036
+  },
+  {
+    "score_bin": 3.2,
+    "token_count_at_score": 132795,
+    "token_count_at_or_above_score": 188226
+  },
+  {
+    "score_bin": 3.3,
+    "token_count_at_score": 35750,
+    "token_count_at_or_above_score": 55431
+  },
+  {
+    "score_bin": 3.4,
+    "token_count_at_score": 18607,
+    "token_count_at_or_above_score": 19680
+  },
+  {
+    "score_bin": 3.5,
+    "token_count_at_score": 1072,
+    "token_count_at_or_above_score": 1072
+  },
+  {
+    "score_bin": 3.6,
+    "token_count_at_score": 0,
+    "token_count_at_or_above_score": 0
+  },
+  {
+    "score_bin": 3.7,
+    "token_count_at_score": 0,
+    "token_count_at_or_above_score": 0
+  },
+  {
+    "score_bin": 3.8,
+    "token_count_at_score": 0,
+    "token_count_at_or_above_score": 0
+  },
+  {
+    "score_bin": 3.9,
+    "token_count_at_score": 0,
+    "token_count_at_or_above_score": 0
+  },
+  {
+    "score_bin": 4.0,
+    "token_count_at_score": 0,
+    "token_count_at_or_above_score": 0
+  }
+]
