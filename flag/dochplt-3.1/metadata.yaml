@@ -1,9 +1,5 @@
-name:
+name: Doc HPLT 3.1
 suffix: .jsonl.zst
-hash:
-  type: sha256
-  key: hash
-#
 parallel:
   source:
     text: src_text
@@ -15,7 +11,6 @@ parallel:
 release:
   default:
     input: source
-    text: text
     annotations: [nemo-curator, openai-privacy-filter]
     mask: [private_email, private_phone, private_url, secret]
     pack: tree

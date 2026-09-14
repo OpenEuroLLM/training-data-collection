@@ -6,7 +6,6 @@ text: content
 release:
   default:
     input: source
-    text: text
     pack: flat
     sample: random
     budget: 91%

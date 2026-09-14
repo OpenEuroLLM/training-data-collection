@@ -1,5 +1,5 @@
-name:
-huggingface:
+name: Open Thoughts 3
+huggingface: https://huggingface.co/datasets/open-thoughts/OpenThoughts3-1.2M
 suffix: .jsonl.zst
 id: uuid
 text: text

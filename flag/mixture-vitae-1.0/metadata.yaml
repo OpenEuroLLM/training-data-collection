@@ -1,5 +1,4 @@
-name:
-huggingface:
+name: Mixture Vitae 1.0
 id: id
 text: text
 suffix: .jsonl.zst

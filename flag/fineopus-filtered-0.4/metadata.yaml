@@ -1,8 +1,5 @@
-name:
+name: Fine Opus filtered 0.4
 suffix: .jsonl.zst
-hash:
-  type: sha256
-  key: hash
 #
 parallel:
   source:
@@ -15,7 +12,6 @@ parallel:
 release:
   default:
     input: source
-    text: text
     annotations: [nemo-curator, openai-privacy-filter]
     mask: [private_email, private_phone, private_url, secret]
     pack: tree

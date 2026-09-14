@@ -1,3 +1,4 @@
+name: swallow math
 catalogue: swallow-math/0.0.0/data
 suffix: .jsonl.zst
 id: uuid
@@ -25,4 +26,3 @@ uuid:
 source:
   stage3-qa:
   stage3-textbook:
-
