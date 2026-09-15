@@ -185,44 +185,68 @@ for t in megatron-lm md5 counts; do
 done
 ```
 
-## Language Breakdown
+## Breakdown
 
-| Language | Source tokens (23.4T) | Release tokens (13.4T) | % of release |
+### Section A — Language datasets
+
+| Language | Source tokens | Release tokens | % of release | Datasets |
+|:---|---:|---:|---:|:---|
+| English | 8,363,813,579,783 | 7,028,585,633,677 | 51.83% | dclm-1.0, dochplt-3.1, fineopus-filtered-0.4, finepdfs-edu-1.0.0, finephrase-0.0.0, hplt-4.0, mixture-vitae-1.0, nemotron-cc-1.0, nemotron-pretraining-specialized-1.0, nemotron-pretraining-specialized-1.1 |
+| Spanish | 1,454,442,795,174 | 703,407,614,415 | 5.19% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| French | 1,309,915,859,886 | 612,435,288,688 | 4.52% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| German | 1,191,161,841,585 | 512,549,027,676 | 3.78% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Portuguese | 545,054,040,113 | 329,720,018,780 | 2.43% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Italian | 483,388,829,397 | 293,554,844,036 | 2.16% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Polish | 374,117,358,228 | 231,920,445,057 | 1.71% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Dutch | 326,620,892,932 | 210,184,896,196 | 1.55% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Ukrainian | 231,817,943,912 | 169,730,959,314 | 1.25% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Turkish | 456,333,742,333 | 169,666,699,693 | 1.25% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Hungarian | 234,702,676,311 | 166,583,364,465 | 1.23% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Romanian | 255,255,942,389 | 162,634,106,230 | 1.20% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Czech | 353,956,567,813 | 156,320,294,889 | 1.15% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Greek | 280,479,750,873 | 140,897,577,579 | 1.04% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Swedish | 220,778,476,893 | 132,339,934,790 | 0.98% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Finnish | 194,442,763,368 | 108,484,370,132 | 0.80% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Danish | 175,783,542,214 | 103,306,513,583 | 0.76% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Bulgarian | 359,445,351,093 | 96,206,587,852 | 0.71% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Slovak | 181,083,549,612 | 79,334,698,766 | 0.59% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Norwegian Bokmål | 188,831,727,974 | 70,258,869,127 | 0.52% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Catalan | 166,964,297,090 | 62,702,501,669 | 0.46% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Lithuanian | 156,343,458,464 | 61,996,865,879 | 0.46% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Croatian | 158,637,179,651 | 59,453,742,635 | 0.44% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Latvian | 207,867,184,092 | 55,007,187,264 | 0.41% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Slovenian | 148,686,011,016 | 54,837,470,314 | 0.40% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Estonian | 298,047,733,493 | 51,777,030,894 | 0.38% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Serbian | 170,606,931,000 | 50,084,845,041 | 0.37% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Albanian | 194,895,585,883 | 31,525,850,249 | 0.23% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Bosnian | 120,405,440,138 | 23,991,446,057 | 0.18% | dochplt-3.1, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Macedonian | 135,160,107,301 | 16,069,721,881 | 0.12% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Icelandic | 108,308,019,775 | 15,713,483,734 | 0.12% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| Basque | 109,341,989,124 | 10,001,914,343 | 0.07% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Galician | 116,827,599,398 | 7,606,817,948 | 0.06% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Irish | 300,198,444,667 | 6,284,109,250 | 0.05% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Maltese | 139,331,781,023 | 4,412,768,991 | 0.03% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| Norwegian Nynorsk | 92,620,441,998 | 3,538,386,588 | 0.03% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+
+**Subtotal A — source: 19,805,669,435,996 · release: 11,993,125,887,682**
+
+### Section B — Math, code, reasoning datasets
+
+| Dataset | Source tokens | Release tokens | % of release |
 |:---|---:|---:|---:|
-| Spanish | 1,454,442,795,174 | 703,407,614,415 | 5.19% |
-| French | 1,309,915,859,886 | 612,435,288,688 | 4.52% |
-| German | 1,191,161,841,585 | 512,549,027,676 | 3.78% |
-| Portuguese | 545,054,040,113 | 329,720,018,780 | 2.43% |
-| Italian | 483,388,829,397 | 293,554,844,036 | 2.16% |
-| Polish | 374,117,358,228 | 231,920,445,057 | 1.71% |
-| Dutch | 326,620,892,932 | 210,184,896,196 | 1.55% |
-| Ukrainian | 231,817,943,912 | 169,730,959,314 | 1.25% |
-| Turkish | 456,333,742,333 | 169,666,699,693 | 1.25% |
-| Hungarian | 234,702,676,311 | 166,583,364,465 | 1.23% |
-| Romanian | 255,255,942,389 | 162,634,106,230 | 1.20% |
-| Czech | 353,956,567,813 | 156,320,294,889 | 1.15% |
-| Greek | 280,479,750,873 | 140,897,577,579 | 1.04% |
-| Swedish | 220,778,476,893 | 132,339,934,790 | 0.98% |
-| Finnish | 194,442,763,368 | 108,484,370,132 | 0.80% |
-| Danish | 175,783,542,214 | 103,306,513,583 | 0.76% |
-| Bulgarian | 359,445,351,093 | 96,206,587,852 | 0.71% |
-| Slovak | 181,083,549,612 | 79,334,698,766 | 0.59% |
-| Norwegian Bokmål | 188,831,727,974 | 70,258,869,127 | 0.52% |
-| Catalan | 166,964,297,090 | 62,702,501,669 | 0.46% |
-| Lithuanian | 156,343,458,464 | 61,996,865,879 | 0.46% |
-| Croatian | 158,637,179,651 | 59,453,742,635 | 0.44% |
-| Latvian | 207,867,184,092 | 55,007,187,264 | 0.41% |
-| Slovenian | 148,686,011,016 | 54,837,470,314 | 0.40% |
-| Estonian | 298,047,733,493 | 51,777,030,894 | 0.38% |
-| Serbian | 170,606,931,000 | 50,084,845,041 | 0.37% |
-| Albanian | 194,895,585,883 | 31,525,850,249 | 0.23% |
-| Bosnian | 120,405,440,138 | 23,991,446,057 | 0.18% |
-| Macedonian | 135,160,107,301 | 16,069,721,881 | 0.12% |
-| Icelandic | 108,308,019,775 | 15,713,483,734 | 0.12% |
-| Basque | 109,341,989,124 | 10,001,914,343 | 0.07% |
-| Galician | 116,827,599,398 | 7,606,817,948 | 0.06% |
-| Irish | 300,198,444,667 | 6,284,109,250 | 0.05% |
-| Maltese | 139,331,781,023 | 4,412,768,991 | 0.03% |
-| Norwegian Nynorsk | 92,620,441,998 | 3,538,386,588 | 0.03% |
+| common-pile-stackv2-0.1 | 2,928,642,538,533 | 709,743,563,645 | 5.23% |
+| megamath-0.0.0 | 318,049,344,118 | 318,049,344,118 | 2.35% |
+| starcoder-0.0.0 | 276,861,687,159 | 251,955,595,123 | 1.86% |
+| common-pile-stackv2-edu-0.1 | 80,134,962,542 | 80,060,187,066 | 0.59% |
+| swallow-code-2.0 | 62,716,070,265 | 50,172,253,076 | 0.37% |
+| dolmino-mix-100b-1125 | 48,542,080,162 | 48,542,080,162 | 0.36% |
+| finemath-0.0.0 | 39,371,426,362 | 39,371,426,362 | 0.29% |
+| swallow-math-2.0 | 35,041,872,140 | 35,041,872,140 | 0.26% |
+| agenttrove-0.0 | 20,220,696,106 | 20,220,696,106 | 0.15% |
+| openwebmath-0.0.0 | 13,793,650,775 | 13,793,650,775 | 0.10% |
+| nemotron-mind-0.0 | 132,299,120,775 | — | — |
 
+**Subtotal B — source: 3,955,673,448,673 · release: 1,566,950,668,573**
 
+## Unique source tokens: 23,4TT
+## Unique release tokens: 13,4TT
