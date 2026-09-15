@@ -248,5 +248,5 @@ done
 
 **Subtotal B — source: 3,955,673,448,673 · release: 1,566,950,668,573**
 
-## Unique source tokens: 23,4TT
-## Unique release tokens: 13,4TT
+### Unique source tokens: 23,4TT
+### Unique release tokens: 13,4TT
