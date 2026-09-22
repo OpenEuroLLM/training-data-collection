@@ -1,0 +1,24 @@
+name: LTG Saami Web Corpus
+huggingface:
+suffix: .jsonl.zst
+text: text
+id: id
+#
+release:
+  default:
+    input: source
+    pack: tree
+    scrub: [xml, md]
+    sample: full
+#
+# ./etc/plan.py --pattern hplt --format yaml \
+#   --budget datamix.txt | egrep -v 'sample|budget'
+#
+  sme_Latn:
+    shard: 99md
+#
+source:
+  default:
+    id: sha256_id
+    annotations: []
+  sme_Latn:

@@ -1,0 +1,16 @@
+name:
+catalogue: finepdfs/1.0.0/data
+suffix: .jsonl.zst
+id: id
+text: text
+#
+release:
+  default:
+    input: source
+    pack: tree
+    sample: full
+  fao_Latn:
+    shard: 12md
+#
+source:
+  fao_Latn:

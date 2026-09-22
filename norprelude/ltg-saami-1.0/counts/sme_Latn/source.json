@@ -1,0 +1,22 @@
+{
+  "files": 1,
+  "bytes": 204939146,
+  "documents": 138385,
+  "segments": 7225558,
+  "tokens": 205438634,
+  "characters": 509107447,
+  "time": 348.6151874065399,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "source",
+      "text",
+      "languages",
+      "saami_share",
+      "sha256_id",
+      "url"
+    ],
+    "optional": []
+  }
+}
