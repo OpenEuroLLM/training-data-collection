@@ -185,6 +185,19 @@ for t in megatron-lm md5 counts; do
 done
 ```
 
+```bash
+for i in $(egrep -v 'dclm-1.0|hplt-4.0|nemotron-cc-1.0' baby/etc/annealing.txt); do
+  echo $i;
+  ssh -xt data.leonardo.cineca.it \
+    rclone --config ${HOME}/.config/rclone/rclone.conf -v \
+      --exclude openeurollm-256k-v2/** --exclude gpt-oss-120b/** --exclude **.md5 \
+      sync sftp:/scratch/project_465002530/training/collection/${i}/ \
+      /leonardo_work/OELLM_prod2026/training/collection/${i}/ \
+      --sftp-ssh \"/bin/ssh -F ${HOME}/.ssh/config lumi\" \
+  | tee -a $(dirname ${i})/megatron-lm.log 2>&1;
+done
+```
+
 ## Breakdown
 
 ### Section A — Language datasets
