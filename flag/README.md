@@ -171,7 +171,7 @@ into https://github.com/openEuroLLM/tokenizer
 
 ## Mirroring and Validation
 
-```
+```bash
 for t in megatron-lm md5 counts; do
   for d in $(cat etc/datasets.txt); do
     if [ -d ${d}/${t} ]; then
