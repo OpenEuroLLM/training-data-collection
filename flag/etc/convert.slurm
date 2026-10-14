@@ -35,7 +35,11 @@ if [ -z "$dataset" ]; then
 fi
 
 parquet_base="${COLLECTION_ROOT}/${dataset}/parquet"
-converter="${COLLECTION_ROOT}/${dataset}/etc/convert.py"
+if [ -f "${COLLECTION_ROOT}/${dataset}/etc/convert.py" ]; then
+  converter="${COLLECTION_ROOT}/${dataset}/etc/convert.py";
+else
+  converter="${COLLECTION_ROOT}/etc/convert.py";
+fi
 
 source_base="${COLLECTION_ROOT}/${dataset}/source"
 filelist="${COLLECTION_ROOT}/etc/tmp-filelist.${dataset}.txt"
