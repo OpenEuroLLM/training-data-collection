@@ -1,4 +1,4 @@
-# OpenEuroLLM Training Data Collection for the “Baby” Cycle
+# OpenEuroLLM Training Data Collection for the “Baby” Cycle (Prelude 9B)
 
 This directory collects and documents the training data mix for the first
 “production” (or “mid-size”) [model cycle](https://github.com/OpenEuroLLM/training-data-collection/blob/main/README.md), codenamed `baby`.
@@ -181,8 +181,7 @@ document and token counts, and MD5 checksums.
 
 
 
-## Per-language breakdown (To be reviewed)
-
+## Per-language breakdown 
 
 | #  | Language       | Release Tokens   |
 |----|----------------|------------------:|
