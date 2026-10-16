@@ -1,7 +1,7 @@
 # OpenEuroLLM Training Data Collection for the “Baby” Cycle (Prelude 9B)
 
-This directory collects and documents the training data mix for the first
-“production” (or “mid-size”) [model cycle](https://github.com/OpenEuroLLM/training-data-collection/blob/main/README.md), codenamed `baby`, branded Prelude 9B. 
+This directory collects and documents the training data mix for the first OpenEuroLLM
+production [model cycle](https://github.com/OpenEuroLLM/training-data-collection/blob/main/README.md), codenamed `baby`, branded Prelude 9B. 
 
 Training data preparation was carried out on LUMI.
 Select parts of the collection are mirrored to Leonardo,
