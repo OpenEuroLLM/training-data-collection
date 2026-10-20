@@ -171,7 +171,7 @@ into https://github.com/openEuroLLM/tokenizer
 
 ## Mirroring and Validation
 
-```
+```bash
 for t in megatron-lm md5 counts; do
   for d in $(cat etc/datasets.txt); do
     if [ -d ${d}/${t} ]; then
@@ -185,69 +185,82 @@ for t in megatron-lm md5 counts; do
 done
 ```
 
+```bash
+for i in $(egrep -v 'dclm-1.0|hplt-4.0|nemotron-cc-1.0' baby/etc/annealing.txt); do
+  echo $i;
+  ssh -xt data.leonardo.cineca.it \
+    rclone --config ${HOME}/.config/rclone/rclone.conf -v \
+      --exclude openeurollm-256k-v2/** --exclude gpt-oss-120b/** --exclude **.md5 \
+      sync sftp:/scratch/project_465002530/training/collection/${i}/ \
+      /leonardo_work/OELLM_prod2026/training/collection/${i}/ \
+      --sftp-ssh \"/bin/ssh -F ${HOME}/.ssh/config lumi\" \
+  | tee -a $(dirname ${i})/megatron-lm.log 2>&1;
+done
+```
+
 ## Breakdown
 
-### Section A — Language datasets
+### Section A — General
 
+| Language | Native source | Synthetic source | % of source | Release tokens | % of release | Datasets |
+|:---|---:|---:|---:|---:|---:|:---|
+| eng | 8,446,490,966,326 | — | 35.84% | 7,111,097,359,189 | 52.65% | dclm-1.0, dochplt-3.1, fineopus-filtered-0.4, finepdfs-edu-1.0.0, finephrase-0.0.0, hplt-4.0, mixture-vitae-1.0, nemotron-cc-1.0, nemotron-pretraining-specialized-1.0, nemotron-pretraining-specialized-1.1, olmo-mix-1124-arxiv, olmo-mix-1124-pes2o |
+| spa | 1,362,831,489,955 | 91,611,305,219 | 6.17% | 703,407,614,415 | 5.21% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| fra | 1,207,538,399,806 | 102,377,460,080 | 5.56% | 612,435,288,688 | 4.53% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| deu | 1,109,302,181,041 | 81,859,660,544 | 5.05% | 512,549,027,676 | 3.80% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| por | 454,868,766,269 | 90,185,273,844 | 2.31% | 329,720,018,780 | 2.44% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| ita | 401,103,173,503 | 82,285,655,894 | 2.05% | 293,554,844,036 | 2.17% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| pol | 290,288,399,565 | 83,828,958,663 | 1.59% | 231,920,445,057 | 1.72% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| nld | 232,971,969,250 | 93,648,923,682 | 1.39% | 210,184,896,196 | 1.56% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| ukr | 129,321,538,072 | 102,496,405,840 | 0.98% | 169,730,959,314 | 1.26% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| tur | 181,500,459,635 | 274,833,282,698 | 1.94% | 169,666,699,693 | 1.26% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| hun | 134,849,124,074 | 99,853,552,237 | 1.00% | 166,583,364,465 | 1.23% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| ron | 155,208,725,137 | 100,047,217,252 | 1.08% | 162,634,106,230 | 1.20% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| ces | 131,199,129,033 | 222,757,438,780 | 1.50% | 156,320,294,889 | 1.16% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| ell | 125,549,443,805 | 154,930,307,068 | 1.19% | 140,897,577,579 | 1.04% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| swe | 131,096,760,554 | 89,681,716,339 | 0.94% | 132,339,934,790 | 0.98% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| fin | 101,194,080,428 | 93,248,682,940 | 0.82% | 108,484,370,132 | 0.80% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| dan | 88,083,007,756 | 87,700,534,458 | 0.75% | 103,306,513,583 | 0.76% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| bul | 69,419,676,823 | 290,025,674,270 | 1.53% | 96,206,587,852 | 0.71% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| slk | 67,864,952,193 | 113,218,597,419 | 0.77% | 79,334,698,766 | 0.59% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| nob | 104,670,533,300 | 84,161,194,674 | 0.80% | 70,258,869,127 | 0.52% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| cat | 42,610,628,238 | 124,353,668,852 | 0.71% | 62,702,501,669 | 0.46% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| lit | 41,431,282,071 | 114,912,176,393 | 0.66% | 61,996,865,879 | 0.46% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| hrv | 50,426,300,821 | 108,210,878,830 | 0.67% | 59,453,742,635 | 0.44% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| lvs | 37,074,884,344 | 170,792,299,748 | 0.88% | 55,007,187,264 | 0.41% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| slv | 36,102,957,516 | 112,583,053,500 | 0.63% | 54,837,470,314 | 0.41% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| est | 30,667,078,198 | 267,380,655,295 | 1.26% | 51,777,030,894 | 0.38% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| srp | 39,682,650,676 | 130,924,280,324 | 0.72% | 50,084,845,041 | 0.37% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| sqi | 20,676,319,704 | 174,219,266,179 | 0.83% | 31,525,850,249 | 0.23% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| bos | 21,480,819,782 | 98,924,620,356 | 0.51% | 23,991,446,057 | 0.18% | dochplt-3.1, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| mkd | 9,641,146,303 | 125,518,960,998 | 0.57% | 16,069,721,881 | 0.12% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| isl | 10,959,448,370 | 97,348,571,405 | 0.46% | 15,713,483,734 | 0.12% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+| eus | 7,289,528,403 | 102,052,460,721 | 0.46% | 10,001,914,343 | 0.07% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| glg | 6,952,461,929 | 109,875,137,469 | 0.50% | 7,606,817,948 | 0.06% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| gle | 3,440,050,457 | 296,758,394,210 | 1.27% | 6,284,109,250 | 0.05% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| mlt | 4,380,772,012 | 134,951,009,011 | 0.59% | 4,412,768,991 | 0.03% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
+| nno | 2,488,197,640 | 90,132,244,358 | 0.39% | 3,538,386,588 | 0.03% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
 
-| Language | Source tokens | % of source | Release tokens | % of release | Datasets |
-|:---|---:|---:|---:|---:|:---|
-| eng | 8,363,813,579,783 | 35.64% | 7,028,585,633,677 | 52.44% | dclm-1.0, dochplt-3.1, fineopus-filtered-0.4, finepdfs-edu-1.0.0, finephrase-0.0.0, hplt-4.0, mixture-vitae-1.0, nemotron-cc-1.0, nemotron-pretraining-specialized-1.0, nemotron-pretraining-specialized-1.1 |
-| spa | 1,454,442,795,174 | 6.20% | 703,407,614,415 | 5.25% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| fra | 1,309,915,859,886 | 5.58% | 612,435,288,688 | 4.57% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| deu | 1,191,161,841,585 | 5.08% | 512,549,027,676 | 3.82% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| por | 545,054,040,113 | 2.32% | 329,720,018,780 | 2.46% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| ita | 483,388,829,397 | 2.06% | 293,554,844,036 | 2.19% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| pol | 374,117,358,228 | 1.59% | 231,920,445,057 | 1.73% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| nld | 326,620,892,932 | 1.39% | 210,184,896,196 | 1.57% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| ukr | 231,817,943,912 | 0.99% | 169,730,959,314 | 1.27% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| tur | 456,333,742,333 | 1.94% | 169,666,699,693 | 1.27% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| hun | 234,702,676,311 | 1.00% | 166,583,364,465 | 1.24% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| ron | 255,255,942,389 | 1.09% | 162,634,106,230 | 1.21% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| ces | 353,956,567,813 | 1.51% | 156,320,294,889 | 1.17% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| ell | 280,479,750,873 | 1.20% | 140,897,577,579 | 1.05% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| swe | 220,778,476,893 | 0.94% | 132,339,934,790 | 0.99% | fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| fin | 194,442,763,368 | 0.83% | 108,484,370,132 | 0.81% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| dan | 175,783,542,214 | 0.75% | 103,306,513,583 | 0.77% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| bul | 359,445,351,093 | 1.53% | 96,206,587,852 | 0.72% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| slk | 181,083,549,612 | 0.77% | 79,334,698,766 | 0.59% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| nob | 188,831,727,974 | 0.80% | 70,258,869,127 | 0.52% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| cat | 166,964,297,090 | 0.71% | 62,702,501,669 | 0.47% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| lit | 156,343,458,464 | 0.67% | 61,996,865,879 | 0.46% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| hrv | 158,637,179,651 | 0.68% | 59,453,742,635 | 0.44% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| lvs | 207,867,184,092 | 0.89% | 55,007,187,264 | 0.41% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| slv | 148,686,011,016 | 0.63% | 54,837,470,314 | 0.41% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| est | 298,047,733,493 | 1.27% | 51,777,030,894 | 0.39% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| srp | 170,606,931,000 | 0.73% | 50,084,845,041 | 0.37% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| sqi | 194,895,585,883 | 0.83% | 31,525,850,249 | 0.24% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| bos | 120,405,440,138 | 0.51% | 23,991,446,057 | 0.18% | dochplt-3.1, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| mkd | 135,160,107,301 | 0.58% | 16,069,721,881 | 0.12% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| isl | 108,308,019,775 | 0.46% | 15,713,483,734 | 0.12% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
-| eus | 109,341,989,124 | 0.47% | 10,001,914,343 | 0.07% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| glg | 116,827,599,398 | 0.50% | 7,606,817,948 | 0.06% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| gle | 300,198,444,667 | 1.28% | 6,284,109,250 | 0.05% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| mlt | 139,331,781,023 | 0.59% | 4,412,768,991 | 0.03% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
-| nno | 92,620,441,998 | 0.39% | 3,538,386,588 | 0.03% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
+**Subtotal A** — native: 15,290,657,302,989 · synthetic: 4,597,689,519,550 · source: 19,888,346,822,539 (84.38%) · release: 12,075,637,613,194 (89.41%)
 
-**Subtotal A** — source: 19,805,669,435,996 (84.4%) · release: 11,993,125,887,682 (89.5%)
+### Section B — Other
 
-### Section B — Math, code, reasoning datasets
+| Dataset | Native source | Synthetic source | % of source | Release tokens | % of release | Datasets |
+|:---|---:|---:|---:|---:|---:|:---|
+| common-pile-stackv2-0.1 | 2,928,642,538,533 | — | 12.43% | 709,743,563,645 | 5.26% | common-pile-stackv2-0.1 |
+| megamath-0.0.0 | 318,049,344,118 | — | 1.35% | 318,049,344,118 | 2.35% | megamath-0.0.0 |
+| starcoder-0.0.0 | 276,861,687,159 | — | 1.17% | 251,955,595,123 | 1.87% | starcoder-0.0.0 |
+| common-pile-stackv2-edu-0.1 | 80,134,962,542 | — | 0.34% | 80,060,187,066 | 0.59% | common-pile-stackv2-edu-0.1 |
+| swallow-code-2.0 | 62,716,070,265 | — | 0.27% | 50,172,253,076 | 0.37% | swallow-code-2.0 |
+| dolmino-mix-100b-1125 | 48,542,080,162 | — | 0.21% | 48,542,080,162 | 0.36% | dolmino-mix-100b-1125 |
+| finemath-0.0.0 | 39,371,426,362 | — | 0.17% | 39,371,426,362 | 0.29% | finemath-0.0.0 |
+| swallow-math-2.0 | 35,041,872,140 | — | 0.15% | 35,041,872,140 | 0.26% | swallow-math-2.0 |
+| agenttrove-0.0 | 20,220,696,106 | — | 0.09% | 20,220,696,106 | 0.15% | agenttrove-0.0 |
+| openthoughts-3 | 20,203,691,733 | — | 0.09% | 20,203,691,733 | 0.15% | openthoughts-3 |
+| openwebmath-0.0.0 | 13,793,650,775 | — | 0.06% | 13,793,650,775 | 0.10% | openwebmath-0.0.0 |
+| nemotron-mind-0.0 | 132,299,120,775 | — | 0.56% | — | — | nemotron-mind-0.0 |
 
-| Dataset | Source tokens | % of source | Release tokens | % of release | 
-|:---|---:|---:|---:|---:|
-| common-pile-stackv2-0.1 | 2,928,642,538,533 | 12.48% | 709,743,563,645 | 5.30% | 
-| megamath-0.0.0 | 318,049,344,118 | 1.36% | 318,049,344,118 | 2.37% | 
-| starcoder-0.0.0 | 276,861,687,159 | 1.18% | 251,955,595,123 | 1.88% | 
-| common-pile-stackv2-edu-0.1 | 80,134,962,542 | 0.34% | 80,060,187,066 | 0.60% | 
-| swallow-code-2.0 | 62,716,070,265 | 0.27% | 50,172,253,076 | 0.37% | 
-| dolmino-mix-100b-1125 | 48,542,080,162 | 0.21% | 48,542,080,162 | 0.36% | 
-| finemath-0.0.0 | 39,371,426,362 | 0.17% | 39,371,426,362 | 0.29% | 
-| swallow-math-2.0 | 35,041,872,140 | 0.15% | 35,041,872,140 | 0.26% | 
-| agenttrove-0.0 | 20,220,696,106 | 0.09% | 20,220,696,106 | 0.15% | 
-| openwebmath-0.0.0 | 13,793,650,775 | 0.06% | 13,793,650,775 | 0.10% |
-| nemotron-mind-0.0 | 132,299,120,775 | 0.56% | — | — | 
+**Subtotal B** — native: 3,975,877,140,670 · synthetic: — · source: 3,975,877,140,670 (16.87%) · release: 1,587,154,360,306 (11.75%)
 
-**Subtotal B** — source: 3,955,673,448,937 (16.6%) · release: 1,566,950,668,573 (11.5%)
-
-### Unique source tokens: 23,4TT
-### Unique release tokens: 13,4TT
+### Unique source tokens: 23,5TT
+### Unique release tokens: 13,5TT
