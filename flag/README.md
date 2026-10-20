@@ -1,15 +1,7 @@
 # OpenEuroLLM Training Data Collection for the “Flag” Cycle
 
-This directory collects and documents the training data mix for the first
-“flagship” development cycle, codenamed `flag`.
-
-## Background Documents
-
-+ [Overall roadmap](https://docs.google.com/spreadsheets/d/1CbuQfx8ZJVw1TaYXeGGkm17U4j5T_RrD9i0a2tYC5Y8/edit?usp=sharing)
-+ [training data sources](https://github.com/OpenEuroLLM/task4.3/blob/main/flagship-data-sources.md)
-+ [pretraining benchmarks](https://docs.google.com/document/d/1lpKgHLgBK8usB6RZmD_8yS0m-eUSuuxJ3DtV7sGeL2g/edit?usp=sharing)
-+ [posttraining benchmarks](https://mattermost.ufal.mff.cuni.cz/openeurollm/pl/rhoosmej4in99mujt7yhik9hmc)
-+ [task-internal schedule](https://docs.google.com/spreadsheets/d/1CbuQfx8ZJVw1TaYXeGGkm17U4j5T_RrD9i0a2tYC5Y8/edit?usp=sharing)
+This directory documents the training data mix for the first OpenEuroLLM
+“flagship” development cycle, internally codenamed `flag`.
 
 
 ## English Source Datasets
@@ -22,44 +14,44 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample |     Packing      |        Tokens        | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:----------------:|:--------------------:|:----:|:----------:|
-| dclm-1.0                             |  1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(3.88TT)           | ✅ | ✅ |
-| finepdfs-1.0.0 (eng_Latn)            |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(2.36T inc multi)  | ✅ | ✅ |
-| finepdfs-edu-1.0.0 (eng_Latn)        |  1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(279BT inc multi)  | ✅ | ✅ |
-| finephrase-0.0.0                     |  4 | 4 | ✅️ | ✅️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅                   | ✅ | ✅ |
-| hplt-4.0 (eng_Latn)                  |  3 | 3 | ✅️️ | ✅️ | ➖ | ✅ | ✅ | ✅ | ✅ | ✅‍(3.46TT inc multi) | ✅ | ✅ |
-| nemotron-cc-1.0                      |  3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(2.91TT)           | ✅ | ✅ |
-| nemotron-mind-0.0                    |  7 | 4 | ✅️ | ✅️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅                    | ✅ | ✅ |
-| nemotron-pretraining-specialized-1.0 |  6 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(297BT)            | ✅ | ✅ |
-| nemotron-pretraining-specialized-1.1 |  5 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(10BT)             | ✅ | ✅ |
-| mixture-vitae-1.0                    | 13 | 4 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(429BT)            | ✅ | ✅ |
-| olmo-mix-1124                        |  2 | 4 | ✅ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅(83BT)             | ✅ | ✅ |
+| dclm-1.0                             |     1 | 1 | ✅ | ✅ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(3.88TT)           | ✅ | ✅ |
+| finepdfs-1.0.0 (eng_Latn)            |     1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(2.36T inc multi)  | ✅ | ✅ |
+| finepdfs-edu-1.0.0 (eng_Latn)        |     1 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(279BT inc multi)  | ✅ | ✅ |
+| finephrase-0.0.0                     |     4 | 4 | ✅️ | ✅️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅                   | ✅ | ✅ |
+| hplt-4.0 (eng_Latn)                  |     3 | 3 | ✅️️ | ✅️ | ➖ | ✅ | ✅ | ✅ | ✅ | ✅‍(3.46TT inc multi) | ✅ | ✅ |
+| nemotron-cc-1.0                      |     3 | 1 | ✅ | ✅️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(2.91TT)           | ✅ | ✅ |
+| nemotron-mind-0.0                    |     7 | 4 | ✅️ | ✅️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅                    | ✅ | ✅ |
+| nemotron-pretraining-specialized-1.0 |     6 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(297BT)            | ✅ | ✅ |
+| nemotron-pretraining-specialized-1.1 |     5 | 4 | ✅️ | ✅️️️ | ➖ | ✅ | ✅ | ➖ | ✅ | ✅(10BT)             | ✅ | ✅ |
+| mixture-vitae-1.0                    |    13 | 4 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(429BT)            | ✅ | ✅ |
+| ~~olmo-mix-1124~~                    | ~~2~~ | 4 | ✅ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅(83BT)             | ✅ | ✅ |
 
 ## Multilingual Source Datasets
 
 | Path                                                                                                   | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |      Tokens       | Copy | Validation |
 |--------------------------------------------------------------------------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:-------:|:-----------------:|:---:|:---------:|
-| finepdfs-1.0.0 (multilingual)     | 36     | 2 | ✅ | ✅️ | ✅️ | ✅ | ✅ | ✅ | ✅ | ✅(2.36T inc eng)  | ✅ | ✅ |
-| finepdfs-edu-1.0.0 (multilingual) | 35     | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅(279BT inc eng)  | ✅ | ✅ |
-| ~~fineweb2-hq-1.0.0~~             | ~~13~~ |   | ✅️ | ✅️ | ✅️ | ✅ | ✅ | ✅ | ➖ |         ➖         | ➖ | ➖ |
-| finewiki-0.0.0                    | 34     | 3 | ✅️ | ✅️ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅(25BT)           | ✅ | ✅ |
-| hplt-4.0                          | 63     | 1 | ✅ ‍| ✅️️ | ➕ | ✅ | ✅ | ✅ | ✅ | ✅(3.46TT inc eng) | ✅ | ✅ |
-| nemotron-cc-opus-1.1              | 20     | 3 | ✅‍ | ✅️ | ➖ | ➖ | ✅ | ➖ | ✅ | ✅(142BT)          | ✅ | ✅ |
-| nemotron-cc-tower+-0.1            | 16     | 3 | ✅ | ✅️️ | ➖ | ➖ | ✅ | ➖ | ✅ | ✅(541BT)          | ✅ | ✅ |
+| finepdfs-1.0.0 (multilingual)     |     36 | 2 | ✅ | ✅️ | ✅️ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| finepdfs-edu-1.0.0 (multilingual) |     35 | 2 | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| ~~fineweb2-hq-1.0.0~~             | ~~13~~ |   | ✅️ | ✅️ | ✅️ | ✅ | ✅ | ✅ | ➖ | ➖ | ➖ | ➖ |
+| finewiki-0.0.0                    |     34 | 3 | ✅️ | ✅️ | ✅ | ✅ | ➖ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| hplt-4.0                          |     63 | 1 | ✅ ‍| ✅️️ | ➕ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| nemotron-cc-opus-1.1              |     20 | 3 | ✅‍ | ✅️ | ➖ | ➖ | ✅ | ➖ | ✅ | ✅ | ✅ | ✅ |
+| nemotron-cc-tower+-0.1            |     16 | 3 | ✅ | ✅️️ | ➖ | ➖ | ✅ | ➖ | ✅ | ✅ | ✅ | ✅ |
 
 ## Code and Math Datasets
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |  Tokens   | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:----:|:---------:|:----:|:----------:|
-| common-pile-stackv2-0.1              |     1 | 3 | ✅ | ✅️️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | ✅️(710B)  |    ✅ | ✅ |
-| common-pile-stackv2-edu-0.1          |     1 | 3 | ✅️ | ✅️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | ✅️(80BT)  |    ✅ | ✅ |
-| dolmino-mix-100b-1125                |     9 | 5 | ✅ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(49BT)  |    ✅ | ✅ |
-| finemath-0.0.0                       |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(40BT)  |    ✅ | ✅ |
-| megamath-0.0.0                       |     1 | 4 | ✅ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️(318BT) |    ✅ | ✅ |
-| openwebmath-0.0.0                    |     1 | 5 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(14BT)  |    ✅ | ✅ |
-| starcoder-0.0.0                      |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(252BT) |    ✅ | ✅ |
-| swallow-code-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(50BT)  |    ✅ | ✅ |
-| swallow-math-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️(35BT)  |    ✅ | ✅ |
-| ~~the-stack-1.2~~                    | ~~1~~ |   | ✅️️ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ➖ |     ➖     | ➖ | ➖ |
+| common-pile-stackv2-0.1              |     1 | 3 | ✅ | ✅️️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | ✅️ |    ✅ | ✅ |
+| common-pile-stackv2-edu-0.1          |     1 | 3 | ✅️ | ✅️️ | ✅️ | ➖ | ➖ | ✅️ | ✅️ | ✅️ |    ✅ | ✅ |
+| dolmino-mix-100b-1125                |     9 | 5 | ✅ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️ |    ✅ | ✅ |
+| finemath-0.0.0                       |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️ |    ✅ | ✅ |
+| megamath-0.0.0                       |     1 | 4 | ✅ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️ |    ✅ | ✅ |
+| openwebmath-0.0.0                    |     1 | 5 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
+| starcoder-0.0.0                      |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
+| swallow-code-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
+| swallow-math-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
+| ~~the-stack-1.2~~                    | ~~1~~ |   | ✅️️ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
 
 ## Parallel Datasets
 
@@ -72,10 +64,23 @@ This directory collects and documents the training data mix for the first
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample | Packing |  Tokens  | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:------:|:-------:|:--------:|:----:|:----------:|
-| agenttrove-0.0                       |     1 |   | ✅️️ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅️(20BT) | ✅ | ✅ |
-| openthoughts-3                       |     1 |   | ✅️️ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅(20BT)️ | ✅ | ✅ |
+| agenttrove-0.0                       |     1 |   | ✅️️ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅️ | ✅ | ✅ |
+| ~~openthoughts-3~~                   | ~~1~~ |   | ✅️️ | ✅️️️ | ➖ | ✅ | ➖ | ➖ | ✅ | ✅️ | ✅ | ✅ |
 
 ## Annotations: Contamination
+
+Decontamination proceeded in two steps, (a) contamination annotation and (b)
+document filtering.
+Starting from a [comprehensive list of LLMs benchmarks](benchmarks.txt), an
+augmented version of [NeMo Curator](https://github.com/NVIDIA-NeMo/Curator)
+served to compile per-language search indices of n-grams between 8 and 13
+word tokens.
+For all datasets except code & math, n-gram matches were annotated; these
+are available below the `nemo-curator/` sub-directory for each dataset.
+
+In final packing, documents containing such matches were removed.
+For technical reasons, this process regrettably failed for the two reasoning
+datasets, `agenttrove-0.0` and `openthoughts-3`.
 
 ## Annotations: Personally Identifiable Information
 
@@ -91,22 +96,6 @@ data selection processes should follow declarative specifications, e.g.
 inclusion of all relevant parameters and weighting formulas in the
 `metadata.yaml` files for each dataset.
 
-For filtering, one can imagine a tiny specification language, composed
-of a small inventory of operators, field identifiers, comparison values,
-and boolean connectives.
-A match of one or more filter expression will trigger removal of documents,
-for example:
-```
-hplt-low-resource:
-  or:
-  - in:
-      propella-4b.content_safety: [illegal, harmful]
-  - =:
-      propella-4b.content_quality: unacceptable
-  - <=:
-      doc_scores.0: 2
-  … 
-```
 
 Resampling will take a pseudo-probabilistic perspective, where each candidate
 document is assigned a numeric weight, where values below `1` correspond to
@@ -264,3 +253,12 @@ done
 
 ### Unique source tokens: 23,5TT
 ### Unique release tokens: 13,5TT
+
+
+## Background Documents
+
++ [Overall roadmap](https://docs.google.com/spreadsheets/d/1CbuQfx8ZJVw1TaYXeGGkm17U4j5T_RrD9i0a2tYC5Y8/edit?usp=sharing)
++ [training data sources](https://github.com/OpenEuroLLM/task4.3/blob/main/flagship-data-sources.md)
++ [pretraining benchmarks](https://docs.google.com/document/d/1lpKgHLgBK8usB6RZmD_8yS0m-eUSuuxJ3DtV7sGeL2g/edit?usp=sharing)
++ [posttraining benchmarks](https://mattermost.ufal.mff.cuni.cz/openeurollm/pl/rhoosmej4in99mujt7yhik9hmc)
++ [task-internal schedule](https://docs.google.com/spreadsheets/d/1CbuQfx8ZJVw1TaYXeGGkm17U4j5T_RrD9i0a2tYC5Y8/edit?usp=sharing)
