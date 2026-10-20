@@ -230,7 +230,7 @@ done
 | mlt | 4,380,772,012 | 134,951,009,011 | 0.59% | 4,412,768,991 | 0.03% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, finewiki-0.0.0, hplt-4.0, nemotron-cc-opus-1.1 |
 | nno | 2,488,197,640 | 90,132,244,358 | 0.39% | 3,538,386,588 | 0.03% | dochplt-3.1, fineopus-filtered-0.4, finepdfs-1.0.0, finepdfs-edu-1.0.0, hplt-4.0, nemotron-cc-tower+-0.1 |
 
-**Subtotal A** — native: 15,290,657,302,989 · synthetic: 4,597,689,519,550 · source: 19,888,346,822,539 (84.38%) · release: 12,075,637,613,194 (89.41%)
+**Subtotal A** — native: 15,290,657,302,989 · synthetic: 4,597,689,519,550 · source: 19,888,346,822,539 (84.38%) · release: 12,075,637,613,194 (89.55%)
 
 ### Section B — Other
 
@@ -249,7 +249,7 @@ done
 | openwebmath-0.0.0 | 13,793,650,775 | — | 0.06% | 13,793,650,775 | 0.10% | openwebmath-0.0.0 |
 | nemotron-mind-0.0 | 132,299,120,775 | — | 0.56% | — | — | nemotron-mind-0.0 |
 
-**Subtotal B** — native: 3,975,877,140,670 · synthetic: — · source: 3,975,877,140,670 (16.87%) · release: 1,587,154,360,306 (11.75%)
+**Subtotal B** — native: 3,975,877,140,670 · synthetic: — · source: 3,975,877,140,670 (16.87%) · release: 1,566,950,668,573 (11.62%)
 
 ### Unique source tokens: 23,5TT
 ### Unique release tokens: 13,5TT
