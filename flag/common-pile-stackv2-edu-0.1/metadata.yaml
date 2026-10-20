@@ -1,5 +1,6 @@
 name: Common Pile Stack v2 Edu
 catalogue: common-pile/0.1/stackv2-edu
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 id: id
 text: text
 suffix: .jsonl.zst

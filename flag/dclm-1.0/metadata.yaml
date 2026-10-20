@@ -1,5 +1,6 @@
 name: DCLM Baseline 1.0
 catalogue: dclm/1.0/baseline
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 text: text
 id: metadata.WARC-Record-ID

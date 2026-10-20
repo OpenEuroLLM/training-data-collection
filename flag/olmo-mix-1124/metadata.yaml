@@ -1,5 +1,6 @@
 name: OLMo 2 (November 2024) Pretraining Set
 huggingface: allenai/olmo-mix-1124
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 commit: 99ee6aa
 suffix: .jsonl.zst
 text: text

@@ -1,4 +1,5 @@
 name: Doc HPLT 3.1
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 parallel:
   source:

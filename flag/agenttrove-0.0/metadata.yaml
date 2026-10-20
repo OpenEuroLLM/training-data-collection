@@ -1,5 +1,6 @@
 name: Agent Trove
 huggingface: https://huggingface.co/datasets/open-thoughts/AgentTrove
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: uuid
 text: text

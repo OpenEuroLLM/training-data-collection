@@ -1,5 +1,6 @@
 name: Fine PDFs edu
 catalogue: finepdfs/1.0.0/edu
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: id
 text: text
@@ -139,8 +140,6 @@ propella-4b:
 #
 source:
   default:
-    annotations:
-    - propella-4b
 #
 # ( cd finepdfs-edu-1.0.0/source; for i in *; do echo "  $i:"; done; ) \
 # | sort >> finepdfs-edu-1.0.0/metadata.yaml

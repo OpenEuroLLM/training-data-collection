@@ -1,5 +1,6 @@
 name: Tower+ Translations of Nemotron-CC 0.1
 catalogue: nemotron-cc-tower+/0.1/parallel
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 text: text
 id: warc_record_id

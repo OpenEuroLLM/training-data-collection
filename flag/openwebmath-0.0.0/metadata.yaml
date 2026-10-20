@@ -1,5 +1,6 @@
 name: Open web math
 catalogue: openwebmath/0.0.0/data
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: uuid
 text: text

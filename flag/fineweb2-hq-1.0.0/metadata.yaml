@@ -1,5 +1,6 @@
 name: Fine Web 2 HQ
 huggingface: https://huggingface.co/datasets/epfml/FineWeb2-HQ
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 id: id
 text: text
 suffix: .jsonl.zst

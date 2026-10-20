@@ -1,5 +1,6 @@
 name: The Stack v1.2
 catalogue: the-stack/1.2/data
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: hexsha
 text: content

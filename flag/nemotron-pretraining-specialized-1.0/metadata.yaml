@@ -1,5 +1,6 @@
 name: Nemotron pretrainint specialized v1
 huggingface: https://huggingface.co/datasets/nvidia/Nemotron-Pretraining-Specialized-v1
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: uuid
 text: text

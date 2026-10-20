@@ -1,5 +1,6 @@
 name: Fine Wiki
 catalogue: finewiki/0.0.0
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: id
 text: text
@@ -83,6 +84,7 @@ release:
 sample:
   default:
     input: source
+    annotations: [propella-4b]
     sample: dynamic
     filter: ../sample/propella-filter.py
     parameters: {}
@@ -132,8 +134,6 @@ openai-privacy-filter:
 propella-4b:
 #
 source:
-  default:
-    annotations: [propella-4b]
   bos_Latn:
   bul_Cyrl:
   cat_Latn:

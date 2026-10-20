@@ -1,5 +1,6 @@
 name: OPUS Translations of Nemotron-CC 1.1
 catalogue: nemotron-cc-opus/1.1/openeurollm
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 text: text
 id: warc_record_id
