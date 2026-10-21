@@ -8,6 +8,7 @@ id: warc_record_id
 release:
   default:
     input: source
+    annotations: [openai-privacy-filter]
     pack: tree
     sample: random
     rubber: 1.5
@@ -64,6 +65,10 @@ release:
     budget: 10%
     shard: 137md
 #
+openai-privacy-filter:
+  default:
+    input: source
+
 source:
   parallel/tower72b/ita_Latn:
   parallel/tower72b/spa_Latn:
