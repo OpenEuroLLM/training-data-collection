@@ -29,6 +29,7 @@ openai-privacy-filter:
     input: source
 propella-4b:
   default:
+    annotations: [propella-4b]
     input: source
 #
 source:
