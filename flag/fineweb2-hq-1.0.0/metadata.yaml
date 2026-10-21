@@ -27,6 +27,9 @@ nemo-curator:
 openai-privacy-filter:
   default:
     input: source
+propella-4b:
+  default:
+    input: source
 #
 source:
   ces_Latn:
