@@ -76,3 +76,22 @@ release:
 source:
   default:
     suffix: .jsonl.gz
+  bos_Latn:
+  bul_Cyrl:
+  cat_Latn:
+  ces_Latn:
+  ell_Grek:
+  est_Latn:
+  eus_Latn:
+  gle_Latn:
+  glg_Latn:
+  hrv_Latn:
+  lav_Latn:
+  lit_Latn:
+  mkd_Cyrl:
+  mlt_Latn:
+  slk_Latn:
+  slv_Latn:
+  sqi_Latn:
+  srp_Cyrl:
+  tur_Latn:
