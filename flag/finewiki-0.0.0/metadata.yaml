@@ -8,7 +8,7 @@ text: text
 release:
   default:
     input: sample
-    annotations: [nemo-curator, openai-privacy-filter]
+    annotations: [nemo-curator]
     mask: [private_email, private_phone, private_url, secret]
     pack: tree
     sample: full
@@ -124,10 +124,6 @@ sample:
   ukr_Cyrl:
 #
 nemo-curator:
-  default:
-    input: source
-#
-openai-privacy-filter:
   default:
     input: source
 #
