@@ -8,6 +8,7 @@ id: warc_record_id
 release:
   default:
     input: source
+    annotations: [openai-privacy-filter]
     pack: tree
     sample: random
     rubber: 1.5
@@ -73,6 +74,10 @@ release:
     budget: 6%
     shard: 115md
 #
+openai-privacy-filter:
+  default:
+    input: source
+
 source:
   default:
     suffix: .jsonl.gz
