@@ -26,7 +26,7 @@ openai-privacy-filter:
 #
 source:
   default:
-  finephrase-0.0.0/source/table:
-  finephrase-0.0.0/source/tutorial:
-  finephrase-0.0.0/source/math:
-  finephrase-0.0.0/source/faq:
+  table:
+  tutorial:
+  math:
+  faq:
