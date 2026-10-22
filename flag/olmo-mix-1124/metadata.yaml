@@ -9,7 +9,7 @@ id: id
 release:
   default:
     input: source
-    annotations: [nemo-curator, openai-privacy-filter]
+    annotations: [nemo-curator]
     mask: [account_number, private_email, private_phone, private_url, secret]
     pack: tree
     sample: full
@@ -23,10 +23,6 @@ release:
     shard: 64md
 #
 nemo-curator:
-  default:
-    input: source
-#
-openai-privacy-filter:
   default:
     input: source
 #
