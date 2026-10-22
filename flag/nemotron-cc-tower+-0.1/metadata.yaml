@@ -1,5 +1,6 @@
 name: Tower+ Translations of Nemotron-CC 0.1
 catalogue: nemotron-cc-tower+/0.1/parallel
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 text: text
 id: warc_record_id
@@ -7,6 +8,7 @@ id: warc_record_id
 release:
   default:
     input: source
+    annotations: [openai-privacy-filter]
     pack: tree
     sample: random
     rubber: 1.5
@@ -63,20 +65,24 @@ release:
     budget: 10%
     shard: 137md
 #
+openai-privacy-filter:
+  default:
+    input: source
+
 source:
-  nemotron-cc-tower+-0.1/source/parallel/tower72b/ita_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower72b/spa_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower72b/fin_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower72b/swe_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower72b/deu_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/fra_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/nld_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/dan_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/ron_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/nno_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/pol_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/isl_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/por_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/hun_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/nob_Latn:
-  nemotron-cc-tower+-0.1/source/parallel/tower9b/ukr_Cyrl:
+  parallel/tower72b/ita_Latn:
+  parallel/tower72b/spa_Latn:
+  parallel/tower72b/fin_Latn:
+  parallel/tower72b/swe_Latn:
+  parallel/tower72b/deu_Latn:
+  parallel/tower9b/fra_Latn:
+  parallel/tower9b/nld_Latn:
+  parallel/tower9b/dan_Latn:
+  parallel/tower9b/ron_Latn:
+  parallel/tower9b/nno_Latn:
+  parallel/tower9b/pol_Latn:
+  parallel/tower9b/isl_Latn:
+  parallel/tower9b/por_Latn:
+  parallel/tower9b/hun_Latn:
+  parallel/tower9b/nob_Latn:
+  parallel/tower9b/ukr_Cyrl:

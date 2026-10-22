@@ -1,5 +1,6 @@
-name:
-huggingface:
+name: Open Thoughts 3
+huggingface: https://huggingface.co/datasets/open-thoughts/OpenThoughts3-1.2M
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: uuid
 text: text

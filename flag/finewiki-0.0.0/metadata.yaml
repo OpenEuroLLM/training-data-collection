@@ -1,5 +1,6 @@
-name:
+name: Fine Wiki
 catalogue: finewiki/0.0.0
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: id
 text: text
@@ -7,7 +8,7 @@ text: text
 release:
   default:
     input: sample
-    annotations: [nemo-curator, openai-privacy-filter]
+    annotations: [nemo-curator]
     mask: [private_email, private_phone, private_url, secret]
     pack: tree
     sample: full
@@ -83,6 +84,7 @@ release:
 sample:
   default:
     input: source
+    annotations: [propella-4b]
     sample: dynamic
     filter: ../sample/propella-filter.py
     parameters: {}
@@ -125,15 +127,9 @@ nemo-curator:
   default:
     input: source
 #
-openai-privacy-filter:
-  default:
-    input: source
-#
 propella-4b:
 #
 source:
-  default:
-    annotations: [propella-4b]
   bos_Latn:
   bul_Cyrl:
   cat_Latn:
