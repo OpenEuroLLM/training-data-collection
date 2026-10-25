@@ -117,7 +117,7 @@ def main():
         _ = suffix.search(path);
         if _ is not None: path = path[:_.start()];
         if path in mix:
-          mix[path]["ratio"] += float(ratio);
+          mix[path]["ratio"] += ratio;
         else:
           dataset = re.sub(r"/megatron-lm.*", "", path);
           part = re.sub(r".+/megatron-lm/?", "", path);
