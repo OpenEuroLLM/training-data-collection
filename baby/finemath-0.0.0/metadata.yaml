@@ -4,10 +4,11 @@ catalogue: finemath/0.0.0/data
 suffix: .jsonl.zst
 id: uuid
 text: text
+language: eng_Latn
+tags: [math]
 annotations:
   contamination:
     owner: Prompsit
-    status: done
 release:
   default:
     input: uuid

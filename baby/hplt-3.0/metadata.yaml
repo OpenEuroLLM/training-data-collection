@@ -4,15 +4,13 @@ catalogue: hplt/3.0/sorted
 suffix: .jsonl.zst
 text: text
 id: id
-wds: doc_scores
-registers: web-register
+language: ~([a-z]{3}_[A-Z][a-z]{3})
+tags: [web]
 annotations:
   contamination:
     owner: Prompsit
-    status: _to_do_
   pii:
-    owner: AI Sweden
-    status: _to_do_
+    owner: Prompsit
 wds+register:
   default:
     input: source

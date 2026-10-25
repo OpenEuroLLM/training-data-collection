@@ -4,13 +4,13 @@ catalogue: nemotron-cc-tower+/0.1/parallel
 suffix: .jsonl.zst
 text: text
 id: warc_record_id
+language: ~([a-z]{3}_[A-Z][a-z]{3})
+tags: [mt]
 annotations:
   contamination:
     owner: Prompsit
-    status: _to_do_
   pii:
-    owner: AI Sweden
-    status: _to_do_
+    owner: Prompsit
 release:
   default:
     input: source

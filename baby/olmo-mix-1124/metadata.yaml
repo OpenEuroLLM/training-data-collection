@@ -5,12 +5,13 @@ commit: 99ee6aa
 suffix: .json.gz
 text: text
 id: id
+language: eng_Latn
 annotations:
   contamination:
     owner: Prompsit
     suffix: .jsonl
   pii:
-    owner: AI Sweden
+    owner: Prompsit
     suffix: .json.gz
 release:
   default:
@@ -22,8 +23,11 @@ release:
 #   --budget datamix.txt | grep -v sample: >> olmo-mix-1124/metadata.yaml
 #
   arxiv:
+    tags: [science]
     shard: 18md
   pes2o:
+    tags: [science]
     shard: 64md
   wiki:
+    tags: [wiki]
     shard: 161md

@@ -4,13 +4,13 @@ catalogue: nemotron-cc/1.0/data
 suffix: .jsonl.zstd
 text: text
 id: warc_record_id
+language: eng_Latn
+tags: [web]
 annotations:
   contamination:
     owner: Prompsit
-    status: _to_do_
   pii:
-    owner: AI Sweden
-    status: _to_do_
+    owner: Prompsit
 release:
   default:
     input: source

@@ -4,13 +4,13 @@ catalogue: finepds/1.0.0/edu
 suffix: .jsonl.zst
 text: text
 id: id
+language: ~([a-z]{3}_[A-Z][a-z]{3})
+tags: [pdf]
 annotations:
   contamination:
     owner: Prompsit
-    status: _to_do_
   pii:
-    owner: AI Sweden
-    status: _to_do_
+    owner: Prompsit
 release:
   default:
     input: source
