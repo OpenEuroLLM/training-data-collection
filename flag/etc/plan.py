@@ -2,6 +2,12 @@
 
 # -*- coding: utf-8; -*-
 
+#
+# ./flag/etc/plan.py --budget --format , \
+#   baby/datamix.txt | ( IFS= read -r head; echo ${head}; sort ) \
+# > baby/counts.csv
+#
+
 from collections import Counter;
 import argparse;
 import glob;
@@ -23,7 +29,15 @@ def summarize_counts(path, argument):
       with open(_, encoding = "utf-8") as _:
         result[suffix] = json.load(_);
   return result;
-  
+
+def summarize_tags(metadata, dataset, part):
+  tags = metadata["tags"] if "tags" in metadata else set();
+  if "release" in metadata:
+    for key, value in metadata["release"].items():
+      if key == "default" or value is None: continue;
+      if "tags" in value: tags |= set(value["tags"]);
+  return tags;
+
 def main():
 
   start = time.time();
@@ -107,9 +121,32 @@ def main():
         else:
           dataset = re.sub(r"/megatron-lm.*", "", path);
           part = re.sub(r".+/megatron-lm/?", "", path);
+          metadata = os.path.join(dataset, "metadata.yaml");
+          language = "";
+          if not os.path.isfile(metadata):
+            if not arguments.quiet:
+              print("plan.py(): no metadata for {}/{}."
+                    "".format(dataset, part), file = sys.stderr);
+          else:
+            with open(metadata, encoding = "utf-8") as _:
+              metadata = yaml.safe_load(_);
+              language = metadata.get("language", "");
+              if language != "" and language.startswith("~"):
+                _ = re.search(language[1:], part);
+                if _ is not None and len(_.groups()) >= 1:
+                  language = _.group(1);
+          if language in {"est_Latn", "ekk_Latn"}: language = "ekk_Latn";
+          elif language in {"lav_Latn", "lvs_Latn"}: language = "lvs_Latn";
+          elif language in {"sqi_Latn", "als_Latn"}: language = "als_Latn";
+          elif language in {"nor_Latn", "nob_Latn"}: language = "nob_Latn";
+          if language == "" and not arguments.quiet:
+            print("plan.py(): no language for {}/{}."
+                    "".format(dataset, part), file = sys.stderr);
+
           counts = summarize_counts(path, arguments.counts);
           active = True if filter is None or filter.search(path) else False;
-          mix[path] = {"dataset": dataset, "part": part,
+          mix[path] = {"dataset": dataset, "part": part, "language": language,
+                       "tags": summarize_tags(metadata, dataset, part),
                        "ratio": ratio, "active": active,
                        "counts": counts};
       
@@ -192,7 +229,7 @@ def main():
               
   if arguments.budget:
     if arguments.format == ",":
-      print("dataset,part,budget,usage"
+      print("dataset,part,language,tags,budget,usage"
             ",source tokens,source documents,source length"
             ",sample tokens,sample documents,sample length"
             ",token reduction,document reduction",
@@ -253,9 +290,11 @@ def main():
                         sample["tokens"] / source["tokens"] * 100));
       elif arguments.format == ",":
         budget = math.ceil(arguments.horizon * data["ratio"]);
-        print("{},{},{},{:.3f}"
+        print("{},{},{},{},{},{:.3f}"
               ",{},{},{:.1f}"
-              "".format(data["dataset"], data["part"], budget, budget / tokens,
+              "".format(data["dataset"], data["part"], data["language"],
+                        " ".join(data["tags"]),
+                        budget, budget / tokens,
                         source["tokens"], source["documents"],
                         source["tokens"] / source["documents"]),
               end = "");
