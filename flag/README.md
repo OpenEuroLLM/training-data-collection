@@ -11,6 +11,7 @@ This directory documents the training data mix for the first OpenEuroLLM
 * ✅ - complete
 * ➕ - included
 * ➖ - inapplicable
+* 🏃 - running
 
 | Path                                 | Parts | # | Data | Counts | Propella | Contamination | PII | Sample |     Packing      |        Tokens        | Copy | Validation |
 |--------------------------------------|:-----:|:-:|:----:|:------:|:--------:|:-------------:|:---:|:-----:|:----------------:|:--------------------:|:----:|:----------:|
@@ -47,10 +48,10 @@ This directory documents the training data mix for the first OpenEuroLLM
 | dolmino-mix-100b-1125                |     9 | 5 | ✅ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️ |    ✅ | ✅ |
 | finemath-0.0.0                       |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️ |    ✅ | ✅ |
 | megamath-0.0.0                       |     1 | 4 | ✅ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️️️ | ✅️ |    ✅ | ✅ |
-| openwebmath-0.0.0                    |     1 | 5 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
+| openwebmath-0.0.0                    |     1 | 5 | ✅️ | ✅️️ | ➖ | 🏃 | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
 | starcoder-0.0.0                      |     1 | 4 | ✅ | ✅️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
-| swallow-code-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
-| swallow-math-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | ➖ | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
+| swallow-code-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | 🏃  | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
+| swallow-math-2.0                     |     1 | 4 | ✅️ | ✅️️ | ➖ | 🏃  | ➖ | ➖ | ✅️ | ✅️ |    ✅ | ✅ |
 | ~~the-stack-1.2~~                    | ~~1~~ |   | ✅️️ | ✅️️️ | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ | ➖ |
 
 ## Parallel Datasets
