@@ -1,5 +1,5 @@
-name:
-huggingface:
+name: Mixture Vitae 1.0 Nuggets
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 id: id
 text: text
 suffix: .jsonl.zst

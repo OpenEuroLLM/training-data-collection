@@ -1,5 +1,6 @@
 name: OPUS Translations of Nemotron-CC 1.1
 catalogue: nemotron-cc-opus/1.1/openeurollm
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 text: text
 id: warc_record_id
@@ -7,6 +8,7 @@ id: warc_record_id
 release:
   default:
     input: source
+    annotations: [openai-privacy-filter]
     pack: tree
     sample: random
     rubber: 1.5
@@ -72,6 +74,29 @@ release:
     budget: 6%
     shard: 115md
 #
+openai-privacy-filter:
+  default:
+    input: source
+
 source:
   default:
     suffix: .jsonl.gz
+  bos_Latn:
+  bul_Cyrl:
+  cat_Latn:
+  ces_Latn:
+  ell_Grek:
+  est_Latn:
+  eus_Latn:
+  gle_Latn:
+  glg_Latn:
+  hrv_Latn:
+  lav_Latn:
+  lit_Latn:
+  mkd_Cyrl:
+  mlt_Latn:
+  slk_Latn:
+  slv_Latn:
+  sqi_Latn:
+  srp_Cyrl:
+  tur_Latn:

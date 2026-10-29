@@ -1,5 +1,6 @@
 name: Nemotron-CC 1.0
 catalogue: nemotron-cc/1.0/data
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 text: text
 id: warc_record_id

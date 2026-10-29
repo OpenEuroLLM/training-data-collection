@@ -1,5 +1,6 @@
 name: HPLT 4.0
 catalogue: hplt/4.0
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 text: text
 id: id

@@ -1,5 +1,6 @@
-name: 
+name: The Stack v1.2
 catalogue: the-stack/1.2/data
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: hexsha
 text: content
@@ -7,10 +8,9 @@ text: content
 release:
   default:
     input: source
-    text: text
     pack: flat
-    sample: 
-    shard: 
+    sample: full
+    shard: 100md
 #
 source:
 #
@@ -72,8 +72,6 @@ source:
   common-lisp:
   component-pascal:
   coq:
-  counts.json:
-  counts.md:
   creole:
   crystal:
   c-sharp:
@@ -109,7 +107,6 @@ source:
   factor:
   fancy:
   fantom:
-  fields.md:
   fish:
   flux:
   forth:
