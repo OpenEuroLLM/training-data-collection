@@ -1,0 +1,47 @@
+name: swallow code decontaminated 
+catalogue: /0.0.0/data
+suffix: .jsonl.zst
+id: uuid
+text: text
+#
+megatron-lm:
+  default:
+    source: release
+  openeurollm-256k:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k
+  openeurollm-256k-reason:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k-reason
+#
+nemo-curator:
+  default:
+    input: uuid
+#
+release:
+  default:
+    input: uuid
+    annotations: [nemo-curator]
+    pack: tree
+#
+# ./etc/plan.py --pattern swallow-code --format yaml --budget datamix.txt
+#
+  stage5-auto-format/python/medium:
+    sample: random
+    budget: 80%
+    shard: 46md
+#
+uuid:
+#
+# for i in swallow-code-2.0/source/stage5-auto-format/python/medium/*.jsonl.zst; do
+#   t=swallow-code-2.0/uuid/${i##swallow-code-2.0/source/};
+#   mkdir -p $(dirname $t); echo $i;
+#   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#     --mode json --uuid $i | zstd -z -o $t;
+# done
+#
+  default:
+    input: source
+#
+source:
+  stage5-auto-format/python/medium:
