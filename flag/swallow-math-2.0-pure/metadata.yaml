@@ -1,0 +1,44 @@
+name: swallow-math
+catalogue: swallow-math/0.0.0/data
+suffix: .jsonl.zst
+id: uuid
+text: text
+#
+megatron-lm:
+  default:
+    source: release
+  openeurollm-256k:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k
+  openeurollm-256k-reason:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k-reason
+#
+release:
+  default:
+    input: uuid
+    annotations: [nemo-curator]
+    pack: flat
+    sample: full
+    shard: 74md
+#
+nemo-curator:
+  default:
+    input: uuid
+#
+uuid:
+#
+# for i in swallow-math-2.0/source/*/*.jsonl.zst; do
+#   t=swallow-math-2.0/uuid/${i##swallow-math-2.0/source/};
+#   mkdir -p $(dirname $t); echo $i;
+#   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#     --mode json --uuid $i | zstd -z -o $t;
+# done
+#
+  default:
+    input: source
+#
+source:
+  stage3-qa:
+  stage3-textbook:
+
