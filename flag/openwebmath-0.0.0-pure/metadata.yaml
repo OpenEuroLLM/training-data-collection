@@ -1,0 +1,46 @@
+name: openwebmath decontaminated
+catalogue: openwebmath/0.0.0/data
+suffix: .jsonl.zst
+id: uuid
+text: text
+#
+megatron-lm:
+  default:
+    source: release
+  openeurollm-256k:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k
+  openeurollm-256k-reason:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k-reason
+#
+release:
+  default:
+    input: uuid
+    annotations: [nemo-curator]
+    pack: tree
+#
+nemo-curator:
+  default:
+    input: uuid
+#
+# ./etc/plan.py --pattern openwebmath-0.0.0 --format yaml --budget datamix.txt
+#
+  data:
+    sample: full
+    shard: 46md
+#
+uuid:
+#
+# for i in openwebmath-0.0.0/source/data/*.jsonl.zst; do
+#   echo $i;
+#   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#     --mode json --uuid $i \
+#   | zstd -z -o openwebmath-0.0.0/uuid/${i##openwebmath*/source/};
+# done
+#
+  default:
+    input: source
+#
+source:
+  data:
