@@ -1,4 +1,6 @@
+name: swallow code 2.0
 catalogue: /0.0.0/data
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: uuid
 text: text
