@@ -4,7 +4,7 @@ catalogue: starcoder/0.0.0/data
 suffix: .jsonl.zst
 id: id
 text: content
-language: code
+language: null
 annotations:
   contamination:
     owner: Prompsit

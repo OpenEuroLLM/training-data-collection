@@ -4,7 +4,7 @@ catalogue: nemotron-cc-opus/1.1/openeurollm
 suffix: .jsonl.gz
 text: text
 id: warc_record_id
-language: ~parallel/.*/([a-z]{3}_[A-Z][a-z]{3})
+language: ~([a-z]{3}_[A-Z][a-z]{3})
 tags: [mt]
 annotations:
   contamination:
