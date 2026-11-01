@@ -1,5 +1,6 @@
-name:
-huggingface:
+name: Nemotron mind
+huggingface: https://huggingface.co/datasets/nvidia/Nemotron-MIND
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: Document ID
 text: Text

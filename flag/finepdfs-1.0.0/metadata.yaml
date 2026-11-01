@@ -1,5 +1,6 @@
-name:
+name: FinePDFs 1.0
 catalogue: finepdfs/1.0.0/data
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
 suffix: .jsonl.zst
 id: id
 text: text
