@@ -334,3 +334,17 @@ for f in $(find */md5 -name megatron-lm.md5); do
   fi;
 done
 ```
+
+```bash
+for i in $(cat etc/parts.txt); do
+  rclone -v --transfers 8 --checkers 16 sync \
+    $i lumi-465002530-public:baby-collection/$i; done
+
+rclone lsjson --recursive --files-only --no-mimetype --hash \
+  lumi-465002530-public:baby-collection \
+  | jq -c '.[] | del(.IsDir)' \
+  | sed -e 's/"Path":/"bucket":"baby-collection","path":/g' \
+    -e 's/"Name":/"name":/g' -e 's/"Size"/"size"/g' \
+    -e 's/"ModTime":/"mtime":/g' -e 's/"Hashes":{//g' -e 's/}}$/}/g' \
+  > lumio.jsonl
+```
