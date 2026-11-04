@@ -1,0 +1,63 @@
+name: Dolmino mix 100b 1125
+huggingface: https://huggingface.co/datasets/allenai/dolma3_dolmino_mix-100B-1125
+suffix: .jsonl.zst
+id: id
+text: text
+#
+megatron-lm:
+  default:
+    source: release
+  openeurollm-256k:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k
+  openeurollm-256k-reason:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k-reason
+#
+release:
+  default:
+    input: openeurollm
+    annotations: [nemo-curator]
+    pack: tree
+    sample: full
+#
+# ./etc/plan.py --budget --counts openeurollm.json --format yaml \
+#   --pattern dolmino-mix datamix.txt | grep -v sample
+#
+  ingredient2-code-meta-reasoning:
+    shard: 67md
+  ingredient2-cranecode:
+    shard: 82md
+  ingredient2-cranemath:
+    shard: 105md
+  ingredient2-dolmino-math:
+    shard: 177md
+  ingredient2-megamatt:
+    shard: 158md
+  ingredient2-omr-rewrite-fullthoughts:
+    shard: 32md
+  ingredient2-program_verifiable:
+    shard: 77md
+  ingredient2-stack_edu-fim:
+    shard: 112md
+  ingredient2-tinymath-mind:
+    shard: 160md
+#
+nemo-curator:
+  default:
+    input: openeurollm
+#
+openeurollm:
+#
+# ( cd dolmino-mix-100b-1125/openeurollm; for i in *; do echo "  $i:"; done; ) \
+# | sort >> dolmino-mix-100b-1125/metadata.yaml
+#
+  ingredient2-code-meta-reasoning:
+  ingredient2-cranecode:
+  ingredient2-cranemath:
+  ingredient2-dolmino-math:
+  ingredient2-megamatt:
+  ingredient2-omr-rewrite-fullthoughts:
+  ingredient2-program_verifiable:
+  ingredient2-stack_edu-fim:
+  ingredient2-tinymath-mind:
