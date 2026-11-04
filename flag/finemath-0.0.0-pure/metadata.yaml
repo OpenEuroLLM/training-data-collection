@@ -1,0 +1,44 @@
+name: FineMath 0.0.0 after Decontamination
+catalogue: finemath/0.0.0/data
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
+suffix: .jsonl.zst
+id: uuid
+text: text
+#
+megatron-lm:
+  default:
+    source: release
+  openeurollm-256k:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k
+  openeurollm-256k-reason:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k-reason
+#
+release:
+  default:
+    input: uuid
+    annotations: [nemo-curator]
+    pack: tree
+    sample: full
+  finemath-3plus:
+    shard: 54md
+#
+nemo-curator:
+  default:
+    input: uuid
+#
+uuid:
+#
+# for i in finemath-0.0.0/source/finemath-3plus/*.jsonl.zst; do
+#   echo $i;
+#   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#     --mode json --uuid $i \
+#   | zstd -z -o finemath-0.0.0/uuid/${i##finemath*/source/};
+# done
+#
+  default:
+    input: source
+#
+source:
+  finemath-3plus:
