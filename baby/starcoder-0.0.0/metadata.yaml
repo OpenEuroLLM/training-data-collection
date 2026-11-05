@@ -5,6 +5,7 @@ suffix: .jsonl.zst
 id: id
 text: content
 language: null
+tags: code
 annotations:
   contamination:
     owner: Prompsit
