@@ -4,8 +4,8 @@
 
 #
 # ./flag/etc/plan.py --budget --format , \
-#   baby/datamix.txt | ( IFS= read -r head; echo ${head}; sort ) \
-# > baby/counts.csv
+#   baby/pretraining.txt | ( IFS= read -r head; echo ${head}; sort ) \
+# > baby/pretraining.csv
 #
 
 from collections import Counter;
@@ -31,11 +31,14 @@ def summarize_counts(path, argument):
   return result;
 
 def summarize_tags(metadata, dataset, part):
-  tags = metadata["tags"] if "tags" in metadata else set();
-  if "release" in metadata:
-    for key, value in metadata["release"].items():
-      if key == "default" or value is None: continue;
-      if "tags" in value: tags |= set(value["tags"]);
+  def setify(dictionary, key):
+    if key not in dictionary: return set();
+    _ = dictionary[key];
+    if isinstance(_, list): return set(_);
+    else: return {_};
+  tags = setify(metadata, "tags");
+  if "release" in metadata and part in metadata["release"]:
+    tags |= setify(metadata["release"][part], "tags");
   return tags;
 
 def main():
@@ -131,7 +134,8 @@ def main():
             with open(metadata, encoding = "utf-8") as _:
               metadata = yaml.safe_load(_);
               language = metadata.get("language", "");
-              if language != "" and language.startswith("~"):
+              if language is None: language = "";
+              elif language.startswith("~"):
                 _ = re.search(language[1:], part);
                 if _ is not None and len(_.groups()) >= 1:
                   language = _.group(1);
