@@ -31,7 +31,7 @@ Pretraining drew data for [36 distinct languages](languages.txt) plus some
 code and math from the `baby` data collection (this directory).
 Conversely, annealing and context extension availed themselves of data
 from the newer
-[`flag` training data collection](https://github.com/OpenEuroLLM/training-data-collection/blob/main/flag/README.md), which will be published at the end of 2026.
+[`flag` training data collection](https://github.com/OpenEuroLLM/training-data-collection/blob/main/flag/README.md), which will be published in December 2026.
 
 For Prelude training, the data has undergone
 [filtering for benchmark contamination](https://github.com/OpenEuroLLM/decontamination-benchmarks),
