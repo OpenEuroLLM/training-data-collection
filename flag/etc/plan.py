@@ -3,7 +3,7 @@
 # -*- coding: utf-8; -*-
 
 #
-# ./flag/etc/plan.py --budget --format , \
+# ./flag/etc/plan.py --budget --horizon 8e12 --format , \
 #   baby/pretraining.txt | ( IFS= read -r head; echo ${head}; sort ) \
 # > baby/pretraining.csv
 #
@@ -175,7 +175,6 @@ def main():
               "".format(dataset), file = sys.stderr);
         continue;
       flat = False;
-      flats = set();
       for part, data in metadata["release"].items():
         if part in {"default"}:
           if "pack" in data and data["pack"] == "flat": flat = True;
@@ -200,18 +199,6 @@ def main():
           elif os.path.getmtime(release) > os.path.getmtime(counts):
             print("plan.py(): out-of-date .release. counts for {}."
                   "".format(dataset + "/" + part), file = sys.stderr);
-          elif arguments.format == "md" and dataset not in flats:
-            #
-            # Markdown table with summary statistics
-            #
-            with open(os.path.join(dataset, "counts", part, "source.json")) as _:
-              s = json.load(_)["tokens"];
-            with open(counts) as _: r = json.load(_)["tokens"];
-            t = len(glob.glob(os.path.join(release, "*.jsonl.zst")));
-            print("| `{}` | {} | {:,} | {:,} | {:,.1f} | {} |"
-                  "".format(dataset, f"`{part}`" if not flat else "",
-                            s, r, r / s * 100, t));
-            if flat: flats.add(dataset);
           if not os.path.isdir(tokens):
             print("plan.py(): no .megatron-lm. directory for {}."
                   "".format(dataset + "/" + part), file = sys.stderr);
@@ -239,6 +226,9 @@ def main():
             ",token reduction,document reduction",
             ",release tokens,release documents,release length"
             ",token reduction,document reduction");
+    elif arguments.format == "md":
+      print("| **Dataset** | **Part** | **Source Tokens** | **Release Tokens** | **%**| **Token Budget** | **%** |\n"
+            "|-------------|----------|------------------:|-------------------:|-----:|-----------------:|------:|");
     for path, data in mix.items():
       if not data["active"]: continue;
       counts = data["counts"];
@@ -321,6 +311,16 @@ def main():
                           release["tokens"] / release["documents"],
                           release["tokens"] / source["tokens"],
                           release["documents"] / source["documents"]));
+      elif arguments.format == "md":
+        #
+        # Markdown table with summary statistics
+        #
+        budget = math.ceil(arguments.horizon * data["ratio"]);
+        print("| `{}` | `{}` | {:,} | {:,} | {:.1f} | {:,} | {:.1f} |"
+              "".format(data["dataset"], data["part"],
+                        source["tokens"], release["tokens"],
+                        release["tokens"] / source["tokens"] * 100,
+                        budget, budget / release["tokens"] * 100));
     sys.exit(0);
 
   if arguments.finepdfs:
