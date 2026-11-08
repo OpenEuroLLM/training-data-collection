@@ -212,8 +212,8 @@ context extension over the next few weeks.
 <details>
 <summary><b>Pretraining: Languages</b></summary>
 
-| **Dataset** | **Source Tokens** | **Release Tokens** | **%**| **Token Budget** | **%** | **Share** |
-|-------------|------------------:|-------------------:|-----:|-----------------:|------:|----------:|
+| **Language** | **Source Tokens** | **Release Tokens** | **%**| **Token Budget** | **%** | **Share** |
+|--------------|------------------:|-------------------:|-----:|-----------------:|------:|----------:|
 | `eng_Latn` | 8,608,247,768,327 | 7,402,695,986,047 | 86.0 | 5,824,000,000,003 | 78.7 | 74.5 |
 | `code` | 276,861,687,159 | 276,861,687,159 | 100.0 | 576,000,000,001 | 208.0 | 7.4 |
 | `spa_Latn` | 1,027,223,535,454 | 253,364,476,233 | 24.7 | 163,072,000,000 | 64.4 | 2.1 |
@@ -281,7 +281,7 @@ For convenience, following is a table of download links for the subset of
 tokenization.
 
 <details>
-<summary><b>Pretraining</b></summary>
+<summary><b>Pretraining: Downloads</b></summary>
 
 | **URL** | **Size** |
 |---------|----------|
