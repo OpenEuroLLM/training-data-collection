@@ -14,6 +14,7 @@ import glob;
 import io;
 import json;
 import math;
+from operator import itemgetter;
 import os;
 import re;
 import sys;
@@ -219,6 +220,7 @@ def main():
                     "".format(i, j, dataset + "/" + part), file = sys.stderr);
               
   if arguments.budget:
+    languages = dict();
     if arguments.format == ",":
       print("dataset,part,language,tags,budget,usage"
             ",source tokens,source documents,source length"
@@ -315,12 +317,35 @@ def main():
         #
         # Markdown table with summary statistics
         #
-        budget = math.ceil(arguments.horizon * data["ratio"]);
-        print("| `{}` | `{}` | {:,} | {:,} | {:.1f} | {:,} | {:.1f} |"
-              "".format(data["dataset"], data["part"],
-                        source["tokens"], release["tokens"],
-                        release["tokens"] / source["tokens"] * 100,
-                        budget, budget / release["tokens"] * 100));
+        s = source["tokens"];
+        r = release["tokens"];
+        b = math.ceil(arguments.horizon * data["ratio"]);
+        part = data["part"];
+        if part != "": part = "`" + part + "`";
+        print("| `{}` | {} | {:,} | {:,} | {:.1f} | {:,} | {:.1f} |"
+              "".format(data["dataset"], part,
+                        s, r, r / s * 100, b, b / r * 100));
+        l = data["language"];
+        if l == "":
+          for _ in {"code", "math"}:
+            if _ in data["tags"]: l = _;
+        if l in languages:
+          languages[l]["s"] += s;
+          languages[l]["r"] += r;
+          languages[l]["b"] += b;
+        else:
+          languages[l] = {"l": l, "s": s, "r": r, "b": b};
+        n = sum(_["b"] for _ in languages.values());
+
+    if arguments.format == "md":
+      print("| **Language** | **Source Tokens** | **Release Tokens** | **%**| **Token Budget** | **%** | **Share** |\n"
+            "|--------------|------------------:|-------------------:|-----:|-----------------:|------:|----------:|");
+      for _ in sorted(languages.values(), key = itemgetter("b"), reverse = True):
+        print("| `{}` | {:,} | {:,} | {:.1f} | {:,} | {:.1f} | {:.1f} |"
+              "".format(_["l"], _["s"], _["r"],
+                        _["r"] / _["s"] * 100,
+                        _["b"], _["b"] / _["r"] * 100,
+                        _["b"] / n * 100));
     sys.exit(0);
 
   if arguments.finepdfs:
