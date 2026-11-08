@@ -95,8 +95,9 @@ fi
 #
 source=$(yq4 ".parallel.source.text" ${metadata});
 target=$(yq4 ".parallel.target.text" ${metadata});
-if [ "${infix}" != "release" -a
-     "${source}" -a "${source}" != "null" -a "${target}" -a "${target}" != "null" ]; then
+if [ "${infix}" = "release" ]; then
+  key="\"text\"";
+elif [ "${source}" -a "${source}" != "null" -a "${target}" -a "${target}" != "null" ]; then
   key="[\"${source}\", \"${target}\"]";
 else    
   key=$(yq4 ".${infix}.${part}.text" ${metadata});
