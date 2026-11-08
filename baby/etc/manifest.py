@@ -23,7 +23,7 @@ def main():
 
   if arguments.md:
     print("| **URL** | **Size** |\n"
-          "|---------|------- --|");
+          "|---------|----------|");
     for line in sys.stdin:
       _ = json.loads(line.strip());
       print("| [`{}`]({}) | {:,} |"
