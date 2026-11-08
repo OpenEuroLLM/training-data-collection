@@ -274,7 +274,7 @@ The total data volume is around 55 terabytes (of which a little more than 70%
 corresponds to token binaries).
 It is recommended to only retrieve the subset of files necessary for a specific
 purpose.
-The [full list of available files](pretraining.json), including download links
+The [full list of available files](manifest.json), including download links
 (in the `url` field) is provided in JSONLines format.
 For convenience, following is a table of download links for the subset of
 `release/` files, i.e. the actual training data shards that were input to
