@@ -8,12 +8,28 @@
 #   lumi-465002530-private:baby-collection \
 # | ./etc/manifest.py > manifest.json
 #
+# grep /release/ manifest.json | ./etc/manifest.py --md > urls.md
+#
 
+import argparse;
 import json;
 import sys;
 
 def main():
 
+  parser = argparse.ArgumentParser(description = "Creation and Formatting of Download Manifest");
+  parser.add_argument("--md", action = "store_true", default = False);
+  arguments = parser.parse_args();
+
+  if arguments.md:
+    print("| **URL** | **Size** |\n"
+          "|---------|------- --|");
+    for line in sys.stdin:
+      _ = json.loads(line.strip());
+      print("| [`{}`]({}) | {:,} |"
+            "".format(_["url"], _["url"], _["size"]));
+    return 0;
+  
   for _ in json.load(sys.stdin):
     path = _["Path"];
     size = _["Size"];
