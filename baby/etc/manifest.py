@@ -19,9 +19,9 @@ def main():
     size = _["Size"];
     mtime = _["ModTime"];
     md5 = _["Hashes"]["md5"];
-    json.dump({"bucket": "baby-collection", "path": path,
-               "size": size, "mtime": mtime, "md5": md5,
-               "url": f"https://data.openeurollm.eu/prelude/baby/{path}"},
+    json.dump({"url": f"https://data.openeurollm.eu/prelude/baby/{path}",
+               "bucket": "baby-collection", "path": path,
+               "size": size, "mtime": mtime, "md5": md5},
               sys.stdout, indent = None);
     print();
 
