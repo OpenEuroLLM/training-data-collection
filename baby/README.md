@@ -27,7 +27,7 @@ Megatron-LM, document and token counts, and MD5 checksums.
 Prelude 9B was [pretrained on eight trillion](pretraining.txt) tokens
 and [annealed on another two trillion tokens](annealing.txt).
 The Prelude base model further has undergone a stage of context extension.
-Pretraining drew data for [36 distinct languages](language.txt) plus some
+Pretraining drew data for [36 distinct languages](languages.txt) plus some
 code and math from the `baby` data collection (this directory).
 Conversely, annealing and context extension availed themselves of data
 from the newer
@@ -37,11 +37,15 @@ For Prelude training, the data has undergone
 [filtering for benchmark contamination](https://github.com/OpenEuroLLM/decontamination-benchmarks),
 [masking of personally identifiable information](https://github.com/OpenEuroLLM/training-data-collection/issues/2)
 (PII), and up- and down-sampling towards preset token budgets.
-Thus, data statistics below distinguish between _source tokens_ (in the original
+Thus, data statistics distinguish between _source tokens_ (in the original
 dataset), _release tokens_ (in the actual OpenEuroLLM training data collection),
 and _token budgets_ in individual training phases.
 All token counts are in terms of the
-[OpenEuroLLM 256k `v1` Tokenizer](https://huggingface.co/openeurollm/tokenizer-256k).
+[OpenEuroLLM 256k Tokenizer](https://huggingface.co/openeurollm/tokenizer-256k) (`v1`).
+
+The tables below provide high-level breakdowns by dataset parts and languages;
+these counts can also be explored interactively and further broken down by
+individual data types.
 More detailed statistics are available in machine-readable form for
 [pretraining](pretraining.csv), and will be provided for annealing and
 context extension over the next few weeks.
@@ -218,14 +222,325 @@ We solely license the packaging of these data, i.e. contamination and PII
 annotations and the file organization of the data collection under the
 [Creative Commons CC0](https://creativecommons.org/share-your-work/public-domain/cc0/) license 
 
-## Packing: Data Processing
+Redistribution of the `baby` data collection comprises what are called
+the `release/` files (the result of resampling, filtering, masking, and packing),
+the underlying `contamination/` and `pii/` annotations, as well as the actual
+binary token shards in [Megatron-LM](https://github.com/NVIDIA/Megatron-LM) format.
+The total data volume is around 55 terabytes (of which a little more than 70%
+corresponds to token binaries).
+It is recommended to only retrieve the subset of files necessary for a specific
+purpose.
+The [full list of available files](pretraining.json), including download links
+(in the `url` field) is provided in JSONLines format.
+For convenience, following is a table of download links for the subset of
+`release/` files, i.e. the actual training data shards that were input to
+tokenization.
+
+<details>
+<summary><b>Pretraining</b></summary>
+| **URL** | **Size** |
+|---------|------- --|
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_0_0000.jsonl.zst) | 64,901,832,057 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_1_0000.jsonl.zst) | 64,884,824,400 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_2_0000.jsonl.zst) | 64,887,933,530 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_3_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_3_0000.jsonl.zst) | 64,883,746,004 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_4_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_4_0000.jsonl.zst) | 64,900,602,394 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_5_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_5_0000.jsonl.zst) | 64,907,956,741 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_6_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_6_0000.jsonl.zst) | 64,883,072,259 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_7_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_7_0000.jsonl.zst) | 64,880,635,419 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_8_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_8_0000.jsonl.zst) | 64,889,826,759 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_9_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_9_0000.jsonl.zst) | 64,880,120,000 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_0_0000.jsonl.zst) | 64,890,931,563 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_1_0000.jsonl.zst) | 64,949,431,186 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_2_0000.jsonl.zst) | 64,878,830,416 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_3_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_3_0000.jsonl.zst) | 64,874,301,215 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_4_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_4_0000.jsonl.zst) | 64,909,043,718 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_5_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_5_0000.jsonl.zst) | 64,896,818,360 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_6_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_6_0000.jsonl.zst) | 64,908,706,423 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_7_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_7_0000.jsonl.zst) | 64,927,255,839 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_8_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_8_0000.jsonl.zst) | 64,908,448,890 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_9_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/02_9_0000.jsonl.zst) | 64,870,054,562 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_0_0000.jsonl.zst) | 64,874,889,187 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_1_0000.jsonl.zst) | 42,991,261,674 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_2_0000.jsonl.zst) | 64,932,901,017 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_3_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_3_0000.jsonl.zst) | 64,889,342,496 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_4_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_4_0000.jsonl.zst) | 64,904,780,455 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_5_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_5_0000.jsonl.zst) | 64,895,070,990 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_6_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_6_0000.jsonl.zst) | 64,940,663,591 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_7_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_7_0000.jsonl.zst) | 64,949,020,741 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_8_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_8_0000.jsonl.zst) | 64,969,655,765 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_9_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/03_9_0000.jsonl.zst) | 64,884,622,472 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_0_0000.jsonl.zst) | 64,920,807,309 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_1_0000.jsonl.zst) | 64,956,736,081 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_2_0000.jsonl.zst) | 65,012,930,339 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_3_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_3_0000.jsonl.zst) | 64,908,640,727 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_4_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_4_0000.jsonl.zst) | 64,942,840,328 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_5_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_5_0000.jsonl.zst) | 64,979,170,144 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_6_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_6_0000.jsonl.zst) | 64,970,142,741 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_7_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_7_0000.jsonl.zst) | 64,988,387,330 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_8_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_8_0000.jsonl.zst) | 64,944,009,116 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_9_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/04_9_0000.jsonl.zst) | 64,941,374,663 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_0_0000.jsonl.zst) | 64,973,591,916 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_1_0000.jsonl.zst) | 65,002,657,784 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_2_0000.jsonl.zst) | 65,008,285,916 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_3_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_3_0000.jsonl.zst) | 64,944,337,073 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_4_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_4_0000.jsonl.zst) | 64,976,007,582 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_5_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_5_0000.jsonl.zst) | 64,978,723,650 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_6_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_6_0000.jsonl.zst) | 64,966,645,207 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_7_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_7_0000.jsonl.zst) | 64,977,998,937 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_8_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_8_0000.jsonl.zst) | 65,029,715,402 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_9_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/05_9_0000.jsonl.zst) | 64,988,075,453 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_0_0000.jsonl.zst) | 64,905,270,992 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_1_0000.jsonl.zst) | 64,944,415,423 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_2_0000.jsonl.zst) | 64,936,861,634 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_3_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_3_0000.jsonl.zst) | 64,930,748,452 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_4_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_4_0000.jsonl.zst) | 64,914,659,849 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_5_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_5_0000.jsonl.zst) | 64,907,549,268 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_6_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_6_0000.jsonl.zst) | 64,936,538,410 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_7_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_7_0000.jsonl.zst) | 64,936,248,267 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_8_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_8_0000.jsonl.zst) | 64,924,993,133 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_9_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/06_9_0000.jsonl.zst) | 64,946,341,150 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_0_0000.jsonl.zst) | 64,928,274,195 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_1_0000.jsonl.zst) | 64,954,874,025 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_2_0000.jsonl.zst) | 64,945,003,984 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_3_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_3_0000.jsonl.zst) | 64,949,714,408 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_4_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_4_0000.jsonl.zst) | 64,922,543,227 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_5_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_5_0000.jsonl.zst) | 64,970,577,733 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_6_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_6_0000.jsonl.zst) | 64,940,572,181 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_7_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_7_0000.jsonl.zst) | 64,918,629,380 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_8_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_8_0000.jsonl.zst) | 64,936,651,573 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_9_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/07_9_0000.jsonl.zst) | 64,955,041,384 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_0_0000.jsonl.zst) | 65,029,460,278 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_1_0000.jsonl.zst) | 64,974,438,343 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_2_0000.jsonl.zst) | 64,990,033,816 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_3_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_3_0000.jsonl.zst) | 64,984,429,827 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_4_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_4_0000.jsonl.zst) | 64,996,737,081 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_5_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_5_0000.jsonl.zst) | 64,993,877,799 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_6_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_6_0000.jsonl.zst) | 64,981,277,151 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_7_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_7_0000.jsonl.zst) | 65,007,458,152 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_8_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_8_0000.jsonl.zst) | 64,978,081,468 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_9_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/08_9_0000.jsonl.zst) | 64,989,085,005 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_0_0000.jsonl.zst) | 64,806,822,217 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_1_0000.jsonl.zst) | 64,844,015,924 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_2_0000.jsonl.zst) | 64,810,312,535 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_3_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_3_0000.jsonl.zst) | 64,820,909,691 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_4_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_4_0000.jsonl.zst) | 64,850,884,725 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_5_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_5_0000.jsonl.zst) | 64,843,303,738 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_6_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_6_0000.jsonl.zst) | 64,806,215,817 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_7_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_7_0000.jsonl.zst) | 64,829,431,736 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_8_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_8_0000.jsonl.zst) | 64,825,055,261 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_9_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/09_9_0000.jsonl.zst) | 64,801,849,045 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_0_0000.jsonl.zst) | 64,851,412,008 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_1_0000.jsonl.zst) | 64,826,057,174 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_2_0000.jsonl.zst) | 64,813,257,782 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_3_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_3_0000.jsonl.zst) | 64,869,727,403 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_4_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_4_0000.jsonl.zst) | 64,844,449,405 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_5_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_5_0000.jsonl.zst) | 64,835,986,446 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_6_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_6_0000.jsonl.zst) | 64,880,485,726 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_7_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_7_0000.jsonl.zst) | 64,875,581,875 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_8_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_8_0000.jsonl.zst) | 64,847,143,561 |
+| [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_9_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/10_9_0000.jsonl.zst) | 64,817,798,548 |
+| [`https://data.openeurollm.eu/prelude/baby/finemath-0.0.0/release/finemath-4plus/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finemath-0.0.0/release/finemath-4plus/shard_0000.jsonl.zst) | 12,426,892,939 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/als_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/als_Latn/shard_0000.jsonl.zst) | 1,890,145,847 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/bos_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/bos_Latn/shard_0000.jsonl.zst) | 4,433,471,940 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/bul_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/bul_Cyrl/shard_0000.jsonl.zst) | 6,534,201,956 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/cat_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/cat_Latn/shard_0000.jsonl.zst) | 5,273,922,543 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ces_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ces_Latn/shard_0000.jsonl.zst) | 5,568,406,192 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/dan_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/dan_Latn/shard_0000.jsonl.zst) | 4,431,957,026 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/deu_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/deu_Latn/shard_0000.jsonl.zst) | 11,861,437,790 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ekk_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ekk_Latn/shard_0000.jsonl.zst) | 3,148,609,208 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ell_Grek/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ell_Grek/shard_0000.jsonl.zst) | 8,982,593,498 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0000.jsonl.zst) | 127,939,029,456 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0001.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0001.jsonl.zst) | 127,358,974,690 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0002.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0002.jsonl.zst) | 128,156,368,653 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0003.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0003.jsonl.zst) | 127,350,629,761 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0004.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0004.jsonl.zst) | 124,081,625,467 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0005.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0005.jsonl.zst) | 120,060,014,216 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0006.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0006.jsonl.zst) | 115,069,093,960 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0007.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0007.jsonl.zst) | 115,287,616,780 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0008.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0008.jsonl.zst) | 114,529,097,613 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0009.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0009.jsonl.zst) | 115,790,322,079 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0010.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0010.jsonl.zst) | 115,193,226,566 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0011.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eng_Latn/shard_0011.jsonl.zst) | 13,985,631,065 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eus_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/eus_Latn/shard_0000.jsonl.zst) | 2,933,223,335 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/fin_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/fin_Latn/shard_0000.jsonl.zst) | 4,967,739,129 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/fra_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/fra_Latn/shard_0000.jsonl.zst) | 14,731,046,524 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/gle_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/gle_Latn/shard_0000.jsonl.zst) | 317,647,606 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/glg_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/glg_Latn/shard_0000.jsonl.zst) | 1,883,875,854 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/hrv_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/hrv_Latn/shard_0000.jsonl.zst) | 4,096,409,837 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/hun_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/hun_Latn/shard_0000.jsonl.zst) | 4,728,015,529 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/isl_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/isl_Latn/shard_0000.jsonl.zst) | 3,382,919,684 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ita_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ita_Latn/shard_0000.jsonl.zst) | 13,169,395,208 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/kat_Geor/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/kat_Geor/shard_0000.jsonl.zst) | 1,037,876,589 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/lit_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/lit_Latn/shard_0000.jsonl.zst) | 4,505,014,815 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/lvs_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/lvs_Latn/shard_0000.jsonl.zst) | 3,216,195,803 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/mkd_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/mkd_Cyrl/shard_0000.jsonl.zst) | 1,856,587,067 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/mlt_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/mlt_Latn/shard_0000.jsonl.zst) | 742,731,808 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/nld_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/nld_Latn/shard_0000.jsonl.zst) | 7,957,637,811 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/nno_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/nno_Latn/shard_0000.jsonl.zst) | 401,276,406 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/nob_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/nob_Latn/shard_0000.jsonl.zst) | 4,197,354,011 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/pol_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/pol_Latn/shard_0000.jsonl.zst) | 5,907,083,759 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/por_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/por_Latn/shard_0000.jsonl.zst) | 9,797,000,730 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ron_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ron_Latn/shard_0000.jsonl.zst) | 4,490,101,569 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/slk_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/slk_Latn/shard_0000.jsonl.zst) | 4,080,505,328 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/slv_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/slv_Latn/shard_0000.jsonl.zst) | 4,789,850,633 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/spa_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/spa_Latn/shard_0000.jsonl.zst) | 16,003,905,673 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/srp_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/srp_Cyrl/shard_0000.jsonl.zst) | 4,192,584,584 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/swe_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/swe_Latn/shard_0000.jsonl.zst) | 5,247,412,868 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/tur_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/tur_Latn/shard_0000.jsonl.zst) | 7,934,009,872 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ukr_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-1.0.0/release/ukr_Cyrl/shard_0000.jsonl.zst) | 4,964,240,785 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/als_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/als_Latn/shard_0000.jsonl.zst) | 419,021,269 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/bos_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/bos_Latn/shard_0000.jsonl.zst) | 1,284,229,395 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/bul_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/bul_Cyrl/shard_0000.jsonl.zst) | 1,865,593,392 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/cat_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/cat_Latn/shard_0000.jsonl.zst) | 1,425,156,035 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ces_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ces_Latn/shard_0000.jsonl.zst) | 6,165,992,426 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/dan_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/dan_Latn/shard_0000.jsonl.zst) | 2,173,701,963 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/deu_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/deu_Latn/shard_0000.jsonl.zst) | 25,460,455,807 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ekk_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ekk_Latn/shard_0000.jsonl.zst) | 489,834,850 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ell_Grek/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ell_Grek/shard_0000.jsonl.zst) | 2,790,016,739 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/eng_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/eng_Latn/shard_0000.jsonl.zst) | 189,196,943,994 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/eus_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/eus_Latn/shard_0000.jsonl.zst) | 372,177,702 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/fin_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/fin_Latn/shard_0000.jsonl.zst) | 2,414,584,954 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/fra_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/fra_Latn/shard_0000.jsonl.zst) | 21,703,908,342 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/glg_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/glg_Latn/shard_0000.jsonl.zst) | 284,616,352 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/hrv_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/hrv_Latn/shard_0000.jsonl.zst) | 2,080,337,768 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/hun_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/hun_Latn/shard_0000.jsonl.zst) | 6,068,128,426 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/isl_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/isl_Latn/shard_0000.jsonl.zst) | 305,265,133 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ita_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ita_Latn/shard_0000.jsonl.zst) | 15,040,274,545 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/kat_Geor/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/kat_Geor/shard_0000.jsonl.zst) | 194,678,067 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/lit_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/lit_Latn/shard_0000.jsonl.zst) | 1,145,141,635 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/lvs_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/lvs_Latn/shard_0000.jsonl.zst) | 513,419,876 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/mkd_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/mkd_Cyrl/shard_0000.jsonl.zst) | 362,125,515 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/mlt_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/mlt_Latn/shard_0000.jsonl.zst) | 104,976,086 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/nld_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/nld_Latn/shard_0000.jsonl.zst) | 6,407,243,826 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/nno_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/nno_Latn/shard_0000.jsonl.zst) | 54,603,120 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/nob_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/nob_Latn/shard_0000.jsonl.zst) | 1,682,265,128 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/pol_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/pol_Latn/shard_0000.jsonl.zst) | 10,426,524,643 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/por_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/por_Latn/shard_0000.jsonl.zst) | 15,861,759,652 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ron_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ron_Latn/shard_0000.jsonl.zst) | 5,241,765,812 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/slk_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/slk_Latn/shard_0000.jsonl.zst) | 2,404,715,702 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/slv_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/slv_Latn/shard_0000.jsonl.zst) | 810,223,374 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/spa_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/spa_Latn/shard_0000.jsonl.zst) | 35,796,204,610 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/srp_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/srp_Cyrl/shard_0000.jsonl.zst) | 2,516,343,896 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/swe_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/swe_Latn/shard_0000.jsonl.zst) | 4,168,505,687 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/tur_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/tur_Latn/shard_0000.jsonl.zst) | 2,948,138,568 |
+| [`https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ukr_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/finepdfs-edu-1.0.0/release/ukr_Cyrl/shard_0000.jsonl.zst) | 7,001,946,334 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/als_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/als_Latn/shard_0000.jsonl.zst) | 9,826,677,094 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/bos_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/bos_Latn/shard_0000.jsonl.zst) | 22,480,006,829 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/bul_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/bul_Cyrl/shard_0000.jsonl.zst) | 31,015,158,801 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/cat_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/cat_Latn/shard_0000.jsonl.zst) | 19,565,580,481 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ces_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ces_Latn/shard_0000.jsonl.zst) | 42,366,062,825 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/dan_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/dan_Latn/shard_0000.jsonl.zst) | 21,581,114,143 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/deu_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/deu_Latn/shard_0000.jsonl.zst) | 133,057,604,005 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ekk_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ekk_Latn/shard_0000.jsonl.zst) | 13,816,705,984 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ell_Grek/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ell_Grek/shard_0000.jsonl.zst) | 49,752,680,911 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/eus_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/eus_Latn/shard_0000.jsonl.zst) | 2,587,143,262 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/fin_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/fin_Latn/shard_0000.jsonl.zst) | 25,828,849,308 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/fra_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/fra_Latn/shard_0000.jsonl.zst) | 138,127,385,516 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/gle_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/gle_Latn/shard_0000.jsonl.zst) | 515,093,332 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/glg_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/glg_Latn/shard_0000.jsonl.zst) | 3,329,701,930 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/hrv_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/hrv_Latn/shard_0000.jsonl.zst) | 21,577,337,335 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/hun_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/hun_Latn/shard_0000.jsonl.zst) | 35,802,164,663 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/isl_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/isl_Latn/shard_0000.jsonl.zst) | 3,625,712,486 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ita_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ita_Latn/shard_0000.jsonl.zst) | 113,120,985,803 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/kat_Geor/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/kat_Geor/shard_0000.jsonl.zst) | 7,896,296,272 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/lit_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/lit_Latn/shard_0000.jsonl.zst) | 16,742,191,638 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/lvs_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/lvs_Latn/shard_0000.jsonl.zst) | 10,852,166,204 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/mkd_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/mkd_Cyrl/shard_0000.jsonl.zst) | 5,885,705,106 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/mlt_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/mlt_Latn/shard_0000.jsonl.zst) | 858,681,392 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/nld_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/nld_Latn/shard_0000.jsonl.zst) | 52,905,518,575 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/nno_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/nno_Latn/shard_0000.jsonl.zst) | 1,352,195,221 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/nob_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/nob_Latn/shard_0000.jsonl.zst) | 21,193,591,974 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/pol_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/pol_Latn/shard_0000.jsonl.zst) | 68,529,549,282 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/por_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/por_Latn/shard_0000.jsonl.zst) | 109,699,276,717 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ron_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ron_Latn/shard_0000.jsonl.zst) | 39,424,790,878 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/slk_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/slk_Latn/shard_0000.jsonl.zst) | 21,856,269,635 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/slv_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/slv_Latn/shard_0000.jsonl.zst) | 14,710,363,667 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/spa_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/spa_Latn/shard_0000.jsonl.zst) | 212,211,795,078 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/srp_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/srp_Cyrl/shard_0000.jsonl.zst) | 9,856,628,780 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/swe_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/swe_Latn/shard_0000.jsonl.zst) | 35,527,287,669 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/tur_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/tur_Latn/shard_0000.jsonl.zst) | 47,479,294,179 |
+| [`https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ukr_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/hplt-3.0/release/ukr_Cyrl/shard_0000.jsonl.zst) | 43,202,996,283 |
+| [`https://data.openeurollm.eu/prelude/baby/megamath-0.0.0/release/megamath-text-code-block/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/megamath-0.0.0/release/megamath-text-code-block/shard_0000.jsonl.zst) | 12,041,344,005 |
+| [`https://data.openeurollm.eu/prelude/baby/megamath-0.0.0/release/megamath-web-pro/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/megamath-0.0.0/release/megamath-web-pro/shard_0000.jsonl.zst) | 13,748,407,364 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0000.jsonl.zst) | 154,555,825,527 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0001.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0001.jsonl.zst) | 161,160,519,623 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0002.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0002.jsonl.zst) | 164,889,011,768 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0003.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0003.jsonl.zst) | 175,950,657,023 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0004.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0004.jsonl.zst) | 191,038,569,075 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0005.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/high/actual/shard_0005.jsonl.zst) | 134,020,265,036 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium-high/actual/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium-high/actual/shard_0000.jsonl.zst) | 205,337,845,067 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium-high/actual/shard_0001.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium-high/actual/shard_0001.jsonl.zst) | 205,046,729,770 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium-high/actual/shard_0002.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium-high/actual/shard_0002.jsonl.zst) | 212,315,716,042 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium-high/actual/shard_0003.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium-high/actual/shard_0003.jsonl.zst) | 216,409,796,951 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium-high/actual/shard_0004.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium-high/actual/shard_0004.jsonl.zst) | 49,536,351,932 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0000.jsonl.zst) | 172,568,599,788 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0001.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0001.jsonl.zst) | 179,192,211,686 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0002.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0002.jsonl.zst) | 182,118,349,881 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0003.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0003.jsonl.zst) | 175,214,895,123 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0004.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0004.jsonl.zst) | 178,648,265,015 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0005.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0005.jsonl.zst) | 174,420,960,276 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0006.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0006.jsonl.zst) | 180,249,258,551 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0007.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0007.jsonl.zst) | 179,083,725,227 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0008.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0008.jsonl.zst) | 179,362,558,603 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0009.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0009.jsonl.zst) | 179,050,680,611 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0010.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0010.jsonl.zst) | 177,406,330,128 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0011.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0011.jsonl.zst) | 178,717,213,717 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0012.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0012.jsonl.zst) | 171,763,952,229 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0013.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0013.jsonl.zst) | 166,678,111,055 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0014.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-1.0/release/medium/actual/shard_0014.jsonl.zst) | 33,302,943,399 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/bos_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/bos_Latn/shard_0000.jsonl.zst) | 25,920,505,695 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/bul_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/bul_Cyrl/shard_0000.jsonl.zst) | 35,912,361,343 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/cat_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/cat_Latn/shard_0000.jsonl.zst) | 26,617,195,470 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/ces_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/ces_Latn/shard_0000.jsonl.zst) | 37,899,035,549 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/ell_Grek/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/ell_Grek/shard_0000.jsonl.zst) | 46,102,989,088 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/est_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/est_Latn/shard_0000.jsonl.zst) | 23,752,302,745 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/eus_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/eus_Latn/shard_0000.jsonl.zst) | 19,831,487,405 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/gle_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/gle_Latn/shard_0000.jsonl.zst) | 21,491,003,782 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/glg_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/glg_Latn/shard_0000.jsonl.zst) | 22,412,901,412 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/hrv_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/hrv_Latn/shard_0000.jsonl.zst) | 27,937,516,312 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/kat_Geor/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/kat_Geor/shard_0000.jsonl.zst) | 33,626,179,967 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/lav_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/lav_Latn/shard_0000.jsonl.zst) | 24,704,462,860 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/lit_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/lit_Latn/shard_0000.jsonl.zst) | 24,923,341,642 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/mkd_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/mkd_Cyrl/shard_0000.jsonl.zst) | 28,919,327,773 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/mlt_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/mlt_Latn/shard_0000.jsonl.zst) | 23,249,851,355 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/slk_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/slk_Latn/shard_0000.jsonl.zst) | 27,330,027,414 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/slv_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/slv_Latn/shard_0000.jsonl.zst) | 24,232,883,999 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/sqi_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/sqi_Latn/shard_0000.jsonl.zst) | 25,863,518,443 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/srp_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/srp_Cyrl/shard_0000.jsonl.zst) | 30,843,566,231 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/tur_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-opus-1.1/release/tur_Latn/shard_0000.jsonl.zst) | 38,216,840,258 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower72b/deu_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower72b/deu_Latn/shard_0000.jsonl.zst) | 69,554,656,901 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower72b/fin_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower72b/fin_Latn/shard_0000.jsonl.zst) | 23,291,593,084 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower72b/ita_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower72b/ita_Latn/shard_0000.jsonl.zst) | 62,987,398,652 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower72b/spa_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower72b/spa_Latn/shard_0000.jsonl.zst) | 108,787,273,231 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower72b/swe_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower72b/swe_Latn/shard_0000.jsonl.zst) | 27,289,776,505 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/dan_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/dan_Latn/shard_0000.jsonl.zst) | 22,116,794,582 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/fra_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/fra_Latn/shard_0000.jsonl.zst) | 73,522,273,086 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/hun_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/hun_Latn/shard_0000.jsonl.zst) | 30,071,758,879 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/isl_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/isl_Latn/shard_0000.jsonl.zst) | 17,377,316,373 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/nld_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/nld_Latn/shard_0000.jsonl.zst) | 36,572,704,177 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/nno_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/nno_Latn/shard_0000.jsonl.zst) | 16,772,177,807 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/nob_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/nob_Latn/shard_0000.jsonl.zst) | 21,941,589,238 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/pol_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/pol_Latn/shard_0000.jsonl.zst) | 44,761,598,659 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/por_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/por_Latn/shard_0000.jsonl.zst) | 64,550,511,314 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/ron_Latn/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/ron_Latn/shard_0000.jsonl.zst) | 30,336,160,945 |
+| [`https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/ukr_Cyrl/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/nemotron-cc-tower+-0.1/release/parallel/tower9b/ukr_Cyrl/shard_0000.jsonl.zst) | 34,182,171,112 |
+| [`https://data.openeurollm.eu/prelude/baby/olmo-mix-1124/release/arxiv/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/olmo-mix-1124/release/arxiv/shard_0000.jsonl.zst) | 21,735,915,323 |
+| [`https://data.openeurollm.eu/prelude/baby/olmo-mix-1124/release/pes2o/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/olmo-mix-1124/release/pes2o/shard_0000.jsonl.zst) | 104,527,250,996 |
+| [`https://data.openeurollm.eu/prelude/baby/olmo-mix-1124/release/wiki/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/olmo-mix-1124/release/wiki/shard_0000.jsonl.zst) | 6,125,158,754 |
+| [`https://data.openeurollm.eu/prelude/baby/starcoder-0.0.0/release/shard_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/starcoder-0.0.0/release/shard_0000.jsonl.zst) | 70,564,696,583 |
+| [`https://data.openeurollm.eu/prelude/baby/starcoder-0.0.0/release/shard_0001.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/starcoder-0.0.0/release/shard_0001.jsonl.zst) | 79,472,911,202 |
+| [`https://data.openeurollm.eu/prelude/baby/starcoder-0.0.0/release/shard_0002.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/starcoder-0.0.0/release/shard_0002.jsonl.zst) | 51,257,371,969 |
+</details>
+
+## Data Packing
 
 Overall design principles and some terminology are documented through
 the [general description of OpenEuroLLM training data collection](https://github.com/OpenEuroLLM/training-data-collection/blob/main/README.md).
-The `flag` data collection is the first implementation of this process,
+The `baby` data collection is the first implementation of this process,
 where the bulk of processing parameters already are made explicit through
-per-dataset `metadata.yaml` files, but some configuration aspects also
+per-dataset `metadata.yaml` files, but some configuration aspects merely
 reflect the defaults setting (at the time) of the software involved.
-For the central tool; the OpenEuroLLM Training Data Packer, the
+For the central tool; the OpenEuroLLM Training Data Packer, its
 [`baby` release version](https://github.com/OpenEuroLLM/training-data-packer/tree/baby)
 was used.
