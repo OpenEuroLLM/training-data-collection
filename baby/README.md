@@ -37,9 +37,9 @@ For Prelude training, the data has undergone
 [filtering for benchmark contamination](https://github.com/OpenEuroLLM/decontamination-benchmarks),
 [masking of personally identifiable information](https://github.com/OpenEuroLLM/training-data-collection/issues/2)
 (PII), and up- and down-sampling towards preset token budgets.
-Thus, data statistics distinguish between _source tokens_ (in the original
-dataset), _release tokens_ (in the actual OpenEuroLLM training data collection),
-and _token budgets_ in individual training phases.
+Thus, data statistics distinguish between _source tokens_ (from the original
+dataset), _release tokens_ (actually in the training data collection),
+and _token budgets_ for each individual training phase.
 All token counts are in terms of the
 [OpenEuroLLM 256k Tokenizer](https://huggingface.co/openeurollm/tokenizer-256k) (`v1`).
 
@@ -263,7 +263,7 @@ However, the consortium does not claim or assign any rights to the majority of
 textual content in these datasets, seeing as these predominantly derive from
 third-party web crawls.
 We solely license the packaging of these data, i.e. contamination and PII
-annotations and the file organization of the data collection under the
+annotations and the file organization of the data collection, under the
 [Creative Commons CC0](https://creativecommons.org/share-your-work/public-domain/cc0/) license 
 
 Redistribution of the `baby` data collection comprises what are called
@@ -274,7 +274,7 @@ The total data volume is around 55 terabytes (of which a little more than 70%
 corresponds to token binaries).
 It is recommended to only retrieve the subset of files necessary for a specific
 purpose.
-The [full list of available files](manifest.json), including download links
+A [full list of available files](manifest.json), including download links
 (in the `url` field) is provided in JSONLines format.
 For convenience, following is a table of download links for the subset of
 `release/` files, i.e. the actual training data shards that were input to
@@ -581,11 +581,11 @@ tokenization.
 ## Data Packing
 
 Overall design principles and some terminology are documented through
-the [general description of OpenEuroLLM training data collection](https://github.com/OpenEuroLLM/training-data-collection/blob/main/README.md).
-The `baby` data collection is the first implementation of this process,
-where the bulk of processing parameters already are made explicit through
+the [general description of OpenEuroLLM training data collections](https://github.com/OpenEuroLLM/training-data-collection/blob/main/README.md).
+The `baby` data collection is the first implementation of this approach,
+where the majority of processing parameters already are made explicit through
 per-dataset `metadata.yaml` files, but some configuration aspects merely
-reflect the defaults setting (at the time) of the software involved.
-For the central tool; the OpenEuroLLM Training Data Packer, its
+reflect default settings (at the time) of the software involved.
+For the central tool, the OpenEuroLLM Training Data Packer, its
 [`baby` release version](https://github.com/OpenEuroLLM/training-data-packer/tree/baby)
 was used.
