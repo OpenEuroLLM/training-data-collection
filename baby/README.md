@@ -1,9 +1,9 @@
 # OpenEuroLLM Training Data Collection for Prelude 9B
 
 This directory documents the training data mix for the first OpenEuroLLM
-production model [Prelude 9B](https://huggingface.co/openeurollm/prelude-base),
+production model, [Prelude 9B](https://huggingface.co/openeurollm/prelude-base),
 which was internally codenamed `baby`.
-For full transparency and replicability, the full and exact training data
+For transparency and replicability, the full and exact training data
 is made publicly available (see below).
 Further, the full software stack and exact recipes for training data
 preparation are available under open-source licenses.
