@@ -46,11 +46,12 @@ More detailed statistics are available in machine-readable form for
 [pretraining](pretraining.csv), and will be provided for annealing and
 context extension over the next few weeks.
 
-** Pretraining**
+<details>
+<summary><b>Pretraining</b></summary>
 
 | **Dataset** | **Part** | **Source Tokens** | **Release Tokens** | **%**| **Token Budget** | **%** |
 |-------------|----------|------------------:|-------------------:|-----:|-----------------:|------:|
-| `baby/dclm-1.0` | `` | 3,845,395,936,156 | 3,493,015,206,249 | 90.8 | 2,591,976,000,001 | 74.2 |
+| `baby/dclm-1.0` |  | 3,845,395,936,156 | 3,493,015,206,249 | 90.8 | 2,591,976,000,001 | 74.2 |
 | `baby/finemath-0.0.0` | `finemath-4plus` | 10,684,233,758 | 10,616,534,301 | 99.4 | 32,000,000,000 | 301.4 |
 | `baby/finepdfs-1.0.0` | `als_Latn` | 2,353,482,366 | 2,353,482,366 | 100.0 | 4,888,000,000 | 207.7 |
 | `baby/finepdfs-1.0.0` | `bos_Latn` | 5,627,374,893 | 3,999,982,671 | 71.1 | 2,960,000,000 | 74.0 |
@@ -201,7 +202,8 @@ context extension over the next few weeks.
 | `baby/olmo-mix-1124` | `arxiv` | 22,325,465,870 | 22,287,607,951 | 99.8 | 73,600,000,000 | 330.2 |
 | `baby/olmo-mix-1124` | `pes2o` | 60,351,920,673 | 60,336,371,648 | 100.0 | 202,400,000,000 | 335.5 |
 | `baby/olmo-mix-1124` | `wiki` | 3,836,025,828 | 3,819,092,981 | 99.6 | 12,000,000,000 | 314.2 |
-| `baby/starcoder-0.0.0` | `` | 276,861,687,159 | 276,861,687,159 | 100.0 | 576,000,000,001 | 208.0 |
+| `baby/starcoder-0.0.0` |  | 276,861,687,159 | 276,861,687,159 | 100.0 | 576,000,000,001 | 208.0 |
+</details>
 
 ## Data Access
 
