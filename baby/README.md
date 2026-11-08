@@ -239,7 +239,7 @@ tokenization.
 <details>
 <summary><b>Pretraining</b></summary>
 | **URL** | **Size** |
-|---------|------- --|
+|---------|----------|
 | [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_0_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_0_0000.jsonl.zst) | 64,901,832,057 |
 | [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_1_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_1_0000.jsonl.zst) | 64,884,824,400 |
 | [`https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_2_0000.jsonl.zst`](https://data.openeurollm.eu/prelude/baby/dclm-1.0/release/01_2_0000.jsonl.zst) | 64,887,933,530 |
