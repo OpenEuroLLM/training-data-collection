@@ -595,7 +595,7 @@ The packing step takes three inputs for each dataset: the source data, PII detec
 
 The PII detection data was produced using the process described in [pii-masking-oellm](https://github.com/OpenEuroLLM/pii-masking-oellm). This process generates a list of detected PII, where each entry contains the document ID, the type of PII detected, and its position in the document. These lists are stored in the `pii` subdirectory of each dataset.
 
-Similarly, [NeMo Curator]() **Link to repo here** was used to detect documents that are similar to documents in the evaluation suites. It produces a list of documents to be removed. These lists are stored in the `contamination` subdirectory of each dataset.
+Similarly, [NeMo Curator pipeline](https://github.com/OpenEuroLLM/pretraining-decontamination) was used to detect documents that are similar to documents in [the evaluation suites](https://github.com/OpenEuroLLM/decontamination-benchmarks/blob/main/README.md). It produces a list of documents to be removed. These lists are stored in the `contamination` subdirectory of each dataset.
 
 The packer combines this data and, following the configuration in `metadata.yaml`, generates a final packed version of each dataset. At a high level, the steps are:
 
