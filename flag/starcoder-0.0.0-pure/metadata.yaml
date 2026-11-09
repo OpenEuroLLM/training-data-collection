@@ -1,0 +1,123 @@
+name: StarCoder Training Dataset 0.0.0
+catalogue: starcoder/0.0.0/data
+tokenizer: /scratch/project_465002530/users/pyysalos/tokenizers/openeurollm/tokenizer-256k
+suffix: .jsonl.zst
+id: id
+text: content
+#
+megatron-lm:
+  default:
+    source: release
+  openeurollm-256k:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k
+  openeurollm-256k-reason:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k-reason
+#
+release:
+  default:
+    input: source
+    annotations: [nemo-curator]
+    pack: flat
+    sample: random
+    budget: 91%
+    shard: 75md
+#
+nemo-curator:
+  default:
+    input: source
+#
+source:
+  ada:
+  agda:
+  alloy:
+  antlr:
+  applescript:
+  assembly:
+  augeas:
+  awk:
+  batchfile:
+  bluespec:
+  c:
+  clojure:
+  cmake:
+  coffeescript:
+  common-lisp:
+  cpp:
+  c-sharp:
+  css:
+  cuda:
+  dart:
+  dockerfile:
+  elixir:
+  elm:
+  emacs-lisp:
+  erlang:
+  fortran:
+  f-sharp:
+  git-commits-cleaned:
+  github-issues-filtered-structured:
+  glsl:
+  go:
+  groovy:
+  haskell:
+  html:
+  idris:
+  isabelle:
+  java:
+  javascript:
+  java-server-pages:
+  json:
+  julia:
+  jupyter-scripts-dedup-filtered:
+  jupyter-structured-clean-dedup:
+  kotlin:
+  lean:
+  literate-agda:
+  literate-coffeescript:
+  literate-haskell:
+  lua:
+  makefile:
+  maple:
+  markdown:
+  mathematica:
+  matlab:
+  ocaml:
+  pascal:
+  perl:
+  php:
+  powershell:
+  prolog:
+  protocol-buffer:
+  python:
+  r:
+  racket:
+  restructuredtext:
+  rmarkdown:
+  ruby:
+  rust:
+  sas:
+  scala:
+  scheme:
+  shell:
+  smalltalk:
+  solidity:
+  sparql:
+  sql:
+  stan:
+  standard-ml:
+  stata:
+  systemverilog:
+  tcl:
+  tcsh:
+  tex:
+  thrift:
+  typescript:
+  verilog:
+  vhdl:
+  visual-basic:
+  xslt:
+  yacc:
+  yaml:
+  zig:
