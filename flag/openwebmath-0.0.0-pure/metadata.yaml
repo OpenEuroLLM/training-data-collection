@@ -19,16 +19,13 @@ release:
     input: uuid
     annotations: [nemo-curator]
     pack: tree
+  data:
+    sample: full
+    shard: 46md
 #
 nemo-curator:
   default:
     input: uuid
-#
-# ./etc/plan.py --pattern openwebmath-0.0.0 --format yaml --budget datamix.txt
-#
-  data:
-    sample: full
-    shard: 46md
 #
 uuid:
 #

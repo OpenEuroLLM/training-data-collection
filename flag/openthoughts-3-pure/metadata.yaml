@@ -1,0 +1,43 @@
+name: Open Thoughts 3
+huggingface: https://huggingface.co/datasets/open-thoughts/OpenThoughts3-1.2M
+suffix: .jsonl.zst
+id: uuid
+text: text
+#
+megatron-lm:
+  default:
+    source: release
+  openeurollm-256k-without-bos:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k
+  openeurollm-256k-reason-without-bos:
+    bos: false
+    huggingface: openeurollm/tokenizer-256k-reason
+#
+release:
+  default:
+    input: uuid
+    annotations: [nemo-curator]
+    pack: tree
+    sample: full
+  data:
+    shard: 2md
+#
+nemo-curator:
+  default:
+    input: uuid
+#
+uuid:
+#
+# for i in openthoughts-3/source/data/*.jsonl.zst; do
+#   echo $i;
+#   /appl/local/openeurollm/training/catalogue/etc/zstdcat.py \
+#     --mode json --uuid $i \
+#   | zstd -z -o openthoughts-3/uuid/${i##openthoughts-3/source/};
+# done
+#
+  default:
+    input: source
+#
+source:
+  data:
