@@ -3,7 +3,7 @@
 # -*- coding: utf-8; -*-
 
 #
-# ./flag/etc/plan.py --budget --format , \
+# ./flag/etc/plan.py --budget --horizon 8e12 --format , \
 #   baby/pretraining.txt | ( IFS= read -r head; echo ${head}; sort ) \
 # > baby/pretraining.csv
 #
@@ -14,6 +14,7 @@ import glob;
 import io;
 import json;
 import math;
+from operator import itemgetter;
 import os;
 import re;
 import sys;
@@ -175,7 +176,6 @@ def main():
               "".format(dataset), file = sys.stderr);
         continue;
       flat = False;
-      flats = set();
       for part, data in metadata["release"].items():
         if part in {"default"}:
           if "pack" in data and data["pack"] == "flat": flat = True;
@@ -200,18 +200,6 @@ def main():
           elif os.path.getmtime(release) > os.path.getmtime(counts):
             print("plan.py(): out-of-date .release. counts for {}."
                   "".format(dataset + "/" + part), file = sys.stderr);
-          elif arguments.format == "md" and dataset not in flats:
-            #
-            # Markdown table with summary statistics
-            #
-            with open(os.path.join(dataset, "counts", part, "source.json")) as _:
-              s = json.load(_)["tokens"];
-            with open(counts) as _: r = json.load(_)["tokens"];
-            t = len(glob.glob(os.path.join(release, "*.jsonl.zst")));
-            print("| `{}` | {} | {:,} | {:,} | {:,.1f} | {} |"
-                  "".format(dataset, f"`{part}`" if not flat else "",
-                            s, r, r / s * 100, t));
-            if flat: flats.add(dataset);
           if not os.path.isdir(tokens):
             print("plan.py(): no .megatron-lm. directory for {}."
                   "".format(dataset + "/" + part), file = sys.stderr);
@@ -232,6 +220,7 @@ def main():
                     "".format(i, j, dataset + "/" + part), file = sys.stderr);
               
   if arguments.budget:
+    languages = dict();
     if arguments.format == ",":
       print("dataset,part,language,tags,budget,usage"
             ",source tokens,source documents,source length"
@@ -239,6 +228,9 @@ def main():
             ",token reduction,document reduction",
             ",release tokens,release documents,release length"
             ",token reduction,document reduction");
+    elif arguments.format == "md":
+      print("| **Dataset** | **Part** | **Source Tokens** | **Release Tokens** | **%**| **Token Budget** | **%** |\n"
+            "|-------------|----------|------------------:|-------------------:|-----:|-----------------:|------:|");
     for path, data in mix.items():
       if not data["active"]: continue;
       counts = data["counts"];
@@ -321,6 +313,45 @@ def main():
                           release["tokens"] / release["documents"],
                           release["tokens"] / source["tokens"],
                           release["documents"] / source["documents"]));
+      elif arguments.format == "md":
+        #
+        # Markdown table with summary statistics
+        #
+        s = source["tokens"];
+        r = release["tokens"];
+        b = math.ceil(arguments.horizon * data["ratio"]);
+        part = data["part"];
+        if part != "": part = "`" + part + "`";
+        print("| `{}` | {} | {:,} | {:,} | {:.1f} | {:,} | {:.1f} |"
+              "".format(data["dataset"], part,
+                        s, r, r / s * 100, b, b / r * 100));
+        l = data["language"];
+        if l == "":
+          for _ in {"code", "math"}:
+            if _ in data["tags"]: l = _;
+        if l in languages:
+          languages[l]["s"] += s;
+          languages[l]["r"] += r;
+          languages[l]["b"] += b;
+        else:
+          languages[l] = {"l": l, "s": s, "r": r, "b": b};
+
+    if arguments.format == "md":
+      print("| **Language** | **Source Tokens** | **Release Tokens** | **%**| **Token Budget** | **%** | **Share** |\n"
+            "|--------------|------------------:|-------------------:|-----:|-----------------:|------:|----------:|");
+      n = sum(_["b"] for _ in languages.values());
+      for _ in sorted(languages.values(), key = itemgetter("b"), reverse = True):
+        print("| `{}` | {:,} | {:,} | {:.1f} | {:,} | {:.1f} | {:.1f} |"
+              "".format(_["l"], _["s"], _["r"],
+                        _["r"] / _["s"] * 100,
+                        _["b"], _["b"] / _["r"] * 100,
+                        _["b"] / n * 100));
+      
+      s = sum(_["s"] for _ in languages.values());
+      r = sum(_["r"] for _ in languages.values());
+      b = sum(_["b"] for _ in languages.values());
+      print("| **Total** | **{:,}** | **{:,}** | **{:.1f}** | **{:,}** | **{:.1f}** | **{:.1f}** |"
+            "".format(s, r, r / s * 100, b, b / r * 100, b / n * 100));
     sys.exit(0);
 
   if arguments.finepdfs:
