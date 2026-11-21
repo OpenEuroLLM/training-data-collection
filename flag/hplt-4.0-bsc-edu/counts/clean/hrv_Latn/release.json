@@ -10,36 +10,36 @@
   "tokenizer": "openeurollm/tokenizer-256k",
   "keys": {
     "required": [
-      "u",
-      "de",
+      "ts",
+      "seg_langs_openlid_v3",
+      "text",
+      "glotlid_v3",
       "bsc-edu",
-      "o",
-      "id",
       "filter",
-      "finepdfs-edu",
-      "s",
-      "openlid_v2",
       "rs",
       "cluster_size",
-      "propella-4b",
-      "text",
-      "ts",
-      "pii",
-      "crawl_id",
-      "openlid_v3",
-      "c",
-      "jql",
-      "glotlid_v3",
-      "f",
+      "openlid_v2",
+      "finepdfs-edu",
+      "s",
+      "id",
+      "de",
       "doc_scores",
-      "seg_langs_openlid_v3"
+      "openlid_v3",
+      "f",
+      "crawl_id",
+      "c",
+      "o",
+      "u",
+      "propella-4b",
+      "jql",
+      "pii"
     ],
     "optional": [
       "allowed",
-      "pii_masks",
       "htmllang",
-      "metalang",
-      "pii_masks_ignored"
+      "pii_masks_ignored",
+      "pii_masks",
+      "metalang"
     ]
   }
 }
