@@ -24,10 +24,11 @@ Megatron-LM, document and token counts, and MD5 checksums.
 
 ## Data Statistics
 
-Prelude 9B was [pretrained on eight trillion](pretraining.txt) tokens
-and [annealed on another two trillion tokens](annealing.txt).
+Prelude 9B was pretrained in a warmup–stable stage of
+[eight trillion](mix/stable.txt) tokens and an annealing stage of
+[another two trillion tokens](decay.txt).
 The Prelude base model further has undergone a stage of context extension.
-Pretraining drew data for [36 distinct languages](languages.txt) plus some
+The first stage drew data for [36 distinct languages](languages.txt) plus some
 code and math from the `baby` data collection (this directory).
 Conversely, annealing and context extension availed themselves of data
 from the newer
@@ -41,17 +42,17 @@ Thus, data statistics distinguish between _source tokens_ (from the original
 dataset), _release tokens_ (actually in the training data collection),
 and _token budgets_ for each individual training phase.
 All token counts are in terms of the
-[OpenEuroLLM 256k Tokenizer](https://huggingface.co/openeurollm/tokenizer-256k) (`v1`).
+[OpenEuroLLM 256k Tokenizer](https://huggingface.co/openeurollm/tokenizer-256k) (sometimes called `v1`).
 
 The tables below provide high-level breakdowns by languages and dataset parts;
 these counts can also be explored interactively and further broken down by
 individual data types.
-More detailed statistics are available in machine-readable form for
-[pretraining](pretraining.csv), and will be provided for annealing and
+More detailed statistics are available in machine-readable form for the
+[warmup–stable stage](mix/stable.csv), and will be provided for annealing and
 context extension over the next few weeks.
 
 <details>
-<summary><b>Pretraining: Languages</b></summary>
+<summary><b>Warmup–Stable: Languages</b></summary>
 
 | **Language** | **Source Tokens** | **Release Tokens** | **%**| **Token Budget** | **%** | **Share** |
 |--------------|------------------:|-------------------:|-----:|-----------------:|------:|----------:|
@@ -96,7 +97,7 @@ context extension over the next few weeks.
 </details>
 
 <details>
-<summary><b>Pretraining: Datasets</b></summary>
+<summary><b>Warmup–Stable: Datasets</b></summary>
 
 | **Dataset** | **Part** | **Source Tokens** | **Release Tokens** | **%**| **Token Budget** | **%** |
 |-------------|----------|------------------:|-------------------:|-----:|-----------------:|------:|
@@ -282,7 +283,7 @@ For convenience, following is a table of download links for the subset of
 tokenization.
 
 <details>
-<summary><b>Pretraining: Downloads</b></summary>
+<summary><b>Warmup–Stable: Downloads</b></summary>
 
 | **URL** | **Size** |
 |---------|----------|
@@ -587,13 +588,13 @@ The `baby` data collection is the first implementation of this approach,
 where the majority of processing parameters already are made explicit through
 per-dataset `metadata.yaml` files, but some configuration aspects merely
 reflect default settings (at the time) of the software involved.
-For the central tool, the OpenEuroLLM Training Data Packer, its
+For the central tool, the OpenEuroLLM Training Data Packer, in its
 [`baby` release version](https://github.com/OpenEuroLLM/training-data-packer/tree/baby)
 was used.
 
-The packing step takes three inputs for each dataset: the source data, PII detection data, and contamination detection data. The PII and contamination data specify which documents are affected.
-
-The PII detection data was produced using the process described in [pii-masking-oellm](https://github.com/OpenEuroLLM/pii-masking-oellm). This process generates a list of detected PII, where each entry contains the document ID, the type of PII detected, and its position in the document. These lists are stored in the `pii` subdirectory of each dataset.
+Packing takes three inputs for each dataset: the source data, PII annotations,
+and contamination detection.
+PII were produced using the process described in [pii-masking-oellm](https://github.com/OpenEuroLLM/pii-masking-oellm). This process generates a list of detected PII, where each entry contains the document ID, the type of PII detected, and its position in the document. These lists are stored in the `pii` subdirectory of each dataset.
 
 Similarly, [NeMo Curator pipeline](https://github.com/OpenEuroLLM/pretraining-decontamination) was used to detect documents that are similar to documents in [the evaluation suites](https://github.com/OpenEuroLLM/decontamination-benchmarks/blob/main/README.md). It produces a list of documents to be removed. These lists are stored in the `contamination` subdirectory of each dataset.
 
