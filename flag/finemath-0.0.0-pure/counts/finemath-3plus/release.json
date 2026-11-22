@@ -1,0 +1,33 @@
+{
+  "files": 1,
+  "bytes": 43726265730,
+  "documents": 21316700,
+  "segments": 2147433455,
+  "tokens": 38939315549,
+  "characters": 119013811482,
+  "time": 41800.73484683037,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "score",
+      "fetch_time",
+      "metadata",
+      "warc_filename",
+      "url",
+      "text",
+      "char_count",
+      "token_count",
+      "int_score",
+      "id",
+      "language_score",
+      "crawl",
+      "snapshot_type",
+      "content_mime_type",
+      "language",
+      "warc_record_offset",
+      "warc_record_length"
+    ],
+    "optional": []
+  }
+}
