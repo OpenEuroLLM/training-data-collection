@@ -594,17 +594,20 @@ was used.
 
 Packing takes three inputs for each dataset: the source data, PII annotations,
 and contamination detection.
-PII were produced using the process described in [pii-masking-oellm](https://github.com/OpenEuroLLM/pii-masking-oellm). This process generates a list of detected PII, where each entry contains the document ID, the type of PII detected, and its position in the document. These lists are stored in the `pii` subdirectory of each dataset.
+PII annotations were produced using a
+[process based on multilingual regular expressions](https://github.com/OpenEuroLLM/pii-masking-oellm), recording
+document identifiers, text spans, and detected entity types.
+This data is recorded below the `pii/` path for each source dataset
+in the training data collection and publicly available through the above
+[download manifest](manifest.json).
+Similarly, the
+[NeMo Curator pipeline](https://github.com/OpenEuroLLM/pretraining-decontamination) was adapted to annotate large n-gram overlaps between training documents
+and the Prelude [the evaluation suite](https://github.com/OpenEuroLLM/decontamination-benchmarks/blob/main/README.md).
+These annotations reside below `contamination/` path for each dataset and
+are also available for public download.
 
-Similarly, [NeMo Curator pipeline](https://github.com/OpenEuroLLM/pretraining-decontamination) was used to detect documents that are similar to documents in [the evaluation suites](https://github.com/OpenEuroLLM/decontamination-benchmarks/blob/main/README.md). It produces a list of documents to be removed. These lists are stored in the `contamination` subdirectory of each dataset.
-
-The packer combines this data and, following the configuration in `metadata.yaml`, generates a final packed version of each dataset. At a high level, the steps are:
-
-1. Unify the record format
-2. Mask PII
-3. Remove contaminated documents
-4. Sample the data to fit the token budget
-5. Write temporary files
-6. Merge the temporary files into larger files
-
-After packing, the data is tokenized using NVIDIA's Nemotron preprocessing script, following the procedure described in [baby-tokenization](https://github.com/OpenEuroLLM/tokenizer/tree/main/baby-tokenization).
+Finally, packing combines the source data and annotations, normalizes
+key field names (`text` and `ìd`), removes contaminated documents,
+masks PII matches, samples to target token budgets, and merges the
+`release/` data into suitably sized shards.
+The resulting files served as input to [tokenization](https://github.com/OpenEuroLLM/tokenizer/tree/main/baby-tokenization).
