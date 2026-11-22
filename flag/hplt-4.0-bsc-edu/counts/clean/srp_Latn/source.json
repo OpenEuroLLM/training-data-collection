@@ -1,1 +1,41 @@
-../../../../hplt-4.0/counts/clean/srp_Latn/source.json
+{
+  "files": 6,
+  "bytes": 2270267315,
+  "documents": 1340747,
+  "segments": 20473619,
+  "tokens": 1031609180,
+  "characters": 3692166047,
+  "time": 1386.4796032905579,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "id",
+      "f",
+      "cluster_size",
+      "glotlid_v3",
+      "seg_langs_openlid_v3",
+      "crawl_id",
+      "rs",
+      "ts",
+      "pii",
+      "openlid_v3",
+      "text",
+      "o",
+      "md",
+      "c",
+      "de",
+      "xml",
+      "doc_scores",
+      "openlid_v2",
+      "u",
+      "s",
+      "filter"
+    ],
+    "optional": [
+      "allowed",
+      "htmllang",
+      "metalang"
+    ]
+  }
+}

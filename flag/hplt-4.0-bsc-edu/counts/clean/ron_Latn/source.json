@@ -1,1 +1,46 @@
-../../../../hplt-4.0/counts/clean/ron_Latn/source.json
+{
+  "files": 16,
+  "bytes": 202226508443,
+  "documents": 101192506,
+  "segments": 1932750569,
+  "tokens": 88109689628,
+  "characters": 307184059221,
+  "time": 112898.79141521454,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "ts",
+      "web-register",
+      "propella-4b",
+      "f",
+      "finepdfs-edu",
+      "id",
+      "s",
+      "u",
+      "filter",
+      "openlid_v2",
+      "cluster_size",
+      "pii",
+      "crawl_id",
+      "o",
+      "jql",
+      "rs",
+      "md",
+      "openlid_v3",
+      "c",
+      "glotlid_v3",
+      "de",
+      "doc_scores",
+      "xml",
+      "bsc-edu",
+      "text",
+      "seg_langs_openlid_v3"
+    ],
+    "optional": [
+      "metalang",
+      "allowed",
+      "htmllang"
+    ]
+  }
+}

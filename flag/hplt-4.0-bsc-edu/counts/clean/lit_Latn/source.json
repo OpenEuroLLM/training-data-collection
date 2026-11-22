@@ -1,1 +1,46 @@
-../../../../hplt-4.0/counts/clean/lit_Latn/source.json
+{
+  "files": 8,
+  "bytes": 53710805262,
+  "documents": 21946435,
+  "segments": 535817028,
+  "tokens": 23934780270,
+  "characters": 85075229311,
+  "time": 32627.983870744705,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "rs",
+      "filter",
+      "bsc-edu",
+      "s",
+      "c",
+      "md",
+      "o",
+      "id",
+      "openlid_v2",
+      "cluster_size",
+      "text",
+      "f",
+      "xml",
+      "propella-4b",
+      "crawl_id",
+      "seg_langs_openlid_v3",
+      "finepdfs-edu",
+      "u",
+      "glotlid_v3",
+      "openlid_v3",
+      "de",
+      "pii",
+      "jql",
+      "doc_scores",
+      "web-register",
+      "ts"
+    ],
+    "optional": [
+      "metalang",
+      "allowed",
+      "htmllang"
+    ]
+  }
+}

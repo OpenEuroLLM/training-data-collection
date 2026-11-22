@@ -1,1 +1,46 @@
-../../../../hplt-4.0/counts/noisy/gle_Latn/source.json
+{
+  "files": 8,
+  "bytes": 539758691,
+  "documents": 520878,
+  "segments": 7674481,
+  "tokens": 184594945,
+  "characters": 619203359,
+  "time": 269.30243253707886,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "jql",
+      "de",
+      "glotlid_v3",
+      "id",
+      "s",
+      "noise",
+      "md",
+      "cluster_size",
+      "pii",
+      "rs",
+      "seg_langs_openlid_v3",
+      "openlid_v3",
+      "doc_scores",
+      "crawl_id",
+      "filter",
+      "propella-4b",
+      "f",
+      "o",
+      "c",
+      "openlid_v2",
+      "xml",
+      "web-register",
+      "ts",
+      "u",
+      "bsc-edu",
+      "text"
+    ],
+    "optional": [
+      "allowed",
+      "metalang",
+      "htmllang"
+    ]
+  }
+}

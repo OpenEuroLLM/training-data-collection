@@ -1,1 +1,47 @@
-../../../../hplt-4.0/counts/clean/ell_Grek/source.json
+{
+  "files": 21,
+  "bytes": 228762532266,
+  "documents": 91479404,
+  "segments": 1823550107,
+  "tokens": 102689593671,
+  "characters": 290827792459,
+  "time": 133847.10107541084,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "crawl_id",
+      "jql",
+      "md",
+      "text",
+      "rs",
+      "id",
+      "bsc-edu",
+      "fineweb2-hq",
+      "finepdfs-edu",
+      "f",
+      "de",
+      "c",
+      "xml",
+      "ts",
+      "glotlid_v3",
+      "doc_scores",
+      "s",
+      "openlid_v2",
+      "web-register",
+      "filter",
+      "pii",
+      "cluster_size",
+      "openlid_v3",
+      "seg_langs_openlid_v3",
+      "o",
+      "u"
+    ],
+    "optional": [
+      "propella-4b",
+      "allowed",
+      "metalang",
+      "htmllang"
+    ]
+  }
+}

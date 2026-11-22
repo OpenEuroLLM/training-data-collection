@@ -1,1 +1,46 @@
-../../../../hplt-4.0/counts/clean/mkd_Cyrl/source.json
+{
+  "files": 6,
+  "bytes": 14093534982,
+  "documents": 7424445,
+  "segments": 105191100,
+  "tokens": 5194078041,
+  "characters": 17779175414,
+  "time": 7448.55731844902,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "xml",
+      "c",
+      "glotlid_v3",
+      "pii",
+      "bsc-edu",
+      "o",
+      "id",
+      "openlid_v2",
+      "cluster_size",
+      "openlid_v3",
+      "crawl_id",
+      "doc_scores",
+      "finepdfs-edu",
+      "propella-4b",
+      "text",
+      "web-register",
+      "jql",
+      "f",
+      "filter",
+      "de",
+      "rs",
+      "ts",
+      "s",
+      "u",
+      "md",
+      "seg_langs_openlid_v3"
+    ],
+    "optional": [
+      "metalang",
+      "htmllang",
+      "allowed"
+    ]
+  }
+}

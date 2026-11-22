@@ -1,1 +1,47 @@
-../../../../hplt-4.0/counts/clean/fra_Latn/source.json
+{
+  "files": 139,
+  "bytes": 2214442567015,
+  "documents": 914929291,
+  "segments": 24126954703,
+  "tokens": 974451524823,
+  "characters": 3551270478477,
+  "time": 2153315.7057578564,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "s",
+      "f",
+      "c",
+      "rs",
+      "crawl_id",
+      "web-register",
+      "bsc-edu",
+      "glotlid_v3",
+      "u",
+      "id",
+      "finepdfs-edu",
+      "xml",
+      "pii",
+      "md",
+      "propella-4b",
+      "o",
+      "de",
+      "openlid_v2",
+      "text",
+      "cluster_size",
+      "openlid_v3",
+      "fineweb2-hq",
+      "seg_langs_openlid_v3",
+      "jql",
+      "ts",
+      "doc_scores",
+      "filter"
+    ],
+    "optional": [
+      "htmllang",
+      "allowed",
+      "metalang"
+    ]
+  }
+}

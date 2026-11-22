@@ -1,1 +1,47 @@
-../../../../hplt-4.0/counts/clean/swe_Latn/source.json
+{
+  "files": 18,
+  "bytes": 229943236853,
+  "documents": 106942233,
+  "segments": 2432647075,
+  "tokens": 98222963393,
+  "characters": 362684163364,
+  "time": 138918.65313744545,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "text",
+      "cluster_size",
+      "o",
+      "crawl_id",
+      "openlid_v3",
+      "openlid_v2",
+      "f",
+      "xml",
+      "ts",
+      "jql",
+      "u",
+      "rs",
+      "pii",
+      "de",
+      "c",
+      "doc_scores",
+      "propella-4b",
+      "finepdfs-edu",
+      "glotlid_v3",
+      "id",
+      "seg_langs_openlid_v3",
+      "s",
+      "web-register",
+      "md",
+      "bsc-edu",
+      "fineweb2-hq",
+      "filter"
+    ],
+    "optional": [
+      "metalang",
+      "htmllang",
+      "allowed"
+    ]
+  }
+}

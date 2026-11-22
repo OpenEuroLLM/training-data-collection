@@ -1,1 +1,47 @@
-../../../../hplt-4.0/counts/noisy/ron_Latn/source.json
+{
+  "files": 8,
+  "bytes": 75334725994,
+  "documents": 41305636,
+  "segments": 1074844404,
+  "tokens": 33146198439,
+  "characters": 108482389639,
+  "time": 47428.93163013458,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "xml",
+      "text",
+      "s",
+      "de",
+      "propella-4b",
+      "u",
+      "web-register",
+      "seg_langs_openlid_v3",
+      "bsc-edu",
+      "crawl_id",
+      "doc_scores",
+      "cluster_size",
+      "pii",
+      "filter",
+      "finepdfs-edu",
+      "rs",
+      "jql",
+      "glotlid_v3",
+      "md",
+      "id",
+      "openlid_v3",
+      "openlid_v2",
+      "c",
+      "o",
+      "noise",
+      "f",
+      "ts"
+    ],
+    "optional": [
+      "htmllang",
+      "allowed",
+      "metalang"
+    ]
+  }
+}

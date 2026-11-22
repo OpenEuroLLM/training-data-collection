@@ -1,1 +1,46 @@
-../../../../hplt-4.0/counts/clean/als_Latn/source.json
+{
+  "files": 6,
+  "bytes": 19525213293,
+  "documents": 12179805,
+  "segments": 170458625,
+  "tokens": 11196323363,
+  "characters": 29469731696,
+  "time": 11445.461008548737,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "filter",
+      "propella-4b",
+      "c",
+      "md",
+      "web-register",
+      "openlid_v2",
+      "crawl_id",
+      "o",
+      "xml",
+      "openlid_v3",
+      "doc_scores",
+      "bsc-edu",
+      "glotlid_v3",
+      "s",
+      "de",
+      "u",
+      "pii",
+      "seg_langs_openlid_v3",
+      "rs",
+      "finepdfs-edu",
+      "text",
+      "id",
+      "ts",
+      "cluster_size",
+      "jql",
+      "f"
+    ],
+    "optional": [
+      "allowed",
+      "htmllang",
+      "metalang"
+    ]
+  }
+}

@@ -1,1 +1,48 @@
-../../../../hplt-4.0/counts/noisy/dan_Latn/source.json
+{
+  "files": 8,
+  "bytes": 43916336561,
+  "documents": 29657187,
+  "segments": 661046894,
+  "tokens": 17012922573,
+  "characters": 62159742534,
+  "time": 24742.526438951492,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "xml",
+      "seg_langs_openlid_v3",
+      "openlid_v2",
+      "filter",
+      "finepdfs-edu",
+      "pii",
+      "openlid_v3",
+      "jql",
+      "propella-4b",
+      "web-register",
+      "de",
+      "cluster_size",
+      "noise",
+      "rs",
+      "u",
+      "bsc-edu",
+      "doc_scores",
+      "o",
+      "c",
+      "fineweb2-hq",
+      "crawl_id",
+      "id",
+      "text",
+      "ts",
+      "glotlid_v3",
+      "md",
+      "s",
+      "f"
+    ],
+    "optional": [
+      "metalang",
+      "htmllang",
+      "allowed"
+    ]
+  }
+}

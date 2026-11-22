@@ -1,1 +1,47 @@
-../../../../hplt-4.0/counts/noisy/mkd_Cyrl/source.json
+{
+  "files": 8,
+  "bytes": 2444949091,
+  "documents": 2909283,
+  "segments": 25232970,
+  "tokens": 622248347,
+  "characters": 1901499588,
+  "time": 1006.9702711105347,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "c",
+      "jql",
+      "finepdfs-edu",
+      "crawl_id",
+      "filter",
+      "rs",
+      "web-register",
+      "doc_scores",
+      "de",
+      "seg_langs_openlid_v3",
+      "md",
+      "text",
+      "glotlid_v3",
+      "ts",
+      "pii",
+      "propella-4b",
+      "f",
+      "openlid_v2",
+      "xml",
+      "id",
+      "s",
+      "u",
+      "cluster_size",
+      "noise",
+      "bsc-edu",
+      "o",
+      "openlid_v3"
+    ],
+    "optional": [
+      "metalang",
+      "allowed",
+      "htmllang"
+    ]
+  }
+}

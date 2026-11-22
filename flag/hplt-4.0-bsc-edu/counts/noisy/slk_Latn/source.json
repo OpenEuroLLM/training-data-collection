@@ -1,1 +1,47 @@
-../../../../hplt-4.0/counts/noisy/slk_Latn/source.json
+{
+  "files": 8,
+  "bytes": 26315014398,
+  "documents": 20617110,
+  "segments": 474851906,
+  "tokens": 9383868167,
+  "characters": 28088144863,
+  "time": 12527.420766353607,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "doc_scores",
+      "glotlid_v3",
+      "f",
+      "cluster_size",
+      "c",
+      "bsc-edu",
+      "web-register",
+      "jql",
+      "xml",
+      "id",
+      "de",
+      "openlid_v2",
+      "rs",
+      "filter",
+      "o",
+      "md",
+      "ts",
+      "u",
+      "finepdfs-edu",
+      "noise",
+      "crawl_id",
+      "openlid_v3",
+      "s",
+      "propella-4b",
+      "pii",
+      "text",
+      "seg_langs_openlid_v3"
+    ],
+    "optional": [
+      "metalang",
+      "allowed",
+      "htmllang"
+    ]
+  }
+}

@@ -1,1 +1,46 @@
-../../../../hplt-4.0/counts/clean/ekk_Latn/source.json
+{
+  "files": 6,
+  "bytes": 37541120839,
+  "documents": 15024995,
+  "segments": 426776899,
+  "tokens": 17699715774,
+  "characters": 60811817489,
+  "time": 22761.18095088005,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "md",
+      "xml",
+      "ts",
+      "cluster_size",
+      "f",
+      "filter",
+      "doc_scores",
+      "c",
+      "openlid_v3",
+      "o",
+      "s",
+      "bsc-edu",
+      "crawl_id",
+      "de",
+      "finepdfs-edu",
+      "u",
+      "id",
+      "pii",
+      "text",
+      "web-register",
+      "seg_langs_openlid_v3",
+      "openlid_v2",
+      "jql",
+      "glotlid_v3",
+      "rs"
+    ],
+    "optional": [
+      "htmllang",
+      "metalang",
+      "propella-4b",
+      "allowed"
+    ]
+  }
+}

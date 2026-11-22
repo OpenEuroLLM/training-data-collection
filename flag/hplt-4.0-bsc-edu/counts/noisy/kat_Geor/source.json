@@ -1,1 +1,47 @@
-../../../../hplt-4.0/counts/noisy/kat_Geor/source.json
+{
+  "files": 8,
+  "bytes": 4025168173,
+  "documents": 3521418,
+  "segments": 56869878,
+  "tokens": 6973901499,
+  "characters": 3242345694,
+  "time": 3583.511300086975,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "doc_scores",
+      "u",
+      "o",
+      "bsc-edu",
+      "md",
+      "rs",
+      "openlid_v3",
+      "web-register",
+      "finepdfs-edu",
+      "crawl_id",
+      "de",
+      "openlid_v2",
+      "xml",
+      "propella-4b",
+      "ts",
+      "jql",
+      "f",
+      "noise",
+      "glotlid_v3",
+      "filter",
+      "cluster_size",
+      "text",
+      "s",
+      "id",
+      "seg_langs_openlid_v3",
+      "pii",
+      "c"
+    ],
+    "optional": [
+      "metalang",
+      "allowed",
+      "htmllang"
+    ]
+  }
+}

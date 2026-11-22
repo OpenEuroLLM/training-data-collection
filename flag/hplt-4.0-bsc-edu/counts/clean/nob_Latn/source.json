@@ -1,1 +1,46 @@
-../../../../hplt-4.0/counts/clean/nob_Latn/source.json
+{
+  "files": 8,
+  "bytes": 82766658572,
+  "documents": 37000822,
+  "segments": 822024953,
+  "tokens": 34569056183,
+  "characters": 132759845015,
+  "time": 49015.84583616257,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "f",
+      "ts",
+      "doc_scores",
+      "pii",
+      "rs",
+      "xml",
+      "bsc-edu",
+      "cluster_size",
+      "glotlid_v3",
+      "seg_langs_openlid_v3",
+      "s",
+      "web-register",
+      "openlid_v3",
+      "filter",
+      "finepdfs-edu",
+      "o",
+      "text",
+      "jql",
+      "c",
+      "id",
+      "propella-4b",
+      "de",
+      "u",
+      "md",
+      "openlid_v2",
+      "crawl_id"
+    ],
+    "optional": [
+      "allowed",
+      "metalang",
+      "htmllang"
+    ]
+  }
+}

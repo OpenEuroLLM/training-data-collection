@@ -1,1 +1,47 @@
-../../../../hplt-4.0/counts/noisy/bul_Cyrl/source.json
+{
+  "files": 8,
+  "bytes": 20705305647,
+  "documents": 20266745,
+  "segments": 263019015,
+  "tokens": 5635433753,
+  "characters": 16747358900,
+  "time": 8753.561470985413,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "rs",
+      "bsc-edu",
+      "xml",
+      "text",
+      "finepdfs-edu",
+      "filter",
+      "o",
+      "u",
+      "pii",
+      "de",
+      "openlid_v2",
+      "s",
+      "crawl_id",
+      "c",
+      "md",
+      "cluster_size",
+      "jql",
+      "noise",
+      "openlid_v3",
+      "ts",
+      "seg_langs_openlid_v3",
+      "web-register",
+      "id",
+      "propella-4b",
+      "f",
+      "glotlid_v3",
+      "doc_scores"
+    ],
+    "optional": [
+      "htmllang",
+      "metalang",
+      "allowed"
+    ]
+  }
+}

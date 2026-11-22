@@ -1,1 +1,42 @@
-../../../../../hplt-4.0/counts/clean/eng_Latn/ccc/source.json
+{
+  "files": 988,
+  "bytes": 2455738380226,
+  "documents": 1034352553,
+  "segments": 28321294547,
+  "tokens": 954587029955,
+  "characters": 4321625248848,
+  "time": 5545844.806064367,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "md",
+      "u",
+      "c",
+      "xml",
+      "openlid_v3",
+      "openlid_v2",
+      "seg_langs_openlid_v3",
+      "glotlid_v3",
+      "web-register",
+      "pii",
+      "ts",
+      "o",
+      "cluster_size",
+      "doc_scores",
+      "crawl_id",
+      "rs",
+      "s",
+      "text",
+      "filter",
+      "id",
+      "f",
+      "de",
+      "bsc-edu"
+    ],
+    "optional": [
+      "htmllang",
+      "metalang"
+    ]
+  }
+}

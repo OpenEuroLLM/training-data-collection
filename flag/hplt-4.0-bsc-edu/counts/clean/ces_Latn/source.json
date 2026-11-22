@@ -1,1 +1,47 @@
-../../../../hplt-4.0/counts/clean/ces_Latn/source.json
+{
+  "files": 19,
+  "bytes": 270263381212,
+  "documents": 117324028,
+  "segments": 2574322034,
+  "tokens": 97860267851,
+  "characters": 384235238644,
+  "time": 157686.11333322525,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "cluster_size",
+      "glotlid_v3",
+      "xml",
+      "s",
+      "ts",
+      "fineweb2-hq",
+      "doc_scores",
+      "c",
+      "web-register",
+      "rs",
+      "md",
+      "u",
+      "text",
+      "id",
+      "propella-4b",
+      "de",
+      "openlid_v3",
+      "filter",
+      "jql",
+      "o",
+      "crawl_id",
+      "pii",
+      "bsc-edu",
+      "seg_langs_openlid_v3",
+      "openlid_v2",
+      "f",
+      "finepdfs-edu"
+    ],
+    "optional": [
+      "metalang",
+      "allowed",
+      "htmllang"
+    ]
+  }
+}

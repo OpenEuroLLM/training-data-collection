@@ -1,1 +1,47 @@
-../../../../hplt-4.0/counts/noisy/nno_Latn/source.json
+{
+  "files": 8,
+  "bytes": 2361403916,
+  "documents": 2251188,
+  "segments": 29378867,
+  "tokens": 735937363,
+  "characters": 2399558565,
+  "time": 1061.9706382751465,
+  "errors": 0,
+  "tokenizer": "openeurollm/tokenizer-256k",
+  "keys": {
+    "required": [
+      "openlid_v2",
+      "jql",
+      "crawl_id",
+      "id",
+      "glotlid_v3",
+      "cluster_size",
+      "web-register",
+      "seg_langs_openlid_v3",
+      "noise",
+      "propella-4b",
+      "rs",
+      "xml",
+      "doc_scores",
+      "filter",
+      "u",
+      "md",
+      "de",
+      "text",
+      "ts",
+      "c",
+      "finepdfs-edu",
+      "o",
+      "pii",
+      "openlid_v3",
+      "f",
+      "bsc-edu",
+      "s"
+    ],
+    "optional": [
+      "metalang",
+      "allowed",
+      "htmllang"
+    ]
+  }
+}
