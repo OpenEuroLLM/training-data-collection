@@ -6,7 +6,7 @@ suffix: .jsonl.zst
 #
 release:
   default:
-    input: nugget
+    input: openeurollm
     annotations: [nemo-curator, openai-privacy-filter]
     mask: [account_number, private_email, private_phone, private_url, secret]
     pack: tree
@@ -49,7 +49,7 @@ release:
   "youtube:multi-youtube":
   "youtube:youtube":
 #
-nugget:
+openeurollm:
 #
 # ( cd ../mixture-vitae-1.0/sample;
 #   find * -name \*.jsonl.zst | while read f; do \
@@ -57,8 +57,8 @@ nugget:
 #     g=$(echo $f | sed -e 's,.jsonl.zst$,,g' -e 's,[-_][0-9]$,,g' -e 's,/,:,g');
 #     echo "$g $d $(basename $f)";
 #  done | sort; ) > nuggets.txt;
-# mkdir nugget;
-# cd nugget;
+# mkdir openeurollm;
+# cd openeurollm;
 # cat ../nuggets.txt | while read g d f; do
 #   [ -d $g ] || mkdir "$g";
 #   ln -s ../../../mixture-vitae-1.0/sample/$d/$f $g;
