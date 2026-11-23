@@ -1,4 +1,4 @@
-name: FineMath 0.0.0
+name: FineMath
 huggingface: HuggingFaceTB/finemath
 catalogue: finemath/0.0.0/data
 suffix: .jsonl.zst

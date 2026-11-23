@@ -52,9 +52,11 @@ echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] mn5.slurm: data: ${path}."
 echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] mn5.slurm: using ${cores} cores."
 
 module load lumio;
-rclone -v --transfers 16 --checkers 32 --config ${HOME}/.config/rclone/bsc.conf \
-  --sftp-ssh "ssh uiop429521@transfer2.bsc.es" copy \
-  ${path}/megatron-lm \
-  sftp:/gpfs/projects/ehpc533/training/collection/baby/${path}/megatron-lm
+for i in md5 counts megatron-lm; do
+  rclone -v --transfers 16 --checkers 32 --config ${HOME}/.config/rclone/bsc.conf \
+    --sftp-ssh "ssh uiop429521@transfer2.bsc.es" sync \
+    ${path}/${i} \
+    sftp:/gpfs/projects/ehpc533/training/collection/baby/${path}/${i}
+done
 echo "[$(date +"%Y-%m-%d (%H:%M:%S)")] mn5.slurm: all files processed."
 exit 0;

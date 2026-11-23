@@ -1,4 +1,4 @@
-name: MegaMath 0.0.0
+name: MegaMath
 huggingface: LLM360/MegaMath
 catalogue: megamath/0.0.0/data
 suffix: .jsonl.zst
