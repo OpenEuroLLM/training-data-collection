@@ -79,10 +79,18 @@ def main():
             entries[i].pop("paths");
         i -= 1;
     for language in sorted(map.keys()):
+      i = 0; last = None;
       for entry in map[language]:
         if "paths" in entry and len(entry["paths"]) > 1:
-          print(entry);
-      
+          if last is None or entry["bucket"] != last:
+            i = 0;
+          else:
+            print("foo")
+            i += 1;
+          last = entry["bucket"];
+          print("{},{},{},{}"
+                "".format(entry["partition"], entry["language"],
+                          f"{last}_{i}", " ".join(entry["paths"])))
 
 if __name__ == "__main__":
   main();
