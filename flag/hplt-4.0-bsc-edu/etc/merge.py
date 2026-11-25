@@ -88,7 +88,7 @@ def main():
             print("foo")
             i += 1;
           last = entry["bucket"];
-          print("{},{},{:04d},{},{}"
+          print("{},{},{:04d},{:02d},{}"
                 "".format(entry["partition"], entry["language"],
                           i, last, " ".join(entry["paths"])))
 

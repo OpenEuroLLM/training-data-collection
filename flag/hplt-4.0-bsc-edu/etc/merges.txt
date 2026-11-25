@@ -16,8 +16,8 @@ clean,hun_Latn,0000,36,clean/hun_Latn/shard_0000_36.info.json clean/hun_Latn/sha
 clean,isl_Latn,0000,35,clean/isl_Latn/shard_0000_35.info.json clean/isl_Latn/shard_0000_36.info.json
 clean,ita_Latn,0000,37,clean/ita_Latn/shard_0000_37.info.json clean/ita_Latn/shard_0000_39.info.json clean/ita_Latn/shard_0001_38.info.json clean/ita_Latn/shard_0000_38.info.json
 clean,lit_Latn,0000,35,clean/lit_Latn/shard_0000_35.info.json clean/lit_Latn/shard_0000_36.info.json
-clean,ltg_Latn,0000,3,clean/ltg_Latn/shard_0000_03.info.json clean/ltg_Latn/shard_0000_02.info.json clean/ltg_Latn/shard_0000_01.info.json clean/ltg_Latn/shard_0000_00.info.json
-clean,ltg_Latn,0000,5,clean/ltg_Latn/shard_0000_05.info.json clean/ltg_Latn/shard_0000_04.info.json
+clean,ltg_Latn,0000,03,clean/ltg_Latn/shard_0000_03.info.json clean/ltg_Latn/shard_0000_02.info.json clean/ltg_Latn/shard_0000_01.info.json clean/ltg_Latn/shard_0000_00.info.json
+clean,ltg_Latn,0000,05,clean/ltg_Latn/shard_0000_05.info.json clean/ltg_Latn/shard_0000_04.info.json
 clean,ltg_Latn,0000,26,clean/ltg_Latn/shard_0000_26.info.json clean/ltg_Latn/shard_0000_25.info.json clean/ltg_Latn/shard_0000_29.info.json clean/ltg_Latn/shard_0000_28.info.json clean/ltg_Latn/shard_0000_27.info.json
 clean,lvs_Latn,0000,35,clean/lvs_Latn/shard_0000_35.info.json clean/lvs_Latn/shard_0000_36.info.json
 clean,mkd_Cyrl,0000,33,clean/mkd_Cyrl/shard_0000_33.info.json clean/mkd_Cyrl/shard_0000_35.info.json clean/mkd_Cyrl/shard_0000_34.info.json
@@ -50,9 +50,9 @@ noisy,glg_Latn,0000,32,noisy/glg_Latn/shard_0000_32.info.json noisy/glg_Latn/sha
 noisy,hrv_Latn,0000,33,noisy/hrv_Latn/shard_0000_33.info.json noisy/hrv_Latn/shard_0000_35.info.json noisy/hrv_Latn/shard_0000_34.info.json
 noisy,isl_Latn,0000,32,noisy/isl_Latn/shard_0000_32.info.json noisy/isl_Latn/shard_0000_34.info.json noisy/isl_Latn/shard_0000_33.info.json
 noisy,lit_Latn,0000,33,noisy/lit_Latn/shard_0000_33.info.json noisy/lit_Latn/shard_0000_36.info.json noisy/lit_Latn/shard_0000_35.info.json noisy/lit_Latn/shard_0000_34.info.json
-noisy,ltg_Latn,0000,2,noisy/ltg_Latn/shard_0000_02.info.json noisy/ltg_Latn/shard_0000_01.info.json
-noisy,ltg_Latn,0000,4,noisy/ltg_Latn/shard_0000_04.info.json noisy/ltg_Latn/shard_0000_03.info.json
-noisy,ltg_Latn,0000,6,noisy/ltg_Latn/shard_0000_06.info.json noisy/ltg_Latn/shard_0000_05.info.json
+noisy,ltg_Latn,0000,02,noisy/ltg_Latn/shard_0000_02.info.json noisy/ltg_Latn/shard_0000_01.info.json
+noisy,ltg_Latn,0000,04,noisy/ltg_Latn/shard_0000_04.info.json noisy/ltg_Latn/shard_0000_03.info.json
+noisy,ltg_Latn,0000,06,noisy/ltg_Latn/shard_0000_06.info.json noisy/ltg_Latn/shard_0000_05.info.json
 noisy,ltg_Latn,0000,14,noisy/ltg_Latn/shard_0000_14.info.json noisy/ltg_Latn/shard_0000_13.info.json
 noisy,ltg_Latn,0000,19,noisy/ltg_Latn/shard_0000_19.info.json noisy/ltg_Latn/shard_0000_18.info.json noisy/ltg_Latn/shard_0000_17.info.json
 noisy,ltg_Latn,0000,28,noisy/ltg_Latn/shard_0000_28.info.json noisy/ltg_Latn/shard_0000_27.info.json noisy/ltg_Latn/shard_0000_26.info.json noisy/ltg_Latn/shard_0000_25.info.json noisy/ltg_Latn/shard_0000_24.info.json noisy/ltg_Latn/shard_0000_23.info.json noisy/ltg_Latn/shard_0000_22.info.json noisy/ltg_Latn/shard_0000_21.info.json noisy/ltg_Latn/shard_0000_20.info.json noisy/ltg_Latn/shard_0000_29.info.json
