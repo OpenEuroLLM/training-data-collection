@@ -88,9 +88,9 @@ def main():
             print("foo")
             i += 1;
           last = entry["bucket"];
-          print("{},{},{},{}"
+          print("{},{},{:04d},{},{}"
                 "".format(entry["partition"], entry["language"],
-                          f"{last}_{i}", " ".join(entry["paths"])))
+                          i, last, " ".join(entry["paths"])))
 
 if __name__ == "__main__":
   main();
